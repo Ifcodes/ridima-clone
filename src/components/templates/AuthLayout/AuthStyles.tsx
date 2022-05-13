@@ -2,57 +2,46 @@ import styled from "styled-components";
 import Bluebg from '../../../../public/vectors/BlueAuthbg.svg';
 import Lightbg from '../../../../public/vectors/LightAuthbg.svg';
 
-export const PrimaryAuthWrapper = styled.section<{lightBg?: Boolean}>`
+export const AuthWrapper = styled.section<{lightBg?: Boolean}>`
   width: 100%;
-  max-width: 100%;
   height: 100vh;
-  margin-right: auto;
-  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   background-image: ${props => props.lightBg ? `url(${Lightbg})` : `url(${Bluebg})`};
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: cover;
   overflow: hidden;
- 
+  
+  &::before{
+    content: '';
+    width: 15rem;
+    height: 19rem;
+    background: ${props => props.lightBg
+      ? `url('/vectors/spiralLeftBlue.svg')`
+      : `url('/vectors/SpiralLeftWhite.svg')`
+    };
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -9rem;
+    top: 4rem;
+  }
 
-  .auth-cont{
-    width: 100%;
-    height: 100vh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    position: relative;
-
-    &::before{
-      content: '';
-      width: 15rem;
-      height: 19rem;
-      background: ${props => props.lightBg
-        ? `url('../../../../public/vectors/spiralLeftBlue.svg')`
-        : `url('../../../../public/vectors/SpiralLeftWhite.svg')`
-      };
-      background-repeat: no-repeat;
-      position: absolute;
-      left: -9rem;
-      top: 4rem;
-    }
-
-    &::after{
-      content: '';
-      width: 17rem;
-      height: 20rem;
-      background: ${props => props.lightBg
-        ? `url('../../../../public/vectors/SpiralRightBlue.svg')`
-        : `url('../../../../public/vectors/SpiralRightYellow.svg')`
-      };
-      background-repeat: no-repeat;
-      position: absolute;
-      right: -9rem;
-      bottom: 3.13rem;
-    }
+  &::after{
+    content: '';
+    width: 17rem;
+    height: 20rem;
+    background: ${props => props.lightBg
+      ? `url('/vectors/SpiralRightBlue.svg')`
+      : `url('/vectors/SpiralRightYellow.svg')`
+    };
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -9rem;
+    bottom: 3.13rem;
   }
 `
 export const BirdShapeWrap = styled.div<{isVisible: Boolean}>`

@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import CeraPro from '/public/Fonts/CeraPro/stylesheet.css'
+import CeraPro from '/public/fonts/CeraPro/stylesheet.css'
 
 const GlobalStyles = createGlobalStyle` 
 
@@ -12,7 +12,6 @@ const GlobalStyles = createGlobalStyle`
   html,
   body{
     width: 100%;
-    height: 100vh;
     overflow: hidden;
     position: relative;
     margin: 0;
