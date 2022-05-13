@@ -28,7 +28,7 @@ const AuthLayout = ({
               <AuthCard>
                 <AuthSideBarShow />
                   {children}
-                <div className="bird-cont">
+                <div className='bird-cont'>
                   <BirdShapeSm />
                 </div>
               </AuthCard>

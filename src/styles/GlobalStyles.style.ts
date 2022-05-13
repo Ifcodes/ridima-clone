@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import CeraPro from '../../public/Fonts/CeraPro/stylesheet.css'
+import CeraPro from '/public/Fonts/CeraPro/stylesheet.css'
 
 const GlobalStyles = createGlobalStyle` 
 

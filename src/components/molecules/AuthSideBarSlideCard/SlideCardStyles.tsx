@@ -7,11 +7,6 @@ export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
   max-width: 100%;
   min-height: 100%;
   margin-bottom: 0;
-  background: url(${pattern}), ${props => 
-    props.bgColor === "light" 
-    ? "transparent" 
-    : "rgba(245, 207, 72)"
-  };
   display: flex;
   flex-direction: column;
   justify-content: space-between;

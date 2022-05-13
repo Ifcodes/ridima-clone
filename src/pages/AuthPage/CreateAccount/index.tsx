@@ -37,68 +37,75 @@ const CreateAccountPage = () => {
     setCurrentStage(1)
   }
   return (
-    <AuthLayout>
-      <CreateAccountFormWrapper onSubmit={submit}>
-        <H1 mt='0'> Create Account</H1>
-        <Input 
-          id={generateId()}
-          label='Username'
-          placeholder='e.g. Johndoe'
-          required
-          value={formField.username}
-          onChange={(e) => handleChange('username', e)}
-        />
-        <Input 
-          id={generateId()}
-          label='Phone number'
-          placeholder='e.g. 080 0000 0000'
-          required
-          value={formField.phoneNumber}
-          onChange={(e) => handleChange('phoneNumber', e)}
-        />
-        <Input 
-          id={generateId()}
-          label='Email address'
-          placeholder='e.g. you@email.com'
-          required
-          value={formField.email}
-          onChange={(e) => handleChange('email', e)}
-          type='email'
-        />
-        <Input 
-          id={generateId()}
-          label='Password'
-          placeholder='*******'
-          required
-          value={formField.password}
-          onChange={(e) => handleChange('password', e)}
-          type='password'
-        />
-        <p className='password-hint'>Password should be minimum of 8 Characters</p>
+    <AuthLayout secondaryAuth={currentStage === 1}>
+      {currentStage === 1
+        ? (
+          <VerifyOtp />
+        )
+        : (
+          <CreateAccountFormWrapper onSubmit={submit}>
+            <H1 mt='0'> Create Account</H1>
+            <Input 
+              id={generateId()}
+              label='Username'
+              placeholder='e.g. Johndoe'
+              required
+              value={formField.username}
+              onChange={(e) => handleChange('username', e)}
+            />
+            <Input 
+              id={generateId()}
+              label='Phone number'
+              placeholder='e.g. 080 0000 0000'
+              required
+              value={formField.phoneNumber}
+              onChange={(e) => handleChange('phoneNumber', e)}
+            />
+            <Input 
+              id={generateId()}
+              label='Email address'
+              placeholder='e.g. you@email.com'
+              required
+              value={formField.email}
+              onChange={(e) => handleChange('email', e)}
+              type='email'
+            />
+            <Input 
+              id={generateId()}
+              label='Password'
+              placeholder='*******'
+              required
+              value={formField.password}
+              onChange={(e) => handleChange('password', e)}
+              type='password'
+            />
+            <p className='password-hint'>Password should be minimum of 8 Characters</p>
 
-        <div className='alternative'>
-          <LeftLineVector />
-          <span>Or Create account with</span>
-          <div className='right-vec'>
-            <RightLineVector />
-          </div>
-        </div>
-        
-        <AlternativeAuthOptions />
-        <Button 
-          btnText='Create Account'
-          disabled={disableButton}
-          mt="2.5rem"
-          btnType="submit"
-        />
-        <div className='alternative-nav-cont'>
-          <AlternativeAuth 
-            text='Already have an account?'
-            cta='Login'
-            location='/login'
-          />
-        </div>
-      </CreateAccountFormWrapper> 
+            <div className='alternative'>
+              <LeftLineVector />
+              <span>Or Create account with</span>
+              <div className='right-vec'>
+                <RightLineVector />
+              </div>
+            </div>
+            
+            <AlternativeAuthOptions />
+            <Button 
+              btnText='Create Account'
+              disabled={disableButton}
+              mt="2.5rem"
+              btnType="submit"
+            />
+            <div className='alternative-nav-cont'>
+              <AlternativeAuth 
+                text='Already have an account?'
+                cta='Login'
+                location='/login'
+              />
+            </div>
+          </CreateAccountFormWrapper>
+        )
+      }
     </AuthLayout>
   )
 }

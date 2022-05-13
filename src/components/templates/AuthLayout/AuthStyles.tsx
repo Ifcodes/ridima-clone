@@ -25,7 +25,6 @@ export const PrimaryAuthWrapper = styled.section<{lightBg?: Boolean}>`
     justify-content: center;
     flex-grow: 1;
     position: relative;
-    /* border: 2px solid red; */
 
     &::before{
       content: '';
@@ -57,12 +56,9 @@ export const PrimaryAuthWrapper = styled.section<{lightBg?: Boolean}>`
   }
 `
 export const BirdShapeWrap = styled.div<{isVisible: Boolean}>`
-  
-  .bird{
-    position: absolute;
-    bottom: 3rem;
-    left: 20rem;
-  }
+  position: absolute;
+  bottom: 3rem;
+  left: 20rem;
   display: ${props => props.isVisible ? 'block' : 'none'};
 `
 export const LayoutFooter = styled.footer`

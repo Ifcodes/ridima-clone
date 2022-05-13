@@ -51,9 +51,45 @@ export const CreateAccountFormWrapper = styled.form<DetailedHTMLProps<React.Form
 
 export const VerifyOtpWrapper = styled.div`
   width: 32rem;
-  height: 51rem;
+  height: 80vh;
+  max-height: 50rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3.5rem 1rem 1rem;
+  justify-content: space-between;
+  padding: 1rem 2.5rem 1.5rem;
+  background-color: white;
+  border-radius: 2.5rem;
+  overflow-y: auto;
+
+  ::-webkit-scrollbar{
+    width: 0;
+  }
+
+  .form-cont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p{
+      max-width: 18.7rem;
+      text-align: center;
+    }
+  
+    .img-cont{
+      margin-top: 0;
+      width: 20rem;
+      height: 20rem;
+  
+      img{
+        width: 20rem;
+        height: 20rem;
+      }
+    }
+  
+    input{
+      text-align: center;
+    }
+  }
 `

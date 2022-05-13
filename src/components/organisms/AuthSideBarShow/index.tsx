@@ -22,12 +22,18 @@ const AuthSideBarShow = () => {
       illustration: <img src='/vectors/LadyBlueTopIllus.svg' alt='illustration' />,
       title: 'Get access to Virtual Dollar Cards.',
       description: 'Virtual dollar cards that can be used for online payments on any platform.',
-      bgType: 'yellow'
+      bgType: 'light'
     },
     {
       illustration: <img src='/vectors/BlueHairMaleIllus.svg' alt='illustration' />,
       title: 'Buy airtime and pay bills',
       description: 'Buy airtime, pay for cable TV, electricity, water, education and more on RIdima',
+      bgType: 'light'
+    },
+    {
+      illustration: <img src='/vectors/JetIcon.svg' alt='illustration' />,
+      title: 'Get Started on Ridima today',
+      description: 'Create your account and start trading giftcards, anytime, anywhere',
       bgType: 'light'
     },
   ]
@@ -39,7 +45,7 @@ const AuthSideBarShow = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 10000,
+    autoplaySpeed: 8000,
   };
 
   setTimeout(() => {

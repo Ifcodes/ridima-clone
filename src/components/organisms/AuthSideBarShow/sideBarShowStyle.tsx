@@ -13,7 +13,7 @@ export const SideBarShowWrapper = styled.aside<{bgColor?: string}>`
   .slide-show-cont{
     width: 100%;
     height: 100%;
-    background: ${props => props.bgColor === "yellow" ? "#f5cf48" : "linear-gradient(0deg, rgba(113, 101, 227, 0.05), rgba(113, 101, 227, 0.05)),#FFFFFE"} ;
+    background: url(${pattern}), ${props => props.bgColor === "yellow" ? "#f5cf48" : "linear-gradient(0deg, rgba(113, 101, 227, 0.05), rgba(113, 101, 227, 0.05)),#FFFFFE"} ;
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
