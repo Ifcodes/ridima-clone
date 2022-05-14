@@ -5,12 +5,13 @@ import Lightbg from '../../../../public/vectors/LightAuthbg.svg';
 export const AuthWrapper = styled.section<{lightBg?: Boolean}>`
   width: 100%;
   height: 100vh;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  background-image: ${props => props.lightBg ? `url(${Lightbg})` : `url(${Bluebg})`};
+  background: ${props => props.lightBg ? `url(${Lightbg})` : `url(${Bluebg})`};
   background-repeat: no-repeat;
   background-size: cover;
   background-position: cover;
@@ -69,7 +70,6 @@ export const AuthCard = styled.section`
   border-radius: 2.5rem;
   display: grid;
   grid-template-columns: 38% 1fr;
-  align-items: center;
   justify-content: center;
   position: relative;
 

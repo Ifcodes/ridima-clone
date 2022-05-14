@@ -4,9 +4,8 @@ import pattern from '../../../../public/vectors/CreateAccountPattern.svg';
 export type bgType = "light" | "yellow"
 
 export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
-  max-width: 100%;
-  min-height: 100%;
-  margin-bottom: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,13 +14,14 @@ export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
 
   .illustration{
     width: 100%;
+    height: 17rem;
     margin: 4rem 0 1.5rem;
     display: flex;
     justify-content: center;
     
     img{
       max-width: 14rem;
-      max-height: 15rem;
+      max-height: 100%;
 
       @media screen and (max-width: 1220px) {
         max-height: 10rem;

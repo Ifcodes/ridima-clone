@@ -55,7 +55,7 @@ const AuthSideBarShow = () => {
 
   return (
     <SideBarShowWrapper>
-      <div className="slide-show-cont">
+      {/* <div className="slide-show-cont"> */}
         <Slider {...settings}>  
           {slideShowContent.map((slide, index) => (
               <SlideCard 
@@ -67,7 +67,7 @@ const AuthSideBarShow = () => {
               />
           ))}
         </Slider>
-      </div>
+      {/* </div> */}
       
     </SideBarShowWrapper>
   )
