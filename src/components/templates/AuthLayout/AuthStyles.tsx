@@ -45,9 +45,9 @@ export const AuthWrapper = styled.section<{lightBg?: Boolean}>`
     bottom: 3.13rem;
   }
 `
-export const BirdShapeWrap = styled.div<{isVisible: Boolean}>`
+export const BirdShapeWrap = styled.div<{isVisible: Boolean, forgotPassword?: Boolean}>`
   position: absolute;
-  bottom: 3rem;
+  bottom: ${props => props.forgotPassword ? '-3rem' : '3rem'};
   left: 20rem;
   display: ${props => props.isVisible ? 'block' : 'none'};
 `

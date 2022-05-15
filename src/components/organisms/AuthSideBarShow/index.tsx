@@ -55,7 +55,6 @@ const AuthSideBarShow = () => {
 
   return (
     <SideBarShowWrapper>
-      {/* <div className="slide-show-cont"> */}
         <Slider {...settings}>  
           {slideShowContent.map((slide, index) => (
               <SlideCard 
@@ -66,9 +65,7 @@ const AuthSideBarShow = () => {
                 bgColorType={slide.bgType}
               />
           ))}
-        </Slider>
-      {/* </div> */}
-      
+        </Slider>      
     </SideBarShowWrapper>
   )
 }

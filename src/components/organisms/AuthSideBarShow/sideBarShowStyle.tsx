@@ -15,15 +15,4 @@ export const SideBarShowWrapper = styled.aside<{bgColor?: string}>`
   .slick-slider{
     height: 92%;
   }
-  /* .slide-show-cont{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    border-top-left-radius: 2.5rem;
-    border-bottom-left-radius: 2.5rem;
-
-    .dot-cont{
-      display: none;
-    }
-  } */
 `

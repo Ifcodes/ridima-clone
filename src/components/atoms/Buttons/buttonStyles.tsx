@@ -23,12 +23,18 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     position: absolute;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 80%;
+    height: 100%;
     margin: 0 auto;
-    top: 1.3rem;
+    top: 0;
   }
 
   span{
     margin: 0.5rem;
+  }
+
+  img{
+    max-width: 100%;
   }
 `
