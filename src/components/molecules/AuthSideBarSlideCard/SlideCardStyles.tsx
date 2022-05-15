@@ -5,10 +5,8 @@ export type bgType = "light" | "yellow"
 
 export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   text-align: center;
 
@@ -21,11 +19,11 @@ export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
     
     img{
       max-width: 14rem;
-      max-height: 100%;
+      max-height: 17rem;
 
-      @media screen and (max-width: 1220px) {
+      /* @media screen and (max-width: 1220px) {
         max-height: 10rem;
-      }
+      } */
     }
   }
 
@@ -50,17 +48,12 @@ export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
 
     p{
       width: 100%;
-      margin-bottom: 5rem;
+      margin-bottom: 4rem;
 
       @media screen and (max-width: 1220px){
         font-size: 0.9rem;
-        margin-bottom: 0.75rem;
       }
     }
-  }
-
-  @media screen and (max-width: 1220px){
-    padding: 0 0.5rem;
   }
    
 `

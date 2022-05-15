@@ -6,6 +6,7 @@ import MessageCard from '../../../components/molecules/MessageCard'
 
 const SuccessMessageCard = () => {
   const navigate = useNavigate()
+
   return (
     <>
       <MessageCard 
@@ -15,6 +16,7 @@ const SuccessMessageCard = () => {
         primaryCta={
           <Button 
             btnText='Login'
+            disabled={false}
             onClick={() => navigate('/login')}
           />
         }

@@ -21,6 +21,8 @@ const Button = ({
   mt,
   mb,
   suffix,
+  onClick,
+  ...props
 } : ButtonProps) => {
   return (
     <ButtonWrapper
@@ -29,6 +31,7 @@ const Button = ({
       mt={mt}
       mb={mb}
       type={btnType}
+      onClick={onClick}
     >
       <div className='text-cont'>
         <span>{btnText}</span>

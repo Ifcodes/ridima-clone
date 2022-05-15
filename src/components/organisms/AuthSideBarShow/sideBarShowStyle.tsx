@@ -11,8 +11,9 @@ export const SideBarShowWrapper = styled.aside<{bgColor?: string}>`
   border-top-left-radius: 2.5rem;
   border-bottom-left-radius: 2.5rem;
   position: relative;
+  padding-bottom: 1rem;
 
-  .slick-slider{
-    height: 92%;
+  @media screen and (max-width: 1024px){
+    padding-bottom: 3rem;
   }
 `

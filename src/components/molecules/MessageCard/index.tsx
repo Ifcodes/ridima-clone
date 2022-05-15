@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react'
+import React, { MouseEventHandler, ReactNode } from 'react'
+import CloseIcon from '../../atoms/CloseIcon';
 import { H1, Paragraph } from '../../atoms/Typography';
 import { MessageCardWrapper } from './StyledMessageCard'
 
@@ -8,6 +9,10 @@ type MessageCardProp ={
   description?: string;
   primaryCta?: ReactNode;
   secondaryCta?: ReactNode;
+  closeIcon?: boolean;
+  width?: string;
+  height?: string;
+  handleClick?: MouseEventHandler<HTMLDivElement>;
 }
 
 const MessageCard = ({
@@ -16,9 +21,24 @@ const MessageCard = ({
   description,
   primaryCta,
   secondaryCta,
+  closeIcon,
+  width,
+  height,
+  handleClick,
 } : MessageCardProp) => {
   return (
-    <MessageCardWrapper>
+    <MessageCardWrapper
+      width={width}
+      height={height}
+    >
+      {closeIcon &&
+        <div 
+          className='close-Icon'
+          onClick={handleClick}
+        >
+          <CloseIcon />
+        </div>
+      }
       <div className='icon-cont'>
         {cardIcon}
       </div>

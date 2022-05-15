@@ -1,14 +1,30 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const MessageCardWrapper = styled.div`
-  width: 35rem;
+export const MessageCardWrapper = styled.div<{height?: string, width?: string}>`
+  width: ${props => props.width || '35rem'};
+  ${props => props.height && 
+    css`
+      height: ${props.height};
+    `
+  };
   background-color: white;
   border-radius: 2.5rem;
   padding: 0 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   
+  .close-Icon{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    cursor: pointer;
+  }
   .icon-cont{
     display: flex;
     justify-content: center;
