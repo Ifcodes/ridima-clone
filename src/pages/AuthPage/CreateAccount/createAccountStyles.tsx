@@ -89,6 +89,10 @@ export const VerifyOtpWrapper = styled.div`
         height: 13rem;
       }
     }
+
+    form{
+      width: 100%;
+    }
   
     input{
       text-align: center;

@@ -4,7 +4,9 @@ import { ButtonProps } from ".";
 export const ButtonWrapper = styled.button<ButtonProps>`
   width: ${props => props.width || "100%"};
   font-size: 1rem;
-  color: ${props => props.disabled
+  color: ${props => props.textColor 
+    ? props.textColor
+    : props.disabled
     ? props.theme.colors.lightGrey
     : props.theme.colors.black
   };
@@ -22,7 +24,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   .text-cont{
     position: absolute;
     display: flex;
-    justify-content: center;
+    justify-content: ${props => props.menuBtn ? 'flex-start' : 'center'};
     align-items: center;
     width: 80%;
     height: 100%;
@@ -34,7 +36,11 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     margin: 0.5rem;
   }
 
-  img{
+  .button-Bg{
     max-width: 100%;
+    visibility: ${props => props.hideBg 
+      ? 'hidden'
+      : 'visible'
+    };
   }
 `

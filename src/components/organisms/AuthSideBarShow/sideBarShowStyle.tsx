@@ -13,7 +13,7 @@ export const SideBarShowWrapper = styled.aside<{bgColor?: string}>`
   position: relative;
   padding-bottom: 1rem;
 
-  @media screen and (max-width: 1024px){
-    padding-bottom: 3rem;
+  .slick-dots{
+    bottom: 0;
   }
 `

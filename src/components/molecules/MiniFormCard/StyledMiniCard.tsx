@@ -13,6 +13,7 @@ export const MiniFormCardWrapper = styled.div`
   }
 
   form{
+    width: 100%;
     height: 75%;
     display: flex;
     flex-direction: column;
@@ -20,6 +21,7 @@ export const MiniFormCardWrapper = styled.div`
     justify-content: space-between;
 
     .secondary-cta{
+      width: 100%;
       text-align: center;
       color: ${props => props.theme.colors.primary};
       margin: 4rem 0 2rem;

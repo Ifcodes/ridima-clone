@@ -12,7 +12,6 @@ export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
 
   .illustration{
     width: 100%;
-    height: 17rem;
     margin: 4rem 0 1.5rem;
     display: flex;
     justify-content: center;
@@ -20,10 +19,6 @@ export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
     img{
       max-width: 14rem;
       max-height: 17rem;
-
-      /* @media screen and (max-width: 1220px) {
-        max-height: 10rem;
-      } */
     }
   }
 
@@ -39,21 +34,35 @@ export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
       text-align: center;
       width: 100%;
       margin-bottom: 0.5rem;
-
-      @media screen and (max-width: 1220px) {
-        font-size: 1.3rem;
-        margin-bottom: 0;
-      }
     }
 
     p{
       width: 100%;
-      margin-bottom: 4rem;
+      margin-bottom: 4.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
 
-      @media screen and (max-width: 1220px){
-        font-size: 0.9rem;
+    .illustration{
+      width: 80%;
+      margin: 2rem 0 0.5rem;
+      
+      img{
+        max-width: 10rem;
+        max-height: 13rem;
+      }
+    }
+
+    .description-cont{
+      h1{
+        font-size: 1rem;        
+      }
+
+      p{
+        font-size: 0.8rem;
+        margin-bottom: 3.2rem;
       }
     }
   }
-   
 `
