@@ -33,55 +33,62 @@ const DashboardSideNav = () => {
         <DashboardLogo />
         <ArrowLeftClosePanel />
       </div>
-      {primaryMenuList.map((item, index) => (
-        <div
-          key={`${item}-${index}`}
-          className='menu'
-        >
-          <Button 
-            buttonBgType='small'
-            btnPrefix={<item.icon active={isActive === item.id}/>}
-            menuBtn={true}
-            btnText={item.text}
-            bgColor={isActive === item.id 
-              ? '#7165E3'
-              : 'transparent'
-            }
-            textColor={isActive === item.id
-              ? 'white'
-              : '#7165E3'
-            }
-            hideBg={isActive !== item.id}
-            onClick={() => handleMenuClick('primaryMenu', item.id)}
-          />
-        </div>
-      ))}
-      <hr />
-      {secondaryMenuList.map((item, index) => (
-        <div
-          key={`${item}-${index}`}
-          className='menu'
-        >
-          <Button
-            buttonBgType='small' 
-            btnPrefix={<item.icon active={isActive === item.id}/>}
-            menuBtn={true}
-            btnText={item.text}
-            bgColor={isActive === item.id 
-              ? '#7165E3'
-              : 'transparent'
-            }
-            textColor={isActive === item.id
-              ? 'white'
-              : item.text === "Logout"
-              ? 'red'
-              : '#7165E3'
-            }
-            hideBg={isActive !== item.id}
-            onClick={() => handleMenuClick('secondaryMenu', item.id)}
-          />
-        </div> 
-      ))}
+      <div className='menu-items'>
+        {primaryMenuList.map((item, index) => (
+          <div
+            key={`${item}-${index}`}
+            className='menu'
+          >
+            <Button 
+              buttonBgType='small'
+              btnPrefix={<item.icon active={isActive === item.id}/>}
+              menuBtn={true}
+              btnText={item.text}
+              bgColor={isActive === item.id 
+                ? '#7165E3'
+                : 'transparent'
+              }
+              textColor={isActive === item.id
+                ? 'white'
+                : '#7165E3'
+              }
+              mt='0'
+              hideBg={isActive !== item.id}
+              onClick={() => handleMenuClick('primaryMenu', item.id)}
+            />
+          </div>
+        ))}
+      </div>
+      
+        <hr />
+      <div className='menu-items secondary'>
+        {secondaryMenuList.map((item, index) => (
+          <div
+            key={`${item}-${index}`}
+            className='menu'
+          >
+            <Button
+              buttonBgType='small' 
+              btnPrefix={<item.icon active={isActive === item.id}/>}
+              menuBtn={true}
+              btnText={item.text}
+              bgColor={isActive === item.id 
+                ? '#7165E3'
+                : 'transparent'
+              }
+              textColor={isActive === item.id
+                ? 'white'
+                : item.text === "Logout"
+                ? 'red'
+                : '#7165E3'
+              }
+              mt='0'
+              hideBg={isActive !== item.id}
+              onClick={() => handleMenuClick('secondaryMenu', item.id)}
+            />
+          </div> 
+        ))}
+      </div>
     </SideNavWrapper>
   )
 }

@@ -13,15 +13,28 @@ export const SideNavWrapper = styled.aside<{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 1rem;
   }
 
-  .menu{
+  .menu-items{
     width: 100%;
-    display: flex;
-    align-items: center;
+    margin-top: 2rem;
+
+    .menu{
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .secondary{
+    margin-top: 0;
   }
 
   hr{
-    width: 90%;
+    width: 65%;
+    border: 1px solid #7165E3;
+    margin: 1.5rem 0;
+    opacity: 0.1;
   }
 `

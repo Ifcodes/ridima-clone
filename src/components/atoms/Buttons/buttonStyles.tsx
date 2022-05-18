@@ -18,7 +18,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: ${props => props.menuBtn ? 'flex-start' : 'center'};
   cursor: pointer;
 
   .text-cont{
@@ -28,7 +28,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     align-items: center;
     width: 80%;
     height: 100%;
-    margin: 0 auto;
+    margin: ${props => props.menuBtn ? '0 1rem' : '0 auto'};
     top: 0;
   }
 

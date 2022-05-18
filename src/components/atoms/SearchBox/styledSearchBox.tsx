@@ -6,6 +6,7 @@ export const SearchBoxWrapper = styled.div<{
 }>`
   width: ${props => props.width || '100%'};
   display: flex;
+  align-items: center;
   border: ${props => props.border || 'none'};
   padding: 1rem;
 
@@ -13,7 +14,7 @@ export const SearchBoxWrapper = styled.div<{
     display: flex;
     flex-grow: 1;
     margin: 1rem;
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: 1rem;
     border: none;
     outline: none;
