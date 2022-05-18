@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { primaryMenuList, secondaryMenuList } from '../../../utils/helpers/menuList'
 import Button from '../../atoms/Buttons'
 import ArrowLeftClosePanel from '../../atoms/vectors/ArrowLeftClosePanel'
@@ -7,26 +7,8 @@ import DashboardLogo from '../../atoms/vectors/LogoDashboard'
 import { SideNavWrapper } from './styledMenuBar'
 
 const DashboardSideNav = () => {
-  const [isActive, setIsActive] = useState(1)
-  const navigate = useNavigate()
+  const [activePath] = useState(window.location.pathname)
 
-  const handleMenuClick = (type: string, menuId: number) => {
-    if(type === "primaryMenu") {
-      primaryMenuList.map((i, _index) => {
-        if(menuId === i.id) setIsActive(menuId)
-
-        return i
-      })
-    }
-
-     if(type === "secondaryMenu") {
-      secondaryMenuList.map((i, _index) => {
-        if(menuId === i.id) setIsActive(menuId)
-
-        return i
-      })
-    }
-  }
   return (
     <SideNavWrapper>
       <div className='logo-cont'>
@@ -34,59 +16,62 @@ const DashboardSideNav = () => {
         <ArrowLeftClosePanel />
       </div>
       <div className='menu-items'>
-        {primaryMenuList.map((item, index) => (
-          <div
-            key={`${item}-${index}`}
-            className='menu'
-          >
-            <Button 
-              buttonBgType='small'
-              btnPrefix={<item.icon active={isActive === item.id}/>}
-              menuBtn={true}
-              btnText={item.text}
-              bgColor={isActive === item.id 
-                ? '#7165E3'
-                : 'transparent'
-              }
-              textColor={isActive === item.id
-                ? 'white'
-                : '#7165E3'
-              }
-              mt='0'
-              hideBg={isActive !== item.id}
-              onClick={() => handleMenuClick('primaryMenu', item.id)}
-            />
-          </div>
-        ))}
+        {primaryMenuList.map((item, index) =>{
+          const isActive = activePath === item.location
+          return(
+            <Link
+              to={item.location}
+              key={`${item}-${index}`}
+              className='menu'
+            >
+              <Button 
+                buttonBgType='small'
+                btnPrefix={<item.icon active={isActive}/>}
+                menuBtn={true}
+                btnText={item.text}
+                bgColor={isActive 
+                  ? '#7165E3'
+                  : 'transparent'
+                }
+                textColor={isActive
+                  ? 'white'
+                  : '#7165E3'
+                }
+                mt='0'
+                hideBg={!isActive}
+              />
+            </Link>
+          )
+        })}
       </div>
       
         <hr />
       <div className='menu-items secondary'>
         {secondaryMenuList.map((item, index) => (
-          <div
+          <Link
+            to={item.location}
             key={`${item}-${index}`}
             className='menu'
           >
             <Button
               buttonBgType='small' 
-              btnPrefix={<item.icon active={isActive === item.id}/>}
+              btnPrefix={<item.icon active={activePath === item.location}/>}
               menuBtn={true}
               btnText={item.text}
-              bgColor={isActive === item.id 
+              bgColor={activePath === item.location 
                 ? '#7165E3'
                 : 'transparent'
               }
-              textColor={isActive === item.id
+              textColor={activePath === item.location
                 ? 'white'
                 : item.text === "Logout"
                 ? 'red'
                 : '#7165E3'
               }
               mt='0'
-              hideBg={isActive !== item.id}
-              onClick={() => handleMenuClick('secondaryMenu', item.id)}
+              hideBg={activePath !== item.location}
             />
-          </div> 
+          </Link> 
         ))}
       </div>
     </SideNavWrapper>
