@@ -26,7 +26,10 @@ const DashboardSideNav = () => {
             >
               <Button 
                 buttonBgType='small'
-                btnPrefix={<item.icon active={isActive}/>}
+                btnPrefix={ isActive 
+                  ? <item.iconFilled />
+                  :<item.icon />
+                }
                 menuBtn={true}
                 btnText={item.text}
                 bgColor={isActive 
@@ -44,7 +47,6 @@ const DashboardSideNav = () => {
           )
         })}
       </div>
-      
         <hr />
       <div className='menu-items secondary'>
         {secondaryMenuList.map((item, index) => (
@@ -55,7 +57,10 @@ const DashboardSideNav = () => {
           >
             <Button
               buttonBgType='small' 
-              btnPrefix={<item.icon active={activePath === item.location}/>}
+              btnPrefix={ activePath === item.location 
+                  ? <item.iconFilled />
+                  :<item.icon />
+                }
               menuBtn={true}
               btnText={item.text}
               bgColor={activePath === item.location 
