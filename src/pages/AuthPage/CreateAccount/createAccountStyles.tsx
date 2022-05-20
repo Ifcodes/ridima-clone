@@ -78,14 +78,20 @@ export const VerifyOtpWrapper = styled.div`
     }
   
     .img-cont{
-      margin-top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 20rem;
-      height: 20rem;
+      height: 15rem;
   
       img{
         width: 20rem;
-        height: 20rem;
+        height: 13rem;
       }
+    }
+
+    form{
+      width: 100%;
     }
   
     input{

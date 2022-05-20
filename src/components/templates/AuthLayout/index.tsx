@@ -8,12 +8,14 @@ type AuthLayoutProps = {
   children: ReactNode;
   light?: Boolean;
   secondaryAuth?: Boolean;
+  forPasswordReset?: Boolean;
 }
 
 const AuthLayout = ({
   children, 
   light = false,
   secondaryAuth = false,
+  forPasswordReset = false,
 }: AuthLayoutProps) => {
   return (
     <AuthWrapper lightBg={light}>
@@ -33,7 +35,11 @@ const AuthLayout = ({
             </AuthCard>
           )
       }
-      <BirdShapeWrap className="bird" isVisible={secondaryAuth}>
+      <BirdShapeWrap 
+        className="bird" 
+        isVisible={secondaryAuth}
+        forgotPassword={forPasswordReset}
+      >
         <BirdShapeSm />
       </BirdShapeWrap>
       <LayoutFooter>

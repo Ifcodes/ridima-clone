@@ -1,11 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components";
-import CeraPro from '/public/fonts/CeraPro/stylesheet.css'
+import CeraPro from '/fonts/CeraPro/stylesheet.css'
 
 const GlobalStyles = createGlobalStyle` 
 
   @font-face {
     font-family: "Cera Pro";
-    src: url(${CeraPro}) format("truetype");
+    src: url('/fonts/Cera_Pro/stylesheet.css') format("truetype");
   }
 
   

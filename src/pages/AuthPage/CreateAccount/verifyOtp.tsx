@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, FormEventHandler, MouseEventHandler, useState } from 'react'
 import Button from '../../../components/atoms/Buttons'
 import Input from '../../../components/atoms/Forms/Input'
 import { H1, Paragraph } from '../../../components/atoms/Typography'
@@ -7,9 +7,13 @@ import { generateId } from '../../../utils/generateId'
 import { VerifyOtpWrapper } from './createAccountStyles'
 import envelope from '../../../../public/vectors/GroupedEnvelopImg.svg';
 
-const VerifyOtp = () => {
+type OtpProps = {
+  handleSubmit?: FormEventHandler<HTMLFormElement>;
+  handleClick?: MouseEventHandler<HTMLButtonElement>;
+}
+
+const VerifyOtp = ({handleSubmit, handleClick}: OtpProps) => {
   const [otp, setOtp] = useState('');
-  const [disableButton, setDisableButton] = useState(true)
 
   const handleChange = (e:  ChangeEvent<HTMLInputElement>) => {
     setOtp(e.target.value)
@@ -25,17 +29,21 @@ const VerifyOtp = () => {
         <Paragraph>
           Enter the 6-digit code sent to your email to verify your account.
         </Paragraph>
-        <Input 
-          id={generateId()}
-          value={otp}
-          onChange={(e) => handleChange(e)}
-          placeholder='259-527'
-        />
+        <form onSubmit={handleSubmit}>
+          <Input 
+            id={generateId()}
+            value={otp}
+            onChange={(e) => handleChange(e)}
+            placeholder='259-527'
+          />
+          <Button 
+            btnText='Create Account'
+            disabled={!otp}
+            type='submit'
+            mt='5rem'
+          />
+        </form>
       </div>
-      <Button 
-        btnText='Create Account'
-        disabled={!otp}
-      />
     </VerifyOtpWrapper>
   )
 }

@@ -1,0 +1,32 @@
+import styled from "styled-components";
+
+export const TradeCardWrapper = styled.div`
+  width: 100%;
+  height: max-content;
+  max-width: 35rem;
+
+  position: relative;
+
+  .card-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    padding-right: 1.2rem;
+    top: 0;
+    left: 0;
+
+    h3{
+      width: 10rem;
+      color: ${props => props.theme.colors.primary};
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+  }
+
+  img{
+    width: 100%;
+  }
+`

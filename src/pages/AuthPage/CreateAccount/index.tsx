@@ -10,6 +10,7 @@ import AlternativeAuthOptions from '../../../components/molecules/AlternativeAut
 import AuthLayout from '../../../components/templates/AuthLayout'
 import { generateId } from '../../../utils/generateId'
 import { CreateAccountFormWrapper } from './createAccountStyles'
+import CreateAccountSuccess from './createAccountSuccess'
 import VerifyOtp from './verifyOtp'
 
 const CreateAccountPage = () => {
@@ -34,14 +35,19 @@ const CreateAccountPage = () => {
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault
 
-    setCurrentStage(1)
+    setCurrentStage(currentStage + 1)
   }
   return (
-    <AuthLayout secondaryAuth={currentStage === 1}>
+    <AuthLayout secondaryAuth={currentStage > 0}>
       {currentStage === 1
         ? (
-          <VerifyOtp />
+          <VerifyOtp  
+            handleSubmit={(e) => submit(e)}
+            handleClick={() => setCurrentStage(currentStage + 1)}
+          />
         )
+        : currentStage === 2
+        ? <CreateAccountSuccess />
         : (
           <CreateAccountFormWrapper onSubmit={submit}>
             <H1 mt='0'> Create Account</H1>

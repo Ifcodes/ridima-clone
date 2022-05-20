@@ -33,6 +33,7 @@ export const InputWrapper = styled.div<InputStyleProps>`
       : props.theme.colors.grey2
     };
     font-weight: 500;
+    margin-bottom: 0.4rem;
   }
 
   .input-cont{

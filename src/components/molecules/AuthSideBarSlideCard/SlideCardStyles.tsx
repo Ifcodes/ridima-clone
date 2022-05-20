@@ -4,12 +4,9 @@ import pattern from '../../../../public/vectors/CreateAccountPattern.svg';
 export type bgType = "light" | "yellow"
 
 export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
-  max-width: 100%;
-  min-height: 100%;
-  margin-bottom: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   text-align: center;
 
@@ -21,11 +18,7 @@ export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
     
     img{
       max-width: 14rem;
-      max-height: 15rem;
-
-      @media screen and (max-width: 1220px) {
-        max-height: 10rem;
-      }
+      max-height: 17rem;
     }
   }
 
@@ -41,26 +34,35 @@ export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
       text-align: center;
       width: 100%;
       margin-bottom: 0.5rem;
-
-      @media screen and (max-width: 1220px) {
-        font-size: 1.3rem;
-        margin-bottom: 0;
-      }
     }
 
     p{
       width: 100%;
-      margin-bottom: 5rem;
+      margin-bottom: 4.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
 
-      @media screen and (max-width: 1220px){
-        font-size: 0.9rem;
-        margin-bottom: 0.75rem;
+    .illustration{
+      width: 80%;
+      margin: 2rem 0 0.5rem;
+      
+      img{
+        max-width: 10rem;
+        max-height: 13rem;
+      }
+    }
+
+    .description-cont{
+      h1{
+        font-size: 1rem;        
+      }
+
+      p{
+        font-size: 0.8rem;
+        margin-bottom: 3.2rem;
       }
     }
   }
-
-  @media screen and (max-width: 1220px){
-    padding: 0 0.5rem;
-  }
-   
 `

@@ -55,20 +55,17 @@ const AuthSideBarShow = () => {
 
   return (
     <SideBarShowWrapper>
-      <div className="slide-show-cont">
         <Slider {...settings}>  
           {slideShowContent.map((slide, index) => (
-              <SlideCard 
-                key={`slide-key-${index}`}
-                illustration={slide.illustration}
-                title={slide.title}
-                description={slide.description}
-                bgColorType={slide.bgType}
-              />
+            <SlideCard 
+              key={`slide-key-${index}`}
+              illustration={slide.illustration}
+              title={slide.title}
+              description={slide.description}
+              bgColorType={slide.bgType}
+            />
           ))}
-        </Slider>
-      </div>
-      
+        </Slider>      
     </SideBarShowWrapper>
   )
 }
