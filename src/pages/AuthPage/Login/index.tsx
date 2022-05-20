@@ -29,13 +29,13 @@ const Loginpage = () => {
 
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-
+    console.log('submitted')
     navigate('/home')
   }
   return (
     <AuthLayout>
-      <LoginWrapper>
-        <form onSubmit={(e) => submit(e)} className='form-cont'>
+      <LoginWrapper onSubmit={(e) => submit(e)}>
+        <div className='form-cont'>
           <div className='input-fields'>
             <H1 mb='1rem'>Login</H1>
             <Input 
@@ -81,11 +81,11 @@ const Loginpage = () => {
               <AlternativeAuth 
                 text="Don't have an account?"
                 cta='Create account'
-                location='/'
+                location='/create-account'
               />
             </div>
           </div>
-        </form>
+        </div>
       </LoginWrapper>
     </AuthLayout>
   )

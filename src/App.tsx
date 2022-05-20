@@ -20,8 +20,9 @@ function App() {
 
   return (
     <Routes>
-      <Route path='/' element={<CreateAccountPage />} />
+      <Route path='/' element={<Loginpage />} />
       <Route path='/login' element={<Loginpage />} />
+      <Route path='/create-account' element={<CreateAccountPage />} />
       <Route path='/forgot-password' element={<ForgotPassword />} />
       <Route path='/forgot-pin' element={<ForgotPin />} />
       <Route path='/home' element={<Home />} />
