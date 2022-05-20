@@ -8,6 +8,7 @@ export const LayoutWrapper = styled.section`
   overflow: hidden;
 
   main{
+    max-width: 100%;
     position: relative;
   }
 `

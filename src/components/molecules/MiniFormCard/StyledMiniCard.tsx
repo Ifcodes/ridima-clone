@@ -2,11 +2,15 @@ import styled from "styled-components";
 
 export const MiniFormCardWrapper = styled.div`
   width: 35rem;
-  /* min-height: 35.8rem; */
   max-height: 80vh;
   background-color: white;
   border-radius: 2.5rem;
   padding: 2rem 4rem;
+  overflow-y: auto;
+
+  ::-webkit-scrollbar{
+    width: 0;
+  }
   
   .title-cont{
     text-align: center;

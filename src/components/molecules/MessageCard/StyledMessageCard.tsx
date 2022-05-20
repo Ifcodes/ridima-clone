@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const MessageCardWrapper = styled.div<{height?: string, width?: string}>`
-  width: ${props => props.width || '35rem'};
+  width: ${props => props.width || '28%'};
   ${props => props.height && 
     css`
       height: ${props.height};
@@ -9,7 +9,7 @@ export const MessageCardWrapper = styled.div<{height?: string, width?: string}>`
   };
   background-color: white;
   border-radius: 2.5rem;
-  padding: 0 4rem 2rem;
+  padding: 0 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,5 +34,12 @@ export const MessageCardWrapper = styled.div<{height?: string, width?: string}>`
   .title-cont{
     text-align: center;
     margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p{
+      width: 20rem;
+    }
   }
 `

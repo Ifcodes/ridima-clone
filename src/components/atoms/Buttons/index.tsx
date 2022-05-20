@@ -5,6 +5,7 @@ import defaultBtn from '../../../../public/vectors/PrimaryDefaultBtn.svg'
 import PrimaryButtonBg from '../vectors/PrimaryButtonBg';
 import SmallButtonBg from '../vectors/SmallButtonBg';
 import MediumButtonBg from '../vectors/MediumButtonBg';
+import ModalButtonBg from '../vectors/ModalButtonBg';
 
 export type ButtonProps = {
   width?: string;
@@ -19,7 +20,8 @@ export type ButtonProps = {
   textColor?: string;
   bgColor?: string;
   menuBtn?: boolean;
-  buttonBgType?: 'small' | 'medium'
+  buttonBgType?: 'small' | 'medium' | 'modal';
+  buttonPosition?: 'center' | 'left' | 'right'
 } & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
 const Button = ({  
@@ -36,6 +38,7 @@ const Button = ({
   bgColor,
   buttonBgType,
   menuBtn = false,
+  buttonPosition,
   onClick,
 } : ButtonProps) => {
   return (
@@ -49,6 +52,7 @@ const Button = ({
       textColor={textColor}
       onClick={onClick}
       menuBtn={menuBtn}
+      buttonPosition={buttonPosition}
     >
       <div className='text-cont'>
         {btnPrefix && <span>{btnPrefix}</span>}
@@ -64,6 +68,11 @@ const Button = ({
         ? <MediumButtonBg 
             bgColor={bgColor}
             className='button-Bg'
+          />
+        : buttonBgType === 'modal' 
+        ? <ModalButtonBg 
+            bgColor={bgColor}
+            width={width}
           />
         : <PrimaryButtonBg
             bgColor={bgColor 

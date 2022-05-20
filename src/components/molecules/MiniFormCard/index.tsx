@@ -13,6 +13,9 @@ type CardProps ={
   secondaryCtaUrl?: string;
   btnType?: "submit" | "reset" | "button";
   btnIsDisabled?: boolean;
+  btnSuffix?: ReactNode,
+  btnPrefix?: ReactNode,
+  btnTextColor?: string,
   handleClick?: MouseEventHandler<HTMLButtonElement>;
   handleSubmit?: FormEventHandler<HTMLFormElement> ;
 }
@@ -25,6 +28,9 @@ const MiniFormCard = ({
   secondaryCtaUrl,
   btnType,
   btnIsDisabled,
+  btnPrefix,
+  btnSuffix,
+  btnTextColor,
   handleClick,
   handleSubmit,
 } : CardProps) => {
@@ -46,10 +52,14 @@ const MiniFormCard = ({
             </span>
           }
           <Button 
+            suffix={btnSuffix}
+            btnPrefix={btnPrefix}
             btnText={btnText}
             btnType={btnType}
             disabled={btnIsDisabled}
+            textColor={btnTextColor}
             onClick={handleClick}
+            mb={'1rem'}
           />
         </div>
       </form>

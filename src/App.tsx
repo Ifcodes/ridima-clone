@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import BVNAuthentication from './pages/AuthPage/BVNAuthentication'
 import CreateAccountPage from './pages/AuthPage/CreateAccount'
 import ForgotPassword from './pages/AuthPage/ForgotPassword'
 import ForgotPin from './pages/AuthPage/ForgotPin'
@@ -33,6 +34,7 @@ function App() {
       <Route path='/referral' element={<Referral />} />
       <Route path='/security' element={<Security />} />
       <Route path='/logout' element={<Logout />} />
+      <Route path='/bvn-authentication' element={<BVNAuthentication />} />
     </Routes>
   )
 }

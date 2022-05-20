@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle`
 
   @font-face {
     font-family: "Cera Pro";
-    src: url('/fonts/CeraPro/stylesheet.css') format("truetype");
+    src: url('/fonts/Cera_Pro/stylesheet.css') format("truetype");
   }
 
   

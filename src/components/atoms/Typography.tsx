@@ -5,12 +5,13 @@ type TextProps = {
   mb?: string;
   ml?: string;
   mr?: string;
+  fontSize?: string;
   color?: string;
 } 
 
 export const H1 = styled.h1<TextProps>`
-  font-size: 1.75rem;
-  color: ${props => props.theme.colors.primary};
+  font-size: ${props => props.fontSize || "1.75rem"};
+  color: ${props => props.color || props.theme.colors.primary};
   font-weight: 700;
   margin-top: ${props => props.mt || "1rem"};
   margin-bottom: ${props => props.mb || "0"};

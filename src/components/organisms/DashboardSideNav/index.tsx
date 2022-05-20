@@ -31,6 +31,7 @@ const DashboardSideNav = () => {
                   :<item.icon />
                 }
                 menuBtn={true}
+                buttonPosition='left'
                 btnText={item.text}
                 bgColor={isActive 
                   ? '#7165E3'
@@ -62,6 +63,7 @@ const DashboardSideNav = () => {
                   :<item.icon />
                 }
               menuBtn={true}
+              buttonPosition='left'
               btnText={item.text}
               bgColor={activePath === item.location 
                 ? '#7165E3'

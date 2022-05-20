@@ -12,6 +12,7 @@ type MessageCardProp ={
   closeIcon?: boolean;
   width?: string;
   height?: string;
+  titleColor?: string;
   handleClick?: MouseEventHandler<HTMLDivElement>;
 }
 
@@ -24,6 +25,7 @@ const MessageCard = ({
   closeIcon,
   width,
   height,
+  titleColor,
   handleClick,
 } : MessageCardProp) => {
   return (
@@ -43,7 +45,7 @@ const MessageCard = ({
         {cardIcon}
       </div>
       <div className='title-cont'>
-        <H1>{title}</H1>
+        <H1 color={titleColor}>{title}</H1>
         <Paragraph>{description}</Paragraph>
       </div>
       {primaryCta && primaryCta}
