@@ -27,6 +27,17 @@ export const VirtualDollarCardWrapper = styled.div`
         width: 11rem;
         color: #3F1E4B;
       }
+
+     .img-cont{
+       width: 6rem;
+       height: 6rem;
+       border-radius: 100%;
+
+       img{
+         width: 100%;
+         height: 100%;
+       }
+     }
     }
 
     .description{

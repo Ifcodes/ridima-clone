@@ -3,7 +3,7 @@ import { CircleLoader, ClipLoader, DotLoader } from 'react-spinners'
 import { css } from '@emotion/react'
 import Button from '../../../components/atoms/Buttons'
 import Input from '../../../components/atoms/Forms/Input'
-import { H1, Paragraph } from '../../../components/atoms/Typography'
+import { setProfileComplete } from '../../../Entity/ProfileComplete'
 import MiniFormCard from '../../../components/molecules/MiniFormCard'
 import Modal from '../../../components/molecules/Modal'
 import AuthLayout from '../../../components/templates/AuthLayout'
@@ -41,6 +41,7 @@ const BVNAuthentication = () => {
     setTimeout(() => {
       setLoading(false)
       setCurrentStage(1)
+      setProfileComplete(true)
     }, 6000)
   }
 

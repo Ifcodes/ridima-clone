@@ -8,7 +8,7 @@ export type InputStyleProps = {
   ml?: string,
   mr?: string,
   bgColor?: string,
-  isFocused?: boolean | string,
+  isFocused?: boolean | string | number,
   shownError?: boolean;
 }
 
@@ -42,6 +42,19 @@ export const InputWrapper = styled.div<InputStyleProps>`
     flex-direction: column;
     justify-content: center;
     margin-right: 1rem;
+    
+    .symbol-cont{
+      display: flex;
+      align-items: center;
+      
+      .symbol{
+        font-weight: 700;
+        color: ${props => props.isFocused 
+          ? props.theme.colors.grey1 
+          : props.theme.colors.grey4
+        };
+      }
+    }
 
     input{
       width: 100%;
