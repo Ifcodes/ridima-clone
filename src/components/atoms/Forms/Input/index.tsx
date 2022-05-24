@@ -6,7 +6,7 @@ import { InputWrapper } from './inputStyles';
 type InputProps = {
   id: string,
   label?: string,
-  value?: string,
+  value?: string | number,
   type?: string;
   placeholder?: string;
   handleChange?: Function;
@@ -17,6 +17,7 @@ type InputProps = {
   width?: string;
   bgColor?: string;
   required?: boolean;
+  symbol?: string;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
 const Input = ({
@@ -33,6 +34,7 @@ const Input = ({
   bgColor,
   required = false,
   className,
+  symbol,
   ...props
 }: InputProps) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -55,16 +57,24 @@ const Input = ({
         <label htmlFor={id}>
           {label}
         </label>
-        <input 
-          id={id}
-          required={required}
-          value={value}
-          placeholder={placeholder}
-          type={type === "password" && showPassword ? "text" : type}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          {...props}
-        />
+        <div className='symbol-cont'>
+          {symbol && 
+            <span className="symbol">
+              {symbol}
+            </span>
+          }
+          <input 
+            id={id}
+            required={required}
+            value={value}
+            placeholder={placeholder}
+            type={type === "password" && showPassword ? "text" : type}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            {...props}
+          />
+
+        </div>
       </div>
         {type === 'password' 
           && <PasswordEye onClick={() => setShowPassword(!showPassword)}/>

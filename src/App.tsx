@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import CreateVirtualCard from './components/organisms/CreateVirtualCard'
 import BVNAuthentication from './pages/AuthPage/BVNAuthentication'
 import CreateAccountPage from './pages/AuthPage/CreateAccount'
 import ForgotPassword from './pages/AuthPage/ForgotPassword'
@@ -36,6 +37,7 @@ function App() {
       <Route path='/security' element={<Security />} />
       <Route path='/logout' element={<Logout />} />
       <Route path='/bvn-authentication' element={<BVNAuthentication />} />
+      <Route path='/create-virtual-dollar-card' element={<CreateVirtualCard />} />
     </Routes>
   )
 }
