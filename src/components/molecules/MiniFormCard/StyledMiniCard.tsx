@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const MiniFormCardWrapper = styled.div`
-  width: 35rem;
-  max-height: 80vh;
+  width: 40%;
+  height: 80vh;
+  max-width: 32rem;
+  max-height: 42rem;
   background-color: white;
   border-radius: 2.5rem;
   padding: 2rem 4rem;

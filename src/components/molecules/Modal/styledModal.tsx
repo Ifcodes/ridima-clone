@@ -28,10 +28,10 @@ export const ModalWrapper = styled.div<{
   z-index: 100;
 
   .modal-card{
-    width: ${props => props.width || '45%'};
-    height: 70vh;
-    max-height: ${props => props.cardHeight || '80vh'};
-    max-width: 35rem;
+    width: ${props => props.width || '45%w'};
+    height:  ${props => props.cardHeight || '75%'};
+    max-height: 40rem;
+    max-width: 37rem;
     background-color: white;
     border-radius: 2.5rem;
     animation: ${popout} 700ms ease-in-out 1; 

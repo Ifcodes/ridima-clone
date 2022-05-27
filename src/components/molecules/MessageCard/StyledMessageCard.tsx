@@ -2,11 +2,9 @@ import styled, { css } from "styled-components";
 
 export const MessageCardWrapper = styled.div<{height?: string, width?: string}>`
   width: ${props => props.width || '28%'};
-  ${props => props.height && 
-    css`
-      height: ${props.height};
-    `
-  };
+  height: ${props => props.height || '75vh'};
+  max-width: 35rem;
+  max-height: 42rem;
   background-color: white;
   border-radius: 2.5rem;
   padding: 0 2rem 2rem;
