@@ -5,6 +5,7 @@ export type bgType = "light" | "yellow"
 
 export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,13 +13,19 @@ export const SlideCardWrapper = styled.div<{bgColor?: bgType | string}>`
 
   .illustration{
     width: 100%;
+    height: 50%;
     margin: 4rem 0 1.5rem;
     display: flex;
     justify-content: center;
     
     img{
+      width: 80%;
       max-width: 14rem;
       max-height: 17rem;
+
+    }
+    @media screen and (min-width: 1640px){
+      height: 80%;
     }
   }
 

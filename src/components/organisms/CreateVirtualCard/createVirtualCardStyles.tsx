@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const MainWrapper = styled.section`
   width: 100%;
   height: 100vh;
-  padding: 2rem 0 0 3rem;
 
   .stage-title-cont{
     display: flex;

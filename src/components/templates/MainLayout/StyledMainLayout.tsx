@@ -10,5 +10,9 @@ export const LayoutWrapper = styled.section`
   main{
     max-width: 100%;
     position: relative;
+
+    .child-cont{
+      padding: 2rem 3.75rem;
+    }
   }
 `

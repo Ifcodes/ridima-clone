@@ -9,7 +9,9 @@ const DashboardLayout = ({children}:{children: ReactNode}) => {
       <DashboardSideNav />
       <main>
         <TopNav />
-        {children}
+        <div className='child-cont'>
+          {children}
+        </div>
       </main>
 
     </LayoutWrapper>

@@ -28,6 +28,7 @@ export const VirtualCardWrapper = styled.div<{
     justify-content: space-between;
 
     .card-name-cont{
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -37,6 +38,19 @@ export const VirtualCardWrapper = styled.div<{
           ? '1'
           : '0.3'
         };
+        font-weight: ${props => props.isActive
+          ? '700'
+          : '400'
+        };
+        font-size: ${props => props.isActive
+          ? '1.5rem'
+          : '1rem'
+        };
+
+        sup{
+          font-size: 0.75;
+          font-weight: 400;
+        }
       }
     }
 
