@@ -8,6 +8,8 @@ type CardDesignsProps = {
   cardOwnerName?: string,
   cardNumber?: string,
   cardExpiry?: string,
+  currencyInitial?: string,
+  currencySymbol?: string,
   isActive?: boolean,
 }
 
@@ -17,6 +19,8 @@ const VirtualCard = ({
   cardFund,
   cardOwnerName,
   cardNumber,
+  currencyInitial,
+  currencySymbol,
   cardExpiry,
   isActive,
 } : CardDesignsProps) => {
@@ -28,12 +32,20 @@ const VirtualCard = ({
       <div className="card-content">
         <div className="card-name-cont">
           <span className='card-name'>{cardName}</span>
-          <span className='fund'>
-            {cardFund === ''
-              ? '$0.00'
-              : cardFund
-            }
-          </span>
+          <div>
+
+            <span className='fund'>
+              {cardFund === ''
+                ? '$'
+                : `${currencySymbol}`
+              }
+              {cardFund === ''
+                ? '0.00'
+                : cardFund
+              }
+            </span>
+              {currencyInitial && <sup> {currencyInitial} </sup>}
+          </div>
         </div>
         <div className="card-user-name">
           <span className='description'>Name on card</span>

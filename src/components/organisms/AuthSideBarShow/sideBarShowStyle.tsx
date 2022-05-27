@@ -14,6 +14,18 @@ export const SideBarShowWrapper = styled.aside<{bgColor?: string}>`
   padding-bottom: 1rem;
 
   .slick-dots{
-    bottom: 0;
+    bottom: 1rem;
+
+    li{
+      button:before{
+        color: #7165E3;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  .slick-slider{
+    height: 100%;
   }
 `
