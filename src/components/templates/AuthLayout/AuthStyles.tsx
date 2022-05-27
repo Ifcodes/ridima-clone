@@ -65,6 +65,8 @@ export const LayoutFooter = styled.footer`
 export const AuthCard = styled.section`
   width: 55%;
   height: 80vh;
+  max-height: 51rem;
+  max-width: 58rem;
   background-color: white;
   box-shadow: 0 5px 28px rgba(0, 0, 0, 0.1);
   border-radius: 2.5rem;

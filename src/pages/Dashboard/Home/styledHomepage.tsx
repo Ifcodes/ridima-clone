@@ -3,7 +3,6 @@ import styled, { keyframes } from "styled-components";
 export const HomeWrapper = styled.section`
   width: 100%;
   height: 100vh;
-  padding: 2rem 3.75rem;
   overflow: auto;
 
   .salutation{

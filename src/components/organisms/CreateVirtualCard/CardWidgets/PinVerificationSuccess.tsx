@@ -1,9 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Button from '../../../atoms/Buttons'
 import { Paragraph } from '../../../atoms/Typography'
 import MessageCard from '../../../molecules/MessageCard'
 
 const PinVerificationSuccess = () => {
+  const navigate = useNavigate()
   return (
     <>
       <div className="success-title-cont">
@@ -20,6 +22,7 @@ const PinVerificationSuccess = () => {
           buttonBgType='modal'
           btnText='Go to virtual card'
           width='350'
+          onClick={() => navigate('/virtual-cards')}
         />
       </div>
     </>

@@ -15,6 +15,7 @@ import Profile from './pages/Dashboard/Profile'
 import Referral from './pages/Dashboard/Referral'
 import Security from './pages/Dashboard/Security'
 import Support from './pages/Dashboard/Support'
+import VirtualCardsPage from './pages/Dashboard/VirtualCardsPage'
 import Wallet from './pages/Dashboard/Wallet'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
       <Route path='/logout' element={<Logout />} />
       <Route path='/bvn-authentication' element={<BVNAuthentication />} />
       <Route path='/create-virtual-dollar-card' element={<CreateVirtualCard />} />
+      <Route path='/virtual-cards' element={<VirtualCardsPage />} />
     </Routes>
   )
 }
