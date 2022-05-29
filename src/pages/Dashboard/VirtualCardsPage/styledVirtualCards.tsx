@@ -136,10 +136,13 @@ export const CardDetailsModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem 2rem;
+  overflow-y: auto;
 
   h1{
     text-align: center;
     color: ${props => props.theme.colors.deepPurple};
+    margin-bottom: 0.6rem;
   }
 
   .card-cont{
@@ -147,11 +150,12 @@ export const CardDetailsModalWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1.3rem 0;
     border-bottom: 1px solid #E0E0E0;
 
     .label-cont{
-      display: block;
+      display: flex;
+      flex-direction: column;
 
       .label{
         color: ${props => props.theme.colors.grey3};
@@ -161,19 +165,48 @@ export const CardDetailsModalWrapper = styled.div`
       .content{
         color: ${props => props.theme.colors.grey1};
         font-size: 0.875rem;
-        line-height: 17px;
+        margin-top: 0.5rem;
       }
     }
 
     button{
       width: max-content;
       height: max-content;
-      padding: 0.3rem 0.6rem;
+      padding: 0.5rem 0.6rem;
       background-color: #EBE9FB;
       border-radius: 3.125rem;
-      text-align: center;
+      display: flex;
       justify-content: center;
       align-items: center;
+      color: ${props => props.theme.colors.blue};
+      border: none;
+      outline: none;
+
+      span{
+        margin-left: 0.4rem;
+      }
     }
   }
+`
+
+export const FreezeCardWrapper = styled.div`
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+  .heading{
+    margin-top: 2rem;
+    h1{
+      color: ${props => props.theme.colors.deepPurple};
+    }
+    p{
+      width: 22rem;
+      margin-top: 2rem;
+    }
+  }
+
 `

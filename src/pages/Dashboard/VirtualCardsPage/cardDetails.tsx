@@ -13,6 +13,8 @@ import { cardActions } from '../../../utils/helpers/cardActions.'
 import { cardDataList } from '../../../utils/helpers/cardsData'
 import FundActiveCard from './FundActiveCard'
 import { CardDetailsWrapper } from './styledVirtualCards'
+import CardDetailsModal from './widgets/cardDetailsModal'
+import FreezeCardModal from './widgets/freezeCardModal'
 import Withdraw from './withdraw'
 
 const CardDetails = () => {
@@ -20,6 +22,8 @@ const CardDetails = () => {
   const cardData = selectedVirtualCardData.use()
   const params = useParams()
   console.log("params:", params)
+  const [showDetailsModal, setShowDetails] = useState(false)
+  const [showFreezeCardModal, setShowFreezeCardModal] = useState(false)
   const [activeAction, setActiveAction] = useState('')
   const [tabs, setTabs] = useState([
     "Virtual cards",
@@ -51,9 +55,15 @@ const CardDetails = () => {
   }
 
   const handleActionClick = (actionType: string) => {
-    setActiveAction(actionType)
-    setTabs(tabs.concat(actionType))
-    setActiveTab(activeTab + 1)
+    if(actionType === "Details"){
+      setShowDetails(true)
+    }else if(actionType === "Freeze"){
+      setShowFreezeCardModal(true)
+    }else{
+      setActiveAction(actionType)
+      setTabs(tabs.concat(actionType))
+      setActiveTab(activeTab + 1)
+    }
   }
 
   return (
@@ -129,6 +139,14 @@ const CardDetails = () => {
               </>
           )
         }
+        <CardDetailsModal 
+          showModal={showDetailsModal}
+          closeModal={() => setShowDetails(false)}
+        />
+        <FreezeCardModal 
+          showModal={showFreezeCardModal}
+          closeModal={() => setShowFreezeCardModal(false)}
+        />
       </CardDetailsWrapper>
     </DashboardLayout>
   )

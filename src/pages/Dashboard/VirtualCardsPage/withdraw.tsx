@@ -8,6 +8,7 @@ import PinVerificationCard from '../../../components/molecules/PinVerificationMo
 import VirtualCard from '../../../components/molecules/VirtualCard'
 import PinVerification from '../../../components/organisms/CreateVirtualCard/CardWidgets/PinVerification'
 import { selectedVirtualCardData } from '../../../Entity/SelectedVirtualCardData'
+import { user } from '../../../Entity/User'
 import { generateId } from '../../../utils/generateId'
 import { FundCardWrapper } from './styledVirtualCards'
 
@@ -21,10 +22,7 @@ const Withdraw = () => {
   const [openPinModal, setOpenPinModal] = useState(false)
   const [pin, setPin] = useState('')
   const [pinModalStage, setPinModalStage] = useState(0)
-  const [userDetails, setUserDetails] = useState({
-    profileImage: '',
-    userName: 'Toyosil',
-  })
+  const userDetails = user.use()
 
   const handleValueConversion = (e: ChangeEvent<HTMLInputElement>) => {
     setFundAmount(e.target.value)

@@ -23,7 +23,6 @@ const DetailContainer = ({
           {content}
         </span>
       </div>
-      
       <button>
         <CopyIcon />
         <span>copy</span>
@@ -32,9 +31,14 @@ const DetailContainer = ({
   )
 }
 
-const CardDetailsModal = () => {
+const CardDetailsModal = ({
+  showModal,
+  closeModal
+}:{
+  showModal: boolean;
+  closeModal: Function
+}) => {
   const selectedCardData = selectedVirtualCardData.use()
-  const [showModal, setShowModal] = useState(false)
 
   const cardDetails = [
     {
@@ -69,18 +73,18 @@ const CardDetailsModal = () => {
       cardHeight='95vh'
       showModal={showModal}
       showCloseBtn
-      closeModal={() => setShowModal(false)}
+      closeModal={closeModal}
     >
       <CardDetailsModalWrapper>
         <>
           <H1>Card Details</H1>
-          {cardDetails.map((detail, index) => {
+          {cardDetails.map((detail) => (
             <DetailContainer 
               key={detail.cardlabel}
               itemLabel={detail.cardlabel}
               content={detail.content}
             />
-          })}
+          ))}
         </>
       </CardDetailsModalWrapper>
     </Modal>
