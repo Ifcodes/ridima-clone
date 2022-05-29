@@ -3,6 +3,7 @@ import OtpInput from 'react-otp-input';
 import { Link } from 'react-router-dom';
 import ProfilePics from '../../../atoms/ProfilePics'
 import Avatar from '../../../atoms/vectors/Avatar'
+import { PinVerificationWrapper } from '../../../molecules/PinVerificationModal/styledPinVerification';
 
 type PinVerificationProps = {
   imgUrl?: string;
@@ -35,7 +36,7 @@ const PinVerification = ({
   }
 
   return (
-    <>
+    <PinVerificationWrapper>
       <div className="modal-title-cont">
         <div className='profile-pics'>
           <ProfilePics 
@@ -59,7 +60,7 @@ const PinVerification = ({
       <Link to={'/forgot-pin'}>
         Forgot PIN
       </Link>
-    </>
+    </PinVerificationWrapper>
   )
 }
 

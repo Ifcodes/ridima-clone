@@ -3,7 +3,7 @@ import { generateId } from '../../../utils/generateId'
 import Button from '../../atoms/Buttons'
 import Input from '../../atoms/Forms/Input'
 import { Paragraph } from '../../atoms/Typography'
-import VirtualCard from '../../atoms/VirtualCard'
+import VirtualCard from '../../molecules/VirtualCard'
 import Modal from '../../molecules/Modal'
 import ConfirmFunding from './CardWidgets/confirmFunding'
 import PinVerification from './CardWidgets/PinVerification'
@@ -33,7 +33,6 @@ const FundYourCard = ({
   useEffect(() => {
     if(pin.length === 4){
       setModalStage(modalStage + 1)
-      console.log(pin)
     }
   }, [pin])
 
@@ -89,6 +88,7 @@ const FundYourCard = ({
       >
         <div className="modal-content">
           {modalStage === 1
+          //TODO: Replace with pinverification from molecule
             ? <PinVerification 
                 imgUrl={userDetails.profileImage}
                 user={userDetails.userName}

@@ -4,7 +4,7 @@ import { VirtualCardWrapper } from './virtualCardStyles'
 type CardDesignsProps = {
   cardBgColor: string,
   cardName?: string,
-  cardFund?: string,
+  cardFund?: string | number,
   cardOwnerName?: string,
   cardNumber?: string,
   cardExpiry?: string,

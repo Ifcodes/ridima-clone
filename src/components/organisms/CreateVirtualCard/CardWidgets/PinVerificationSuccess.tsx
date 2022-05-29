@@ -4,6 +4,7 @@ import Button from '../../../atoms/Buttons'
 import { Paragraph } from '../../../atoms/Typography'
 import MessageCard from '../../../molecules/MessageCard'
 
+// TODO: Remove this component
 const PinVerificationSuccess = () => {
   const navigate = useNavigate()
   return (

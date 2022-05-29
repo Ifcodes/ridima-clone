@@ -188,7 +188,3 @@ export const FundYourCardWrapper = styled.div`
     }
   }
 `
-
-export const PinVerificationSuccessWrapper = styled.div`
-  
-`

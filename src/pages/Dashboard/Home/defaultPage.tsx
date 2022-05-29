@@ -52,7 +52,7 @@ const DefaultHomeScreen = ({toggleActiveScreen}:{toggleActiveScreen?: MouseEvent
         showModal={showModal}
         closeModal={() => setShowModal(false)}
         width={'28%'}
-        cardHeight={'95vh'}
+        // cardHeight={'95vh'}
       >
         <div className="modal-content">
           <div>

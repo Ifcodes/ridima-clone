@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Button from '../../../components/atoms/Buttons'
-import VirtualCard from '../../../components/atoms/VirtualCard'
+import VirtualCard from '../../../components/molecules/VirtualCard'
 import { MainWrapper, StageTitleWrapper } from '../../../components/organisms/CreateVirtualCard/createVirtualCardStyles'
 import DashboardLayout from '../../../components/templates/MainLayout'
 import { setProfileComplete } from '../../../Entity/ProfileComplete'
+import { generateId } from '../../../utils/generateId'
+import { cardDataList } from '../../../utils/helpers/cardsData'
 import { VirtualCardsWrapper } from './styledVirtualCards'
 
 const VirtualCardsPage = () => {
@@ -34,84 +36,11 @@ const VirtualCardsPage = () => {
     })
   }
   
-  const cards = [
-    {
-      cardDesign: 'blue',
-      cardName: 'Hetikal',
-      currency: {
-        symbol: '$',
-        initial: 'USD'
-      },
-      cardFund: '5.76',
-      cardOwnerName: 'Lawal Omotoyosi',
-      cardNumber: '5399  4412  3426  4412',
-      cardExpiry: '01/02'
-    },
-    {
-      cardDesign: 'yellow',
-      cardName: 'Hetikal',
-      currency: {
-        symbol: 'N',
-        initial: 'NGN'
-      },
-      cardFund: '5.76',
-      cardOwnerName: 'Lawal Omotoyosi',
-      cardNumber: '5399  4412  3426  4412',
-      cardExpiry: '01/02'
-    },
-    {
-      cardDesign: 'grey',
-      cardName: 'Hetikal',
-      currency: {
-        symbol: 'N',
-        initial: 'NGN'
-      },
-      cardFund: '5.76',
-      cardOwnerName: 'Lawal Omotoyosi',
-      cardNumber: '5399  4412  3426  4412',
-      cardExpiry: '01/02'
-    },
-    {
-      cardDesign: 'yellow',
-      cardName: 'Hetikal',
-      currency: {
-        symbol: 'N',
-        initial: 'NGN'
-      },
-      cardFund: '5.76',
-      cardOwnerName: 'Lawal Omotoyosi',
-      cardNumber: '5399  4412  3426  4412',
-      cardExpiry: '01/02'
-    },
-     {
-      cardDesign: 'grey',
-      cardName: 'Hetikal',
-      currency: {
-        symbol: '$',
-        initial: 'USD'
-      },
-      cardFund: '5.76',
-      cardOwnerName: 'Lawal Omotoyosi',
-      cardNumber: '5399  4412  3426  4412',
-      cardExpiry: '01/02'
-    },
-    {
-      cardDesign: 'blue',
-      cardName: 'Hetikal',
-      currency: {
-        symbol: 'N',
-        initial: 'NGN'
-      },
-      cardFund: '5.76',
-      cardOwnerName: 'Lawal Omotoyosi',
-      cardNumber: '5399  4412  3426  4412',
-      cardExpiry: '01/02'
-    },
-  ]
+  
   return (
     <DashboardLayout>
       <VirtualCardsWrapper>
-        <div>
+        <div className='stage-header'>
           <div className="stage-title-cont">
             <span 
               className='home'
@@ -140,8 +69,11 @@ const VirtualCardsPage = () => {
         </div>
 
         <div className="cards-wrapper">
-          {cards.map((card, index) => (
-            <div key={`card-${card.cardDesign}-${index}`}>
+          {cardDataList.map((card, index) => (
+            <div 
+              key={`card-${card.cardDesign}-${index}`}
+              onClick={() => navigate(`/virtual-cards/${card.id}`)}
+            >
               <VirtualCard 
                 cardBgColor={card.cardDesign}
                 cardName={card.cardName}

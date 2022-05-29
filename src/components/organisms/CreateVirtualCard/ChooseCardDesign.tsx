@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react'
 import Button from '../../atoms/Buttons';
-import CardDesigns from '../../molecules/DebitCardDesigns'
+import CardDesigns from '../../atoms/DebitCardDesigns'
 import Modal from '../../molecules/Modal'
 
 const ChooseCardDesign = ({
