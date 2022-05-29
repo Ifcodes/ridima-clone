@@ -78,10 +78,10 @@ export const cardDataList = [
         initial: 'NGN'
       },
       cardFund: '5.76',
-      cardOwnerName: 'Lawal Omotoyosi',
-      cardNumber: '5399  4412  3426  4412',
+      cardOwnerName: 'Bernard Desmond',
+      cardNumber: '5399  4212  3426  8822',
       cardExpiry: '01/02',
-      cvv: 289,
+      cvv: 329,
       billingAddress: '302, Scheme 1, Oko Oba, Agege, Lagos.',
       zipCode: '23343',
       transactions: [
@@ -146,10 +146,10 @@ export const cardDataList = [
         initial: 'NGN'
       },
       cardFund: '5.76',
-      cardOwnerName: 'Lawal Omotoyosi',
-      cardNumber: '5399  4412  3426  4412',
+      cardOwnerName: 'John Doe',
+      cardNumber: '5399  4412  3426  3312',
       cardExpiry: '01/02',
-      cvv: 288,
+      cvv: 645,
       billingAddress: '302, Scheme 1, Oko Oba, Agege, Lagos.',
       zipCode: '23343',
       transactions: [
@@ -214,10 +214,10 @@ export const cardDataList = [
         initial: 'NGN'
       },
       cardFund: '5.76',
-      cardOwnerName: 'Lawal Omotoyosi',
+      cardOwnerName: 'Moshood Abiola',
       cardNumber: '5399  4412  3426  4412',
       cardExpiry: '01/02',
-      cvv: 288,
+      cvv: 324,
       billingAddress: '302, Scheme 1, Oko Oba, Agege, Lagos.',
       zipCode: '23343',
       transactions: [
@@ -282,7 +282,7 @@ export const cardDataList = [
         initial: 'USD'
       },
       cardFund: '5.76',
-      cardOwnerName: 'Lawal Omotoyosi',
+      cardOwnerName: 'Omotoyosi Lawal',
       cardNumber: '5399  4412  3426  4412',
       cardExpiry: '01/02',
       cvv: 288,
@@ -350,7 +350,7 @@ export const cardDataList = [
         initial: 'NGN'
       },
       cardFund: '5.76',
-      cardOwnerName: 'Lawal Omotoyosi',
+      cardOwnerName: 'Walt Smith',
       cardNumber: '5399  4412  3426  4412',
       cardExpiry: '01/02',
       cvv: 288,

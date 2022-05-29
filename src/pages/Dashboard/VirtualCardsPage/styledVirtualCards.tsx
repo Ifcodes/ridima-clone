@@ -136,7 +136,7 @@ export const CardDetailsModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 3.5rem;
   overflow-y: auto;
 
   h1{
@@ -206,6 +206,7 @@ export const FreezeCardWrapper = styled.div`
     p{
       width: 22rem;
       margin-top: 2rem;
+      line-height: 1.3rem;
     }
   }
 
