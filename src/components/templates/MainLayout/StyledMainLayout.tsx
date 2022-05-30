@@ -9,13 +9,13 @@ export const LayoutWrapper = styled.section`
 
   main{
     max-width: 100%;
-    height: 80%;
+    height: 100%;
     position: relative;
 
     .child-cont{
       width: 100%;
       height: 100%;
-      padding: 2rem 3.75rem;
+      padding: 2rem 3.75rem 0;
       overflow: auto;
     }
   }

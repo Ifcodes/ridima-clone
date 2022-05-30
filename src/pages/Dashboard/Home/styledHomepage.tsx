@@ -49,7 +49,7 @@ export const HomeWrapper = styled.section`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 3rem;
     align-items: center;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
   }
 
   .modal-content{

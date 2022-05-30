@@ -42,8 +42,7 @@ export const VirtualCardsWrapper = styled.section`
 
 export const CardDetailsWrapper = styled.div`
   width: 100%;
-  height: 100vh;
-  /* padding-bottom: 40rem; */
+  height: 120%;
 
   .stage-title-cont{
     display: flex;
