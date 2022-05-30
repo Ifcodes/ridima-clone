@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { setCreatedVirtualCard } from '../../../../Entity/CreatedVirtualCard'
 import Button from '../../../atoms/Buttons'
 import { Paragraph } from '../../../atoms/Typography'
 import MessageCard from '../../../molecules/MessageCard'
@@ -7,6 +8,11 @@ import MessageCard from '../../../molecules/MessageCard'
 // TODO: Remove this component
 const PinVerificationSuccess = () => {
   const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate('/virtual-cards')
+    setCreatedVirtualCard(true)
+  }
   return (
     <>
       <div className="success-title-cont">
@@ -23,7 +29,7 @@ const PinVerificationSuccess = () => {
           buttonBgType='modal'
           btnText='Go to virtual card'
           width='350'
-          onClick={() => navigate('/virtual-cards')}
+          onClick={() => handleClick()}
         />
       </div>
     </>

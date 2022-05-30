@@ -8,6 +8,7 @@ const AppTheme = {
     grey5: '#E0E0E0',
     grey6: '#F2F2F2',
     green2: "#27AE60",
+    lightYellow: '#F9E59F',
     red: '#E81313',
     blue: '#7165E3',
     lightGrey: '#CCCCCC',

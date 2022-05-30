@@ -1,38 +1,24 @@
 import React, { MouseEventHandler } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { createdCard } from '../../../Entity/CreatedVirtualCard'
 import { CardProps } from '../../../types'
 import Button from '../../atoms/Buttons'
 import MasterCardLogo from '../../atoms/vectors/MasterCardLogo'
+import ActiveCard from './ActiveCard'
+import CreateCard from './createCard'
 import { VirtualDollarCardWrapper } from './styledCard'
 
 const VirtualDollarMastercard = ({
   onClick
 }: CardProps) => {
+  const cardCreated = createdCard.use()
+  const navigate = useNavigate()
   return (
     <VirtualDollarCardWrapper>
-      <div className='card-content'>
-        <div>
-          <div className='title-cont'>
-            <h3 className='title'>
-              Virtual US Dollar Mastercard
-            </h3>
-            <MasterCardLogo />
-          </div>
-          <span className='description'>
-            $2 Creation Fee
-          </span>
-        </div>
-        <Button 
-          width='18rem'
-          buttonBgType='small'
-          bgColor='#3F1E4B'
-          textColor='white'
-          btnText='Create card'
-          buttonPosition='left'
-          onClick={onClick}
-        />
-      </div>
-
-      <img src='/vectors/YellowCardRectangle.svg' alt='' />
+      {cardCreated 
+        ? <ActiveCard onClick={() => navigate('/virtual-cards')}/>
+        : <CreateCard onClick={onClick}/>
+      }
     </VirtualDollarCardWrapper>
   )
 }

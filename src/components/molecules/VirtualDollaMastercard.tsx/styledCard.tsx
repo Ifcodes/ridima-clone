@@ -50,3 +50,54 @@ export const VirtualDollarCardWrapper = styled.div`
     width: 100%;
   }
 `
+export const ActiveCardWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  height: max-content;
+  padding: 0 1rem;
+  background-color: transparent;
+  cursor: pointer;
+
+  .content{
+    width: 90%;
+    height: 95%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    .title-cont{
+      width: 9rem;
+      margin-left: 3.5rem;
+      margin-top: 3rem;
+
+      .title{
+        color: ${props => props.theme.colors.deepPurple};
+        font-size: 1.5rem;
+      }
+
+      .total-cards{
+        width: max-content;
+        height: max-content;
+        padding: 0.6rem;
+        background-color: ${props => props.theme.colors.lightYellow};
+        border-radius: 1.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .card-illustrations{
+      width: 60%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      max-width: 100%;
+    }
+  }
+
+  /* .cardBg{
+    width: 100%;
+    height: 100%;
+  } */
+`
