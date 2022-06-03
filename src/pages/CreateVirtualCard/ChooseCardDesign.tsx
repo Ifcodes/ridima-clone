@@ -1,7 +1,7 @@
-import React, { MouseEventHandler } from 'react'
-import Button from '../../atoms/Buttons';
-import CardDesigns from '../../atoms/DebitCardDesigns'
-import Modal from '../../molecules/Modal'
+import React, { MouseEventHandler } from "react";
+import Button from "../../components/atoms/Buttons";
+import CardDesigns from "../../components/atoms/DebitCardDesigns";
+import Modal from "../../components/molecules/Modal";
 
 const ChooseCardDesign = ({
   showModal,
@@ -14,50 +14,48 @@ const ChooseCardDesign = ({
 }) => {
   const cardDesigns = [
     {
-      cardType: 'Basic',
-      cardBg: 'grey'
+      cardType: "Basic",
+      cardBg: "grey",
     },
     {
-      cardType: 'Standard',
-      cardBg: 'blue'
+      cardType: "Standard",
+      cardBg: "blue",
     },
     {
-      cardType: 'Gold',
-      cardBg: 'yellow'
+      cardType: "Gold",
+      cardBg: "yellow",
     },
-  ]
+  ];
   return (
     <Modal
       showModal={showModal}
       closeModal={closeModal}
-      cardHeight={'95vh'}
-      width={'27%'}
+      cardHeight={"95vh"}
+      width={"27%"}
     >
       <div className="card-design-content">
         <h1>Choose Card Design</h1>
-        <div className='cards-wrapper'>
+        <div className="cards-wrapper">
           {cardDesigns.map((card, index) => (
-            <div 
+            <div
               key={`card-${card.cardBg}-${index}`}
-              className='card-cont'
+              className="card-cont"
               onClick={() => handleSelect("card", card.cardBg)}
             >
-              <CardDesigns 
-                cardBgColor={card.cardBg}
-              />
+              <CardDesigns cardBgColor={card.cardBg} />
               <p>{card.cardType}</p>
             </div>
           ))}
         </div>
-        <Button 
-          buttonBgType='modal'
-          btnText='Select'
-          width='350'
+        <Button
+          buttonBgType="modal"
+          btnText="Select"
+          width="350"
           onClick={() => handleSelect("button")}
         />
       </div>
     </Modal>
-  )
-}
+  );
+};
 
-export default ChooseCardDesign
+export default ChooseCardDesign;

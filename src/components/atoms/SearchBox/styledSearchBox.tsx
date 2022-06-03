@@ -2,15 +2,23 @@ import styled from "styled-components";
 
 export const SearchBoxWrapper = styled.div<{
   width?: string;
+  height?: string;
   border?: string;
+  borderRadius?: string;
+  bgColor?: string;
+  placeholderColor?: string;
+  textColor?: string;
 }>`
-  width: ${props => props.width || '100%'};
+  width: ${(props) => props.width || "100%"};
+  height: ${(props) => props.height || ""};
   display: flex;
   align-items: center;
-  border: ${props => props.border || 'none'};
+  border: ${(props) => props.border || "none"};
+  border-radius: ${(props) => props.borderRadius || "0"};
+  background-color: ${(props) => props.bgColor || "transparent"};
   padding: 1rem;
 
-  input{
+  input {
     display: flex;
     flex-grow: 1;
     margin: 1rem;
@@ -18,5 +26,11 @@ export const SearchBoxWrapper = styled.div<{
     padding: 1rem;
     border: none;
     outline: none;
+    background-color: transparent;
+    color: ${(props) => props.textColor || ""};
+
+    ::placeholder {
+      color: ${(props) => props.placeholderColor || ""};
+    }
   }
-`
+`;

@@ -1,27 +1,27 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import CreateVirtualCard from '../../../components/organisms/CreateVirtualCard'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import CreateVirtualCard from "../../CreateVirtualCard";
 
-import DashboardLayout from '../../../components/templates/MainLayout'
-import DefaultHomeScreen from './defaultPage'
+import DashboardLayout from "../../../components/templates/MainLayout";
+import DefaultHomeScreen from "./defaultPage";
 
 const Home = () => {
-  const [activeScreen, setActiveScreen] = useState('default')
+  const [activeScreen, setActiveScreen] = useState("default");
 
   return (
     <DashboardLayout>
-      {activeScreen === 'default' &&
-        <DefaultHomeScreen 
-          toggleActiveScreen={() => setActiveScreen('createVirtualCard')}
+      {activeScreen === "default" && (
+        <DefaultHomeScreen
+          toggleActiveScreen={() => setActiveScreen("createVirtualCard")}
         />
-      }
-      {activeScreen === 'createVirtualCard' &&
-        <CreateVirtualCard 
-          toggleActiveScreen={() => setActiveScreen('default')}
+      )}
+      {activeScreen === "createVirtualCard" && (
+        <CreateVirtualCard
+          toggleActiveScreen={() => setActiveScreen("default")}
         />
-      }
+      )}
     </DashboardLayout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
