@@ -25,6 +25,10 @@ export const SellGiftCardWrapper = styled.div`
     padding: 2rem 3rem 1rem;
   }
 
+  .default {
+    padding: 2rem 3rem 1rem;
+  }
+
   .search-cont {
     margin-top: 2.5rem;
   }
@@ -40,6 +44,191 @@ export const SellGiftCardWrapper = styled.div`
       grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
       margin-top: 2rem;
       grid-gap: 1rem;
+    }
+  }
+`;
+
+export const ActiveGiftCardWrapper = styled.div`
+  .selector {
+    margin-top: 2.5rem;
+  }
+
+  .card-types-heading {
+    margin: 2.5rem 0 1.5rem;
+  }
+
+  .card-types-cont {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7.125rem, 8rem));
+    margin-top: 2rem;
+    grid-gap: 1rem;
+  }
+`;
+
+export const SubCategoryWrapper = styled.div<{
+  isBigInt?: boolean;
+  isActive?: boolean;
+}>`
+  .amount-field-cont {
+    width: 25rem;
+    display: grid;
+    grid-template-columns: 1fr 7.5rem;
+    align-items: center;
+    margin-top: 1rem;
+    grid-gap: 1rem;
+  }
+
+  .value-display-cont {
+    width: 25rem;
+    display: flex;
+    flex-direction: ${(props) => (props.isBigInt ? "column" : "row")};
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    color: ${(props) => props.theme.colors.grey2};
+
+    .value-cont {
+      width: max-content;
+      display: flex;
+      align-items: center;
+      margin: ${(props) => (props.isBigInt ? "1rem 0" : "")};
+
+      .symbol,
+      h1 {
+        margin: 0 0.5rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .symbol {
+        color: rgba(113, 101, 227, 1);
+      }
+
+      h1 {
+        color: ${(props) =>
+          props.isActive
+            ? props.theme.colors.blue
+            : "rgba(113, 101, 227, 0.3)"};
+      }
+    }
+  }
+`;
+export const SelectedCurrencyModalWrapper = styled.div`
+  width: 100%;
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    color: ${(props) => props.theme.colors.deepPurple};
+  }
+
+  .currency-list-cont {
+    width: 100%;
+    margin-top: 0.5rem;
+
+    .currency-cont {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #f2f2f2;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+  }
+`;
+
+export const SubCategoryModalWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 1rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+
+  h1 {
+    color: ${(props) => props.theme.colors.deepPurple};
+  }
+
+  .category-list-cont {
+    width: 100%;
+    margin-top: 1rem;
+
+    .category-cont {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #f2f2f2;
+      padding: 1rem;
+      cursor: pointer;
+
+      .category {
+        color: ${(props) => props.theme.colors.grey2};
+      }
+    }
+  }
+`;
+
+export const UploadImageWrapper = styled.div`
+  width: 100%;
+  .title-cont {
+    margin: 1.5rem 0 1rem;
+  }
+
+  .ecode-cont {
+    width: 25rem;
+  }
+
+  .selected-imgs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .img-list-cont {
+      width: 100%;
+      display: grid;
+      margin-left: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 10rem));
+      column-gap: 1.5rem;
+    }
+
+    .img-cont {
+      width: 100%;
+      height: 10rem;
+      border-radius: 8px;
+      margin-left: 1.5rem;
+      display: flex;
+      justify-content: center;
+      object-fit: contain;
+      border: 1px solid ${(props) => props.theme.colors.grey1};
+      position: relative;
+
+      .remove-img {
+        color: red;
+        position: absolute;
+        right: -1rem;
+        top: -1rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 100%;
+        background-color: ${(props) => props.theme.colors.grey6};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 8px;
+      }
     }
   }
 `;

@@ -1,15 +1,19 @@
-import { DetailedHTMLProps, InputHTMLAttributes, useState } from 'react'
-import { generateId } from '../../../../utils/generateId';
-import PasswordEye from '../../vectors/PasswordEye';
-import { InputWrapper } from './inputStyles';
+import {
+  DetailedHTMLProps,
+  InputHTMLAttributes,
+  MouseEventHandler,
+  useState,
+} from "react";
+import { generateId } from "../../../../utils/generateId";
+import PasswordEye from "../../vectors/PasswordEye";
+import { InputWrapper } from "./inputStyles";
 
-type InputProps = {
-  id: string,
-  label?: string,
-  value?: string | number,
+export type InputProps = {
+  id?: string;
+  label?: string;
+  value?: string | number;
   type?: string;
   placeholder?: string;
-  handleChange?: Function;
   mt?: string;
   mb?: string;
   ml?: string;
@@ -18,7 +22,9 @@ type InputProps = {
   bgColor?: string;
   required?: boolean;
   symbol?: string;
-} & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
+  padding?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+} & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 const Input = ({
   id = generateId(),
@@ -30,6 +36,7 @@ const Input = ({
   mb,
   ml,
   mr,
+  padding,
   width,
   bgColor,
   required = false,
@@ -38,8 +45,8 @@ const Input = ({
   ...props
 }: InputProps) => {
   const [showPassword, setShowPassword] = useState(false);
-  const [isFocused, setIsFocused] = useState(false)
-  const [errorShown, setErrorShown] = useState(false)
+  const [isFocused, setIsFocused] = useState(false);
+  const [errorShown, setErrorShown] = useState(false);
 
   return (
     <InputWrapper
@@ -48,22 +55,17 @@ const Input = ({
       mb={mb}
       ml={ml}
       mr={mr}
+      padding={padding}
       bgColor={bgColor}
       isFocused={isFocused || value}
       shownError={errorShown}
       className={className && className}
     >
-      <div className='input-cont'>
-        <label htmlFor={id}>
-          {label}
-        </label>
-        <div className='symbol-cont'>
-          {symbol && 
-            <span className="symbol">
-              {symbol}
-            </span>
-          }
-          <input 
+      <div className="input-cont">
+        <label htmlFor={id}>{label}</label>
+        <div className="symbol-cont">
+          {symbol && <span className="symbol">{symbol}</span>}
+          <input
             id={id}
             required={required}
             value={value}
@@ -73,14 +75,13 @@ const Input = ({
             onBlur={() => setIsFocused(false)}
             {...props}
           />
-
         </div>
       </div>
-        {type === 'password' 
-          && <PasswordEye onClick={() => setShowPassword(!showPassword)}/>
-        }
+      {type === "password" && (
+        <PasswordEye onClick={() => setShowPassword(!showPassword)} />
+      )}
     </InputWrapper>
-  )
-}
+  );
+};
 
-export default Input
+export default Input;
