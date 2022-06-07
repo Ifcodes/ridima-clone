@@ -20,6 +20,7 @@ import CardDetails from "./pages/VirtualCardsPage/cardDetails";
 import Wallet from "./pages/Dashboard/Wallet";
 import TradeGiftCard from "./pages/TradeGiftCard";
 import SellGiftCards from "./pages/TradeGiftCard/SellGiftCard";
+import BuyGiftCards from "./pages/TradeGiftCard/BuyGiftCard";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         path="/trade-giftcards/sell-giftcards"
         element={<SellGiftCards />}
       />
+      <Route path="/trade-giftcards/buy-giftcards" element={<BuyGiftCards />} />
       <Route path="/virtual-cards" element={<VirtualCardsPage />} />
       <Route path="/virtual-cards/:id" element={<CardDetails />} />
     </Routes>

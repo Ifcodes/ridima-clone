@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
-export const SelectedImgCard = styled.div`
-  width: 10rem;
-  height: 10rem;
-  border-radius: 8px;
+export const SelectedImgCardWrapper = styled.div<{
+  width?: string;
+  height?: string;
+  borderRadius?: string;
+}>`
+  width: ${(props) => props.width || "10rem"};
+  height: ${(props) => props.height || "10rem"};
+  border-radius: ${(props) => props.borderRadius || "8px"};
   margin-left: 1.5rem;
   display: flex;
   justify-content: center;

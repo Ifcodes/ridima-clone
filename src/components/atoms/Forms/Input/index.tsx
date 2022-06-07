@@ -24,6 +24,7 @@ export type InputProps = {
   symbol?: string;
   padding?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  onChange?: Function;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 const Input = ({
@@ -40,6 +41,7 @@ const Input = ({
   width,
   bgColor,
   required = false,
+  onChange,
   className,
   symbol,
   ...props
@@ -73,6 +75,7 @@ const Input = ({
             type={type === "password" && showPassword ? "text" : type}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
+            onChange={onChange}
             {...props}
           />
         </div>

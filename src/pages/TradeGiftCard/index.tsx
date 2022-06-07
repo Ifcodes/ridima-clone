@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PlainRectangleCard from "../../components/atoms/PlainRectangleCard";
 import DashboardLayout from "../../components/templates/MainLayout";
+import {
+  buyGiftCardsState,
+  setShowBuyCardTermsModal,
+} from "../../Entity/BuyGiftCardsEntity";
 import { setProfileComplete } from "../../Entity/ProfileComplete";
 import { StageTitleWrapper } from "../CreateVirtualCard/createVirtualCardStyles";
+import BuyGiftCardTermsModal from "./BuyGiftCard/widgets/BuyGiftCardTermsModal";
 import TradeGiftCardDefaultPage from "./defaultPage";
 import SellGiftCards from "./SellGiftCard";
 import { TradeGiftCardWrapper } from "./styledTradeGiftCard";
@@ -32,6 +37,7 @@ const cardContent = [
 ];
 
 const TradeGiftCard = () => {
+  const buyGiftCardStates = buyGiftCardsState.use();
   const navigate = useNavigate();
   const [tabs, setTabs] = useState(["Trade GiftCards"]);
   const [activeTab, setActiveTab] = useState(0);
@@ -43,8 +49,8 @@ const TradeGiftCard = () => {
   };
 
   const handleTabClick = (type: string, index: number) => {
-    if (type === "Virtual cards") {
-      navigate("/virtual-cards");
+    if (type === "Trade GiftCards") {
+      navigate("/trade-giftcards");
     } else {
       setTabs(tabs.slice(0, index + 1));
       setActiveCard("");
@@ -54,17 +60,20 @@ const TradeGiftCard = () => {
   };
 
   const handleActionClick = (actionType: string) => {
-    if(actionType === "Sell Gift Cards"){
-      navigate('/trade-giftcards/sell-giftcards')
+    if (actionType === "Sell Gift Cards") {
+      navigate("/trade-giftcards/sell-giftcards");
+    } else if (actionType === "Buy Gift Cards") {
+      setShowBuyCardTermsModal(true);
+    } else {
+      setActiveCard(actionType);
+      setTabs(tabs.concat(actionType));
     }
-    setActiveCard(actionType);
-    setTabs(tabs.concat(actionType));
-    setActiveTab(activeTab + 1);
+    return;
   };
 
   return (
     <DashboardLayout>
-      <TradeGiftCardWrapper> 
+      <TradeGiftCardWrapper>
         <StageTitleWrapper>
           <span className="home" onClick={() => toggleActiveScreen()}>
             Home
@@ -86,6 +95,10 @@ const TradeGiftCard = () => {
             onCardClick={handleActionClick}
           />
         )}
+        <BuyGiftCardTermsModal
+          openModal={buyGiftCardStates.showTermsModal}
+          closeModal={() => setShowBuyCardTermsModal(false)}
+        />
       </TradeGiftCardWrapper>
     </DashboardLayout>
   );

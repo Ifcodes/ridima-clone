@@ -1,81 +1,46 @@
-import React, { MouseEventHandler, useState } from "react";
+import React, { MouseEventHandler, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchBox from "../../../components/atoms/SearchBox";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
 import TrapCard from "../../../components/atoms/TrapezoidCard";
-import AmazonIcon from "../../../components/atoms/vectors/AmazonIcon";
-import AppleLogoRedBgIcon from "../../../components/atoms/vectors/AppleLogoRedBgIcon";
-import GooglePlayLogoIcon from "../../../components/atoms/vectors/GooglePlayLogoIcon";
-import SteamLogoIcon from "../../../components/atoms/vectors/SteamLogoIcon";
-import WalmartLogoIcon from "../../../components/atoms/vectors/WalmartLogoIcon";
 import DashboardLayout from "../../../components/templates/MainLayout";
+
+import {
+  activeTradeGiftCardTab,
+  setActiveTabChange,
+} from "../../../Entity/TradeGiftCardsTabs";
 import { navigateHome } from "../../../utils/helpers";
 import { StageTitleWrapper } from "../../CreateVirtualCard/createVirtualCardStyles";
+import { trapCardIemList } from "../SellGiftCard";
 import { SellGiftCardWrapper } from "../styledTradeGiftCard";
-import ActiveGiftCard from "./ActiveGiftCardPage";
+import BuyGiftCardActive from "./BuyGiftCardActiveCard";
 
-export const trapCardIemList = [
-  {
-    cardBg: "#F9D89F",
-    cardType: "rightTrape",
-    cardtitle: "Amazon",
-    cardIcon: AmazonIcon,
-    titleDescription: "19 Gift Cards",
-  },
-  {
-    cardBg: "#F8DAD3",
-    cardType: "rightTrape",
-    cardtitle: "Apple iTunes",
-    cardIcon: AppleLogoRedBgIcon,
-    titleDescription: "19 Gift Cards",
-  },
-  {
-    cardBg: "#9AFED3",
-    cardType: "rightTrape",
-    cardtitle: "Google Play",
-    cardIcon: GooglePlayLogoIcon,
-    titleDescription: "19 Gift Cards",
-  },
-  {
-    cardBg: "#DCE5EF",
-    cardType: "leftTrape",
-    cardtitle: "Steam",
-    cardIcon: SteamLogoIcon,
-    titleDescription: "6 Gift Cards",
-  },
-  {
-    cardBg: "#D8D4F7",
-    cardType: "leftTrape",
-    cardtitle: "Walmart",
-    cardIcon: WalmartLogoIcon,
-    titleDescription: "6 Gift Cards",
-  },
-];
-
-const SellGiftCards = () => {
+const BuyGiftCards = () => {
+  const activeTab = activeTradeGiftCardTab.use();
   const navigate = useNavigate();
   const [searchField, setSearchField] = useState("");
-  const [activeTab, setActiveTab] = useState(1);
-  const [tabs, setTabs] = useState(["Trade Gift Cards", "Sell Gift Cards"]);
-  const [activeCard, setActiveCard] = useState("");
+  const [tabs, setTabs] = useState(["Trade Gift Cards", "Buy Gift Cards"]);
+
+  useEffect(() => {
+    setActiveTabChange("reset");
+  }, []);
 
   const handleTabClick = (type: string, index: number) => {
     if (type === "Trade Gift Cards") {
       navigate("/trade-giftcards");
-      setActiveTab(0);
+      setActiveTabChange("prev");
     } else if (index !== tabs.length - 1) {
       setTabs(tabs.slice(0, index + 1));
-      setActiveCard("");
-      setActiveTab(activeTab - 1);
+      setActiveTabChange("prev");
     }
     return;
   };
 
   const handleCardClick = (actionType: string) => {
-    setActiveCard(actionType);
     setTabs(tabs.concat(actionType));
-    setActiveTab(activeTab + 1);
+    setActiveTabChange("next");
   };
+
   return (
     <DashboardLayout childPadding="0">
       <SellGiftCardWrapper>
@@ -114,9 +79,7 @@ const SellGiftCards = () => {
         </div>
         <div className="main-content">
           {activeTab === 2 ? (
-            <>
-              <ActiveGiftCard />
-            </>
+            <BuyGiftCardActive />
           ) : (
             <>
               <div className="title-cont">
@@ -142,4 +105,4 @@ const SellGiftCards = () => {
   );
 };
 
-export default SellGiftCards;
+export default BuyGiftCards;

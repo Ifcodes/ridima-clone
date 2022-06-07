@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Input from "../../../../components/atoms/Forms/Input";
 import Selector from "../../../../components/atoms/Selector";
+import { setExpectedValue, tradeValue } from "../../../../Entity/TradeValue";
 import { SubCategoryWrapper } from "../../styledTradeGiftCard";
 import SelectSubCategoryModal from "./Widgets/selectSubCategoryModal";
 
@@ -16,15 +17,17 @@ const SelectSubCategory = ({
   formField,
   handleChange = () => {},
 }: SubCategoryProps) => {
+  const tradeValues = tradeValue.use();
   const [showModal, setShowModal] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  const [expectedValue, setExpectedValue] = useState(0);
   const rate = 410;
 
   useEffect(() => {
     setExpectedValue(
-      Number(formField?.amount) * rate * Number(formField?.quantity)
+      Number(formField?.amount),
+      Number(formField?.quantity),
+      rate
     );
   }, [formField?.amount, formField?.quantity]);
 
@@ -35,8 +38,8 @@ const SelectSubCategory = ({
 
   return (
     <SubCategoryWrapper
-      isBigInt={expectedValue.toString().length >= 5}
-      isActive={expectedValue > 0}
+      isBigInt={tradeValues.expectedValue.toString().length >= 5}
+      isActive={tradeValues.expectedValue > 0}
     >
       <div className="subcat-cont">
         <Selector
@@ -66,7 +69,7 @@ const SelectSubCategory = ({
         <span>You will get:</span>
         <div className="value-cont">
           <span className="symbol">₦</span>
-          <h1> {expectedValue.toLocaleString()}</h1>
+          <h1> {tradeValues.expectedValue.toLocaleString()}</h1>
         </div>
         <span>≠{rate}</span>
       </div>

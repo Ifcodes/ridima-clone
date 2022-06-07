@@ -15,6 +15,11 @@ import { ActiveGiftCardWrapper } from "../../styledTradeGiftCard";
 import SelectCurrencyModal from "./Widgets/selectCurrencyModal";
 import SelectSubCategory from "./selectSubCategory";
 import UploadImage from "./uploadImage";
+import TradeSummary from "./tradeSummary";
+import { setTradeSummaryData } from "../../../../Entity/TradeSummaryData";
+import { tradeValue } from "../../../../Entity/TradeValue";
+import AmazonIconCircle from "../../../../components/atoms/vectors/AmazonIconCircle";
+import CardTermsModal from "./Widgets/cardTermsModal";
 
 const giftCardTypes = [
   {
@@ -61,10 +66,12 @@ const steps = [
 ];
 
 const ActiveGiftCard = () => {
+  const tradeValues = tradeValue.use();
   const [showCurrencyModal, setShowCurrencyModal] = useState(false);
   const [selectedCard, setSelectedCard] = useState<number | undefined>();
   const [selectedCurrency, setSelectedCurrency] = useState("");
   const [currentStage, setCurrentStage] = useState(0);
+  const [openCardTermsModal, setOpenCardTermsModal] = useState(false);
   const [imgUploadFormData, setImgUploadFormData] = useState<{
     ecode?: string;
     selectedImages: Array<string>;
@@ -99,9 +106,26 @@ const ActiveGiftCard = () => {
     setSelectedCurrency(currency);
     setShowCurrencyModal(false);
   };
+  const date = new Date();
 
   const onProceed = () => {
-    if (currentStage < 2) setCurrentStage(currentStage + 1);
+    if (currentStage < 3) setCurrentStage(currentStage + 1);
+    if (currentStage === 2) {
+      const summaryData = {
+        transactionDate: date,
+        cardAmount: selectedCategory.amount,
+        rate: tradeValues.rate,
+        expectedValue: tradeValues.expectedValue,
+        cardIcon: <AmazonIconCircle />,
+        cardName: "Amazon",
+        cardDescription: "USA No Receipt ($25)",
+        images: imgUploadFormData.selectedImages,
+      };
+      setTradeSummaryData(summaryData);
+    }
+    if (currentStage === 3) {
+      setOpenCardTermsModal(true);
+    }
     return;
   };
 
@@ -144,7 +168,8 @@ const ActiveGiftCard = () => {
 
   return (
     <ActiveGiftCardWrapper>
-      <AmazonCardImage />
+      {currentStage === 3 && <TradeSummary />}
+      {currentStage !== 3 && <AmazonCardImage />}
       {currentStage === 2 && (
         <UploadImage
           handleEcodeInput={handleEcodeInputChange}
@@ -188,7 +213,7 @@ const ActiveGiftCard = () => {
         </>
       )}
       <Button
-        btnText="Proceed"
+        btnText={currentStage === 3 ? "Sell Giftcard" : "Proceed"}
         disabled={
           currentStage === 1 && !categoryFormIsFilled
             ? true
@@ -206,6 +231,10 @@ const ActiveGiftCard = () => {
         closeModal={() => setShowCurrencyModal(false)}
         selectedCurrency={selectedCurrency}
         selectCurrency={handleSelectCurrency}
+      />
+      <CardTermsModal
+        openModal={openCardTermsModal}
+        closeModal={() => setOpenCardTermsModal(false)}
       />
     </ActiveGiftCardWrapper>
   );

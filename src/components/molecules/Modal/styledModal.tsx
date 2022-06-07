@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-const popout = keyframes`
+const slideIn = keyframes`
   from{
     margin-top: 150vh;
   }
@@ -34,7 +34,7 @@ export const ModalWrapper = styled.div<{
     max-width: 37rem;
     background-color: white;
     border-radius: 2.5rem;
-    animation: ${popout} 700ms ease-in-out 1;
+    animation: ${slideIn} 700ms ease-in-out 1;
     overflow-y: hidden;
   }
 

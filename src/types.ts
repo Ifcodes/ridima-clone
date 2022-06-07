@@ -4,6 +4,7 @@ export type SvgIconProps = {
   active?: boolean;
   color?: string;
   bgColor?: string;
+  lineColor?: string;
   width?: string;
 } & SVGProps<SVGSVGElement>;
 

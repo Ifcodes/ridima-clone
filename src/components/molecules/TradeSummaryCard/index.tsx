@@ -1,15 +1,20 @@
-import React, { ReactNode } from "react";
+import React, { ChangeEventHandler, ReactNode } from "react";
+import { removeImages, selectImage } from "../../../Entity/TradeSummaryData";
+import FileUploadInput from "../../atoms/Forms/FileUploadInput";
+import SelectImgCard from "../../atoms/SelectedImgCard";
 import { TradeSummaryWrapper } from "./styledTradeSummary";
 
-type TradeSummaryProps = {
-  transactionDate?: string;
+export interface TradeSummaryProps {
+  transactionDate?: Date;
   cardAmount?: string;
   rate?: number;
   expectedValue?: number;
   cardIcon?: ReactNode;
   cardName?: string;
   cardDescription?: string;
-};
+  images?: Array<string>;
+  handleImgUpload?: ChangeEventHandler<HTMLInputElement>;
+}
 const TradeSummaryCard = ({
   transactionDate,
   cardAmount,
@@ -18,11 +23,13 @@ const TradeSummaryCard = ({
   cardIcon,
   cardName,
   cardDescription,
+  images,
+  handleImgUpload,
 }: TradeSummaryProps) => {
   const summaryKeys = [
     {
       title: "Transaction Date:",
-      value: transactionDate,
+      value: transactionDate?.toDateString(),
     },
     {
       title: "Card Amount:",
@@ -54,6 +61,25 @@ const TradeSummaryCard = ({
             <span>{key.value}</span>
           </div>
         ))}
+      </div>
+      <div className="selected-imgs-cont">
+        {images?.map((img, index) => (
+          <SelectImgCard
+            width="6rem"
+            height="6rem"
+            borderRadius="10px"
+            imgUrl={img}
+            removeImg={() => removeImages(index)}
+          />
+        ))}
+        <div className="add-file-cont">
+          <FileUploadInput
+            width="5rem"
+            height="5rem"
+            borderRadius="10px"
+            onChange={selectImage}
+          />
+        </div>
       </div>
     </TradeSummaryWrapper>
   );

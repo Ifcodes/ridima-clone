@@ -232,3 +232,76 @@ export const UploadImageWrapper = styled.div`
     }
   }
 `;
+
+export const TradeSummaryWrapper = styled.div`
+  .hr-line {
+    margin-top: 2rem;
+  }
+
+  .card-wrapper {
+    margin-top: 1.5rem;
+  }
+`;
+
+export const CardTermsModalWrapper = styled.div`
+  width: 100%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+
+  .title {
+    width: 21rem;
+
+    h1 {
+      text-align: center;
+      color: ${(props) => props.theme.colors.grey1};
+    }
+  }
+
+  .btn-cont {
+    width: 100%;
+  }
+`;
+
+export const SuccessMessageWrapper = styled.div<{ errorMessage?: boolean }>`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .img-cont {
+    width: 60%;
+    height: 16rem;
+    max-width: 20rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .text-cont {
+    text-align: center;
+    width: 22rem;
+
+    h1 {
+      color: ${(props) =>
+        props.errorMessage
+          ? props.theme.colors.red
+          : props.theme.colors.green2};
+      margin: ${(props) => (props.errorMessage ? "2rem" : "0")};
+    }
+  }
+
+  .btn-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0 0;
+  }
+`;

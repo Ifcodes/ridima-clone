@@ -1,11 +1,17 @@
-import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
-import { ButtonWrapper } from './buttonStyles';
-import disabledBtn from '../../../../public/vectors/PrimaryDisabledBtn.svg'
-import defaultBtn from '../../../../public/vectors/PrimaryDefaultBtn.svg'
-import PrimaryButtonBg from '../vectors/PrimaryButtonBg';
-import SmallButtonBg from '../vectors/SmallButtonBg';
-import MediumButtonBg from '../vectors/MediumButtonBg';
-import ModalButtonBg from '../vectors/ModalButtonBg';
+import React, {
+  ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  ReactNode,
+} from "react";
+import { ButtonWrapper } from "./buttonStyles";
+import disabledBtn from "../../../../public/vectors/PrimaryDisabledBtn.svg";
+import defaultBtn from "../../../../public/vectors/PrimaryDefaultBtn.svg";
+import PrimaryButtonBg from "../vectors/PrimaryButtonBg";
+import SmallButtonBg from "../vectors/SmallButtonBg";
+import MediumButtonBg from "../vectors/MediumButtonBg";
+import ModalButtonBg from "../vectors/ModalButtonBg";
+import ReversedModalBg from "../vectors/ReversedModalBg";
+import ModalButtonSm from "../vectors/ModalButtonSm";
 
 export type ButtonProps = {
   width?: string;
@@ -20,11 +26,15 @@ export type ButtonProps = {
   textColor?: string;
   bgColor?: string;
   menuBtn?: boolean;
-  buttonBgType?: 'small' | 'medium' | 'modal';
-  buttonPosition?: 'center' | 'left' | 'right'
-} & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+  lineColor?: string;
+  buttonBgType?: "small" | "medium" | "modal" | "reversedModal" | "modalSm";
+  buttonPosition?: "center" | "left" | "right";
+} & DetailedHTMLProps<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
 
-const Button = ({  
+const Button = ({
   width,
   disabled,
   btnText,
@@ -36,11 +46,12 @@ const Button = ({
   hideBg = false,
   textColor,
   bgColor,
+  lineColor,
   buttonBgType,
   menuBtn = false,
   buttonPosition,
   onClick,
-} : ButtonProps) => {
+}: ButtonProps) => {
   return (
     <ButtonWrapper
       width={width}
@@ -54,42 +65,29 @@ const Button = ({
       menuBtn={menuBtn}
       buttonPosition={buttonPosition}
     >
-      <div className='text-cont'>
+      <div className="text-cont">
         {btnPrefix && <span>{btnPrefix}</span>}
         <span>{btnText}</span>
         {suffix && <span>{suffix}</span>}
       </div>
-      {buttonBgType === 'small'
-        ? <SmallButtonBg 
-            bgColor={bgColor}
-            className='button-Bg'
-          />
-        : buttonBgType === 'medium'
-        ? <MediumButtonBg 
-            bgColor={bgColor}
-            className='button-Bg'
-          />
-        : buttonBgType === 'modal' 
-        ? <ModalButtonBg 
-            bgColor={bgColor}
-            width={width}
-          />
-        : <PrimaryButtonBg
-            bgColor={bgColor 
-              ? `${bgColor}` 
-              : disabled 
-              ? '#FCF2CF'
-              : '#F5CF48'
-            }
-            className='button-Bg'
-          />
-      }
-      {/* {disabled
-        ? <img src={`${disabledBtn}`} alt='Create account' />
-        : <img src={`${defaultBtn}`} alt='Create account'/>
-      } */}
+      {buttonBgType === "small" ? (
+        <SmallButtonBg bgColor={bgColor} className="button-Bg" />
+      ) : buttonBgType === "medium" ? (
+        <MediumButtonBg bgColor={bgColor} className="button-Bg" />
+      ) : buttonBgType === "modal" ? (
+        <ModalButtonBg bgColor={bgColor} width={width} />
+      ) : buttonBgType === "modalSm" ? (
+        <ModalButtonSm />
+      ) : buttonBgType === "reversedModal" ? (
+        <ReversedModalBg bgColor={bgColor} lineColor={lineColor} />
+      ) : (
+        <PrimaryButtonBg
+          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          className="button-Bg"
+        />
+      )}
     </ButtonWrapper>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
