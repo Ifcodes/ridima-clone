@@ -10,16 +10,19 @@ export const buyGiftCardsState = entity({
   expectedValue: 0,
 });
 
-export const setBuyGiftcardStage = (type: string) => {
+export const setBuyGiftcardStage = (type: string, index: number) => {
   const newState = buyGiftCardsState.get();
 
   if (type === "next") {
     const stage = newState.currentStage + 1;
     buyGiftCardsState.set({ ...newState, currentStage: stage });
   }
-  if (type === "prev") {
+  if (type === "prev" && newState.currentStage > 0) {
     const stage = newState.currentStage - 1;
     buyGiftCardsState.set({ ...newState, currentStage: stage });
+  }
+  if (type === "fixed") {
+    buyGiftCardsState.set({ ...newState, currentStage: index });
   }
 };
 
