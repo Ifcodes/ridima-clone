@@ -3,7 +3,7 @@ import Input from "../../../../components/atoms/Forms/Input";
 import Selector from "../../../../components/atoms/Selector";
 import { setExpectedValue, tradeValue } from "../../../../Entity/TradeValue";
 import { SubCategoryWrapper } from "../../styledTradeGiftCard";
-import SelectSubCategoryModal from "./Widgets/selectSubCategoryModal";
+import SelectSubCategoryModal from "../../../../components/molecules/SelectGiftCardSubCategoryModal";
 
 type SubCategoryProps = {
   formField?: {

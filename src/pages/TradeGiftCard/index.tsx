@@ -6,9 +6,12 @@ import {
   buyGiftCardsState,
   setShowBuyCardTermsModal,
 } from "../../Entity/BuyGiftCardsEntity";
+import { setCheckRatesModal } from "../../Entity/CheckRatesEntity";
 import { setProfileComplete } from "../../Entity/ProfileComplete";
 import { StageTitleWrapper } from "../CreateVirtualCard/createVirtualCardStyles";
 import BuyGiftCardTermsModal from "./BuyGiftCard/widgets/BuyGiftCardTermsModal";
+import CheckRates from "./CheckRates";
+import CheckRatesModal from "./CheckRates/widgets/checkRatesModal";
 import TradeGiftCardDefaultPage from "./defaultPage";
 import SellGiftCards from "./SellGiftCard";
 import { TradeGiftCardWrapper } from "./styledTradeGiftCard";
@@ -64,6 +67,8 @@ const TradeGiftCard = () => {
       navigate("/trade-giftcards/sell-giftcards");
     } else if (actionType === "Buy Gift Cards") {
       setShowBuyCardTermsModal(true);
+    } else if (actionType === "Check Gift Card Rates") {
+      setCheckRatesModal(true);
     } else {
       setActiveCard(actionType);
       setTabs(tabs.concat(actionType));
@@ -99,6 +104,7 @@ const TradeGiftCard = () => {
           openModal={buyGiftCardStates.showTermsModal}
           closeModal={() => setShowBuyCardTermsModal(false)}
         />
+        <CheckRatesModal />
       </TradeGiftCardWrapper>
     </DashboardLayout>
   );

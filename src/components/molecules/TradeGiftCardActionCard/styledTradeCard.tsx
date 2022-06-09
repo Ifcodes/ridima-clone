@@ -4,10 +4,11 @@ export const TradeCardWrapper = styled.div`
   width: 100%;
   height: max-content;
   max-width: 35rem;
+  cursor: pointer;
 
   position: relative;
 
-  .card-content{
+  .card-content {
     width: 100%;
     height: 100%;
     display: flex;
@@ -18,15 +19,15 @@ export const TradeCardWrapper = styled.div`
     top: 0;
     left: 0;
 
-    h3{
+    h3 {
       width: 10rem;
-      color: ${props => props.theme.colors.primary};
+      color: ${(props) => props.theme.colors.primary};
       font-weight: 700;
       font-size: 1.8rem;
     }
   }
 
-  img{
+  img {
     width: 100%;
   }
-`
+`;

@@ -18,6 +18,7 @@ const BuyGiftCardActive = () => {
       if (index === stepIndex) setBuyGiftcardStage("fixed", index);
     });
   };
+
   return (
     <div>
       <Stepper

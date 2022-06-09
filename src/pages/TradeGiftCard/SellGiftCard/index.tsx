@@ -81,7 +81,7 @@ const SellGiftCards = () => {
       <SellGiftCardWrapper>
         <div className={activeTab === 1 ? "heading" : "default"}>
           <StageTitleWrapper darkBgShade>
-            <span className="home" onClick={() => navigateHome()}>
+            <span className="home" onClick={() => navigate("/home")}>
               Home
             </span>
             {tabs.map((tab, index) => (

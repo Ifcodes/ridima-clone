@@ -1,17 +1,19 @@
-import React from 'react'
-import SemiTriangleCard from '../../atoms/vectors/SemiTriangleCard'
-import TradeGiftCardIcon from '../../atoms/vectors/TradeGiftCardIcon'
-import { TradeCardWrapper } from './styledTradeCard'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import SemiTriangleCard from "../../atoms/vectors/SemiTriangleCard";
+import TradeGiftCardIcon from "../../atoms/vectors/TradeGiftCardIcon";
+import { TradeCardWrapper } from "./styledTradeCard";
 
 const TradeGiftcardActionCard = () => {
+  const navigate = useNavigate();
   return (
-    <TradeCardWrapper>
-      <div className='card-content'>
+    <TradeCardWrapper onClick={() => navigate("/trade-giftcards")}>
+      <div className="card-content">
         <h3>Trade Gift Cards</h3>
       </div>
-      <img src='/vectors/SemiTriangleCard.svg' alt='' />
+      <img src="/vectors/SemiTriangleCard.svg" alt="" />
     </TradeCardWrapper>
-  )
-}
+  );
+};
 
-export default TradeGiftcardActionCard
+export default TradeGiftcardActionCard;

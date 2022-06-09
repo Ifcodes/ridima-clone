@@ -12,7 +12,7 @@ import NoRecieptCardIcon from "../../../../components/atoms/vectors/NoRecieptCar
 import PhysicalCardTypeIcon from "../../../../components/atoms/vectors/PhysicalCardTypeIcon";
 import TickIcon from "../../../../components/atoms/vectors/TickIcon";
 import { ActiveGiftCardWrapper } from "../../styledTradeGiftCard";
-import SelectCurrencyModal from "./Widgets/selectCurrencyModal";
+import SelectCurrencyModal from "../../../../components/molecules/SelectCurrencyModal";
 import SelectSubCategory from "./selectSubCategory";
 import UploadImage from "./uploadImage";
 import TradeSummary from "./tradeSummary";
@@ -20,6 +20,7 @@ import { setTradeSummaryData } from "../../../../Entity/TradeSummaryData";
 import { tradeValue } from "../../../../Entity/TradeValue";
 import AmazonIconCircle from "../../../../components/atoms/vectors/AmazonIconCircle";
 import CardTermsModal from "./Widgets/cardTermsModal";
+import Stepper from "../../../../components/molecules/Stepper";
 
 const giftCardTypes = [
   {
@@ -86,6 +87,8 @@ const ActiveGiftCard = () => {
     amount: "",
     quantity: "",
   });
+
+  const steps = ["Giftcard Type", "Card Value", "Upload Image(s)"];
 
   const categoryFormIsFilled = Object.values(selectedCategory).every(
     (item) => item !== ""
@@ -166,8 +169,21 @@ const ActiveGiftCard = () => {
     });
   };
 
+  const handleStepClick = (index: number) => {
+    steps.map((step, stepIndex) => {
+      if (index === stepIndex) setCurrentStage(index);
+    });
+  };
+
   return (
     <ActiveGiftCardWrapper>
+      <Stepper
+        defaultTitle="Card"
+        steps={steps}
+        currentStep={currentStage}
+        previousStep={currentStage - 1}
+        onClick={handleStepClick}
+      />
       {currentStage === 3 && <TradeSummary />}
       {currentStage !== 3 && <AmazonCardImage />}
       {currentStage === 2 && (

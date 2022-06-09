@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import CustomRadioButton from "../../../../../components/atoms/CustomRadioButton";
-import { H1 } from "../../../../../components/atoms/Typography";
-import Modal from "../../../../../components/molecules/Modal";
-import { SelectedCurrencyModalWrapper } from "../../../styledTradeGiftCard";
+import CustomRadioButton from "../../atoms/CustomRadioButton";
+import { H1 } from "../../atoms/Typography";
+import Modal from "../Modal";
+import { SelectedCurrencyModalWrapper } from "./selectCurrencyModalStyles";
 
 const SelectCurrencyModal = ({
   openModal,

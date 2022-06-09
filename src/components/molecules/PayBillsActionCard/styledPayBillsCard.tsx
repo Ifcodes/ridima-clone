@@ -5,8 +5,9 @@ export const PayBillsCardWrapper = styled.div`
   height: max-content;
   position: relative;
   margin-top: 2rem;
+  cursor: pointer;
 
-  .card-content{
+  .card-content {
     width: 100%;
     height: 100%;
     display: flex;
@@ -17,19 +18,19 @@ export const PayBillsCardWrapper = styled.div`
     top: 0;
     left: 0;
 
-    h3{
+    h3 {
       width: 10rem;
-      color: ${props => props.theme.colors.deepPurple};
+      color: ${(props) => props.theme.colors.deepPurple};
       font-weight: 700;
       font-size: 1.8rem;
       margin: 0.5rem 0;
     }
-    span{
-      color: ${props => props.theme.colors.grey3};
+    span {
+      color: ${(props) => props.theme.colors.grey3};
     }
   }
 
-  img{
+  img {
     width: 100%;
   }
-`
+`;
