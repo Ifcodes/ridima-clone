@@ -11,12 +11,16 @@ const CardAmount = () => {
   const rate = 550;
 
   useEffect(() => {
-    if (cardAmount) setExpectedValue(Number(cardAmount) * rate);
-  });
+    if (cardAmount) {
+      setExpectedValue(Number(cardAmount) * rate);
+    } else {
+      setExpectedValue(0);
+    }
+  }, [cardAmount]);
 
   return (
     <CheckRatesFormWrapper isActive={expectedValue > 0}>
-      <div className="title-cont">
+      <div>
         <HorizontalLinedTitle text={`Enter Card Amount`} />
       </div>
       <div className="form-content">

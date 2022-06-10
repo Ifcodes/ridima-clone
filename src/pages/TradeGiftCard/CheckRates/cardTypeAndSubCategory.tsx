@@ -37,7 +37,7 @@ const CardTypeAndSubCategory = () => {
   };
   return (
     <CheckRatesFormWrapper>
-      <div className="title-cont">
+      <div>
         <HorizontalLinedTitle text={`What type of ${selectedGiftCard}?`} />
       </div>
       <div className="card-type-cont">

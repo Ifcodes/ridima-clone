@@ -5,6 +5,7 @@ import Stepper from "../../../components/molecules/Stepper";
 import DashboardLayout from "../../../components/templates/MainLayout";
 import {
   checkRatesStates,
+  resetAllCheckRatesState,
   setCurrentCheckRateStage,
 } from "../../../Entity/CheckRatesEntity";
 import { StageTitleWrapper } from "../../CreateVirtualCard/createVirtualCardStyles";
@@ -35,6 +36,14 @@ const CheckRates = () => {
     return;
   };
 
+  const handleProceed = () => {
+    if (activeStage === 3) {
+      navigate("/trade-giftcards");
+      resetAllCheckRatesState();
+    } else {
+      setCurrentCheckRateStage("next");
+    }
+  };
   return (
     <DashboardLayout>
       <CheckRatesMainWrapper>
@@ -76,7 +85,7 @@ const CheckRates = () => {
                 ? true
                 : false
             }
-            onClick={() => setCurrentCheckRateStage("next")}
+            onClick={() => handleProceed()}
           />
         </CheckRatesWrapper>
       </CheckRatesMainWrapper>

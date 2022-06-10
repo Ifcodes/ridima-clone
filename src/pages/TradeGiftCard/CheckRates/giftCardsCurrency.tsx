@@ -29,7 +29,7 @@ const GiftCardsCurrency = () => {
   };
   return (
     <CheckRatesFormWrapper>
-      <div className="title-cont">
+      <div>
         <HorizontalLinedTitle text="What Giftcard?" />
       </div>
       <div className="form-content">

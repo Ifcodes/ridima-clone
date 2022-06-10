@@ -66,3 +66,18 @@ export const setSelectedSubCatForCheckRates = (category: string) => {
   checkRatesStates.set((prev) => ({ ...prev, selectedSubCategory: category }));
   setCheckRatesSubCatModal(false);
 };
+
+export const resetAllCheckRatesState = () => {
+  checkRatesStates.set((prev) => ({
+    ...prev,
+    testValue: 0,
+    currentStage: 1,
+    selectedGiftCard: "",
+    selectedCurrency: "",
+    selectedSubCategory: "",
+    showSelectedSubCategoryModal: false,
+    showCheckRateCurrencyModal: false,
+    showCheckRateModal: false,
+    showSelectGiftCardModal: false,
+  }));
+};

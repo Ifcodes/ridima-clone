@@ -43,6 +43,10 @@ export const CheckRatesFormWrapper = styled.div<{ isActive?: boolean }>`
   width: 100%;
   /* margin: 2rem 0; */
 
+  .title-cont {
+    margin-top: 2rem;
+  }
+
   .form-content {
     width: 27rem;
     margin-top: 0.5rem;
