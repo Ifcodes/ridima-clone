@@ -22,6 +22,8 @@ import TradeGiftCard from "./pages/TradeGiftCard";
 import SellGiftCards from "./pages/TradeGiftCard/SellGiftCard";
 import BuyGiftCards from "./pages/TradeGiftCard/BuyGiftCard";
 import CheckRates from "./pages/TradeGiftCard/CheckRates";
+import HotGiftCards from "./pages/TradeGiftCard/HotGiftCards";
+import PayBills from "./pages/PayBills";
 
 function App() {
   return (
@@ -49,8 +51,10 @@ function App() {
       />
       <Route path="/trade-giftcards/buy-giftcards" element={<BuyGiftCards />} />
       <Route path="/trade-giftcards/check-rates" element={<CheckRates />} />
+      <Route path="/trade-giftcards/hot-giftcards" element={<HotGiftCards />} />
       <Route path="/virtual-cards" element={<VirtualCardsPage />} />
       <Route path="/virtual-cards/:id" element={<CardDetails />} />
+      <Route path="/pay-bills" element={<PayBills />} />
     </Routes>
   );
 }

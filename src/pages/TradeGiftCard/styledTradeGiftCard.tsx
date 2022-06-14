@@ -49,6 +49,9 @@ export const SellGiftCardWrapper = styled.div`
 `;
 
 export const ActiveGiftCardWrapper = styled.div`
+  .stepper-cont {
+    margin-top: 3rem;
+  }
   .selector {
     margin-top: 2.5rem;
   }
@@ -212,6 +215,7 @@ export const SuccessMessageWrapper = styled.div<{ errorMessage?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: ${(props) => (props.errorMessage ? "1.7rem" : "")};
 
   .img-cont {
     width: 60%;

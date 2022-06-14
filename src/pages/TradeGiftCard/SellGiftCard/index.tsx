@@ -125,6 +125,7 @@ const SellGiftCards = () => {
               <div className="content">
                 {trapCardIemList.map((item, index) => (
                   <TrapCard
+                    key={item.cardtitle}
                     bgColor={item.cardBg}
                     trapeCardType={item.cardType}
                     title={item.cardtitle}

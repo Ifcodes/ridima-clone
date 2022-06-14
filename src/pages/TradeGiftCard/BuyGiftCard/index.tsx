@@ -46,7 +46,7 @@ const BuyGiftCards = () => {
       <SellGiftCardWrapper>
         <div className={activeTab === 1 ? "heading" : "default"}>
           <StageTitleWrapper darkBgShade>
-            <span className="home" onClick={() => navigateHome()}>
+            <span className="home" onClick={() => navigate("/home")}>
               Home
             </span>
             {tabs.map((tab, index) => (
@@ -88,6 +88,7 @@ const BuyGiftCards = () => {
               <div className="content">
                 {trapCardIemList.map((item, index) => (
                   <TrapCard
+                    key={item.cardtitle}
                     bgColor={item.cardBg}
                     trapeCardType={item.cardType}
                     title={item.cardtitle}

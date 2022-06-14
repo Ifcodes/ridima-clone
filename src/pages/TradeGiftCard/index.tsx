@@ -69,7 +69,9 @@ const TradeGiftCard = () => {
       setShowBuyCardTermsModal(true);
     } else if (actionType === "Check Gift Card Rates") {
       setCheckRatesModal(true);
-    } else {
+    } else if (actionType === "Hot Gift Cards"){
+      navigate("/trade-giftcards/hot-giftcards");
+    }else {
       setActiveCard(actionType);
       setTabs(tabs.concat(actionType));
     }
