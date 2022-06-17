@@ -23,14 +23,19 @@ const PayBills = () => {
   const selectedBill = payBillState.selectedBillToPay;
 
   const handleTabClick = (index: number) => {
-    setPayBillsTabs("remove", undefined, index);
+    setPayBillsTabs("remove", " ", index);
+  };
+
+  const handleNavigateHome = () => {
+    navigate("/home");
+    setPayBillActiveTabChange("reset");
   };
 
   return (
     <DashboardLayout>
       <PayBillsWrapper>
         <StageTitleWrapper darkBgShade>
-          <span className="home" onClick={() => navigate("/home")}>
+          <span className="home" onClick={() => handleNavigateHome()}>
             Home
           </span>
           {tabs.map((tab, index) => (

@@ -55,6 +55,7 @@ function App() {
       <Route path="/virtual-cards" element={<VirtualCardsPage />} />
       <Route path="/virtual-cards/:id" element={<CardDetails />} />
       <Route path="/pay-bills" element={<PayBills />} />
+      <Route path="/wallet" element={<Wallet />} />
     </Routes>
   );
 }

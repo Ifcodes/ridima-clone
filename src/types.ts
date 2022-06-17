@@ -6,6 +6,7 @@ export type SvgIconProps = {
   bgColor?: string;
   lineColor?: string;
   width?: string;
+  height?: string;
 } & SVGProps<SVGSVGElement>;
 
 export type CardProps = {

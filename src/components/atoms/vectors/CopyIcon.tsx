@@ -1,10 +1,11 @@
-import * as React from "react"
-import { SVGProps } from "react"
+import * as React from "react";
+import { SVGProps } from "react";
+import { SvgIconProps } from "../../../types";
 
-const CopyIcon = (props: SVGProps<SVGSVGElement>) => (
+const CopyIcon = (props: SvgIconProps) => (
   <svg
-    width={12}
-    height={13}
+    width={props.width || 12}
+    height={props.height || 13}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -18,6 +19,6 @@ const CopyIcon = (props: SVGProps<SVGSVGElement>) => (
       fill="#7165E3"
     />
   </svg>
-)
+);
 
-export default CopyIcon
+export default CopyIcon;
