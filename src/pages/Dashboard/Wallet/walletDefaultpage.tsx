@@ -166,7 +166,7 @@ const WalletDefaultpage = () => {
       <UseUssdCodeModal
         openModal={showUseUssdCodeModal}
         closeModal={() => setShowUseUssdCodeModal(false)}
-        amount="2000"
+        amount={keypadAmount}
         accountNumber={"1234567890"}
       />
       <WarningModal

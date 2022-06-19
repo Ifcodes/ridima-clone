@@ -41,10 +41,8 @@ const UseDebitCardPayOptionCard = ({
         <FlutterWaveLogoIcon />
       </div>
       <div className="text-content">
-        <h3>Use USSD Code</h3>
-        <span>
-          You’d be asked to dail a code on your device and follow the prompt.
-        </span>
+        <h3>Use Debit Card</h3>
+        <span>This option is secured and provided by flutterwave.</span>
       </div>
     </Container>
   );

@@ -1,4 +1,6 @@
 import React from "react";
+import { clearKeypadStates } from "../../../Entity/KeypadModalEntity";
+import { setShowFundWarningModal } from "../../../Entity/WalletEntities/FundWalletEntity";
 import Button from "../../atoms/Buttons";
 import { H1, Paragraph } from "../../atoms/Typography";
 import GroupedBankAndWarningIcon from "../../atoms/vectors/GroupedBankAndWarningIcon";
@@ -13,7 +15,8 @@ const WarningModal = ({
   closeModal: Function;
 }) => {
   const handleProceed = () => {
-    window.location.reload();
+    clearKeypadStates();
+    setShowFundWarningModal(false);
   };
   return (
     <Modal showModal={showModal} closeModal={closeModal} cardHeight="65%">
