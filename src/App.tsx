@@ -24,6 +24,9 @@ import BuyGiftCards from "./pages/TradeGiftCard/BuyGiftCard";
 import CheckRates from "./pages/TradeGiftCard/CheckRates";
 import HotGiftCards from "./pages/TradeGiftCard/HotGiftCards";
 import PayBills from "./pages/PayBills";
+import WithdrawToBank from "./pages/Dashboard/Wallet/withdrawToBank";
+import SendMoney from "./pages/Dashboard/Wallet/sendMoney";
+import RequestMoney from "./pages/Dashboard/Wallet/requestMoney";
 
 function App() {
   return (
@@ -56,6 +59,9 @@ function App() {
       <Route path="/virtual-cards/:id" element={<CardDetails />} />
       <Route path="/pay-bills" element={<PayBills />} />
       <Route path="/wallet" element={<Wallet />} />
+      <Route path="/wallet/withdraw" element={<WithdrawToBank />} />
+      <Route path="/wallet/send-money" element={<SendMoney />} />
+      <Route path="/wallet/request-money" element={<RequestMoney />} />
     </Routes>
   );
 }

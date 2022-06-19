@@ -7,6 +7,7 @@ type ModalProps = {
   showModal: boolean;
   closeModal: Function;
   showCloseBtn?: boolean;
+  handleCloseBtn?: Function;
   width?: string;
   height?: string;
   cardHeight?: string;
@@ -16,13 +17,14 @@ const Modal = ({
   showModal = false,
   showCloseBtn,
   closeModal = () => {},
+  handleCloseBtn = () => {},
   width,
   cardHeight,
 }: ModalProps) => {
   const clickRef = useRef(null);
 
   useClickAway(clickRef, () => {
-    closeModal(false);
+    closeModal();
   });
 
   return (
@@ -34,7 +36,7 @@ const Modal = ({
     >
       <div className="modal-card" ref={clickRef}>
         {showCloseBtn && (
-          <div className="closeModal-btn" onClick={() => closeModal()}>
+          <div className="closeModal-btn" onClick={() => handleCloseBtn()}>
             <hr />
           </div>
         )}

@@ -8,6 +8,7 @@ export const SearchBoxWrapper = styled.div<{
   bgColor?: string;
   placeholderColor?: string;
   textColor?: string;
+  textSize?: string;
 }>`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || ""};
@@ -22,7 +23,7 @@ export const SearchBoxWrapper = styled.div<{
     display: flex;
     flex-grow: 1;
     margin: 1rem;
-    font-size: 1.3rem;
+    font-size: ${(props) => props.textSize || "1.3rem"};
     padding: 1rem;
     border: none;
     outline: none;

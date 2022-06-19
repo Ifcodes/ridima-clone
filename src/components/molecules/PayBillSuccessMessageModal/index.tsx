@@ -47,6 +47,7 @@ const PayBillSuccessMessageModal = ({
   openModal,
   titleWidth,
   closeModal = () => {},
+  handleCloseBtn,
 }: {
   icon?: ReactNode;
   messageTitle?: string;
@@ -55,9 +56,15 @@ const PayBillSuccessMessageModal = ({
   openModal: boolean;
   closeModal?: Function;
   titleWidth?: string;
+  handleCloseBtn?: Function;
 }) => {
   return (
-    <Modal showModal={openModal} closeModal={closeModal} showCloseBtn>
+    <Modal
+      showModal={openModal}
+      closeModal={closeModal}
+      handleCloseBtn={handleCloseBtn}
+      showCloseBtn
+    >
       <Wrapper messageTitleWidth={titleWidth}>
         <H1 className="modal-title">{modalTitle}</H1>
         <div className="icon-cont">{icon}</div>

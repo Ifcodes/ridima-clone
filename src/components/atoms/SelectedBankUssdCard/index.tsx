@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import styled from "styled-components";
 import CopyIcon from "../vectors/CopyIcon";
 import CopyIconLg from "../vectors/CopyIconLg";
@@ -42,15 +42,23 @@ const Container = styled.div`
   }
 `;
 
-const SelectedBankUssdCard = ({ code }: { code?: string }) => {
+const SelectedBankUssdCard = ({
+  code,
+  onTelIconClick,
+  onCopyIconClick,
+}: {
+  code?: string;
+  onTelIconClick?: MouseEventHandler<SVGSVGElement>;
+  onCopyIconClick?: MouseEventHandler<SVGSVGElement>;
+}) => {
   return (
     <Container>
       <span className="title">Your USSD Code</span>
       <div className="code-wrapper">
         <span>{code}</span>
         <div className="icons-wrapper">
-          <TelephoneIconOutline />
-          <CopyIconLg />
+          <TelephoneIconOutline onClick={onTelIconClick} />
+          <CopyIconLg onClick={onCopyIconClick} />
         </div>
       </div>
     </Container>

@@ -13,6 +13,7 @@ type SearchBoxProps = {
   height?: string;
   border?: string;
   inputTextColor?: string;
+  textSize?: string;
   searchIconColor?: string;
 };
 const SearchBox = ({
@@ -27,6 +28,7 @@ const SearchBox = ({
   border,
   inputTextColor,
   searchIconColor,
+  textSize,
 }: SearchBoxProps) => {
   return (
     <SearchBoxWrapper
@@ -37,6 +39,7 @@ const SearchBox = ({
       border={border}
       height={height}
       textColor={inputTextColor}
+      textSize={textSize}
     >
       <SearchIcon color={searchIconColor} />
       <input placeholder={placeholder} value={value} onChange={onChange} />

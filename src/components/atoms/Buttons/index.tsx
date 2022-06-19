@@ -15,6 +15,7 @@ import ModalButtonSm from "../vectors/ModalButtonSm";
 
 export type ButtonProps = {
   width?: string;
+  height?: string;
   disabled?: boolean;
   btnText?: string;
   mt?: string;

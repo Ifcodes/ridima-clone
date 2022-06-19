@@ -80,7 +80,9 @@ const KeypadModal = ({
             <ClearArrowIcon />
           </div>
         </div>
-        <Button btnText={ctaText} mt="3rem" onClick={handleBtnClick} />
+        {amount !== "" && (
+          <Button btnText={ctaText} mt="3rem" onClick={handleBtnClick} />
+        )}
       </KeypadModalWrapper>
     </Modal>
   );

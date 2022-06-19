@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import {
+  setShowFundWarningModal,
+  setShowUseUssdCodeModal,
+} from "../../../Entity/WalletEntities/FundWalletEntity";
 import SelecInput from "../../atoms/Forms/Select";
 import SelectedBankUssdCard from "../../atoms/SelectedBankUssdCard";
 import Selector from "../../atoms/Selector";
@@ -58,6 +62,11 @@ const UseUssdCodeModal = ({
     setSelectedItem(item);
     setShowDropdown(false);
   };
+
+  const handleTelIconClick = () => {
+    setShowUseUssdCodeModal(false);
+    setShowFundWarningModal(true);
+  };
   return (
     <Modal showModal={openModal} closeModal={closeModal} width={"28rem"}>
       <UseUssdCodeContainer>
@@ -77,6 +86,7 @@ const UseUssdCodeModal = ({
           <div className="card-cont">
             <SelectedBankUssdCard
               code={`${selectedItem.code}${accountNumber}#`}
+              onTelIconClick={() => handleTelIconClick()}
             />
           </div>
           <p className="description">

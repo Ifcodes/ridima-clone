@@ -26,14 +26,7 @@ const UploadImage = ({
   handleFormChange,
   removeImg = () => {},
 }: ImgUploadProps) => {
-  // const uploadFile = function (
-  //   e: React.MouseEvent<HTMLSpanElement, MouseEvent>
-  // ) {
-  //   if (uploadedImg) {
-  //     const formData = new FormData();
-  //     formData.append("image", uploadedImg, uploadedImg.name);
-  //   }
-  // };
+  
   return (
     <UploadImageWrapper>
       <div className="title-cont">
