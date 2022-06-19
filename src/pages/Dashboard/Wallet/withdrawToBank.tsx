@@ -4,10 +4,24 @@ import AccountCard from "../../../components/atoms/AccountCard";
 import Button from "../../../components/atoms/Buttons";
 import AddButton from "../../../components/atoms/Buttons/AddButton";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
+import AddBankAccountModal from "../../../components/molecules/AddBankAccountModal";
+import {
+  addAccountStates,
+  clearAddBankAccountStates,
+  setAddAccountModal,
+  setSelectedBankName,
+} from "../../../components/molecules/AddBankAccountModal/addBankAccountEntity";
+import SelectBankModal from "../../../components/molecules/SelectBankModal";
+import {
+  clearSelectBanksState,
+  setSelectBank,
+  setShowSelectBankModal,
+} from "../../../components/molecules/SelectBankModal/selectBankEntity";
 import DashboardLayout from "../../../components/templates/MainLayout";
 import { clearKeypadStates } from "../../../Entity/KeypadModalEntity";
 import {
   clearWithdrawalStates,
+  setWithdrawAccounts,
   setWithdrawSuccessMsgModal,
   withdrawToBankStates,
 } from "../../../Entity/WalletEntities/WithdrawToBankEntity";
@@ -19,6 +33,9 @@ import WithdrawSuccessMsg from "./Widgets/withdrawSuccessMsg";
 const WithdrawToBank = () => {
   const navigate = useNavigate();
   const withdrawalAmount = withdrawToBankStates.use().withdrawalAmount;
+  const accounts = withdrawToBankStates.use().accounts;
+  const newAccountDetails = addAccountStates.use().formField;
+
   const [tabs, setTabs] = useState([
     "Quick Action",
     "Withdraw",
@@ -47,13 +64,25 @@ const WithdrawToBank = () => {
     setSelectedAccount(selected);
   };
 
-  const closeModalBtn = (val: boolean) => {
+  const handleSelectBank = (bank: string) => {
+    setSelectedBankName(bank);
+    setShowSelectBankModal(false);
+    setAddAccountModal(true);
+  };
+
+  const closeWithdrawSuccessModalBtn = (val: boolean) => {
     clearWithdrawalStates();
     clearKeypadStates();
+    clearSelectBanksState();
+    clearAddBankAccountStates();
     setWithdrawSuccessMsgModal(val);
     navigate("/wallet");
   };
 
+  const handleAddNewAccount = () => {
+    setWithdrawAccounts(newAccountDetails);
+    setAddAccountModal(false);
+  };
   return (
     <>
       <DashboardLayout>
@@ -74,14 +103,14 @@ const WithdrawToBank = () => {
             ))}
           </StageTitleWrapper>
           <div className="add-card-cont">
-            <AddButton />
+            <AddButton onClick={() => setAddAccountModal(true)} />
             <span>Add New Bank Account</span>
           </div>
           <div className="line-cont">
             <HorizontalLinedTitle text="Saved Bank Account" />
           </div>
           <div className="cards-wrapper">
-            {demoAccounts.map((account, index) => (
+            {accounts.map((account, index) => (
               <AccountCard
                 key={`${account.accountName}-${index}`}
                 accountName={account.accountName}
@@ -104,10 +133,12 @@ const WithdrawToBank = () => {
         </WithdrawPageWrapper>
       </DashboardLayout>
       <WithdrawSuccessMsg
-        closeModal={() => closeModalBtn(false)}
+        closeModal={() => closeWithdrawSuccessModalBtn(false)}
         accountName={selectedAccount.accountName}
         amount={withdrawalAmount}
       />
+      <AddBankAccountModal handleBtnClick={() => handleAddNewAccount()} />
+      <SelectBankModal handleSelectBank={handleSelectBank} />
     </>
   );
 };

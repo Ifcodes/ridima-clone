@@ -29,6 +29,7 @@ const WithdrawSuccessMsg = ({
     <div>
       <PayBillSuccessMessageModal
         openModal={showModal}
+        titleWidth="100%"
         handleCloseBtn={closeModal}
         closeModal={() => setWithdrawSuccessMsgModal(false)}
         icon={<img src="/vectors/SuccessMessageIconGreen2.svg" alt="" />}

@@ -23,6 +23,7 @@ export const WalletpageDefaultWrapper = styled.div`
 
 export const WithdrawPageWrapper = styled.div`
   width: 100%;
+  padding-bottom: 8rem;
 
   .add-card-cont {
     margin-top: 3rem;

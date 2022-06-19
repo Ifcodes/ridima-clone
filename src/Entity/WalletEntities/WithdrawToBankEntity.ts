@@ -1,6 +1,9 @@
+import { demoAccounts } from "./../../utils/helpers/demoAccountsList";
 import { entity } from "simpler-state";
+import { addAccountStates } from "../../components/molecules/AddBankAccountModal/addBankAccountEntity";
 
 export const withdrawToBankStates = entity({
+  accounts: demoAccounts,
   withdrawalAmount: "",
   showKeypadModal: false,
   showSuccessMsgModal: false,
@@ -24,5 +27,12 @@ export const clearWithdrawalStates = () => {
     withdrawalAmount: "",
     showKeypadModal: false,
     showSuccessMsgModal: false,
+  }));
+};
+
+export const setWithdrawAccounts = (account: any) => {
+  withdrawToBankStates.set((prev) => ({
+    ...prev,
+    accounts: [...prev.accounts, account],
   }));
 };

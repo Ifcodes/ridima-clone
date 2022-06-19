@@ -5,6 +5,7 @@ import {
   useState,
 } from "react";
 import { generateId } from "../../../../utils/generateId";
+import CheckIcon from "../../vectors/CheckIcon";
 import PasswordEye from "../../vectors/PasswordEye";
 import { InputWrapper } from "./inputStyles";
 
@@ -25,6 +26,7 @@ export type InputProps = {
   padding?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   onChange?: Function;
+  showCheckIcon?: boolean;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 const Input = ({
@@ -44,6 +46,7 @@ const Input = ({
   onChange,
   className,
   symbol,
+  showCheckIcon,
   ...props
 }: InputProps) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -83,6 +86,7 @@ const Input = ({
       {type === "password" && (
         <PasswordEye onClick={() => setShowPassword(!showPassword)} />
       )}
+      {showCheckIcon && <CheckIcon />}
     </InputWrapper>
   );
 };

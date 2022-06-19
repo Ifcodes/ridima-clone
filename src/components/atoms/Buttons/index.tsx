@@ -72,15 +72,29 @@ const Button = ({
         {suffix && <span>{suffix}</span>}
       </div>
       {buttonBgType === "small" ? (
-        <SmallButtonBg bgColor={bgColor} className="button-Bg" />
+        <SmallButtonBg
+          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          className="button-Bg"
+        />
       ) : buttonBgType === "medium" ? (
-        <MediumButtonBg bgColor={bgColor} className="button-Bg" />
+        <MediumButtonBg
+          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          className="button-Bg"
+        />
       ) : buttonBgType === "modal" ? (
-        <ModalButtonBg bgColor={bgColor} width={width} />
+        <ModalButtonBg
+          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          width={width}
+        />
       ) : buttonBgType === "modalSm" ? (
-        <ModalButtonSm />
+        <ModalButtonSm
+          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+        />
       ) : buttonBgType === "reversedModal" ? (
-        <ReversedModalBg bgColor={bgColor} lineColor={lineColor} />
+        <ReversedModalBg
+          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          lineColor={lineColor}
+        />
       ) : (
         <PrimaryButtonBg
           bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}

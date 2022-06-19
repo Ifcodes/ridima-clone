@@ -57,4 +57,5 @@ export const AddButtonWrapper = styled.button<ButtonProps>`
   justify-content: center;
   border: none;
   outline: none;
+  cursor: pointer;
 `;
