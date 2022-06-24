@@ -1,6 +1,7 @@
 import React, { ReactNode, useRef, useState } from "react";
 import { ModalWrapper } from "./styledModal";
 import { useClickAway } from "react-use";
+import ModalFooterDesign from "../../atoms/vectors/modalFooterDesign";
 
 type ModalProps = {
   children: ReactNode;
@@ -11,6 +12,8 @@ type ModalProps = {
   width?: string;
   height?: string;
   cardHeight?: string;
+  showModalFooterDesign?: boolean;
+  maxWidth?: string;
 };
 const Modal = ({
   children,
@@ -19,7 +22,9 @@ const Modal = ({
   closeModal = () => {},
   handleCloseBtn = () => {},
   width,
+  maxWidth,
   cardHeight,
+  showModalFooterDesign,
 }: ModalProps) => {
   const clickRef = useRef(null);
 
@@ -32,7 +37,9 @@ const Modal = ({
       openModal={showModal}
       showCloseBtn={showCloseBtn}
       width={width}
+      maxWidth={maxWidth}
       cardHeight={cardHeight}
+      showModalFooter={showModalFooterDesign}
     >
       <div className="modal-card" ref={clickRef}>
         {showCloseBtn && (
@@ -41,6 +48,11 @@ const Modal = ({
           </div>
         )}
         {children}
+        {showModalFooterDesign && (
+          <div className="modal-footer">
+            <ModalFooterDesign />
+          </div>
+        )}
       </div>
     </ModalWrapper>
   );

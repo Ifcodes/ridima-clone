@@ -14,6 +14,8 @@ export const ModalWrapper = styled.div<{
   showCloseBtn?: boolean;
   width?: string;
   cardHeight?: string;
+  showModalFooter?: boolean;
+  maxWidth?: string;
 }>`
   width: 100%;
   height: 100vh;
@@ -31,11 +33,21 @@ export const ModalWrapper = styled.div<{
     width: ${(props) => props.width || "30%"};
     height: ${(props) => props.cardHeight || "75%"};
     max-height: 40rem;
-    max-width: 37rem;
+    max-width: ${(props) => props.maxWidth || "37rem"};
     background-color: white;
-    border-radius: 2.5rem;
+    border-radius: ${(props) =>
+      props.showModalFooter ? "2.5rem 2.5rem 0 0" : "2.5rem"};
     animation: ${slideIn} 700ms ease-in-out 1;
-    overflow-y: hidden;
+    overflow-y: ${(props) => !props.showModalFooter && "hidden"};
+    position: relative;
+
+    .modal-footer {
+      position: absolute;
+      bottom: -1.5rem;
+      left: 0;
+      width: 100%;
+      z-index: 150;
+    }
   }
 
   .closeModal-btn {

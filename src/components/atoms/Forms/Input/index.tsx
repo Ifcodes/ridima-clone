@@ -27,6 +27,7 @@ export type InputProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   onChange?: Function;
   showCheckIcon?: boolean;
+  inputClassName?: string;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 const Input = ({
@@ -45,6 +46,7 @@ const Input = ({
   required = false,
   onChange,
   className,
+  inputClassName,
   symbol,
   showCheckIcon,
   ...props
@@ -79,6 +81,7 @@ const Input = ({
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             onChange={onChange}
+            className={inputClassName}
             {...props}
           />
         </div>

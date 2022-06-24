@@ -1,12 +1,16 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const ScrollableModalContent = styled.div`
+export const ScrollableModalContent = styled.div<{ mt?: string }>`
   width: 90%;
   height: 90%;
   padding: 0 1rem;
   margin: 1rem auto;
   overflow-y: auto;
-
+  ${(props) =>
+    props.mt &&
+    css`
+      margin-top: ${props.mt};
+    `}
   ::-webkit-scrollbar {
     width: 12px;
     border-radius: 24px;

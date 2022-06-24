@@ -2,6 +2,7 @@ import React, { MouseEventHandler, ReactNode } from "react";
 import ListItemCard from "../ListItemCard";
 import ListItemWithRadio from "../ListItemWithRadio";
 import { ScrollableModalContent } from "../ScrollableModalContent";
+import CalendarIcon from "../vectors/CalendarIcon";
 import CaretDown from "../vectors/CaretDown";
 import CaretUpIcon from "../vectors/CaretUpIcon";
 import { SelectButtonWrapper } from "./styledSelector";
@@ -13,6 +14,7 @@ const Selector = ({
   className,
   dropDownList,
   showDropdown,
+  showCalendarIcon,
   selectedDropdownItem,
   width,
   onClick = () => {},
@@ -24,6 +26,7 @@ const Selector = ({
   selectedDropdownItem?: string;
   className?: string;
   showDropdown?: boolean;
+  showCalendarIcon?: boolean;
   dropDownList?: Array<any>;
   onClick?: MouseEventHandler<HTMLDivElement>;
   handleSelectItem?: Function;
@@ -39,7 +42,15 @@ const Selector = ({
       width={width}
     >
       <span className="title">{selectorTitle}</span>
-      <div>{showDropdown ? <CaretUpIcon /> : <CaretDown />}</div>
+      <div>
+        {showCalendarIcon ? (
+          <CalendarIcon />
+        ) : showDropdown ? (
+          <CaretUpIcon />
+        ) : (
+          <CaretDown />
+        )}
+      </div>
       {showDropdown && (
         <div className="dropdown-content">
           {dropDownList &&

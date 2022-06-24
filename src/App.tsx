@@ -11,7 +11,7 @@ import Homepage from "./pages/Dashboard/Home";
 import Leaderboard from "./pages/Dashboard/Leaderboard";
 import Logout from "./pages/Dashboard/Logout";
 import Notification from "./pages/Dashboard/Notifications";
-import Profile from "./pages/Dashboard/Profile";
+import Profile from "./pages/Dashboard/Account";
 import Referral from "./pages/Dashboard/Referral";
 import Security from "./pages/Dashboard/Security";
 import Support from "./pages/Dashboard/Support";
@@ -27,6 +27,7 @@ import PayBills from "./pages/PayBills";
 import WithdrawToBank from "./pages/Dashboard/Wallet/withdrawToBank";
 import SendMoney from "./pages/Dashboard/Wallet/sendMoney";
 import RequestMoney from "./pages/Dashboard/Wallet/requestMoney";
+import EditProfile from "./pages/Dashboard/Account/editProfile";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
       <Route path="/support" element={<Support />} />
       <Route path="/notification" element={<Notification />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/profile/edit-profile" element={<EditProfile />} />
       <Route path="/leaderboard" element={<Leaderboard />} />
       <Route path="/referral" element={<Referral />} />
       <Route path="/security" element={<Security />} />

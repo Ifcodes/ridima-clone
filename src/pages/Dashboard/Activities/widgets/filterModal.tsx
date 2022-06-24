@@ -1,0 +1,85 @@
+import React, { MouseEventHandler } from "react";
+import Button from "../../../../components/atoms/Buttons";
+import ListItemWithRadio from "../../../../components/atoms/ListItemWithRadio";
+import { ScrollableModalContent } from "../../../../components/atoms/ScrollableModalContent";
+import { H1 } from "../../../../components/atoms/Typography";
+import Modal from "../../../../components/molecules/Modal";
+import {
+  activitiesStates,
+  setSelectedFilterOption,
+  setSelectedFilterStatus,
+  setShowFilterModal,
+} from "../../../../Entity/ActivitieEntities";
+import { FilterModalContentWrapper, StatusWrapper } from "../activitiesStyles";
+
+const FilterModal = ({
+  onFilter,
+}: {
+  onFilter?: MouseEventHandler<HTMLButtonElement>;
+}) => {
+  const showModal = activitiesStates.use().showFilterModal;
+  const selectedOption = activitiesStates.use().selectedFilterOption;
+  const selectedStatus = activitiesStates.use().selectedFilterStatus;
+
+  const filterOptions = [
+    "All",
+    "Giftcard trade",
+    "Wallet funding",
+    "Bill payment",
+    "Withdrawal",
+    "Status",
+  ];
+
+  const statuses = ["Pending", "Success", "Rejected"];
+
+  return (
+    <Modal
+      width="28%"
+      showModal={showModal}
+      closeModal={() => setShowFilterModal(false)}
+      height={"85%"}
+    >
+      <FilterModalContentWrapper>
+        <H1>Filter</H1>
+        <ScrollableModalContent>
+          <div className="options-cont">
+            {filterOptions.map((option, index) => (
+              <ListItemWithRadio
+                key={option}
+                text={option}
+                isChecked={option === selectedOption}
+                onClick={() => setSelectedFilterOption(option)}
+              />
+            ))}
+          </div>
+          <div className="statuses-cont">
+            <p>Status</p>
+            <div className="statuses">
+              {statuses.map((status, index) => (
+                <StatusWrapper
+                  key={`${status}-of-${index}`}
+                  className="status"
+                  status={status}
+                  isActive={selectedStatus === status}
+                  onClick={() => setSelectedFilterStatus(status)}
+                >
+                  {status}
+                </StatusWrapper>
+              ))}
+            </div>
+          </div>
+          <Button
+            btnText="Apply Filter"
+            disabled={selectedOption === "" && selectedStatus === ""}
+            mt="3rem"
+            width="100%"
+            buttonBgType="modal"
+            onClick={onFilter}
+          />
+        </ScrollableModalContent>
+      </FilterModalContentWrapper>
+    </Modal>
+  );
+};
+
+export default FilterModal;
