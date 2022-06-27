@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const LeaderBoardWrapper = styled.div`
   width: 100%;
+  overflow: hidden;
 
   .heading {
     width: 100%;
