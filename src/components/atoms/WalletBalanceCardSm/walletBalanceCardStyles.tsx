@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const WalletBalCardWrapper = styled.div`
+export const WalletBalCardWrapper = styled.div<{
+  titleColor?: string;
+  amountColor?: string;
+  otherValueColor?: string;
+}>`
   width: 27rem;
   height: 8.4rem;
   border-radius: 1.5rem;
@@ -20,16 +24,21 @@ export const WalletBalCardWrapper = styled.div`
       cursor: pointer;
     }
 
+    .other-value {
+      font-size: 0.75rem;
+      color: ${(props) => props.otherValueColor || props.theme.colors.blue};
+    }
     .title-amount-cont {
       .title {
-        color: white;
+        color: ${(props) => props.titleColor || "white"};
         margin: 0 0 0.625rem;
       }
 
       .amount-cont {
         display: flex;
+
         .amount {
-          color: white;
+          color: ${(props) => props.amountColor || "white"};
           font-size: 2rem;
           font-weight: 700;
           margin: 0.6rem 0;

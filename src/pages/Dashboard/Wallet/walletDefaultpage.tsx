@@ -131,6 +131,7 @@ const WalletDefaultpage = () => {
           walletName="Naira Wallet"
           walletAmount="25,000"
           currency="NGN"
+          showEyeIcon
         />
       </div>
       <div className="horizontal-line-cont">
