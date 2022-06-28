@@ -39,6 +39,15 @@ export const LeaderBoardWrapper = styled.div`
       bottom: 2rem;
       left: 28rem;
       gap: 3rem;
+
+      leader {
+        width: 4.5rem;
+
+        :nth-child(1) {
+          width: 7.5rem;
+          order: 2;
+        }
+      }
     }
   }
 

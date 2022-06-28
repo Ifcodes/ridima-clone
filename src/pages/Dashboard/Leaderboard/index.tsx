@@ -41,7 +41,10 @@ const Leaderboard = () => {
           </div>
           <div className="leaders">
             {leaders.map((leader, index) => (
-              <img src={leader} alt="" key={leader} />
+              <div className="leader">
+                <div className="ranking"></div>
+                <img src={leader} alt="" key={leader} />
+              </div>
             ))}
           </div>
         </div>
