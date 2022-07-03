@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import CloseIcon from "../../atoms/CloseIcon";
 import ArrowLeftButton from "../../atoms/vectors/ArrowLeftButton";
 import BirdShapeSm from "../../atoms/vectors/BirdShapeSm";
 import Logo from "../../atoms/vectors/Logo";
@@ -17,6 +18,10 @@ type AuthLayoutProps = {
   light?: Boolean;
   secondaryAuth?: Boolean;
   forPasswordReset?: Boolean;
+  showCloseIcon?: boolean;
+  showArrowLeftBtn?: boolean;
+  showLogo?: boolean;
+  handleCloseIcon?: Function;
 };
 
 const AuthLayout = ({
@@ -24,15 +29,24 @@ const AuthLayout = ({
   light = false,
   secondaryAuth = false,
   forPasswordReset = false,
+  showArrowLeftBtn,
+  showCloseIcon,
+  showLogo,
+  handleCloseIcon = () => {},
 }: AuthLayoutProps) => {
   return (
     <AuthWrapper lightBg={light}>
       <LayoutHeader>
-        {/* <div className="back-btn">
-          <ArrowLeftButton />
-        </div> */}
+        <div className="back-btn">
+          {showCloseIcon && (
+            <CloseIcon onClick={() => handleCloseIcon("close")} />
+          )}
+          {showArrowLeftBtn && (
+            <ArrowLeftButton onClick={() => handleCloseIcon("back")} />
+          )}
+        </div>
 
-        <LogoMobile />
+        {showLogo && <LogoMobile />}
       </LayoutHeader>
       {secondaryAuth ? (
         <>{children}</>

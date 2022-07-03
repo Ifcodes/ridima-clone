@@ -35,7 +35,7 @@ const Loginpage = () => {
     navigate("/home");
   };
   return (
-    <AuthLayout>
+    <AuthLayout showLogo>
       <LoginWrapper onSubmit={submit}>
         <div className="input-fields">
           <H1 mb="1rem">Login</H1>

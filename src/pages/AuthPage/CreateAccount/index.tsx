@@ -36,8 +36,22 @@ const CreateAccountPage = () => {
 
     setCurrentStage(currentStage + 1);
   };
+
+  const handleCloseSuccess = (type: string) => {
+    if (type === "close") {
+      navigate("/login");
+      setCurrentStage(0);
+    }
+
+    return;
+  };
   return (
-    <AuthLayout secondaryAuth={currentStage > 0}>
+    <AuthLayout
+      secondaryAuth={currentStage > 0}
+      showCloseIcon={currentStage === 2}
+      showLogo={currentStage < 2}
+      handleCloseIcon={handleCloseSuccess}
+    >
       {currentStage === 1 ? (
         <VerifyOtp
           handleSubmit={(e) => submit(e)}
@@ -61,6 +75,7 @@ const CreateAccountPage = () => {
               id={generateId()}
               label="Phone number"
               placeholder="e.g. 080 0000 0000"
+              maxLength={11}
               required
               value={formField.phoneNumber}
               onChange={(e) => handleChange("phoneNumber", e)}
@@ -79,6 +94,7 @@ const CreateAccountPage = () => {
               label="Password"
               placeholder="*******"
               required
+              minLength={8}
               value={formField.password}
               onChange={(e) => handleChange("password", e)}
               type="password"
@@ -89,9 +105,8 @@ const CreateAccountPage = () => {
           </div>
           <div className="btn-cont">
             <Button
-              btnText="Create Account"
+              btnText={"Create Account"}
               disabled={disableButton}
-              mt="2.5rem"
               btnType="submit"
             />
             <div className="alternative-nav-cont">

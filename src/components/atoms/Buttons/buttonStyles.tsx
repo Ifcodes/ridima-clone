@@ -9,7 +9,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
       ? props.textColor
       : props.disabled
       ? props.theme.colors.lightGrey
-      : props.theme.colors.black};
+      : props.theme.colors.deepPurple};
   margin-top: ${(props) => props.mt || "1rem"};
   margin-bottom: ${(props) => props.mb || "0"};
   background-color: transparent;

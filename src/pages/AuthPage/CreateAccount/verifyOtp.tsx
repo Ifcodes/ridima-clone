@@ -30,25 +30,24 @@ const VerifyOtp = ({ handleSubmit, handleClick }: OtpProps) => {
         <div className="img-cont">
           <img src={`${envelope}`} alt="icon" />
         </div>
-        <H1 mt="0">Email Verification</H1>
+        <H1 mt="2">Email Verification</H1>
         <Paragraph>
           Enter the 6-digit code sent to your email to verify your account.
         </Paragraph>
         <form onSubmit={handleSubmit}>
-          <Input
-            id={generateId()}
-            value={otp}
-            maxLength={6}
-            minLength={6}
-            onChange={(e) => handleChange(e)}
-            placeholder="259-527"
-          />
-          <Button
-            btnText="Create Account"
-            disabled={!otp}
-            type="submit"
-            mt="5rem"
-          />
+          <div className="verify-input">
+            <Input
+              id={generateId()}
+              value={otp}
+              maxLength={6}
+              minLength={6}
+              onChange={(e) => handleChange(e)}
+              placeholder="259-527"
+            />
+          </div>
+          <div className="btn-cont">
+            <Button btnText="Verify Email" disabled={!otp} type="submit" />
+          </div>
         </form>
       </div>
     </VerifyOtpWrapper>

@@ -95,13 +95,14 @@ export const LayoutHeader = styled.header<{ width?: string }>`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem 0;
+    margin: 2rem 0 1rem;
     position: relative;
 
     .back-btn {
       position: absolute;
       left: 0;
       z-index: 10;
+      margin-left: 2rem;
     }
   }
 `;

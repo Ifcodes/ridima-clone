@@ -1,28 +1,31 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import Button from '../../../components/atoms/Buttons'
-import SuccessMessageIconBlue from '../../../components/atoms/vectors/SuccessMessageIconBlue'
-import MessageCard from '../../../components/molecules/MessageCard'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "../../../components/atoms/Buttons";
+import SuccessMessageIconBlue from "../../../components/atoms/vectors/SuccessMessageIconBlue";
+import MessageCard from "../../../components/molecules/MessageCard";
 
 const SuccessMessageCard = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <>
-      <MessageCard 
+      <MessageCard
         cardIcon={<SuccessMessageIconBlue />}
-        title={'Password Reset Successful'}
-        description={"You’ve successfully reset your Password. Please keep your password known to you only."}
+        title={"Password Reset Successful"}
+        description={
+          "You’ve successfully reset your Password. Please keep your password known to you only."
+        }
         primaryCta={
-          <Button 
-            btnText='Login'
+          <Button
+            mt="4rem"
+            btnText="Login"
             disabled={false}
-            onClick={() => navigate('/login')}
+            onClick={() => navigate("/login")}
           />
         }
       />
     </>
-  )
-}
+  );
+};
 
-export default SuccessMessageCard
+export default SuccessMessageCard;

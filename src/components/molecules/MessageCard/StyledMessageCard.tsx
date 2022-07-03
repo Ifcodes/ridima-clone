@@ -4,7 +4,7 @@ export const MessageCardWrapper = styled.div<{
   height?: string;
   width?: string;
 }>`
-  width: ${(props) => props.width || "28%"};
+  width: ${(props) => props.width || "30%"};
   height: ${(props) => props.height || "75vh"};
   max-width: 35rem;
   max-height: 42rem;
@@ -20,21 +20,26 @@ export const MessageCardWrapper = styled.div<{
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    padding-right: 1rem;
-    position: absolute;
-    left: 0;
-    top: 1rem;
+    margin-top: 1rem;
     cursor: pointer;
   }
   .icon-cont {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 4rem auto;
+    margin: 1rem auto;
+
+    svg {
+      width: 80%;
+      height: 80%;
+    }
+    img {
+      width: 100%;
+    }
   }
   .title-cont {
     text-align: center;
-    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,5 +51,19 @@ export const MessageCardWrapper = styled.div<{
 
   @media screen and (max-width: 640px) {
     width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+
+    .icon-cont {
+      width: 80%;
+
+      svg {
+        width: 80%;
+        height: 80%;
+      }
+    }
+    .close-Icon {
+      display: none;
+    }
   }
 `;

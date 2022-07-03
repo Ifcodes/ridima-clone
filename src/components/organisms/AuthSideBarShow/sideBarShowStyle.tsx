@@ -4,7 +4,7 @@ import pattern from "../../../../public/vectors/CreateAccountPattern.svg";
 export const SideBarShowWrapper = styled.aside<{ bgColor?: string }>`
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   background: url(${pattern}),
     ${(props) =>
       props.bgColor === "yellow"
@@ -15,7 +15,6 @@ export const SideBarShowWrapper = styled.aside<{ bgColor?: string }>`
   border-top-left-radius: 2.5rem;
   border-bottom-left-radius: 2.5rem;
   position: relative;
-  padding-bottom: 1rem;
 
   .slick-dots {
     bottom: 1rem;

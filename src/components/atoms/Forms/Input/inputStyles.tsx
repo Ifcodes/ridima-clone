@@ -74,7 +74,7 @@ export const InputWrapper = styled.div<InputStyleProps>`
   }
 
   @media screen and (max-width: 640px) {
-    padding: 0.85rem 1.5rem;
+    padding: 0.85rem 1rem 0.85rem 1.5rem;
     margin-top: 1.5rem;
   }
 `;

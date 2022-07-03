@@ -8,7 +8,7 @@ export const CreateAccountFormWrapper = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem 3rem;
   overflow: auto;
 
   .input-fields {
@@ -82,14 +82,12 @@ export const CreateAccountFormWrapper = styled.form`
 `;
 
 export const VerifyOtpWrapper = styled.div`
-  width: 32rem;
-  height: 80vh;
-  max-height: 50rem;
+  width: 28rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2.5rem 1.5rem;
+  padding: 2.5rem 2.5rem 1.5rem;
   background-color: white;
   border-radius: 2.5rem;
   overflow-y: auto;
@@ -100,6 +98,7 @@ export const VerifyOtpWrapper = styled.div`
 
   .form-cont {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,14 +123,47 @@ export const VerifyOtpWrapper = styled.div`
 
     form {
       width: 100%;
-    }
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
 
-    input {
-      text-align: center;
+      .verify-input {
+        width: 100%;
+        padding: 0 3rem;
+
+        input {
+          text-align: center;
+          font-weight: 700;
+          font-size: 1.5rem;
+        }
+      }
+
+      .btn-cont {
+        width: 100%;
+        margin-top: 1rem;
+      }
     }
   }
 
   @media screen and (max-width: 640px) {
     width: 100%;
+    height: 100vh;
+    padding: 0 2.5rem 1rem;
+
+    .form-cont {
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .btn-cont {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
   }
 `;

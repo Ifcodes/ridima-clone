@@ -1,10 +1,11 @@
-import * as React from "react"
-import { SVGProps } from "react"
+import * as React from "react";
+import { SVGProps } from "react";
 
 const SuccessMessageIconBlue = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width={251}
     height={235}
+    viewBox="0 0 251 235"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -212,6 +213,6 @@ const SuccessMessageIconBlue = (props: SVGProps<SVGSVGElement>) => (
       fill="#F5CF48"
     />
   </svg>
-)
+);
 
-export default SuccessMessageIconBlue
+export default SuccessMessageIconBlue;
