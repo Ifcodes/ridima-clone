@@ -26,7 +26,7 @@ const TradeGiftCardTransactionModal = () => {
       showModal={showModal}
       closeModal={() => setGiftCardTransactionModal(false)}
       height={"85%"}
-      showModalFooterDesign
+      // showModalFooterDesign
     >
       <TransactionDetailModalWrapper>
         <H1>{selectedTransaction.transactionTitle}</H1>

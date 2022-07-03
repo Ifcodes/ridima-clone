@@ -8,6 +8,8 @@ const Container = styled.div<{ width?: string; isActive?: boolean }>`
   grid-template-columns: repeat(3, 1fr);
   border-radius: 3.1rem;
   background-color: #685be1;
+  cursor: pointer;
+  z-index: 200;
 `;
 
 const PeriodContainer = styled.div<{ isActive?: boolean }>`

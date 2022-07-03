@@ -6,6 +6,7 @@ import {
 } from "react";
 import { generateId } from "../../../../utils/generateId";
 import CheckIcon from "../../vectors/CheckIcon";
+import ClosedEyeIconFilled from "../../vectors/CloseEyeIconFilled";
 import PasswordEye from "../../vectors/PasswordEye";
 import { InputWrapper } from "./inputStyles";
 
@@ -87,7 +88,15 @@ const Input = ({
         </div>
       </div>
       {type === "password" && (
-        <PasswordEye onClick={() => setShowPassword(!showPassword)} />
+        <>
+          {showPassword === false ? (
+            <PasswordEye onClick={() => setShowPassword(!showPassword)} />
+          ) : (
+            <ClosedEyeIconFilled
+              onClick={() => setShowPassword(!showPassword)}
+            />
+          )}
+        </>
       )}
       {showCheckIcon && <CheckIcon />}
     </InputWrapper>

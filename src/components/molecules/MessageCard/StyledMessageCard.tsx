@@ -1,8 +1,11 @@
 import styled, { css } from "styled-components";
 
-export const MessageCardWrapper = styled.div<{height?: string, width?: string}>`
-  width: ${props => props.width || '28%'};
-  height: ${props => props.height || '75vh'};
+export const MessageCardWrapper = styled.div<{
+  height?: string;
+  width?: string;
+}>`
+  width: ${(props) => props.width || "28%"};
+  height: ${(props) => props.height || "75vh"};
   max-width: 35rem;
   max-height: 42rem;
   background-color: white;
@@ -12,8 +15,8 @@ export const MessageCardWrapper = styled.div<{height?: string, width?: string}>`
   flex-direction: column;
   align-items: center;
   position: relative;
-  
-  .close-Icon{
+
+  .close-Icon {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -23,21 +26,25 @@ export const MessageCardWrapper = styled.div<{height?: string, width?: string}>`
     top: 1rem;
     cursor: pointer;
   }
-  .icon-cont{
+  .icon-cont {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 4rem auto;
   }
-  .title-cont{
+  .title-cont {
     text-align: center;
     margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    p{
+    p {
       width: 20rem;
     }
   }
-`
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
+`;

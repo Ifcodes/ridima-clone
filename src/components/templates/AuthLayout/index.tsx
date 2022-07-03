@@ -1,42 +1,52 @@
-import { ReactNode } from 'react'
-import BirdShapeSm from '../../atoms/vectors/BirdShapeSm'
-import Logo from '../../atoms/vectors/Logo'
-import AuthSideBarShow from '../../organisms/AuthSideBarShow'
-import { AuthCard, BirdShapeWrap, LayoutFooter, AuthWrapper } from './AuthStyles'
+import { ReactNode } from "react";
+import ArrowLeftButton from "../../atoms/vectors/ArrowLeftButton";
+import BirdShapeSm from "../../atoms/vectors/BirdShapeSm";
+import Logo from "../../atoms/vectors/Logo";
+import LogoMobile from "../../atoms/vectors/LogoMobile";
+import AuthSideBarShow from "../../organisms/AuthSideBarShow";
+import {
+  AuthCard,
+  BirdShapeWrap,
+  LayoutFooter,
+  AuthWrapper,
+  LayoutHeader,
+} from "./AuthStyles";
 
 type AuthLayoutProps = {
   children: ReactNode;
   light?: Boolean;
   secondaryAuth?: Boolean;
   forPasswordReset?: Boolean;
-}
+};
 
 const AuthLayout = ({
-  children, 
+  children,
   light = false,
   secondaryAuth = false,
   forPasswordReset = false,
 }: AuthLayoutProps) => {
   return (
     <AuthWrapper lightBg={light}>
-      {secondaryAuth
-        ? (
-            <>
-              {children}
-            </>
-          )
-        : (
-            <AuthCard>
-              <AuthSideBarShow />
-                {children}
-              <div className='bird-cont'>
-                <BirdShapeSm />
-              </div>
-            </AuthCard>
-          )
-      }
-      <BirdShapeWrap 
-        className="bird" 
+      <LayoutHeader>
+        {/* <div className="back-btn">
+          <ArrowLeftButton />
+        </div> */}
+
+        <LogoMobile />
+      </LayoutHeader>
+      {secondaryAuth ? (
+        <>{children}</>
+      ) : (
+        <AuthCard>
+          <AuthSideBarShow />
+          {children}
+          <div className="bird-cont">
+            <BirdShapeSm />
+          </div>
+        </AuthCard>
+      )}
+      <BirdShapeWrap
+        className="bird"
         isVisible={secondaryAuth}
         forgotPassword={forPasswordReset}
       >
@@ -46,7 +56,7 @@ const AuthLayout = ({
         <Logo />
       </LayoutFooter>
     </AuthWrapper>
-  )
-}
+  );
+};
 
-export default AuthLayout
+export default AuthLayout;

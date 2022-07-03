@@ -1,53 +1,85 @@
 import { DetailedHTMLProps } from "react";
 import styled from "styled-components";
 
-export const CreateAccountFormWrapper = styled.form<DetailedHTMLProps<React.FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>>`
+export const CreateAccountFormWrapper = styled.form`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 2.5rem;
+  justify-content: space-between;
+  padding: 1.5rem 2.5rem;
   overflow: auto;
 
-  ::-webkit-scrollbar{
+  .input-fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-cont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .alternative-nav-cont {
+      margin-top: 1rem;
+    }
+  }
+  ::-webkit-scrollbar {
     width: 0;
   }
 
-  .password-hint{
-    color: ${props => props.theme.colors.blue};
+  .password-hint {
+    color: ${(props) => props.theme.colors.blue};
     font-size: 0.875rem;
     text-align: center;
     font-weight: 500;
   }
 
-  .alternative{
+  .alternative {
     width: 27rem;
     max-width: 100%;
     display: flex;
     align-items: center;
     margin-top: 2rem;
 
-    .right-vec{
+    .right-vec {
       margin: 0;
       display: flex;
       align-items: center;
       transform: rotate(180deg);
     }
 
-    span{
+    span {
       width: 50%;
       font-size: 0.87rem;
       font-weight: 500;
       text-align: center;
-      color: ${props => props.theme.colors.grey4};
+      color: ${(props) => props.theme.colors.grey4};
     }
   }
 
-  .alternative-nav-cont{
+  .alternative-nav-cont {
     margin-top: 1.4rem;
   }
-`
+
+  @media screen and (max-width: 640px) {
+    height: 100%;
+    padding: 0 1rem 4.5rem;
+
+    .input-fields {
+      width: 90%;
+
+      h1 {
+        color: ${(props) => props.theme.colors.deepPurple};
+        margin: 0;
+      }
+    }
+  }
+`;
 
 export const VerifyOtpWrapper = styled.div`
   width: 32rem;
@@ -62,40 +94,44 @@ export const VerifyOtpWrapper = styled.div`
   border-radius: 2.5rem;
   overflow-y: auto;
 
-  ::-webkit-scrollbar{
+  ::-webkit-scrollbar {
     width: 0;
   }
 
-  .form-cont{
+  .form-cont {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    p{
+    p {
       max-width: 18.7rem;
       text-align: center;
     }
-  
-    .img-cont{
+
+    .img-cont {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 20rem;
       height: 15rem;
-  
-      img{
+
+      img {
         width: 20rem;
         height: 13rem;
       }
     }
 
-    form{
+    form {
       width: 100%;
     }
-  
-    input{
+
+    input {
       text-align: center;
     }
   }
-`
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
+`;

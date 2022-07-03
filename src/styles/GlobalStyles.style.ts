@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import CeraPro from '/fonts/CeraPro/stylesheet.css'
+import CeraPro from "/fonts/CeraPro/stylesheet.css";
 
 const GlobalStyles = createGlobalStyle` 
 
@@ -17,7 +17,11 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: "Cera Pro", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1rem;
+    font-size: 1vw;
+
+    @media screen and (max-width: 640px) {
+      font-size: 0.8rem;
+    }
   }
 
   *{
@@ -40,5 +44,7 @@ const GlobalStyles = createGlobalStyle`
   ::-webkit-scrollbar-thumb {
     background-color: #7165E3;
   }
-`
-export default GlobalStyles
+
+
+`;
+export default GlobalStyles;

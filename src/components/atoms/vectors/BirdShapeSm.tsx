@@ -1,12 +1,13 @@
-import * as React from "react"
-import { SVGProps } from "react"
-import { BirdShapeWrapper } from "./BirdShape"
+import * as React from "react";
+import { SVGProps } from "react";
+import { BirdShapeWrapper } from "./BirdShape";
 
 const BirdShapeSm = (props: SVGProps<SVGSVGElement>) => (
   <BirdShapeWrapper>
     <svg
-      width={106}
-      height={98}
+      // width={106}
+      // height={98}
+      viewBox="0 0 132 126"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
@@ -17,6 +18,6 @@ const BirdShapeSm = (props: SVGProps<SVGSVGElement>) => (
       />
     </svg>
   </BirdShapeWrapper>
-)
+);
 
-export default BirdShapeSm
+export default BirdShapeSm;

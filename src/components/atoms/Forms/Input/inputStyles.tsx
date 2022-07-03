@@ -16,7 +16,7 @@ export type InputStyleProps = {
 export const InputWrapper = styled.div<InputStyleProps>`
   width: ${(props) => props.width || "100%"};
   background-color: ${(props) => props.bgColor || props.theme.colors.grey6};
-  padding: ${(props) => props.padding || "1rem 1.5rem"};
+  padding: ${(props) => props.padding || "0.8rem 1.5rem"};
   position: relative;
   border-radius: 3.125rem;
   border: ${(props) => props.shownError && "1px solid #E81313"};
@@ -71,5 +71,10 @@ export const InputWrapper = styled.div<InputStyleProps>`
         color: ${(props) => props.theme.colors.grey4};
       }
     }
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 0.85rem 1.5rem;
+    margin-top: 1.5rem;
   }
 `;
