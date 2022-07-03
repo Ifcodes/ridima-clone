@@ -4,7 +4,7 @@ export const VirtualDollarCardWrapper = styled.div`
   width: 100%;
   position: relative;
 
-  .card-content{
+  .card-content {
     position: absolute;
     top: 0;
     left: 1rem;
@@ -16,40 +16,78 @@ export const VirtualDollarCardWrapper = styled.div`
     padding: 0 1rem;
     background-color: transparent;
 
-    .title-cont{
+    .title-cont {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-top: 1.5rem;
 
-      .title{
+      .title {
         width: 11rem;
-        color: #3F1E4B;
+        color: #3f1e4b;
       }
 
-     .img-cont{
-       width: 6rem;
-       height: 6rem;
-       border-radius: 100%;
+      .img-cont {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 100%;
 
-       img{
-         width: 100%;
-         height: 100%;
-       }
-     }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
 
-    .description{
-      color: ${props => props.theme.colors.grey2};
+    .description {
+      color: ${(props) => props.theme.colors.grey2};
       margin-top: 1.5rem;
     }
   }
 
-  img{
+  img {
     width: 100%;
   }
-`
+
+  .mobile-card-bg {
+    display: none;
+  }
+
+  @media screen and (max-width: 640px) {
+    .card-content {
+      .btn-complete {
+        display: none;
+      }
+
+      .title-cont {
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .img-cont {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+
+    .cardBg {
+      display: none;
+    }
+
+    .mobile-card-bg {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+`;
 export const ActiveCardWrapper = styled.div`
   width: 100%;
   height: 100%;
@@ -58,28 +96,28 @@ export const ActiveCardWrapper = styled.div`
   background-color: transparent;
   cursor: pointer;
 
-  .content{
+  .content {
     width: 90%;
     height: 95%;
     position: absolute;
     left: 0;
     top: 0;
 
-    .title-cont{
+    .title-cont {
       width: 9rem;
       margin-left: 3.5rem;
       margin-top: 3rem;
 
-      .title{
-        color: ${props => props.theme.colors.deepPurple};
+      .title {
+        color: ${(props) => props.theme.colors.deepPurple};
         font-size: 1.5rem;
       }
 
-      .total-cards{
+      .total-cards {
         width: max-content;
         height: max-content;
         padding: 0.6rem;
-        background-color: ${props => props.theme.colors.lightYellow};
+        background-color: ${(props) => props.theme.colors.lightYellow};
         border-radius: 1.25rem;
         display: flex;
         justify-content: center;
@@ -87,7 +125,7 @@ export const ActiveCardWrapper = styled.div`
       }
     }
 
-    .card-illustrations{
+    .card-illustrations {
       width: 60%;
       position: absolute;
       right: 0;
@@ -100,4 +138,4 @@ export const ActiveCardWrapper = styled.div`
     width: 100%;
     height: 100%;
   } */
-`
+`;

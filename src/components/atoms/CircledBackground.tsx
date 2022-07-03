@@ -5,6 +5,7 @@ export const CircledBackground = styled.div<{
   height?: string;
   bgColor?: string;
   border?: string;
+  borderRadius?: string;
 }>`
   width: ${(props) => props.width || "3.8rem"};
   height: ${(props) => props.height || "3.8rem"};
@@ -13,6 +14,6 @@ export const CircledBackground = styled.div<{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 100%;
+  border-radius: ${(props) => props.borderRadius || "100%"};
   cursor: pointer;
 `;

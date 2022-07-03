@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import {
-  primaryMenuList,
-  secondaryMenuList,
-} from "../../../utils/helpers/menuList";
+import { primaryMenuList } from "../../../utils/helpers/menuList";
 import Button from "../../atoms/Buttons";
 import ArrowLeftClosePanel from "../../atoms/vectors/ArrowLeftClosePanel";
 import DashboardLogo from "../../atoms/vectors/LogoDashboard";
+import LogoIcon from "../../atoms/vectors/LogoIcon";
+import { setIsCollapsed, sideNavState } from "./dashboardSideNavEntity";
 import { SideNavWrapper } from "./styledMenuBar";
 
 const DashboardSideNav = () => {
   const [activePath] = useState(window.location.pathname);
+  const isCollapsed = sideNavState.use().isCollapsed;
 
   return (
-    <SideNavWrapper>
+    <SideNavWrapper collapse={isCollapsed}>
       <div className="logo-cont">
-        <DashboardLogo />
-        <ArrowLeftClosePanel />
+        <div>{isCollapsed ? <LogoIcon /> : <DashboardLogo />}</div>
+        <div className="arrow">
+          <ArrowLeftClosePanel onClick={() => setIsCollapsed(!isCollapsed)} />
+        </div>
       </div>
       <div className="menu-items">
         {primaryMenuList.map((item, index) => {
@@ -24,11 +26,11 @@ const DashboardSideNav = () => {
           return (
             <Link to={item.location} key={`${item}-${index}`} className="menu">
               <Button
-                buttonBgType="small"
+                buttonBgType={isCollapsed ? "plain" : "small"}
                 btnPrefix={isActive ? <item.iconFilled /> : <item.icon />}
-                menuBtn={true}
+                menuBtn={!isCollapsed}
                 buttonPosition="left"
-                btnText={item.text}
+                btnText={isCollapsed === true ? "" : item.text}
                 bgColor={isActive ? "#7165E3" : "transparent"}
                 textColor={isActive ? "white" : "#7165E3"}
                 mt="0"
@@ -37,35 +39,6 @@ const DashboardSideNav = () => {
             </Link>
           );
         })}
-      </div>
-      <div className="menu-items secondary">
-        {secondaryMenuList.map((item, index) => (
-          <Link to={item.location} key={`${item}-${index}`} className="menu">
-            <Button
-              buttonBgType="small"
-              btnPrefix={
-                activePath === item.location ? (
-                  <item.iconFilled />
-                ) : (
-                  <item.icon />
-                )
-              }
-              menuBtn={true}
-              buttonPosition="left"
-              btnText={item.text}
-              bgColor={activePath === item.location ? "#7165E3" : "transparent"}
-              textColor={
-                activePath === item.location
-                  ? "white"
-                  : item.text === "Logout"
-                  ? "red"
-                  : "#7165E3"
-              }
-              mt="0"
-              hideBg={activePath !== item.location}
-            />
-          </Link>
-        ))}
       </div>
     </SideNavWrapper>
   );

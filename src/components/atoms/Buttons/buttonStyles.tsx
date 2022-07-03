@@ -12,7 +12,8 @@ export const ButtonWrapper = styled.button<ButtonProps>`
       : props.theme.colors.deepPurple};
   margin-top: ${(props) => props.mt || "1rem"};
   margin-bottom: ${(props) => props.mb || "0"};
-  background-color: transparent;
+  background-color: ${(props) =>
+    props.isPlainBtn ? props.plainBgColor : "transparent"};
   border: none;
   outline: none;
   position: relative;

@@ -6,6 +6,7 @@ const WalletActionCardLeftBg = (props: SvgIconProps) => (
   <svg
     width={175}
     height={210}
+    viewBox="0 0 175 210"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

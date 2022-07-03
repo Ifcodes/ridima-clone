@@ -17,6 +17,9 @@ import {
   withdrawToBankStates,
 } from "../../../Entity/WalletEntities/WithdrawToBankEntity";
 import { keypadModalStates } from "../../../Entity/KeypadModalEntity";
+import { CircledBackground } from "../../../components/atoms/CircledBackground";
+import NotificationIcon from "../../../components/atoms/vectors/NotificationIcon";
+import LeaderBoardIcon from "../../../components/atoms/vectors/LeaderBoardIcon";
 
 const DefaultHomeScreen = ({
   toggleActiveScreen,
@@ -42,9 +45,29 @@ const DefaultHomeScreen = ({
   };
   return (
     <HomeWrapper>
-      <div className="salutation">
-        <span>Hello, </span>
-        <span className="user">{currentUser}</span>
+      <div className="salutation-cont">
+        <div className="salutation">
+          <span>Hello, </span>
+          <span className="user">{currentUser}</span>
+        </div>
+        <div className="secondary-tabs">
+          <CircledBackground
+            width="3rem"
+            height="3rem"
+            borderRadius="1rem"
+            onClick={() => navigate("/notification")}
+          >
+            <NotificationIcon />
+          </CircledBackground>
+          <CircledBackground
+            width="3rem"
+            height="3rem"
+            borderRadius="1rem"
+            onClick={() => navigate("/leaderboard")}
+          >
+            <LeaderBoardIcon />
+          </CircledBackground>
+        </div>
       </div>
       <div className="statCard-wrapper">
         <WalletBalanceCard
@@ -57,7 +80,10 @@ const DefaultHomeScreen = ({
         {profileIsComplete ? (
           <VirtualDollarMastercard onClick={() => setShowModal(true)} />
         ) : (
-          <ProfileStatusCard onClick={() => navigate("/bvn-authentication")} />
+          <ProfileStatusCard
+            onClick={() => navigate("/bvn-authentication")}
+            onCardClick={() => navigate("/bvn-authentication")}
+          />
         )}
       </div>
       <div className="quick-action">

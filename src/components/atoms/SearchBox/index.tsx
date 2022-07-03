@@ -41,7 +41,9 @@ const SearchBox = ({
       textColor={inputTextColor}
       textSize={textSize}
     >
-      <SearchIcon color={searchIconColor} />
+      <div className="search-icon">
+        <SearchIcon color={searchIconColor} />
+      </div>
       <input placeholder={placeholder} value={value} onChange={onChange} />
     </SearchBoxWrapper>
   );

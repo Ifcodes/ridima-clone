@@ -30,4 +30,13 @@ export const TradeCardWrapper = styled.div`
   img {
     width: 100%;
   }
+
+  @media screen and (max-width: 640px) {
+    .card-content {
+      h3 {
+        width: 8rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
 `;

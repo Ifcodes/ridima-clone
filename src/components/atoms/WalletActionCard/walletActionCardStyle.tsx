@@ -26,4 +26,9 @@ export const WalletActionCardWrap = styled.div<{ isYellowBg?: boolean }>`
       font-weight: 700;
     }
   }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 `;

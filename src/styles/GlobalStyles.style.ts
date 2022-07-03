@@ -45,6 +45,11 @@ const GlobalStyles = createGlobalStyle`
     background-color: #7165E3;
   }
 
+  @media screen and (max-width: 640px) {
+    ::-webkit-scrollbar {
+    width: 1px;
+  }
+  }
 
 `;
 export default GlobalStyles;

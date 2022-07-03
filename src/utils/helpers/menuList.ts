@@ -18,6 +18,11 @@ import LeaderBoardFilledIcon from "../../components/atoms/vectors/LeaderBoardFil
 import ReferralIconFilled from "../../components/atoms/vectors/ReferralIconFilled";
 import ShieldIconFilled from "../../components/atoms/vectors/ShieldIconFiled";
 import LogoutIconFilled from "../../components/atoms/vectors/LogoutIconFilled";
+import HomeIconMobile from "../../components/atoms/vectors/HomeIconMobile";
+import ActivitiesIconMobile from "../../components/atoms/vectors/ActivitesIconMobile";
+import WalletIconMobile from "../../components/atoms/vectors/WalletIconMobile";
+import SupportIconMobile from "../../components/atoms/vectors/SupportIconMobile";
+import UserIconMobile from "../../components/atoms/vectors/UserIconMobile";
 
 export const primaryMenuList = [
   {
@@ -55,9 +60,6 @@ export const primaryMenuList = [
     text: "Notification",
     location: "/notification",
   },
-];
-
-export const secondaryMenuList = [
   {
     id: 6,
     icon: UserIcon,
@@ -92,5 +94,38 @@ export const secondaryMenuList = [
     iconFilled: LogoutIconFilled,
     text: "Logout",
     location: "/logout",
+  },
+];
+
+export const mobileMenuTabs = [
+  {
+    id: 1,
+    icon: HomeIconMobile,
+    text: "Home",
+    location: "/home",
+  },
+  {
+    id: 2,
+    icon: ActivitiesIconMobile,
+    text: "Activities",
+    location: "/activities",
+  },
+  {
+    id: 3,
+    icon: WalletIconMobile,
+    text: "Wallet",
+    location: "/wallet",
+  },
+  {
+    id: 4,
+    icon: SupportIconMobile,
+    text: "Support",
+    location: "/support",
+  },
+  {
+    id: 6,
+    icon: UserIconMobile,
+    text: "Account",
+    location: "/profile",
   },
 ];

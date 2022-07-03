@@ -19,6 +19,16 @@ export const SearchBoxWrapper = styled.div<{
   background-color: ${(props) => props.bgColor || "transparent"};
   padding: 1rem;
 
+  .search-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   input {
     display: flex;
     flex-grow: 1;
@@ -32,6 +42,24 @@ export const SearchBoxWrapper = styled.div<{
 
     ::placeholder {
       color: ${(props) => props.placeholderColor || ""};
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 0;
+
+    .search-icon {
+      width: 1.4rem;
+      height: 1.4rem;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    input {
+      font-size: 1rem;
+      margin: 1rem 0;
     }
   }
 `;

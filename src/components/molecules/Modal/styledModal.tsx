@@ -63,4 +63,11 @@ export const ModalWrapper = styled.div<{
       cursor: pointer;
     }
   }
+
+  @media screen {
+    .modal-card {
+      width: 85%;
+      height: 90%;
+    }
+  }
 `;

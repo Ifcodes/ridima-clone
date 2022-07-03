@@ -12,6 +12,8 @@ import MediumButtonBg from "../vectors/MediumButtonBg";
 import ModalButtonBg from "../vectors/ModalButtonBg";
 import ReversedModalBg from "../vectors/ReversedModalBg";
 import ModalButtonSm from "../vectors/ModalButtonSm";
+import IconBtnBg from "../vectors/IconBtnBg";
+import MobileBtnBg from "../vectors/MobileBtnBg";
 
 export type ButtonProps = {
   width?: string;
@@ -28,7 +30,16 @@ export type ButtonProps = {
   bgColor?: string;
   menuBtn?: boolean;
   lineColor?: string;
-  buttonBgType?: "small" | "medium" | "modal" | "reversedModal" | "modalSm";
+  isPlainBtn?: boolean;
+  plainBgColor?: string;
+  buttonBgType?:
+    | "small"
+    | "medium"
+    | "modal"
+    | "reversedModal"
+    | "modalSm"
+    | "plain"
+    | "mobile";
   buttonPosition?: "center" | "left" | "right";
 } & DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
@@ -51,6 +62,8 @@ const Button = ({
   buttonBgType,
   menuBtn = false,
   buttonPosition,
+  isPlainBtn,
+  plainBgColor,
   onClick,
 }: ButtonProps) => {
   return (
@@ -65,13 +78,22 @@ const Button = ({
       onClick={onClick}
       menuBtn={menuBtn}
       buttonPosition={buttonPosition}
+      isPlainBtn={isPlainBtn}
+      plainBgColor={plainBgColor}
     >
       <div className="text-cont">
         {btnPrefix && <span>{btnPrefix}</span>}
         <span>{btnText}</span>
         {suffix && <span>{suffix}</span>}
       </div>
-      {buttonBgType === "small" ? (
+      {buttonBgType === "plain" ? (
+        <IconBtnBg bgColor={bgColor} />
+      ) : buttonBgType === "mobile" ? (
+        <MobileBtnBg
+          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          className="button-Bg"
+        />
+      ) : buttonBgType === "small" ? (
         <SmallButtonBg
           bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
           className="button-Bg"

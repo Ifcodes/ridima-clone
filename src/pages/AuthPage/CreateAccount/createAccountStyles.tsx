@@ -150,10 +150,13 @@ export const VerifyOtpWrapper = styled.div`
   @media screen and (max-width: 640px) {
     width: 100%;
     height: 100vh;
-    padding: 0 2.5rem 1rem;
+    padding: 0 2.5rem 2rem;
 
     .form-cont {
+      height: 100vh;
+
       form {
+        height: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -161,7 +164,7 @@ export const VerifyOtpWrapper = styled.div`
 
         .btn-cont {
           width: 100%;
-          margin: 0;
+          margin: 1rem 0 2rem;
         }
       }
     }
