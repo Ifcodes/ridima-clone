@@ -68,10 +68,12 @@ export const WalletBalCardWrapper = styled.div<{
   }
 
   @media screen and (max-width: 640px) {
-    width: 50%;
-    height: 15rem;
+    width: 100%;
+    height: 17rem;
 
     .card-content {
+      width: 100%;
+      height: 100%;
       padding: 2rem 1rem;
       flex-direction: column-reverse;
       justify-content: flex-end;
@@ -91,6 +93,7 @@ export const WalletBalCardWrapper = styled.div<{
 
     .cardBg-mobile {
       display: block;
+      width: 100%;
     }
   }
 `;

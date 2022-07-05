@@ -26,7 +26,7 @@ const Leaderboard = () => {
     setSelectedPeriod(period);
   };
   return (
-    <DashboardLayout childPadding="0">
+    <DashboardLayout childPadding="0" mobileChildPadding="0">
       <LeaderBoardWrapper>
         <div className="heading">
           <div className="title-cont">
@@ -41,7 +41,7 @@ const Leaderboard = () => {
           </div>
           <div className="leaders">
             {leaders.map((leader, index) => (
-              <div className="leader">
+              <div className="leader" key={leader}>
                 <div className="ranking"></div>
                 <img src={leader} alt="" key={leader} />
               </div>

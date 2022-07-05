@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const LeaderBoardWrapper = styled.div`
   width: 100%;
+  height: 100vh;
   overflow: hidden;
 
   .heading {
@@ -33,15 +34,21 @@ export const LeaderBoardWrapper = styled.div`
     }
 
     .leaders {
-      width: 100%;
+      width: 90%;
       display: flex;
+      justify-content: center;
+      align-items: center;
       position: absolute;
       bottom: 2rem;
-      left: 28rem;
+      left: 0;
       gap: 3rem;
 
       leader {
         width: 4.5rem;
+
+        img {
+          width: 100%;
+        }
 
         :nth-child(1) {
           width: 7.5rem;
@@ -63,6 +70,38 @@ export const LeaderBoardWrapper = styled.div`
       margin-top: 1.5rem;
       img {
         max-width: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .heading {
+      padding: 1rem;
+
+      .leaders {
+        width: 100%;
+        gap: 1rem;
+        bottom: 1rem;
+
+        .leader {
+          width: 4.5rem;
+
+          :nth-child(2) {
+            width: 6rem;
+          }
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+    .main-content {
+      height: 70%;
+      overflow-y: auto;
+      padding: 0 1.5rem 14rem;
+
+      .line-title {
+        margin: 1rem 0 0;
       }
     }
   }

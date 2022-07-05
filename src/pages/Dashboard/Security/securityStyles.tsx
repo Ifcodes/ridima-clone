@@ -10,6 +10,16 @@ export const SecurityPageWrapper = styled.div`
   .actions-cont {
     width: 50%;
   }
+
+  @media screen and (max-width: 640px) {
+    height: 90%;
+    padding: 1.5rem;
+    overflow-y: auto;
+
+    .actions-cont {
+      width: 100%;
+    }
+  }
 `;
 
 export const ChangePinWrapper = styled.div`

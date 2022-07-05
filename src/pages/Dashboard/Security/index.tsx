@@ -80,7 +80,7 @@ const Security = () => {
     resetAllChangePinState();
   };
   return (
-    <DashboardLayout>
+    <DashboardLayout mobileChildPadding="0">
       <SecurityPageWrapper>
         <StageTitleWrapper>
           {tabs.map((tab, index) => (

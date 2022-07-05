@@ -206,6 +206,10 @@ export const EditProfileWrapper = styled.div`
   }
 
   @media screen and (max-width: 640px) {
+    padding: 1rem 1.5rem;
+    height: 90%;
+
+    overflow-y: auto;
     .profile-pics {
       margin: 2rem auto;
     }

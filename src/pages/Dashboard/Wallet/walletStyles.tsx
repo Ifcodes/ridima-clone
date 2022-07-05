@@ -22,8 +22,10 @@ export const WalletpageDefaultWrapper = styled.div`
   }
 
   @media screen and (max-width: 640px) {
-    height: 70%;
-    padding-bottom: 6rem;
+    width: 100%;
+    height: 80%;
+    overflow-y: auto;
+    padding: 1.5rem 1.5rem 4rem;
 
     h1 {
       margin: 0;
@@ -31,17 +33,18 @@ export const WalletpageDefaultWrapper = styled.div`
 
     .wallet-card-cont {
       margin-top: 1.5rem;
+      width: 50%;
     }
 
     .horizontal-line-cont {
-      margin-top: 1.7rem;
+      margin-top: 4rem;
     }
 
     .action-cards-wrapper {
       margin-top: 1.5rem;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 0.7rem;
-      padding-bottom: 10rem;
+      /* padding-bottom: 12rem; */
     }
   }
 `;

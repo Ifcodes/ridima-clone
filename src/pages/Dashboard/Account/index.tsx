@@ -22,10 +22,18 @@ const Profile = () => {
     { text: "Share App", icon: LikeDislikeIcon },
   ];
   const mobileActions = [
-    { text: "Security", icon: ShieldIcon },
-    { text: "Referral", icon: ReferralIcon },
+    { text: "Security", icon: ShieldIcon, location: "/security" },
+    { text: "Referral", icon: ReferralIcon, location: "/referral" },
     { text: "Logout", icon: LogoutIconFilled },
   ];
+
+  const handleMobileActionClick = (type: string, location?: string) => {
+    if (type === "Logout") {
+      return;
+    } else if (location) {
+      navigate(location);
+    }
+  };
   return (
     <DashboardLayout>
       <AccountPageWrapper>
@@ -75,7 +83,13 @@ const Profile = () => {
         </div>
         <div className="mobile-actions">
           {mobileActions.map((action, index) => (
-            <div key={action.text} className="content">
+            <div
+              key={action.text}
+              className="content"
+              onClick={() =>
+                handleMobileActionClick(action.text, action.location)
+              }
+            >
               <div className="icon-cont">
                 <CircledBackground
                   bgColor={action.text === "Logout" ? "#E81313" : ""}

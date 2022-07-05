@@ -5,7 +5,7 @@ import { WalletpageWrapper } from "./walletStyles";
 
 const Wallet = () => {
   return (
-    <DashboardLayout>
+    <DashboardLayout mobileChildPadding="0">
       <WalletpageWrapper>
         <WalletDefaultpage />
       </WalletpageWrapper>

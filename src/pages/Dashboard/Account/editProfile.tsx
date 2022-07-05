@@ -27,7 +27,7 @@ const EditProfile = () => {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout mobileChildPadding="0">
       <EditProfileWrapper>
         <StageTitleWrapper>
           {tabs.map((tab, index) => (
@@ -73,9 +73,21 @@ const EditProfile = () => {
               readOnly
               inputClassName="disabled-input"
             />
-            <Input label="Phone Number" value={userData.phoneNumber} />
-            <Input label="Date of Birth" value={userData.dob} />
-            <Button btnText="Update Profile" mt="5rem" mb="8rem" />
+            <Input
+              label="Phone Number"
+              value={userData.phoneNumber}
+              onChange={(e) =>
+                setUserData({ ...userData, phoneNumber: e.target.value })
+              }
+            />
+            <Input
+              label="Date of Birth"
+              value={userData.dob}
+              onChange={(e) =>
+                setUserData({ ...userData, dob: e.target.value })
+              }
+            />
+            <Button btnText="Update Profile" mt="5rem" mb="6rem" />
           </form>
         </div>
       </EditProfileWrapper>

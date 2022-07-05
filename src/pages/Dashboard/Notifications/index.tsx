@@ -91,7 +91,7 @@ const Notification = () => {
     );
   };
   return (
-    <DashboardLayout childPadding="0">
+    <DashboardLayout childPadding="0" mobileChildPadding="0">
       <NotificationPageWrapper>
         <div className="heading">
           <div className="title-cont">

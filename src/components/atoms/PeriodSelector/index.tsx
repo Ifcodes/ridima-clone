@@ -10,6 +10,11 @@ const Container = styled.div<{ width?: string; isActive?: boolean }>`
   background-color: #685be1;
   cursor: pointer;
   z-index: 200;
+
+  @media screen and (max-width: 640px) {
+    width: 10rem;
+    height: 2rem;
+  }
 `;
 
 const PeriodContainer = styled.div<{ isActive?: boolean }>`
@@ -21,6 +26,9 @@ const PeriodContainer = styled.div<{ isActive?: boolean }>`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  @media screen and (max-width: 640px) {
+  }
 `;
 
 const PeriodSelector = ({

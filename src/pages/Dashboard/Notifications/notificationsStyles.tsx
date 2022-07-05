@@ -62,6 +62,38 @@ export const NotificationPageWrapper = styled.div`
       margin: 1.2rem 0;
     }
   }
+
+  @media screen and (max-width: 640px) {
+    height: 100%;
+    overflow: hidden;
+
+    .heading {
+      padding: 0 1rem;
+      height: 8rem;
+    }
+
+    .content {
+      height: 80%;
+      overflow-y: auto;
+      padding: 2rem 1.5rem;
+
+      .today-date {
+        color: ${(props) => props.theme.colors.grey3};
+        font-weight: 500;
+      }
+    }
+
+    .notifications-wrapper {
+      .current,
+      .previous {
+        width: 100%;
+      }
+
+      .line-title {
+        margin: 1.2rem 0;
+      }
+    }
+  }
 `;
 
 export const NotificationItemCard = styled.div<{
