@@ -3,9 +3,7 @@ import Selector from "../../../components/atoms/Selector";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
 import TransactionDetailContainer from "../../../components/atoms/TransactionListItemContainer";
 import { H1 } from "../../../components/atoms/Typography";
-import CardTradeIcon from "../../../components/atoms/vectors/CardTradeIcon";
-import WalletFundingIcon from "../../../components/atoms/vectors/WalletFundingIcon";
-import WithdrawalIcon from "../../../components/atoms/vectors/WithdrawalIcon";
+
 import {
   activitiesStates,
   setGiftCardTransactionModal,
@@ -84,7 +82,7 @@ const TransactionsPage = () => {
   return (
     <TransactionsPageWrapper>
       <div className="title-filter-cont">
-        <H1>Today</H1>
+        <H1 mt="0">Today</H1>
         <div className="filter-selectors">
           <Selector
             selectorTitle="Date"

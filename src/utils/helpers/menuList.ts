@@ -88,13 +88,6 @@ export const primaryMenuList = [
     text: "Security",
     location: "/security",
   },
-  {
-    id: 10,
-    icon: ArrowRightLogoutIcon,
-    iconFilled: LogoutIconFilled,
-    text: "Logout",
-    location: "/logout",
-  },
 ];
 
 export const mobileMenuTabs = [

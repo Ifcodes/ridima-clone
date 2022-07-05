@@ -75,7 +75,7 @@ const EditProfile = () => {
             />
             <Input label="Phone Number" value={userData.phoneNumber} />
             <Input label="Date of Birth" value={userData.dob} />
-            <Button btnText="Update Profile" mt="5rem" mb="6rem" />
+            <Button btnText="Update Profile" mt="5rem" mb="8rem" />
           </form>
         </div>
       </EditProfileWrapper>

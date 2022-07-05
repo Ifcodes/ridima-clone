@@ -16,6 +16,7 @@ export const ModalWrapper = styled.div<{
   cardHeight?: string;
   showModalFooter?: boolean;
   maxWidth?: string;
+  mobileCardHeight?: string;
 }>`
   width: 100%;
   height: 100vh;
@@ -67,7 +68,7 @@ export const ModalWrapper = styled.div<{
   @media screen {
     .modal-card {
       width: 85%;
-      height: 90%;
+      height: ${(props) => props.mobileCardHeight || "75%"};
     }
   }
 `;

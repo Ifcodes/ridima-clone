@@ -7,12 +7,14 @@ import { LayoutWrapper } from "./StyledMainLayout";
 const DashboardLayout = ({
   children,
   childPadding,
+  mobileChildPadding,
 }: {
   children: ReactNode;
   childPadding?: string;
+  mobileChildPadding?: string;
 }) => {
   return (
-    <LayoutWrapper padding={childPadding}>
+    <LayoutWrapper padding={childPadding} mobilePadding={mobileChildPadding}>
       <DashboardSideNav />
       <main>
         <TopNav />

@@ -5,6 +5,7 @@ const EmptyTransactionIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width={193}
     height={215}
+    viewBox={"0 0 193 215"}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

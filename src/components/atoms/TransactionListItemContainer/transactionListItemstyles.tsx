@@ -36,9 +36,13 @@ export const TransactionDetailWrapper = styled.div<{
         font-size: 1rem;
       }
 
-      span {
+      .product {
         font-size: 0.8125rem;
         color: ${(props) => props.theme.colors.grey4};
+      }
+
+      .date-mobile {
+        display: none;
       }
     }
 
@@ -49,7 +53,12 @@ export const TransactionDetailWrapper = styled.div<{
     }
 
     .amount-cont {
-      span {
+      .status-mobile {
+        display: none;
+      }
+
+      .amount {
+        font-size: 1rem;
         font-weight: 500;
         color: ${(props) =>
           props.type === "debit"
@@ -65,6 +74,61 @@ export const TransactionDetailWrapper = styled.div<{
       justify-content: space-between;
       align-items: center;
       padding-right: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .icon-cont {
+      width: 3.7rem;
+      height: 3.2rem;
+    }
+    .detail-cont {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+
+      .transaction-type-cont {
+        .product {
+          display: none;
+        }
+
+        .date-mobile {
+          display: block;
+          font-size: 0.8125rem;
+          color: ${(props) => props.theme.colors.grey4};
+        }
+      }
+
+      .date-cont {
+        display: none;
+      }
+
+      .amount-cont {
+        text-align: right;
+
+        .amount {
+          font-size: 1rem;
+        }
+
+        .status-mobile {
+          display: block;
+          color: ${(props) =>
+            props.status === "Rejected"
+              ? props.theme.colors.red
+              : props.status === "Successfull"
+              ? "#27AE60"
+              : props.status === "Pending"
+              ? props.theme.colors.yellow
+              : ""};
+
+          font-size: 0.8rem;
+          line-height: 18px;
+        }
+      }
+      .option-icon-cont {
+        display: none;
+      }
     }
   }
 `;
@@ -98,5 +162,9 @@ export const TransactionStatusWrapper = styled.div<{
         : ""};
 
     font-size: 0.8rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    display: none;
   }
 `;

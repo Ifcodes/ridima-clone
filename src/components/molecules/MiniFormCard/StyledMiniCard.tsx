@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const MiniFormCardWrapper = styled.div`
+export const MiniFormCardWrapper = styled.div<{ height?: string }>`
   width: 30%;
-  height: 70vh;
+  height: ${(props) => props.height || "70vh"};
   max-width: 32rem;
   max-height: 42rem;
   background-color: white;

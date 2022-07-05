@@ -56,6 +56,7 @@ const KeypadModal = ({
       showModal={showModal}
       closeModal={closeModal}
       cardHeight={"80%"}
+      mobileCardHeight={"90%"}
       width={"25%"}
     >
       <KeypadModalWrapper>
@@ -72,7 +73,11 @@ const KeypadModal = ({
         </div>
         <div className="digits-cont">
           {digits.map((digit, index) => (
-            <div className="digit" onClick={() => handleDigitClick(digit)}>
+            <div
+              key={digit}
+              className="digit"
+              onClick={() => handleDigitClick(digit)}
+            >
               <span>{digit}</span>
             </div>
           ))}

@@ -78,7 +78,10 @@ const DefaultHomeScreen = ({
           onClick={() => handleWithdrawClick()}
         />
         {profileIsComplete ? (
-          <VirtualDollarMastercard onClick={() => setShowModal(true)} />
+          <VirtualDollarMastercard
+            onClick={() => setShowModal(true)}
+            onCardClick={() => setShowModal(true)}
+          />
         ) : (
           <ProfileStatusCard
             onClick={() => navigate("/bvn-authentication")}
@@ -109,14 +112,14 @@ const DefaultHomeScreen = ({
             </Paragraph>
           </div>
           <img src="/vectors/DoubleDebitCardIcon.svg" alt="" />
-          <div>
+          <div className="modal-btn-cont">
             <span className="creation-fee">$2 creation Fee</span>
             <Button
               buttonBgType="modal"
               btnText="Create"
               mt="0"
               mb="1.5rem"
-              width={"350"}
+              width={"100%"}
               onClick={toggleActiveScreen}
             />
           </div>

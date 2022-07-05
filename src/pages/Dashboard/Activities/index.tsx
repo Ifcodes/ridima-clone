@@ -6,6 +6,7 @@ import ItunesLogoTiny from "../../../components/atoms/vectors/ItunesLogoTiny";
 import SteamLogoTiny from "../../../components/atoms/vectors/SteamLogoTiny";
 import WalmartLogoTiny from "../../../components/atoms/vectors/WalmartLogoTiny";
 import DashboardLayout from "../../../components/templates/MainLayout";
+import { transactionData } from "../../../utils/helpers/transactionsData";
 import { ActivitiesWrapper } from "./activitiesStyles";
 import EmptyTransactionpage from "./emptyTransactionpage";
 import TransactionsPage from "./transactionsPage";
@@ -14,7 +15,7 @@ const Activities = () => {
   const cards = [
     {
       icon: AmazonLogoTiny,
-      number: 0,
+      number: 3,
       cardHeight: "3.875rem",
       bgColor:
         "linear-gradient(162.96deg, #F4C24F 3.01%, #F29F3A 79.55%), #F9D89F",
@@ -22,27 +23,27 @@ const Activities = () => {
     {
       icon: WalmartLogoTiny,
       cardHeight: "7.25rem",
-      number: 0,
+      number: 3,
       bgColor:
         "linear-gradient(161.74deg, #3924CD 6.31%, #6450EF 78.38%), #D8D4F7",
     },
     {
       icon: ItunesLogoTiny,
-      number: 0,
+      number: 2,
       cardHeight: "10.75rem",
       bgColor:
         "linear-gradient(99.09deg, #EB2525 11.63%, #C0742E 89.01%), #F8DAD3",
     },
     {
       icon: SteamLogoTiny,
-      number: 0,
+      number: 1,
       cardHeight: "14.06rem",
       bgColor:
         "linear-gradient(338.35deg, #1A293B 23.32%, #183F5A 94.91%), #9AFED3",
     },
   ];
   return (
-    <DashboardLayout childPadding="0">
+    <DashboardLayout childPadding="0" mobileChildPadding="0">
       <ActivitiesWrapper>
         <div className="heading">
           <div className="title-cont">
@@ -64,7 +65,7 @@ const Activities = () => {
             ))}
           </div>
         </div>
-        {/* <EmptyTransactionpage /> */}
+        {transactionData.length === 0 && <EmptyTransactionpage />}
         <TransactionsPage />
       </ActivitiesWrapper>
     </DashboardLayout>

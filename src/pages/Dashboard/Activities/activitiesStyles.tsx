@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const ActivitiesWrapper = styled.div`
   width: 100%;
+  height: 100%;
+  overflow: hidden;
 
   .heading {
     width: 100%;
@@ -34,6 +36,47 @@ export const ActivitiesWrapper = styled.div`
       right: 3rem;
     }
   }
+
+  @media screen and (max-width: 640px) {
+    .heading {
+      padding: 1rem 1rem 0;
+      display: block;
+
+      .bars-cont {
+        padding: 0 1rem;
+        gap: 0;
+        left: 0;
+
+        .bar:not(:first-child) {
+          margin-left: -6rem;
+        }
+        .bar:nth-child(1) {
+          z-index: 25;
+        }
+        .bar:nth-child(2) {
+          z-index: 20;
+        }
+        .bar:nth-child(3) {
+          z-index: 15;
+        }
+        .bar:nth-child(4) {
+          z-index: 10;
+        }
+        .bar:nth-child(5) {
+          z-index: 5;
+        }
+      }
+
+      .title-cont {
+        h1 {
+          margin: 0;
+        }
+        p {
+          display: none;
+        }
+      }
+    }
+  }
 `;
 
 export const EmptyTransactionPageWrapper = styled.div`
@@ -55,13 +98,42 @@ export const EmptyTransactionPageWrapper = styled.div`
       text-align: center;
       color: ${(props) => props.theme.colors.grey3};
     }
+
+    .cta-cont {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .content {
+      width: 100%;
+      height: 50vh;
+      overflow-y: auto;
+      justify-content: flex-start;
+      padding: 1rem 0 4rem;
+
+      .empty-page-icon {
+        width: 70%;
+        height: 10rem;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .cta-cont {
+        padding: 0 3rem;
+      }
+    }
   }
 `;
 
 export const TransactionsPageWrapper = styled.div`
   width: 100%;
-  height: 100%;
-  padding: 2rem 3rem 8rem;
+  height: 80%;
+  padding: 2rem 3rem 14rem;
+  overflow-y: auto;
 
   .title-filter-cont {
     display: flex;
@@ -95,6 +167,20 @@ export const TransactionsPageWrapper = styled.div`
 
   .yesterday-title {
     margin-top: 2rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 2rem 1.2rem 14rem;
+    height: 70%;
+    overflow-y: auto;
+
+    .title-filter-cont {
+      .filter-selectors {
+        .filter-btn {
+          padding: 0.4rem 0.7rem;
+        }
+      }
+    }
   }
 `;
 

@@ -14,6 +14,7 @@ import ReversedModalBg from "../vectors/ReversedModalBg";
 import ModalButtonSm from "../vectors/ModalButtonSm";
 import IconBtnBg from "../vectors/IconBtnBg";
 import MobileBtnBg from "../vectors/MobileBtnBg";
+import ReverseMobileBtnBg from "../vectors/ReverseMobileBtnBg";
 
 export type ButtonProps = {
   width?: string;
@@ -39,7 +40,8 @@ export type ButtonProps = {
     | "reversedModal"
     | "modalSm"
     | "plain"
-    | "mobile";
+    | "mobile"
+    | "mobileReverse";
   buttonPosition?: "center" | "left" | "right";
 } & DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
@@ -90,6 +92,11 @@ const Button = ({
         <IconBtnBg bgColor={bgColor} />
       ) : buttonBgType === "mobile" ? (
         <MobileBtnBg
+          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          className="button-Bg"
+        />
+      ) : buttonBgType === "mobileReverse" ? (
+        <ReverseMobileBtnBg
           bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
           className="button-Bg"
         />

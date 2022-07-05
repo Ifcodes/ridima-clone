@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const LayoutWrapper = styled.section<{ padding?: string }>`
+export const LayoutWrapper = styled.section<{
+  padding?: string;
+  mobilePadding?: string;
+}>`
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -20,10 +23,11 @@ export const LayoutWrapper = styled.section<{ padding?: string }>`
   }
 
   @media screen and (max-width: 640px) {
+    display: block;
     main {
       .child-cont {
         max-width: 100%;
-        padding: 1.5rem;
+        padding: ${(props) => props.mobilePadding || "1.5rem"};
       }
     }
   }

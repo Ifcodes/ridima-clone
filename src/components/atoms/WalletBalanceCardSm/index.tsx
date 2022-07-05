@@ -57,10 +57,19 @@ const WalletBalanceCardSm = ({
         {otherValue && <span className="other-value">{otherValue}</span>}
       </div>
       {lightBlueCard ? (
-        <img src="/vectors/WalletBalRectangleLight.svg" alt="" />
+        <img
+          src="/vectors/WalletBalRectangleLight.svg"
+          alt=""
+          className="cardBg"
+        />
       ) : (
-        <img src="/vectors/WalletBalRectangle.svg" alt="" />
+        <img src="/vectors/WalletBalRectangle.svg" alt="" className="cardBg" />
       )}
+      <img
+        src="/vectors/BlueCardRecMobile.svg"
+        alt=""
+        className="cardBg-mobile"
+      />
     </WalletBalCardWrapper>
   );
 };

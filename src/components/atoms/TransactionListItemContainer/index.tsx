@@ -28,18 +28,19 @@ const TransactionDetailContainer = ({
   onTitleClick,
 }: TransactionDetailProps) => {
   return (
-    <TransactionDetailWrapper type={transactionType}>
+    <TransactionDetailWrapper type={transactionType} status={transactionStatus}>
       <div className="icon-cont">{icon}</div>
       <div className="detail-cont">
         <div className="transaction-type-cont" onClick={onTitleClick}>
           <h3>{transactionTitle}</h3>
-          <span>{product}</span>
+          <span className="product">{product}</span>
+          <span className="date-mobile">{date}</span>
         </div>
         <div className="date-cont">
           <span>{date}</span>
         </div>
         <div className="amount-cont">
-          <span>
+          <span className="amount">
             {transactionType === "credit"
               ? "+"
               : transactionType === "debit"
@@ -48,6 +49,7 @@ const TransactionDetailContainer = ({
             {currency}
             {amount}
           </span>
+          <span className="status-mobile">{transactionStatus}</span>
         </div>
 
         <div className="option-icon-cont">

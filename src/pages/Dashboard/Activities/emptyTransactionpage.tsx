@@ -10,17 +10,21 @@ const EmptyTransactionpage = () => {
   return (
     <EmptyTransactionPageWrapper>
       <div className="content">
-        <EmptyTransactionIcon />
+        <div className="empty-page-icon">
+          <EmptyTransactionIcon />
+        </div>
         <Paragraph>
           You have no transaction activities yet. You can see all your
           transaction activities here, when you trade.
         </Paragraph>
-        <Button
-          btnText="Trade giftcard"
-          width="100%"
-          mt="2rem"
-          onClick={() => navigate("/trade-giftcards")}
-        />
+        <div className="cta-cont">
+          <Button
+            btnText="Trade giftcard"
+            width="100%"
+            mt="2rem"
+            onClick={() => navigate("/trade-giftcards")}
+          />
+        </div>
       </div>
     </EmptyTransactionPageWrapper>
   );

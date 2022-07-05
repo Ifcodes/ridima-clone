@@ -14,6 +14,7 @@ type ModalProps = {
   cardHeight?: string;
   showModalFooterDesign?: boolean;
   maxWidth?: string;
+  mobileCardHeight?: string;
 };
 const Modal = ({
   children,
@@ -24,6 +25,7 @@ const Modal = ({
   width,
   maxWidth,
   cardHeight,
+  mobileCardHeight,
   showModalFooterDesign,
 }: ModalProps) => {
   const clickRef = useRef(null);
@@ -40,6 +42,7 @@ const Modal = ({
       maxWidth={maxWidth}
       cardHeight={cardHeight}
       showModalFooter={showModalFooterDesign}
+      mobileCardHeight={mobileCardHeight}
     >
       <div className="modal-card" ref={clickRef}>
         {showCloseBtn && (

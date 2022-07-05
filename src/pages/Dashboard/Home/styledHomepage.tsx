@@ -48,7 +48,7 @@ export const HomeWrapper = styled.section`
   .quick-actions-cont {
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
     grid-gap: 3rem;
     align-items: center;
   }
@@ -91,12 +91,21 @@ export const HomeWrapper = styled.section`
       width: 35%;
     }
 
+    .modal-btn-cont {
+      width: 100%;
+    }
     .creation-fee {
       color: ${(props) => props.theme.colors.grey2};
     }
   }
 
   @media screen and (max-width: 640px) {
+    height: 80vh;
+    overflow-y: auto;
+
+    ::-webkit-scrollbar {
+      width: 0;
+    }
     .salutation-cont {
       display: flex;
       justify-content: space-between;
@@ -133,8 +142,9 @@ export const HomeWrapper = styled.section`
     }
 
     .quick-actions-cont {
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
       grid-gap: 0;
-      padding-bottom: 8rem;
+      padding-bottom: 6rem;
       margin: 0 auto;
     }
   }

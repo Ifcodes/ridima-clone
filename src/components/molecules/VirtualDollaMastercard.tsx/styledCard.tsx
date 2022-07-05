@@ -23,7 +23,8 @@ export const VirtualDollarCardWrapper = styled.div`
       align-items: center;
       margin-top: 1.5rem;
 
-      .title {
+      .title,
+      .v-dollar-title {
         width: 11rem;
         color: #3f1e4b;
       }
@@ -38,6 +39,10 @@ export const VirtualDollarCardWrapper = styled.div`
           height: 100%;
         }
       }
+    }
+
+    .mobile-btn-create-card {
+      display: none;
     }
 
     .description {
@@ -56,8 +61,14 @@ export const VirtualDollarCardWrapper = styled.div`
 
   @media screen and (max-width: 640px) {
     .card-content {
+      left: 0;
       .btn-complete {
         display: none;
+      }
+
+      .mobile-btn-create-card {
+        display: block;
+        width: 8rem;
       }
 
       .title-cont {
@@ -65,6 +76,9 @@ export const VirtualDollarCardWrapper = styled.div`
         justify-content: flex-start;
         align-items: flex-start;
 
+        .v-dollar-title {
+          width: 100%;
+        }
         .img-cont {
           width: 4rem;
           height: 4rem;
@@ -88,6 +102,7 @@ export const VirtualDollarCardWrapper = styled.div`
     }
   }
 `;
+
 export const ActiveCardWrapper = styled.div`
   width: 100%;
   height: 100%;
@@ -134,8 +149,24 @@ export const ActiveCardWrapper = styled.div`
     }
   }
 
-  /* .cardBg{
-    width: 100%;
-    height: 100%;
-  } */
+  .mobile-card-bg {
+    display: none;
+  }
+
+  @media screen and (max-width: 640px) {
+    .cardBg {
+      display: none;
+    }
+
+    .mobile-card-bg {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 `;

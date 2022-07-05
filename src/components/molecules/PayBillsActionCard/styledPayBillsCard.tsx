@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const PayBillsCardWrapper = styled.div`
   width: 100%;
+  max-width: 35rem;
   height: max-content;
   position: relative;
   margin-top: 2rem;

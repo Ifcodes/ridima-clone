@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const WalletpageWrapper = styled.div`
   width: 100%;
+  height: 100%;
 `;
 
 export const WalletpageDefaultWrapper = styled.div`
@@ -18,6 +19,30 @@ export const WalletpageDefaultWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(10rem, 11rem));
     grid-gap: 1rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    height: 70%;
+    padding-bottom: 6rem;
+
+    h1 {
+      margin: 0;
+    }
+
+    .wallet-card-cont {
+      margin-top: 1.5rem;
+    }
+
+    .horizontal-line-cont {
+      margin-top: 1.7rem;
+    }
+
+    .action-cards-wrapper {
+      margin-top: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0.7rem;
+      padding-bottom: 10rem;
+    }
   }
 `;
 

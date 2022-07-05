@@ -62,4 +62,35 @@ export const WalletBalCardWrapper = styled.div<{
   img {
     width: 100%;
   }
+
+  .cardBg-mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 50%;
+    height: 15rem;
+
+    .card-content {
+      padding: 2rem 1rem;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+
+      .title-amount-cont {
+        margin-top: 1rem;
+      }
+
+      .eye-icon {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+    .cardBg {
+      display: none;
+    }
+
+    .cardBg-mobile {
+      display: block;
+    }
+  }
 `;
