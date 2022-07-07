@@ -18,12 +18,14 @@ export const trapCardIemList = [
   {
     cardBg: "#F9D89F",
     cardType: "rightTrape",
+    cardBgImgUrl: "/vectors/PeachRightTrapezoid.svg",
     cardtitle: "Amazon",
     cardIcon: AmazonIcon,
     titleDescription: "19 Gift Cards",
   },
   {
     cardBg: "#F8DAD3",
+    cardBgImgUrl: "/vectors/PinkRightTrapezoid.svg",
     cardType: "rightTrape",
     cardtitle: "Apple iTunes",
     cardIcon: AppleLogoRedBgIcon,
@@ -32,6 +34,7 @@ export const trapCardIemList = [
   {
     cardBg: "#9AFED3",
     cardType: "rightTrape",
+    cardBgImgUrl: "/vectors/GreenRightTrapezoid.svg",
     cardtitle: "Google Play",
     cardIcon: GooglePlayLogoIcon,
     titleDescription: "19 Gift Cards",
@@ -39,6 +42,7 @@ export const trapCardIemList = [
   {
     cardBg: "#DCE5EF",
     cardType: "leftTrape",
+    cardBgImgUrl: "/vectors/LighterBlueLeftTrapezoid.svg",
     cardtitle: "Steam",
     cardIcon: SteamLogoIcon,
     titleDescription: "6 Gift Cards",
@@ -46,6 +50,7 @@ export const trapCardIemList = [
   {
     cardBg: "#D8D4F7",
     cardType: "leftTrape",
+    cardBgImgUrl: "/vectors/LightBlueLeftTrapezoid.svg",
     cardtitle: "Walmart",
     cardIcon: WalmartLogoIcon,
     titleDescription: "6 Gift Cards",
@@ -77,7 +82,7 @@ const SellGiftCards = () => {
     setActiveTab(activeTab + 1);
   };
   return (
-    <DashboardLayout childPadding="0">
+    <DashboardLayout childPadding="0" mobileChildPadding="0">
       <SellGiftCardWrapper>
         <div className={activeTab === 1 ? "heading" : "default"}>
           <StageTitleWrapper darkBgShade>
@@ -124,15 +129,18 @@ const SellGiftCards = () => {
               </div>
               <div className="content">
                 {trapCardIemList.map((item, index) => (
-                  <TrapCard
-                    key={item.cardtitle}
-                    bgColor={item.cardBg}
-                    trapeCardType={item.cardType}
-                    title={item.cardtitle}
-                    icon={<item.cardIcon />}
-                    titleDescription={item.titleDescription}
-                    onCardClick={() => handleCardClick(item.cardtitle)}
-                  />
+                  <div className="card-wrapper">
+                    <TrapCard
+                      key={item.cardtitle}
+                      bgColor={item.cardBg}
+                      trapeCardType={item.cardType}
+                      title={item.cardtitle}
+                      icon={<item.cardIcon />}
+                      titleDescription={item.titleDescription}
+                      mobileCardUrl={item.cardBgImgUrl}
+                      onCardClick={() => handleCardClick(item.cardtitle)}
+                    />
+                  </div>
                 ))}
               </div>
             </>

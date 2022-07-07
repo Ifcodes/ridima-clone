@@ -46,7 +46,7 @@ export const SearchBoxWrapper = styled.div<{
   }
 
   @media screen and (max-width: 640px) {
-    padding: 0;
+    padding: 0 0.5rem;
 
     .search-icon {
       width: 1.4rem;

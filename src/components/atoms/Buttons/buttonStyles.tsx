@@ -46,6 +46,10 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     max-width: 100%;
     visibility: ${(props) => (props.hideBg ? "hidden" : "visible")};
   }
+
+  @media screen and (max-width: 640px) {
+    width: ${(props) => props.mobileWidth || "100%"};
+  }
 `;
 
 export const AddButtonWrapper = styled.button<ButtonProps>`

@@ -65,7 +65,8 @@ const FreezeCardModal = ({
             buttonBgType="modal"
             btnText="Proceed"
             onClick={() => setModalStage(modalStage + 1)}
-            width="350"
+            width="100%"
+            mobileWidth="100%"
           />
         </FreezeCardWrapper>
       )}

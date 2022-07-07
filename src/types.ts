@@ -20,8 +20,11 @@ export type CardProps = {
   imgUrl?: string;
   bgColor?: string;
   cardTextWidth?: string;
+  mobileTextWidth?: string;
   imgBottomPosition?: string;
   imgLeftPosition?: string;
+  imgBottomPositionMobile?: string;
+  imgLeftPositionMobile?: string;
   isActive?: boolean;
   onCardClick?: MouseEventHandler<HTMLDivElement>;
   onClick?: MouseEventHandler<HTMLButtonElement>;

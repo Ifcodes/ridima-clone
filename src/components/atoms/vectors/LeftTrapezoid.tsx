@@ -6,6 +6,7 @@ const LeftTrapezoid = (props: SvgIconProps) => (
   <svg
     width={421}
     height={128}
+    viewBox={"0 0 421 128"}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

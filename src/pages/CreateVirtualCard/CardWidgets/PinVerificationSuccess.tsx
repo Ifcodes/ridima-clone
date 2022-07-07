@@ -27,11 +27,12 @@ const PinVerificationSuccess = () => {
           paying online.
         </Paragraph>
       </div>
-      <div>
+      <div className="btn-lg">
         <Button
           buttonBgType="modal"
           btnText="Go to virtual card"
-          width="350"
+          width="100%"
+          mobileWidth="100%"
           onClick={() => handleClick()}
         />
       </div>

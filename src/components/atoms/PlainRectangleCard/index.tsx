@@ -8,8 +8,11 @@ const PlainRectangleCard = ({
   imgUrl,
   onCardClick,
   cardTextWidth,
+  mobileTextWidth,
   imgBottomPosition,
   imgLeftPosition,
+  imgBottomPositionMobile,
+  imgLeftPositionMobile,
 }: CardProps) => {
   return (
     <RectangleWrapper
@@ -18,6 +21,9 @@ const PlainRectangleCard = ({
       onClick={onCardClick}
       imgBottomPosition={imgBottomPosition}
       imgLeftPosition={imgLeftPosition}
+      imgBottomPositionMobile={imgBottomPositionMobile}
+      imgLeftPositionMobile={imgLeftPositionMobile}
+      mobileTextWidth={mobileTextWidth}
     >
       <div className="title-cont">
         <h1>{title}</h1>

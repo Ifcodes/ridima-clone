@@ -6,6 +6,7 @@ import { TrapCardWrapper } from "./styledTrapCards";
 
 interface TrapCardProps extends CardProps {
   trapeCardType?: string;
+  mobileCardUrl?: string;
 }
 const TrapCard = ({
   bgColor,
@@ -13,37 +14,45 @@ const TrapCard = ({
   titleDescription,
   title,
   icon,
+  mobileCardUrl,
   onCardClick,
 }: TrapCardProps) => {
   return (
     <TrapCardWrapper cardType={trapeCardType} onClick={onCardClick}>
-      <div className="card-content-wrapper">
-        <div className="card-content">
-          {trapeCardType === "leftTrape" ? (
-            <>
+      {/* <div className="card-content-wrapper"> */}
+      <div className="card-content">
+        {trapeCardType === "leftTrape" ? (
+          <div className="text-cont">
+            <div className="icon-wrapper">
               <>{icon}</>
-              <div className="leftTrap-title">
-                <h1>{title}</h1>
-                <span>{titleDescription}</span>
-              </div>
-            </>
-          ) : (
-            <>
-              <div>
-                <h1>{title}</h1>
-                <span>{titleDescription}</span>
-              </div>
+            </div>
+            <div className="leftTrap-title">
+              <h1>{title}</h1>
+              <span>{titleDescription}</span>
+            </div>
+          </div>
+        ) : (
+          <div className="text-cont">
+            <div className="title-cont">
+              <h1>{title}</h1>
+              <span>{titleDescription}</span>
+            </div>
+            <div className="icon-wrapper">
               <>{icon}</>
-            </>
-          )}
-        </div>
+            </div>
+          </div>
+        )}
       </div>
-      <div className="card-bg-cont"></div>
       {trapeCardType === "leftTrape" ? (
-        <LeftTrapezoid bgColor={bgColor} />
+        <div className="trap-wrapper">
+          <LeftTrapezoid bgColor={bgColor} />
+        </div>
       ) : (
-        <RightTrapezoid bgColor={bgColor} />
+        <div className="trap-wrapper">
+          <RightTrapezoid bgColor={bgColor} />
+        </div>
       )}
+      <img src={mobileCardUrl} alt="" className="mobile-bg" />
     </TrapCardWrapper>
   );
 };

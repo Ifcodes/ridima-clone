@@ -5,6 +5,7 @@ export const SelectButtonWrapper = styled.div<{
   mt?: string;
   showDropdown?: boolean;
   width?: string;
+  mobileWidth?: string;
 }>`
   width: ${(props) => props.width || "27rem"};
   height: 4.3rem;
@@ -57,5 +58,9 @@ export const SelectButtonWrapper = styled.div<{
       background-color: #bdbdbd;
       border-radius: 24px;
     }
+  }
+
+  @media screen and (max-width: 640px) {
+    width: ${(props) => props.mobileWidth || "100%"};
   }
 `;

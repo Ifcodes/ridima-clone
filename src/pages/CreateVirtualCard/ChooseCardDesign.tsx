@@ -31,7 +31,8 @@ const ChooseCardDesign = ({
       showModal={showModal}
       closeModal={closeModal}
       cardHeight={"95vh"}
-      width={"27%"}
+      width={"28%"}
+      maxWidth={"30rem"}
     >
       <div className="card-design-content">
         <h1>Choose Card Design</h1>
@@ -47,12 +48,14 @@ const ChooseCardDesign = ({
             </div>
           ))}
         </div>
-        <Button
-          buttonBgType="modal"
-          btnText="Select"
-          width="350"
-          onClick={() => handleSelect("button")}
-        />
+        <div className="btn-cont">
+          <Button
+            buttonBgType="modal"
+            btnText="Select"
+            width="100%"
+            onClick={() => handleSelect("button")}
+          />
+        </div>
       </div>
     </Modal>
   );

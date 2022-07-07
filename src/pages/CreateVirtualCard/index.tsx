@@ -12,6 +12,7 @@ import {
   StageTitleWrapper,
 } from "./createVirtualCardStyles";
 import FundYourCard from "./fundYourCard";
+import MobileHeader from "../../components/atoms/MobileHeader";
 
 type VirtualCardProps = {
   toggleActiveScreen?: MouseEventHandler<HTMLSpanElement>;
@@ -28,22 +29,27 @@ const CreateVirtualCard = ({ toggleActiveScreen }: VirtualCardProps) => {
   const [stageTitles, setStageTitles] = useState([
     "Create a Virtual US Dollar Card",
   ]);
+  const [mobileActiveTitle, setMobileActiveTitle] = useState("");
 
   const formIsFilled = Object.values(cardDetails).every((val) => val !== "");
 
-  const handleStageTagClick = (stageIndex: number) => {
-    stageTitles.map((stg, index) => {
-      if (index === stageIndex) {
-        if (stageIndex >= 0 && stage > 0) {
-          setStage(stage - 1);
-          setStageTitles(stageTitles.slice(0, stageIndex + 1));
-        } else {
-          return;
+  const handleStageTagClick = (stageIndex: number, type?: string) => {
+    if (type === "mobile") {
+      setStage(stage - 1);
+    } else {
+      stageTitles.map((stg, index) => {
+        if (index === stageIndex) {
+          if (stageIndex >= 0 && stage > 0) {
+            setStage(stage - 1);
+            setStageTitles(stageTitles.slice(0, stageIndex + 1));
+          } else {
+            return;
+          }
         }
-      }
 
-      return stg;
-    });
+        return stg;
+      });
+    }
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -68,6 +74,14 @@ const CreateVirtualCard = ({ toggleActiveScreen }: VirtualCardProps) => {
 
   return (
     <MainWrapper>
+      <div className="header">
+        <MobileHeader
+          title={stageTitles[stage]}
+          fs="1rem"
+          fw="400"
+          handleArrowBackAction={() => handleStageTagClick(stage, "mobile")}
+        />
+      </div>
       <div className="stage-title-cont">
         <span className="home" onClick={toggleActiveScreen}>
           Home

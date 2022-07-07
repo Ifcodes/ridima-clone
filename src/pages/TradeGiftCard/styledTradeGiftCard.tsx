@@ -3,17 +3,30 @@ import styled from "styled-components";
 export const TradeGiftCardWrapper = styled.div`
   width: 100%;
   overflow: auto;
+  font-size: 1rem;
 
   .default {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(37rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
     margin-top: 3rem;
     grid-gap: 1rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    .default {
+      height: 90%;
+      padding-bottom: 10rem;
+      margin-top: 1rem;
+      overflow-y: auto;
+      display: block;
+    }
   }
 `;
 
 export const SellGiftCardWrapper = styled.div`
   width: 100%;
+  height: 100%;
+  overflow: hidden;
 
   .heading {
     width: 100%;
@@ -34,6 +47,8 @@ export const SellGiftCardWrapper = styled.div`
   }
 
   .main-content {
+    height: 80%;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -41,9 +56,59 @@ export const SellGiftCardWrapper = styled.div`
 
     .content {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
       margin-top: 2rem;
-      grid-gap: 1rem;
+      grid-column-gap: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 1380px) {
+    .main-content {
+      padding: 2rem 3rem 10rem;
+
+      .content {
+        grid-template-columns: repeat(2, 45rem);
+      }
+    }
+  }
+
+  @media screen and (max-width: 902px) {
+    .main-content {
+      .content {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .heading {
+      padding: 1.5rem;
+    }
+
+    .default {
+      padding: 1rem;
+    }
+
+    .main-content {
+      width: 100%;
+      align-items: center;
+      padding: 1rem 1rem 12rem;
+
+      .title-cont {
+        align-self: flex-start;
+        width: 100%;
+      }
+
+      .content {
+        width: 100%;
+        display: block;
+
+        .card-wrapper {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+      }
     }
   }
 `;
@@ -65,6 +130,32 @@ export const ActiveGiftCardWrapper = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(7.125rem, 8rem));
     margin-top: 2rem;
     grid-gap: 1rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .selector {
+      width: 100%;
+    }
+
+    .card-types-heading {
+      width: 100%;
+    }
+    .card-types-cont {
+      width: 100%;
+    }
+
+    .btn-cont {
+      width: 100%;
+
+      button {
+        margin: 4rem 0 0;
+      }
+    }
   }
 `;
 

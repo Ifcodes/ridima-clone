@@ -101,6 +101,8 @@ export const HomeWrapper = styled.section`
 
   @media screen and (max-width: 640px) {
     height: 80vh;
+    padding: 1rem;
+
     overflow-y: auto;
 
     ::-webkit-scrollbar {

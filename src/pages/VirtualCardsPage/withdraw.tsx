@@ -58,7 +58,9 @@ const Withdraw = () => {
   return (
     <FundCardWrapper>
       <div className="form-cont">
-        <h1>How much do you want to withdraw from this card?</h1>
+        <h1 className="form-cont-title">
+          How much do you want to withdraw from this card?
+        </h1>
         <form onSubmit={handleSubmit}>
           <div className="exchange-rate-text">
             <span>Exchange rate: NGN{currentExchangeRate} ≈ $1</span>

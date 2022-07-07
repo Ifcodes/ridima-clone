@@ -17,6 +17,7 @@ const Selector = ({
   showCalendarIcon,
   selectedDropdownItem,
   width,
+  mobileWidth,
   onClick = () => {},
   handleSelectItem = () => {},
 }: {
@@ -31,6 +32,7 @@ const Selector = ({
   onClick?: MouseEventHandler<HTMLDivElement>;
   handleSelectItem?: Function;
   width?: string;
+  mobileWidth?: string;
 }) => {
   return (
     <SelectButtonWrapper
@@ -40,6 +42,7 @@ const Selector = ({
       className={className}
       showDropdown={showDropdown}
       width={width}
+      mobileWidth={mobileWidth}
     >
       <span className="title">{selectorTitle}</span>
       <div>

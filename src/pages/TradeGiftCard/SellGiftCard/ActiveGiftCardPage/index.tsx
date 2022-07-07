@@ -228,20 +228,22 @@ const ActiveGiftCard = () => {
           </div>
         </>
       )}
-      <Button
-        btnText={currentStage === 3 ? "Sell Giftcard" : "Proceed"}
-        disabled={
-          currentStage === 1 && !categoryFormIsFilled
-            ? true
-            : currentStage === 2 && !imgUploadFormIsFilled
-            ? true
-            : !selectedCurrency
-        }
-        width="27rem"
-        mt="5rem"
-        mb="5rem"
-        onClick={() => onProceed()}
-      />
+      <div className="btn-cont">
+        <Button
+          btnText={currentStage === 3 ? "Sell Giftcard" : "Proceed"}
+          disabled={
+            currentStage === 1 && !categoryFormIsFilled
+              ? true
+              : currentStage === 2 && !imgUploadFormIsFilled
+              ? true
+              : !selectedCurrency
+          }
+          width="27rem"
+          mt="5rem"
+          mb="5rem"
+          onClick={() => onProceed()}
+        />
+      </div>
       <SelectCurrencyModal
         openModal={showCurrencyModal}
         closeModal={() => setShowCurrencyModal(false)}

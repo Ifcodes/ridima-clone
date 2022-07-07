@@ -25,6 +25,9 @@ const TradeGiftCardDefaultPage = ({
           cardTextWidth={
             content.cardTitle === "Check Gift Card Rates" ? "12rem" : ""
           }
+          mobileTextWidth={
+            content.cardTitle === "Check Gift Card Rates" ? "8rem" : ""
+          }
           imgBottomPosition={
             content.cardTitle === "Buy Gift Cards"
               ? "-7rem"
@@ -39,6 +42,22 @@ const TradeGiftCardDefaultPage = ({
               ? "2rem"
               : content.cardTitle === "Buy Gift Cards"
               ? "-2.5rem"
+              : ""
+          }
+          imgBottomPositionMobile={
+            content.cardTitle === "Buy Gift Cards"
+              ? "-2rem"
+              : content.cardTitle === "Check Gift Card Rates"
+              ? "0"
+              : content.cardTitle === "Hot Gift Cards"
+              ? "-5rem"
+              : ""
+          }
+          imgLeftPositionMobile={
+            content.cardTitle === "Hot Gift Cards"
+              ? "0rem"
+              : content.cardTitle === "Buy Gift Cards"
+              ? "-1rem"
               : ""
           }
           onCardClick={() => onCardClick(content.cardTitle)}

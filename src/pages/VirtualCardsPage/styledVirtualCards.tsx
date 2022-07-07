@@ -8,6 +8,7 @@ export const VirtualCardsWrapper = styled.section`
     justify-content: space-between;
 
     .stage-title-cont {
+      width: 100%;
       display: flex;
       /* align-items: center; */
 
@@ -35,6 +36,42 @@ export const VirtualCardsWrapper = styled.section`
         box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.3);
         transition: ease 0.3s;
       }
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    height: 100%;
+    overflow-y: hidden;
+
+    .stage-header {
+      padding: 1rem;
+      justify-content: flex-end;
+      position: relative;
+
+      .mobile-header {
+        width: max-content;
+        position: absolute;
+        left: 1.5rem;
+        top: 1.5rem;
+      }
+
+      .stage-title-cont {
+        display: none;
+      }
+
+      button {
+        padding: 0;
+      }
+    }
+
+    .cards-wrapper {
+      height: 80%;
+      overflow-y: auto;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 12rem;
     }
   }
 `;
@@ -66,16 +103,6 @@ export const CardDetailsWrapper = styled.div`
 
   .card-transaction-heading {
     margin-top: 3rem;
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    align-items: center;
-
-    hr {
-      margin-left: 1rem;
-      width: 100%;
-      height: 1px;
-      border: 0.5px solid #d7d4f7;
-    }
   }
 
   .transactions {
@@ -83,6 +110,61 @@ export const CardDetailsWrapper = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
     gap: 1.5rem;
     margin: 3.2rem 0;
+  }
+
+  @media screen and (max-width: 640px) {
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: hidden;
+    margin-bottom: 0;
+
+    .heading {
+      width: 100%;
+      padding: 1rem 1rem 0;
+    }
+    .stage-title-cont {
+      display: none;
+    }
+
+    .action-heading {
+      display: none;
+    }
+
+    .main-content {
+      margin: 0;
+      width: 100%;
+      height: 80%;
+      padding: 0 1rem 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      margin-top: 0;
+    }
+    .card-display {
+      margin-top: 1rem;
+    }
+
+    .card-actions-cont {
+      max-width: 100%;
+      gap: 0;
+
+      > div {
+        margin: 0 0.5rem;
+      }
+    }
+
+    .card-transaction-heading {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .transactions {
+      margin-top: 1rem;
+    }
   }
 `;
 
@@ -127,6 +209,41 @@ export const FundCardWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    height: 80%;
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    grid-gap: 0;
+    overflow-y: auto;
+
+    .virtual-card-cont {
+      margin-top: 1rem;
+    }
+
+    .form-cont {
+      width: 100%;
+      padding: 1rem;
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .form-cont-title {
+        text-align: center;
+        width: 80%;
+        margin: 0;
+      }
+
+      form {
+        width: 100%;
+        padding: 0 1rem;
+      }
+    }
   }
 `;
 export const CardDetailsModalWrapper = styled.div`

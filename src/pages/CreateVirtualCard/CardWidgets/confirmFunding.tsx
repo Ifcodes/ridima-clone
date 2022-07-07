@@ -22,11 +22,13 @@ const ConfirmFunding = ({
           <b>NGN{currentExchangeRate} ≈$1.</b> Would you like to continue?
         </Paragraph>
       </div>
+
       <Button
         buttonBgType="modal"
         btnText="Proceed"
         onClick={setModalStage}
-        width="350"
+        width="100%"
+        mobileWidth="100%"
       />
     </>
   );

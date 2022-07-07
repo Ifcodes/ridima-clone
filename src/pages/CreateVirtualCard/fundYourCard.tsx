@@ -72,7 +72,9 @@ const FundYourCard = ({ selectedCard }: { selectedCard: string }) => {
       </div>
       <Modal
         width="30%"
+        maxWidth="30rem"
         cardHeight="95vh"
+        mobileCardHeight="70%"
         showModal={showModal}
         showCloseBtn
         closeModal={() => setShowModal(false)}

@@ -5,7 +5,7 @@ export const ActionCardWrapper = styled.div<ActionCardProps>`
   width: 5.75rem;
   height: 5.75rem;
   border-radius: 1.25rem;
-  background-color: ${props => props.actionCardBg};
+  background-color: ${(props) => props.actionCardBg};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,10 +13,15 @@ export const ActionCardWrapper = styled.div<ActionCardProps>`
   padding: 0.9rem 1.5rem;
   cursor: pointer;
 
-  p{
+  p {
     font-size: 0.625rem;
     padding: 0;
     margin: 0;
-    color: ${props => props.theme.colors.grey2};
+    color: ${(props) => props.theme.colors.grey2};
   }
-`
+
+  @media screen and (max-width: 640px) {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+`;

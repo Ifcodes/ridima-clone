@@ -11,6 +11,7 @@ import { setProfileComplete } from "../../Entity/ProfileComplete";
 import { generateId } from "../../utils/generateId";
 import { cardDataList } from "../../utils/helpers/cardsData";
 import { VirtualCardsWrapper } from "./styledVirtualCards";
+import MobileHeader from "../../components/atoms/MobileHeader";
 
 const VirtualCardsPage = () => {
   const [stageTitles, setStageTitles] = useState(["Virtual cards"]);
@@ -22,7 +23,7 @@ const VirtualCardsPage = () => {
     setProfileComplete(true);
   };
 
-  const handleStageTagClick = (stageIndex: number) => {
+  const handleStageTagClick = (stageIndex: number, type: string) => {
     stageTitles.map((stg, index) => {
       if (index === stageIndex) {
         if (stageIndex >= 0 && stage > 0) {
@@ -38,9 +39,12 @@ const VirtualCardsPage = () => {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout mobileChildPadding="0">
       <VirtualCardsWrapper>
         <div className="stage-header">
+          <div className="mobile-header" onClick={() => navigate("/home")}>
+            <MobileHeader width="100%" />
+          </div>
           <div className="stage-title-cont">
             <span className="home" onClick={() => toggleActiveScreen()}>
               Home
@@ -48,7 +52,7 @@ const VirtualCardsPage = () => {
             {stageTitles.map((stageText, index) => (
               <StageTitleWrapper
                 key={`key-${stageText}-of-${index}`}
-                onClick={() => handleStageTagClick(index)}
+                onClick={() => handleStageTagClick(index, "")}
                 isActive={index === stage}
               >
                 <span className="arrow"> {" > "} </span>
@@ -60,7 +64,8 @@ const VirtualCardsPage = () => {
             btnText="Create card"
             buttonBgType="small"
             bgColor="#F5CF48"
-            width="350"
+            width="50%"
+            mobileWidth="50%"
             mt="0"
           />
         </div>

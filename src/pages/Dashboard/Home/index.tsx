@@ -9,7 +9,7 @@ const Home = () => {
   const [activeScreen, setActiveScreen] = useState("default");
 
   return (
-    <DashboardLayout>
+    <DashboardLayout mobileChildPadding="0">
       {activeScreen === "default" && (
         <DefaultHomeScreen
           toggleActiveScreen={() => setActiveScreen("createVirtualCard")}

@@ -19,6 +19,8 @@ import { CardDetailsWrapper } from "./styledVirtualCards";
 import CardDetailsModal from "./widgets/cardDetailsModal";
 import FreezeCardModal from "./widgets/freezeCardModal";
 import Withdraw from "./withdraw";
+import HorizontalLinedTitle from "../../components/atoms/TitleWithHorizontalLine";
+import MobileHeader from "../../components/atoms/MobileHeader";
 
 const CardDetails = () => {
   const navigate = useNavigate();
@@ -47,7 +49,16 @@ const CardDetails = () => {
   };
 
   const handleTabClick = (type: string, index: number) => {
-    if (type === "Virtual cards") {
+    if (type === "mobile") {
+      if (activeTab > 0) {
+        setTabs(tabs.slice(0, index + 1));
+        setActiveAction("");
+        setActiveTab(activeTab - 1);
+      } else if (activeTab === 0) {
+        console.log("clicked", activeTab);
+        navigate("/virtual-cards");
+      }
+    } else if (type === "Virtual cards") {
       navigate("/virtual-cards");
     } else {
       setTabs(tabs.slice(0, index + 1));
@@ -70,8 +81,14 @@ const CardDetails = () => {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout mobileChildPadding="0">
       <CardDetailsWrapper>
+        <div
+          className="heading"
+          onClick={() => handleTabClick("mobile", activeTab)}
+        >
+          <MobileHeader title={activeTab === 0 ? "" : tabs[activeTab]} />
+        </div>
         <div className="stage-title-cont">
           <span className="home" onClick={() => toggleActiveScreen()}>
             Home
@@ -92,7 +109,7 @@ const CardDetails = () => {
         ) : activeAction === "Withdraw" ? (
           <Withdraw />
         ) : (
-          <>
+          <div className="main-content">
             <div className="card-display">
               <VirtualCard
                 cardBgColor={cardData.cardDesign}
@@ -106,7 +123,9 @@ const CardDetails = () => {
                 cardFund={cardData.cardFund}
               />
             </div>
-            <H1 mt="3rem">Card Actions</H1>
+            <div className="action-heading">
+              <H1 mt="3rem">Card Actions</H1>
+            </div>
             <div className="card-actions-cont">
               {cardActions.map((action, index) => (
                 <ActionCard
@@ -119,8 +138,7 @@ const CardDetails = () => {
               ))}
             </div>
             <div className="card-transaction-heading">
-              <H1 mt="0">Card Transactions</H1>
-              <hr />
+              <HorizontalLinedTitle text="Card Transactions" />
             </div>
             <div className="transactions">
               {cardData.transactions.map((transaction, index) => (
@@ -134,7 +152,7 @@ const CardDetails = () => {
                 />
               ))}
             </div>
-          </>
+          </div>
         )}
         <CardDetailsModal
           showModal={showDetailsModal}

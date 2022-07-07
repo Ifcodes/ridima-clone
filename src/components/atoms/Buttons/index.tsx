@@ -43,6 +43,7 @@ export type ButtonProps = {
     | "mobile"
     | "mobileReverse";
   buttonPosition?: "center" | "left" | "right";
+  mobileWidth?: string;
 } & DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
@@ -66,11 +67,13 @@ const Button = ({
   buttonPosition,
   isPlainBtn,
   plainBgColor,
+  mobileWidth,
   onClick,
 }: ButtonProps) => {
   return (
     <ButtonWrapper
       width={width}
+      mobileWidth={mobileWidth}
       disabled={disabled}
       mt={mt}
       mb={mb}

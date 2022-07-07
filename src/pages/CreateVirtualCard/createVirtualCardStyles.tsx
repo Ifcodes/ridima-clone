@@ -13,6 +13,19 @@ export const MainWrapper = styled.section`
       cursor: pointer;
     }
   }
+
+  @media screen and (max-width: 640px) {
+    height: 80%;
+    overflow: hidden;
+
+    .header {
+      width: 100%;
+      padding: 1rem 1rem 0;
+    }
+    .stage-title-cont {
+      display: none;
+    }
+  }
 `;
 
 export const CreateVirtualCardWrapper = styled.div`
@@ -63,6 +76,37 @@ export const CreateVirtualCardWrapper = styled.div`
           text-align: center;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    max-width: 100%;
+    height: 80%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form-title-cont {
+      margin: 0 0 1rem;
+      padding: 0 1rem;
+      text-align: center;
+
+      h1 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    form {
+      width: 100%;
+      padding: 0 1rem;
+      margin-top: 0;
     }
   }
 `;
@@ -127,7 +171,7 @@ export const FundYourCardWrapper = styled.div`
   .modal-content {
     width: 100%;
     height: 100%;
-    padding: 1rem 0 4rem;
+    padding: 1rem 2rem 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,6 +236,54 @@ export const FundYourCardWrapper = styled.div`
       /* justify-content: center; */
 
       p {
+        text-align: center;
+      }
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    height: 80%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    grid-gap: 0;
+    overflow-y: auto;
+
+    .form-cont {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        margin-top: 0;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+        width: 80%;
+        margin: 0;
+      }
+
+      form {
+        width: 100%;
+        padding: 0 1rem;
+        margin-top: 0;
+      }
+    }
+
+    .virtual-card-cont {
+      margin-top: 1rem;
+    }
+    .modal-content {
+      padding: 1rem;
+      overflow-y: auto;
+
+      p {
+        width: 100%;
         text-align: center;
       }
     }
