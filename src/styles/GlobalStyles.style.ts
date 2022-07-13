@@ -4,8 +4,8 @@ import CeraPro from "/fonts/CeraPro/stylesheet.css";
 const GlobalStyles = createGlobalStyle` 
 
   @font-face {
-    font-family: "Cera Pro";
-    src: url('/fonts/Cera_Pro/stylesheet.css') format("woff2");
+    font-family: "cera_problack";
+    src: url('/fonts/CeraPro/cera_pro_black-webfont.woff2') format("trueType");
     font-display: swap;
   }
 
@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     margin: 0;
     padding: 0;
-    font-family: "Cera Pro", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'cera_problack';
     font-size: 1vw;
 
     @media screen and (max-width: 640px) {
