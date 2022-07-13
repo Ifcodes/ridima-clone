@@ -52,7 +52,7 @@ export const VirtualCardsWrapper = styled.section`
         width: max-content;
         position: absolute;
         left: 1.5rem;
-        top: 1.5rem;
+        top: 1rem;
       }
 
       .stage-title-cont {
@@ -113,7 +113,7 @@ export const CardDetailsWrapper = styled.div`
   }
 
   @media screen and (max-width: 640px) {
-    height: 100%;
+    height: 85%;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -137,7 +137,7 @@ export const CardDetailsWrapper = styled.div`
       margin: 0;
       width: 100%;
       height: 80%;
-      padding: 0 1rem 6rem;
+      padding: 0 1rem 4rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -164,6 +164,7 @@ export const CardDetailsWrapper = styled.div`
 
     .transactions {
       margin-top: 1rem;
+      width: 100%;
     }
   }
 `;
@@ -307,6 +308,7 @@ export const CardDetailsModalWrapper = styled.div`
 export const FreezeCardWrapper = styled.div`
   width: 100%;
   height: 90%;
+  padding: 1rem 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -322,6 +324,20 @@ export const FreezeCardWrapper = styled.div`
       width: 22rem;
       margin-top: 2rem;
       line-height: 1.3rem;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .heading {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        width: 90%;
+        margin-top: 1rem;
+      }
     }
   }
 `;

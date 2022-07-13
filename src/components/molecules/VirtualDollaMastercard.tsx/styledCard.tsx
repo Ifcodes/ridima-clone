@@ -106,7 +106,6 @@ export const VirtualDollarCardWrapper = styled.div`
 export const ActiveCardWrapper = styled.div`
   width: 100%;
   height: 100%;
-  height: max-content;
   padding: 0 1rem;
   background-color: transparent;
   cursor: pointer;
@@ -154,14 +153,29 @@ export const ActiveCardWrapper = styled.div`
   }
 
   @media screen and (max-width: 640px) {
+    padding: 0;
+
     .cardBg {
       display: none;
     }
 
-    .mobile-card-bg {
-      display: block;
+    .content {
       width: 100%;
       height: 100%;
+
+      .title-cont {
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+      }
+
+      .card-illustrations {
+        bottom: 0.2rem;
+        right: 1.5rem;
+      }
+    }
+    .mobile-card-bg {
+      display: block;
 
       svg {
         width: 100%;

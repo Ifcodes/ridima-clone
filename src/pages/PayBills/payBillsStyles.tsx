@@ -2,6 +2,16 @@ import styled from "styled-components";
 
 export const PayBillsWrapper = styled.div`
   width: 100%;
+
+  @media screen and (max-width: 640px) {
+    height: 80%;
+    padding-bottom: 4rem;
+    overflow-y: auto;
+
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+  }
 `;
 
 export const PayBillsDefaultWrapper = styled.div`
@@ -24,6 +34,24 @@ export const PayBillsDefaultWrapper = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(10rem, 10rem));
     grid-gap: 1.5rem;
     margin-top: 2.6rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    .title-cont {
+      text-align: center;
+      margin: 1.5rem;
+    }
+    .cards-cont {
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      /* grid-gap: 1rem; */
+      margin-top: 1.5rem;
+
+      .card-wrapper {
+        display: flex;
+        justify-content: center;
+      }
+    }
   }
 `;
 
@@ -63,6 +91,12 @@ export const FormWrapper = styled.div<{ isData?: boolean }>`
       input {
         text-align: center;
         font-weight: 700;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      .amount-cont {
+        width: 100%;
       }
     }
   }

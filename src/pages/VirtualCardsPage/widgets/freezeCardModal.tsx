@@ -38,6 +38,7 @@ const FreezeCardModal = ({
       showModal={showModal}
       showCloseBtn
       closeModal={closeModal}
+      handleCloseBtn={closeModal}
     >
       {modalStage === 1 ? (
         <PinVerificationCard

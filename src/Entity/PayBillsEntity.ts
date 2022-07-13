@@ -19,29 +19,25 @@ export const setPayBillActiveTabChange = (type: string) => {
       activeTab: prev.activeTab - 1,
     }));
   } else if (type === "reset") {
-    payBillsState.set((prev) => ({ ...prev, activeTab: 1 }));
+    payBillsState.set((prev) => ({ ...prev, activeTab: 0 }));
   }
   return;
 };
 
-export const setPayBillsTabs = (
-  actionType: string,
-  cardType?: string,
-  index?: number
-) => {
-  if (actionType === "add" && cardType) {
-    payBillsState.set((prev) => ({
-      ...prev,
-      tabs: prev.tabs.concat(cardType),
-    }));
-    setPayBillActiveTabChange("next");
-  } else if (actionType === "remove" && index) {
-    payBillsState.set((prev) => ({
-      ...prev,
-      tabs: prev.tabs.slice(0, index + 1),
-    }));
-    setPayBillActiveTabChange("prev");
-  }
+export const setPayBillsTabs = (cardType: string) => {
+  payBillsState.set((prev) => ({
+    ...prev,
+    tabs: prev.tabs.concat(cardType),
+  }));
+  setPayBillActiveTabChange("next");
+};
+
+export const removePayBillsTabs = (index: number) => {
+  payBillsState.set((prev) => ({
+    ...prev,
+    tabs: prev.tabs.slice(0, index + 1),
+  }));
+  setPayBillActiveTabChange("prev");
 };
 
 export const setSelectedPayBillToPay = (billTopay: string) => {

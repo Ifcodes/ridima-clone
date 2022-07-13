@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 import DashboardLayout from "../../components/templates/MainLayout";
 import {
   payBillsState,
+  removePayBillsTabs,
   setPayBillActiveTabChange,
   setPayBillsTabs,
+  setSelectedPayBillToPay,
 } from "../../Entity/PayBillsEntity";
 import { StageTitleWrapper } from "../CreateVirtualCard/createVirtualCardStyles";
 import AirtimeAndData from "./Airtime&Data";
@@ -22,8 +24,13 @@ const PayBills = () => {
   const activeTab = payBillState.activeTab;
   const selectedBill = payBillState.selectedBillToPay;
 
-  const handleTabClick = (index: number) => {
-    setPayBillsTabs("remove", " ", index);
+  const handleTabClick = (tab: string, index: number) => {
+    if (index < 1) {
+      setPayBillActiveTabChange("prev");
+      setSelectedPayBillToPay("");
+      removePayBillsTabs(index);
+    }
+    return;
   };
 
   const handleNavigateHome = () => {
@@ -41,7 +48,7 @@ const PayBills = () => {
           {tabs.map((tab, index) => (
             <StageTitleWrapper
               key={`key-${tab}-of-${index}`}
-              onClick={() => handleTabClick(index)}
+              onClick={() => handleTabClick(tab, index)}
               isActive={index === activeTab}
             >
               <span className="arrow"> {" > "} </span>

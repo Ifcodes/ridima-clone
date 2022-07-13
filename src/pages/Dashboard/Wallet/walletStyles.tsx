@@ -34,10 +34,11 @@ export const WalletpageDefaultWrapper = styled.div`
     .wallet-card-cont {
       margin-top: 1.5rem;
       width: 50%;
+      height: 12rem;
     }
 
     .horizontal-line-cont {
-      margin-top: 4rem;
+      margin-top: 6rem;
     }
 
     .action-cards-wrapper {

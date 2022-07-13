@@ -46,8 +46,9 @@ const PayBillsDefault = () => {
   const handleBillCardClick = (index: number, title: string) => {
     setActive(index);
     setSelectedPayBillToPay(title);
-    setPayBillsTabs("add", title);
+    setPayBillsTabs(title);
   };
+
   return (
     <PayBillsDefaultWrapper>
       <div className="title-cont">

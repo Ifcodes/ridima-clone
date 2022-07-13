@@ -13,6 +13,7 @@ const WalletBalanceCardSm = ({
   showEyeIcon,
   otherValue,
   otherValueColor,
+  showDefault,
 }: {
   walletName?: string;
   walletAmount?: string;
@@ -23,6 +24,7 @@ const WalletBalanceCardSm = ({
   showEyeIcon?: boolean;
   otherValue?: string;
   otherValueColor?: string;
+  showDefault?: boolean;
 }) => {
   const [showValue, setShowValue] = useState(false);
 
@@ -35,6 +37,7 @@ const WalletBalanceCardSm = ({
       titleColor={titleColor}
       amountColor={amountColor}
       otherValueColor={otherValueColor}
+      showDefault={showDefault}
     >
       <div className="card-content">
         <div className="title-amount-cont">

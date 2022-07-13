@@ -25,7 +25,7 @@ const ActiveCard = ({
       </div>
       <img src="/vectors/PeachRectangleCard.svg" className="cardBg" />
       <div className="mobile-card-bg">
-        <ProfileCardMobile />
+        <ProfileCardMobile bgColor={"#FCF2CF"} />
       </div>
     </ActiveCardWrapper>
   );

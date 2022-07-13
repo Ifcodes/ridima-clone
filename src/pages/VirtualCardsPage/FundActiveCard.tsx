@@ -55,6 +55,7 @@ const FundActiveCard = () => {
     setFundAmount("");
     setPinModalStage(0);
     setPin("");
+    navigate("/virtual-cards");
   };
 
   return (
@@ -84,7 +85,12 @@ const FundActiveCard = () => {
             value={nairaValue}
             readOnly={nairaValue > 0}
           />
-          <Button disabled={!fundAmount} btnText="Fund Card" mt="4.5rem" />
+          <Button
+            type="submit"
+            disabled={!fundAmount}
+            btnText="Fund Card"
+            mt="4.5rem"
+          />
         </form>
       </div>
       <div className="virtual-card-cont">

@@ -3,43 +3,43 @@ import styled from "styled-components";
 export const PinVerificationWrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 1rem 0 4rem;
+  padding: 1rem 2rem 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 
-  .modal-title-cont{
+  .modal-title-cont {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .user{
+    .user {
       text-align: center;
-      color: ${props => props.theme.colors.deepPurple};
+      color: ${(props) => props.theme.colors.deepPurple};
       font-weight: 700;
       margin: 1.5rem 0 2rem;
     }
 
-    .enter-pin{
-      color: ${props => props.theme.colors.blue};
+    .enter-pin {
+      color: ${(props) => props.theme.colors.blue};
       text-align: center;
     }
-    .pin-input-cont{
+    .pin-input-cont {
       justify-content: center;
       border: none;
-    } 
+    }
 
-    .seperator{
+    .seperator {
       margin: 0 0.5rem;
     }
 
-    a{
-      color: ${props => props.theme.colors.blue};
+    a {
+      color: ${(props) => props.theme.colors.blue};
       text-align: center;
     }
 
-    .profile-pics{
+    .profile-pics {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -47,27 +47,27 @@ export const PinVerificationWrapper = styled.div`
     }
   }
 
-  .success-title-cont{
+  .success-title-cont {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    .success-msg-title{
-      color: #27AE60;
+
+    .success-msg-title {
+      color: #27ae60;
       font-weight: 700;
       margin: 0.5rem 0;
       text-align: center;
       font-size: 1.75rem;
     }
 
-     .illustration{
+    .illustration {
       width: 12rem;
       height: 12rem;
     }
 
-    p{
+    p {
       text-align: center;
       width: 20rem;
     }
   }
-`
+`;

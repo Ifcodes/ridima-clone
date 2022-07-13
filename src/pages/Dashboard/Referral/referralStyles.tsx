@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const ReferralPageWrapper = styled.div`
   width: 100%;
+  height: 100%;
+  overflow-y: hidden;
 
   .heading {
     width: 100%;
@@ -62,32 +64,160 @@ export const ReferralPageWrapper = styled.div`
     }
   }
 
-  .page-content {
-    padding: 3.125rem 3rem 6rem;
+  .details {
+    height: 70%;
+    overflow-y: auto;
 
-    .line-title {
-      margin: 2rem 0;
+    .page-content {
+      padding: 3.125rem 3rem 8rem;
+
+      .line-title {
+        margin: 2rem 0;
+      }
+
+      .stats-wrapper {
+        width: 50%;
+
+        .stat {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 1.125rem;
+          border-bottom: 0.5px solid rgba(224, 224, 224, 0.7);
+          padding: 1rem;
+          margin-top: 1rem;
+
+          .stat-title {
+            color: ${(props) => props.theme.colors.grey1};
+          }
+
+          .stat-value {
+            color: ${(props) => props.theme.colors.grey2};
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-page-cont {
+    display: none;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .mobile-referral-details {
+    display: none;
+  }
+
+  @media screen and (max-width: 640px) {
+    height: 80%;
+    overflow-y: hidden;
+
+    .heading,
+    .details {
+      display: none;
     }
 
-    .stats-wrapper {
-      width: 50%;
+    .mobile-referral-details {
+      display: block;
+      height: 80%;
+      overflow-y: auto;
 
-      .stat {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.125rem;
-        border-bottom: 0.5px solid rgba(224, 224, 224, 0.7);
-        padding: 1rem;
-        margin-top: 1rem;
+      .page-content {
+        padding: 1rem 1.5rem 6rem;
 
-        .stat-title {
-          color: ${(props) => props.theme.colors.grey1};
+        .line-title {
+          margin: 3rem 0 1rem;
         }
 
-        .stat-value {
-          color: ${(props) => props.theme.colors.grey2};
-          font-weight: 500;
+        .stats-wrapper {
+          width: 100%;
+
+          .stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.125rem;
+            border-bottom: 0.5px solid rgba(224, 224, 224, 0.7);
+            padding: 1rem;
+            margin-top: 1rem;
+
+            .stat-title {
+              color: ${(props) => props.theme.colors.grey1};
+            }
+
+            .stat-value {
+              color: ${(props) => props.theme.colors.grey2};
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+
+    .header {
+      display: block;
+      width: 100%;
+      padding: 1rem 1.5rem 0;
+    }
+
+    .mobile-page-cont {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 7rem;
+      overflow-y: auto;
+
+      .btn-cont {
+        padding: 0 2rem;
+      }
+      .content {
+        padding: 1rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .img-cont {
+          width: 80%;
+
+          img {
+            max-width: 100%;
+          }
+        }
+
+        .cta-cont {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 2rem;
+
+          .referral-code {
+            width: 13.3rem;
+            padding: 1.5rem;
+            background-color: #f6f6f6;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+
+          .share-btn {
+            width: max-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem 1.6rem;
+            border-radius: 50px;
+            background-color: ${(props) => props.theme.colors.yellow};
+            color: ${(props) => props.theme.colors.deepPurple};
+            margin-left: 1rem;
+          }
         }
       }
     }

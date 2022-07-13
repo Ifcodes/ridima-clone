@@ -4,6 +4,7 @@ export const WalletBalCardWrapper = styled.div<{
   titleColor?: string;
   amountColor?: string;
   otherValueColor?: string;
+  showDefault?: boolean;
 }>`
   width: 27rem;
   height: 8.4rem;
@@ -69,18 +70,10 @@ export const WalletBalCardWrapper = styled.div<{
 
   @media screen and (max-width: 640px) {
     width: 100%;
-    height: 17rem;
+    height: 7rem;
 
     .card-content {
       width: 100%;
-      height: 100%;
-      padding: 2rem 1rem;
-      flex-direction: column-reverse;
-      justify-content: flex-end;
-
-      .title-amount-cont {
-        margin-top: 1rem;
-      }
 
       .eye-icon {
         display: flex;
@@ -88,11 +81,11 @@ export const WalletBalCardWrapper = styled.div<{
       }
     }
     .cardBg {
-      display: none;
+      display: ${(props) => (props.showDefault ? "block" : "none")};
     }
 
     .cardBg-mobile {
-      display: block;
+      display: ${(props) => (props.showDefault ? "none" : "block")};
       width: 100%;
     }
   }

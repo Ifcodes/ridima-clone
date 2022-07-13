@@ -53,6 +53,7 @@ const Withdraw = () => {
     setFundAmount("");
     setPinModalStage(0);
     setPin("");
+    navigate("/virtual-cards");
   };
 
   return (

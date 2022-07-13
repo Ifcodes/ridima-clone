@@ -18,4 +18,18 @@ export const AddMinusWrapper = styled.div<{
       font-size: 1.75rem;
     }
   }
+
+  @media screen and (max-width: 640px) {
+    max-width: 100%;
+
+    .input-cont {
+      width: 60%;
+      margin-top: 0;
+
+      > div {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
 `;
