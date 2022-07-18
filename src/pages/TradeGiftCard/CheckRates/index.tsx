@@ -45,32 +45,34 @@ const CheckRates = () => {
     }
   };
   return (
-    <DashboardLayout>
+    <DashboardLayout mobileChildPadding="0">
       <CheckRatesMainWrapper>
-        <StageTitleWrapper darkBgShade>
-          <span className="home" onClick={() => navigate("/home")}>
-            Home
-          </span>
-          {tabs.map((tab, index) => (
-            <StageTitleWrapper
-              key={`key-${tab}-of-${index}`}
-              onClick={() => handleTabClick(tab, index)}
-              isActive={index === activeTab}
-            >
-              <span className="arrow"> {" > "} </span>
-              <span className="title"> {tab} </span>
-            </StageTitleWrapper>
-          ))}
-        </StageTitleWrapper>
-        <div className="stepper-cont">
-          <Stepper
-            defaultTitle={"Gift Card & currency"}
-            steps={steps}
-            currentStep={activeStage}
-            previousStep={activeStage - 1}
-          />
+        <div className="stage-title-wrap">
+          <StageTitleWrapper darkBgShade>
+            <span className="home" onClick={() => navigate("/home")}>
+              Home
+            </span>
+            {tabs.map((tab, index) => (
+              <StageTitleWrapper
+                key={`key-${tab}-of-${index}`}
+                onClick={() => handleTabClick(tab, index)}
+                isActive={index === activeTab}
+              >
+                <span className="arrow"> {" > "} </span>
+                <span className="title"> {tab} </span>
+              </StageTitleWrapper>
+            ))}
+          </StageTitleWrapper>
         </div>
         <CheckRatesWrapper>
+          <div className="stepper-cont">
+            <Stepper
+              defaultTitle={"Gift Card & currency"}
+              steps={steps}
+              currentStep={activeStage}
+              previousStep={activeStage - 1}
+            />
+          </div>
           {activeStage === 1 && <GiftCardsCurrency />}
           {activeStage === 2 && <CardTypeAndSubCategory />}
           {activeStage === 3 && <CardAmount />}

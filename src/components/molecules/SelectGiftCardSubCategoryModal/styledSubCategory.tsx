@@ -31,4 +31,8 @@ export const SubCategoryModalWrapper = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 640px) {
+    padding: 1rem;
+  }
 `;

@@ -19,7 +19,6 @@ const TrapCard = ({
 }: TrapCardProps) => {
   return (
     <TrapCardWrapper cardType={trapeCardType} onClick={onCardClick}>
-      {/* <div className="card-content-wrapper"> */}
       <div className="card-content">
         {trapeCardType === "leftTrape" ? (
           <div className="text-cont">
@@ -52,7 +51,6 @@ const TrapCard = ({
           <RightTrapezoid bgColor={bgColor} />
         </div>
       )}
-      <img src={mobileCardUrl} alt="" className="mobile-bg" />
     </TrapCardWrapper>
   );
 };

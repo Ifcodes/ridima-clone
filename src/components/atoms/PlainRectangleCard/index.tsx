@@ -25,8 +25,10 @@ const PlainRectangleCard = ({
       imgLeftPositionMobile={imgLeftPositionMobile}
       mobileTextWidth={mobileTextWidth}
     >
-      <div className="title-cont">
-        <h1>{title}</h1>
+      <div className="card-content">
+        <div className="title-cont">
+          <h1>{title}</h1>
+        </div>
       </div>
       <img src={imgUrl} alt="" className="illustrations" />
     </RectangleWrapper>

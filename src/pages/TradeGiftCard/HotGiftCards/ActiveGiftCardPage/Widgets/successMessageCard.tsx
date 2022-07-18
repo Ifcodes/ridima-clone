@@ -32,6 +32,7 @@ const SellGcSuccessMessageCard = () => {
       closeModal={() => setOpenTradeSuccessMessage(false)}
       showCloseBtn
       cardHeight="85%"
+      mobileCardHeight="85%"
     >
       <SuccessMessageWrapper>
         <div className="img-cont">
@@ -52,14 +53,17 @@ const SellGcSuccessMessageCard = () => {
           <Button
             buttonBgType="modalSm"
             btnText="Make another trade"
-            width="22rem"
+            width="100%"
             onClick={() => handleButtonClick("another-trade")}
           />
           <Button
+            bgColor="white"
+            lineColor="#F5CF48"
             buttonBgType="reversedModal"
             btnText="See Transaction Status"
-            width="20rem"
+            width="100%"
             mt="0"
+            mb="2rem"
           />
         </div>
       </SuccessMessageWrapper>

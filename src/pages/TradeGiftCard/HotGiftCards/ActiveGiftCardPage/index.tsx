@@ -77,7 +77,7 @@ const ActiveGiftCard = () => {
 
   const imgUploadFormIsFilled =
     imgUploadFormData.selectedImages.length > 0 &&
-    Object.values(imgUploadFormData).every((item) => item !== "");
+    imgUploadFormData.ecode !== "";
 
   const handleCardTypeClick = (card: string, index: number) => {
     setSelectedCard(index);
@@ -167,7 +167,7 @@ const ActiveGiftCard = () => {
   };
 
   return (
-    <ActiveGiftCardWrapper>
+    <ActiveGiftCardWrapper scrollOnMobile>
       <div className="stepper-cont">
         <Stepper
           defaultTitle="Card"

@@ -68,7 +68,7 @@ const SelectSubCategory = ({
       <div className="value-display-cont">
         <span>You will get:</span>
         <div className="value-cont">
-          <span className="symbol">₦</span>
+          <h1 className="symbol">₦</h1>
           <h1> {tradeValues.expectedValue.toLocaleString()}</h1>
         </div>
         <span>≠{rate}</span>
@@ -76,6 +76,7 @@ const SelectSubCategory = ({
       <SelectSubCategoryModal
         openModal={showModal}
         closeModal={() => setShowModal(false)}
+        handleCloseBtn={() => setShowModal(false)}
         selectedCategory={selectedCategory}
         selectCategory={selectCategory}
       />

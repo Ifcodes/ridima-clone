@@ -9,14 +9,22 @@ import SuccessMessageCard from "./successMessageCard";
 const CardTermsModal = ({
   openModal,
   closeModal = () => {},
+  handleCloseBtn = () => {},
 }: {
   openModal: boolean;
   closeModal?: Function;
+  handleCloseBtn?: Function;
 }) => {
   const [stage, setStage] = useState(0);
   const [successFull, setSuccessful] = useState(false);
   return (
-    <Modal showModal={openModal} closeModal={closeModal} showCloseBtn>
+    <Modal
+      showModal={openModal}
+      closeModal={closeModal}
+      handleCloseBtn={() => handleCloseBtn()}
+      mobileCardHeight={stage === 1 ? "70%" : "45%"}
+      showCloseBtn
+    >
       <CardTermsModalWrapper>
         {stage === 1 && successFull ? (
           <SuccessMessageCard />
@@ -36,8 +44,8 @@ const CardTermsModal = ({
               <Button
                 buttonBgType="modal"
                 btnText="Accept Terms"
-                width="100%"
                 onClick={() => setStage(stage + 1)}
+                mt="0"
               />
             </div>
           </>

@@ -125,7 +125,7 @@ const Button = ({
       ) : buttonBgType === "reversedModal" ? (
         <ReversedModalBg
           bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
-          lineColor={lineColor}
+          linecolor={lineColor}
         />
       ) : (
         <PrimaryButtonBg

@@ -65,3 +65,16 @@ export const setCardPurchaseAmount = (
   const newState = buyGiftCardsState.get();
   buyGiftCardsState.set({ ...newState, cardPurchaseAmount: e.target.value });
 };
+
+export const resetBuyGiftCardsState = () => {
+  buyGiftCardsState.set((prev) => ({
+    ...prev,
+    currentStage: 0,
+    modalStage: 0,
+    showTermsModal: false,
+    showConfirmationModal: false,
+    confirmed: false,
+    cardPurchaseAmount: "",
+    expectedValue: 0,
+  }));
+};

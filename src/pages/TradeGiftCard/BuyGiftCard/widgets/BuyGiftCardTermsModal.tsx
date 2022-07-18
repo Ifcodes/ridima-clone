@@ -41,6 +41,7 @@ const BuyGiftCardTermsModal = ({
         </ol>
         <div className="btn-cont">
           <Button
+            width="100%"
             btnText="Proceed"
             buttonBgType="modal"
             onClick={() => proceed()}

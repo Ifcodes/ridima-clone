@@ -1,10 +1,18 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../../../../components/atoms/Buttons";
 import { Paragraph } from "../../../../../components/atoms/Typography";
-import MessageCard from "../../../../../components/molecules/MessageCard";
+import {
+  setIsConfirmed,
+  setShowConfirmationModal,
+} from "../../../../../Entity/BuyGiftCardsEntity";
 import { SuccessMessageWrapper } from "../../../styledTradeGiftCard";
 
-const SuccessMessageCard = () => {
+const SuccessMessageCard = ({
+  handleBtnClick = () => {},
+}: {
+  handleBtnClick?: Function;
+}) => {
+  
   return (
     <SuccessMessageWrapper>
       <div className="img-cont">
@@ -26,12 +34,16 @@ const SuccessMessageCard = () => {
           buttonBgType="modalSm"
           btnText="Make another trade"
           width="22rem"
+          onClick={() => handleBtnClick("trade")}
         />
         <Button
+          bgColor="white"
+          lineColor="#F5CF48"
           buttonBgType="reversedModal"
           btnText="See Transaction Status"
-          width="20rem"
+          width="22rem"
           mt="0"
+          onClick={() => handleBtnClick("transactions")}
         />
       </div>
     </SuccessMessageWrapper>

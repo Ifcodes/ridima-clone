@@ -65,6 +65,7 @@ const TradeSummaryCard = ({
       <div className="selected-imgs-cont">
         {images?.map((img, index) => (
           <SelectImgCard
+            key={`${img}-${index}`}
             width="6rem"
             height="6rem"
             borderRadius="10px"

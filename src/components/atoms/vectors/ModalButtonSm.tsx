@@ -4,8 +4,8 @@ import { SvgIconProps } from "../../../types";
 
 const ModalButtonSm = (props: SvgIconProps) => (
   <svg
-    width={324}
-    height={79}
+    // width={324}
+    // height={79}
     viewBox={"0 0 324 79"}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

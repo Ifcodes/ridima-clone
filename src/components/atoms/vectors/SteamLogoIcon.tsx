@@ -3,8 +3,8 @@ import { SVGProps } from "react";
 
 const SteamLogoIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    width={93}
-    height={93}
+    // width={93}
+    // height={93}
     viewBox="0 0 93 92"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

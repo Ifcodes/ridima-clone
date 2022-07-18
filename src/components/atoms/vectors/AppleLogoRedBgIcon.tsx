@@ -3,8 +3,8 @@ import { SVGProps } from "react";
 
 const AppleLogoRedBgIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    width={93}
-    height={92}
+    // width={93}
+    // height={92}
     viewBox="0 0 93 92"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

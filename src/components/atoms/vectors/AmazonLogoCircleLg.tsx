@@ -3,8 +3,9 @@ import { SVGProps } from "react";
 
 const AmazonLogoCircleLg = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    width={132}
-    height={132}
+    // width={132}
+    // height={132}
+    viewBox="0 0 132 132"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

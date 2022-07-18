@@ -129,18 +129,16 @@ const SellGiftCards = () => {
               </div>
               <div className="content">
                 {trapCardIemList.map((item, index) => (
-                  <div className="card-wrapper">
-                    <TrapCard
-                      key={item.cardtitle}
-                      bgColor={item.cardBg}
-                      trapeCardType={item.cardType}
-                      title={item.cardtitle}
-                      icon={<item.cardIcon />}
-                      titleDescription={item.titleDescription}
-                      mobileCardUrl={item.cardBgImgUrl}
-                      onCardClick={() => handleCardClick(item.cardtitle)}
-                    />
-                  </div>
+                  <TrapCard
+                    key={item.cardtitle}
+                    bgColor={item.cardBg}
+                    trapeCardType={item.cardType}
+                    title={item.cardtitle}
+                    icon={<item.cardIcon />}
+                    titleDescription={item.titleDescription}
+                    mobileCardUrl={item.cardBgImgUrl}
+                    onCardClick={() => handleCardClick(item.cardtitle)}
+                  />
                 ))}
               </div>
             </>

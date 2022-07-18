@@ -4,8 +4,8 @@ import { SvgIconProps } from "../../../types";
 
 const RightTrapezoid = (props: SvgIconProps) => (
   <svg
-    width={421}
-    height={127}
+    // width={421}
+    // height={127}
     viewBox={"0 0 421 127"}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

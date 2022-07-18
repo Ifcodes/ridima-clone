@@ -61,4 +61,8 @@ export const TradeSummaryWrapper = styled.div`
       margin-left: 1rem;
     }
   }
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
 `;

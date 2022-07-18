@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CustomRadioButton from "../../atoms/CustomRadioButton";
+import { ScrollableModalContent } from "../../atoms/ScrollableModalContent";
 import { H1 } from "../../atoms/Typography";
 import Modal from "../Modal";
 import { SubCategoryModalWrapper } from "./styledSubCategory";
@@ -8,12 +9,14 @@ const SelectSubCategoryModal = ({
   openModal,
   closeModal = () => {},
   selectCategory = () => {},
+  handleCloseBtn = () => {},
   selectedCategory,
 }: {
   openModal: boolean;
   closeModal?: Function;
   selectCategory?: Function;
   selectedCategory?: string;
+  handleCloseBtn?: Function;
 }) => {
   const categoryList = [
     "$25 - $50",
@@ -27,7 +30,14 @@ const SelectSubCategoryModal = ({
     "$50 - $200",
   ];
   return (
-    <Modal showModal={openModal} closeModal={closeModal} showCloseBtn>
+    <Modal
+      showModal={openModal}
+      closeModal={closeModal}
+      width="28%"
+      maxWidth="30%"
+      handleCloseBtn={() => handleCloseBtn()}
+      showCloseBtn
+    >
       <SubCategoryModalWrapper>
         <H1 mt="0">Select sub-category</H1>
         <div className="category-list-cont">

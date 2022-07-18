@@ -5,6 +5,7 @@ import {
   buyGiftCardsState,
   setBuyGiftcardStage,
 } from "../../../../Entity/BuyGiftCardsEntity";
+import { ActiveGiftCardWrapper } from "../../styledTradeGiftCard";
 import { CardAmountFormWrapper } from "../buyGiftCardStyles";
 import CardAmountSelection from "./cardAmount";
 import EmailAndComments from "./emailandcomments";
@@ -20,18 +21,18 @@ const BuyGiftCardActive = () => {
   };
 
   return (
-    <div>
-      <Stepper
+    <ActiveGiftCardWrapper padding="0 1.5rem">
+      {/* <Stepper
         defaultTitle="Card"
         steps={steps}
         currentStep={activeStage}
         previousStep={activeStage - 1}
         onClick={handleStepClick}
-      />
+      /> */}
       <AmazonCardImage />
       {activeStage === 0 && <CardAmountSelection />}
       {activeStage === 1 && <EmailAndComments />}
-    </div>
+    </ActiveGiftCardWrapper>
   );
 };
 

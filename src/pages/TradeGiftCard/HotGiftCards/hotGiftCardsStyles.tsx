@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const HotGiftCardsWrapper = styled.div`
   width: 100%;
+
+  @media screen and (max-width: 640px) {
+    height: 80vh;
+  }
 `;
 
 export const HotGiftCardDefaultWrapper = styled.div`
@@ -25,6 +29,18 @@ export const HotGiftCardDefaultWrapper = styled.div`
     width: 100%;
     .list-item {
       width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    padding-bottom: 6rem;
+
+    .list-wrapper {
+      padding-bottom: 4rem;
+      .list-item {
+        width: 100%;
+      }
     }
   }
 `;

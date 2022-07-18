@@ -37,12 +37,12 @@ const CardTypeAndSubCategory = () => {
   };
   return (
     <CheckRatesFormWrapper>
-      <div>
+      <div className="hr-line-title">
         <HorizontalLinedTitle text={`What type of ${selectedGiftCard}?`} />
       </div>
       <div className="card-type-cont">
         {cards.map((card, index) => (
-          <div className="card-type">
+          <div className="card-type" key={`${index}-${card.title}`}>
             <IconWrapper
               onClick={() => setActiveCard(index)}
               iconIsSelected={index === activeCard}
@@ -53,7 +53,7 @@ const CardTypeAndSubCategory = () => {
           </div>
         ))}
       </div>
-      <div className="title-cont">
+      <div className="hr-line-title">
         <HorizontalLinedTitle text={`Select Card Sub-category`} />
       </div>
       <div className="form-content">

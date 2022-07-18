@@ -42,7 +42,7 @@ const BuyGiftCards = () => {
   };
 
   return (
-    <DashboardLayout childPadding="0">
+    <DashboardLayout childPadding="0" mobileChildPadding="0">
       <SellGiftCardWrapper>
         <div className={activeTab === 1 ? "heading" : "default"}>
           <StageTitleWrapper darkBgShade>

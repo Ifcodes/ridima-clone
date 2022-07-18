@@ -18,41 +18,52 @@ export const RectangleWrapper = styled.div<{
   cursor: pointer;
 
   .illustrations {
+    width: 50%;
+    position: absolute;
     left: ${(props) => props.imgLeftPosition || "0"};
     bottom: ${(props) => props.imgBottomPosition || "-0.5rem"};
   }
 
-  .title-cont {
+  .card-content {
+    width: 100%;
     height: 100%;
+    padding: 2rem;
     position: absolute;
-    right: 4rem;
-    width: ${(props) => props.textWidth || "10.6rem"};
+    top: 0;
+    left: 0;
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
 
-    h1 {
-      font-size: 2.25rem;
-      color: ${(props) => props.theme.colors.deepPurple};
-      font-weight: 700;
+    .title-cont {
+      width: ${(props) => props.textWidth || "12rem"};
+      display: flex;
+      align-items: center;
+
+      h1 {
+        font-size: 2.25rem;
+        color: ${(props) => props.theme.colors.deepPurple};
+        font-weight: 700;
+      }
     }
   }
 
   @media screen and (max-width: 640px) {
     width: 100%;
-    height: 8rem;
-    margin-top: 1rem;
+    height: 9rem;
+    margin: 1.5rem 0;
     border-radius: 1.6rem;
 
     img {
       width: 50%;
     }
+    .card-content {
+      padding: 1rem 2rem 1rem;
+      .title-cont {
+        width: ${(props) => props.mobileTextWidth || "8rem"};
 
-    .title-cont {
-      right: 2rem;
-      width: ${(props) => props.mobileTextWidth || "5rem"};
-
-      h1 {
-        font-size: 1.2rem;
+        h1 {
+          font-size: 1.5rem;
+        }
       }
     }
 
@@ -60,7 +71,7 @@ export const RectangleWrapper = styled.div<{
       max-width: 60%;
       position: absolute;
       left: ${(props) => props.imgLeftPositionMobile || "0"};
-      bottom: ${(props) => props.imgBottomPositionMobile || "-0.5rem"};
+      bottom: ${(props) => props.imgBottomPositionMobile || "0"};
     }
   }
 `;

@@ -141,7 +141,7 @@ const WalletDefaultpage = () => {
         {walletActionCards.map((card, index) => (
           <WalletActionCard
             title={card.cardText}
-            icon={<card.icon lineColor={card.iconColor} />}
+            icon={<card.icon linecolor={card.iconColor} />}
             isYellowBg={card.isYellow}
             cardType={card.cardType}
             bgColor={card.bgColor}

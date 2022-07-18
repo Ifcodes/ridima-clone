@@ -54,4 +54,18 @@ export const ListItemWrapper = styled.div<{
       padding: 0;
     }
   }
+
+  @media screen and (max-width: 640px) {
+    .card-text-content {
+      .title-text-wrapper {
+        .title {
+          font-size: 1.2rem;
+        }
+
+        .description {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
 `;

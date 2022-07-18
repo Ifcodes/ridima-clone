@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-export const BuyGiftCardWrapper = styled.div``;
-
 export const BuyGiftCardTermsModalWrapper = styled.div`
   width: 100%;
   height: 100%;
@@ -14,6 +12,7 @@ export const BuyGiftCardTermsModalWrapper = styled.div`
   h1 {
     color: ${(props) => props.theme.colors.deepPurple};
     margin: 1.2rem 0;
+    text-align: center;
   }
   ol {
     margin-top: 0;
@@ -30,6 +29,7 @@ export const BuyGiftCardTermsModalWrapper = styled.div`
 `;
 
 export const CardAmountFormWrapper = styled.div<{ isActive?: boolean }>`
+  width: 100%;
   margin-top: 2rem;
 
   .form-cont {
@@ -68,13 +68,29 @@ export const CardAmountFormWrapper = styled.div<{ isActive?: boolean }>`
     }
   }
 
-  .btn-cont {
+  .buy-giftCard-cta {
+    width: 27rem;
     margin-top: 5rem;
 
     p {
       font-size: 0.8rem;
       color: ${(props) => props.theme.colors.grey2};
       text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form-cont {
+      width: 100%;
+      max-width: 27rem;
+    }
+
+    .buy-giftCard-cta {
+      width: 100%;
     }
   }
 `;

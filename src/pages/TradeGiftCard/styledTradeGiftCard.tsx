@@ -14,8 +14,8 @@ export const TradeGiftCardWrapper = styled.div`
 
   @media screen and (max-width: 640px) {
     .default {
-      height: 90%;
-      padding-bottom: 10rem;
+      height: 80%;
+      padding-bottom: 12rem;
       margin-top: 1rem;
       overflow-y: auto;
       display: block;
@@ -26,6 +26,7 @@ export const TradeGiftCardWrapper = styled.div`
 export const SellGiftCardWrapper = styled.div`
   width: 100%;
   height: 100%;
+  max-width: 100%;
   overflow: hidden;
 
   .heading {
@@ -47,6 +48,7 @@ export const SellGiftCardWrapper = styled.div`
   }
 
   .main-content {
+    max-width: 100%;
     height: 80%;
     overflow-y: auto;
     display: flex;
@@ -55,28 +57,11 @@ export const SellGiftCardWrapper = styled.div`
     padding: 2rem 3rem;
 
     .content {
+      max-width: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
       margin-top: 2rem;
-      grid-column-gap: 2rem;
-    }
-  }
-
-  @media screen and (max-width: 1380px) {
-    .main-content {
-      padding: 2rem 3rem 10rem;
-
-      .content {
-        grid-template-columns: repeat(2, 45rem);
-      }
-    }
-  }
-
-  @media screen and (max-width: 902px) {
-    .main-content {
-      .content {
-        display: block;
-      }
+      grid-gap: 2rem;
     }
   }
 
@@ -92,7 +77,7 @@ export const SellGiftCardWrapper = styled.div`
     .main-content {
       width: 100%;
       align-items: center;
-      padding: 1rem 1rem 12rem;
+      padding: 1rem 1rem 2rem;
 
       .title-cont {
         align-self: flex-start;
@@ -101,19 +86,19 @@ export const SellGiftCardWrapper = styled.div`
 
       .content {
         width: 100%;
-        display: block;
-
-        .card-wrapper {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-        }
+        grid-column-gap: 3rem;
+        margin-bottom: 12rem;
       }
     }
   }
 `;
 
-export const ActiveGiftCardWrapper = styled.div`
+export const ActiveGiftCardWrapper = styled.div<{
+  padding?: string;
+  scrollOnMobile?: boolean;
+}>`
+  padding: ${(props) => props.padding || ""};
+
   .stepper-cont {
     margin-top: 3rem;
   }
@@ -137,9 +122,18 @@ export const ActiveGiftCardWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 5.5rem;
+
+    .stepper-cont {
+      margin-top: 1rem;
+      width: 100%;
+    }
 
     .selector {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .card-types-heading {
@@ -147,6 +141,8 @@ export const ActiveGiftCardWrapper = styled.div`
     }
     .card-types-cont {
       width: 100%;
+      align-items: center;
+      justify-content: center;
     }
 
     .btn-cont {
@@ -186,6 +182,7 @@ export const SubCategoryWrapper = styled.div<{
       display: flex;
       align-items: center;
       margin: ${(props) => (props.isBigInt ? "1rem 0" : "")};
+      font-family: "cera_promedium";
 
       .symbol,
       h1 {
@@ -206,10 +203,28 @@ export const SubCategoryWrapper = styled.div<{
       }
     }
   }
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    .amount-field-cont {
+      width: 100%;
+    }
+
+    .subcat-cont {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .value-display-cont {
+      width: 100%;
+    }
+  }
 `;
 
 export const UploadImageWrapper = styled.div`
   width: 100%;
+
   .title-cont {
     margin: 1.5rem 0 1rem;
   }
@@ -221,21 +236,15 @@ export const UploadImageWrapper = styled.div`
   .selected-imgs {
     width: 100%;
     display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 10rem));
+    grid-gap: 1.5rem;
     align-items: center;
-
-    .img-list-cont {
-      width: 100%;
-      display: grid;
-      margin-left: 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(10rem, 10rem));
-      column-gap: 1.5rem;
-    }
 
     .img-cont {
       width: 100%;
       height: 10rem;
       border-radius: 8px;
-      margin-left: 1.5rem;
       display: flex;
       justify-content: center;
       object-fit: contain;
@@ -265,6 +274,15 @@ export const UploadImageWrapper = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 640px) {
+    padding: 0 1rem;
+    .ecode-cont {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
 `;
 
 export const TradeSummaryWrapper = styled.div`
@@ -275,6 +293,14 @@ export const TradeSummaryWrapper = styled.div`
   .card-wrapper {
     margin-top: 1.5rem;
   }
+
+  @media screen and (max-width: 640px) {
+    max-width: 100%;
+
+    .hr-line {
+      margin-top: 0;
+    }
+  }
 `;
 
 export const CardTermsModalWrapper = styled.div`
@@ -284,19 +310,34 @@ export const CardTermsModalWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 2rem;
 
   .title {
-    width: 21rem;
+    width: 23rem;
+    text-align: center;
 
     h1 {
-      text-align: center;
       color: ${(props) => props.theme.colors.grey1};
     }
   }
 
   .btn-cont {
     width: 100%;
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 4rem;
+
+    .title {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
 `;
 
@@ -307,6 +348,8 @@ export const SuccessMessageWrapper = styled.div<{ errorMessage?: boolean }>`
   flex-direction: column;
   align-items: center;
   padding-top: ${(props) => (props.errorMessage ? "1.7rem" : "")};
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 
   .img-cont {
     width: 60%;
@@ -338,5 +381,15 @@ export const SuccessMessageWrapper = styled.div<{ errorMessage?: boolean }>`
     flex-direction: column;
     align-items: center;
     margin: 2rem 0 0;
+    padding: 0 1rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    .img-cont {
+      height: 14rem;
+    }
+    .text-cont {
+      width: 80%;
+    }
   }
 `;

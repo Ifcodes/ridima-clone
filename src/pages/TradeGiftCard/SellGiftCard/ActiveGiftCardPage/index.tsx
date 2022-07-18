@@ -177,13 +177,13 @@ const ActiveGiftCard = () => {
 
   return (
     <ActiveGiftCardWrapper>
-      <Stepper
+      {/* <Stepper
         defaultTitle="Card"
         steps={steps}
         currentStep={currentStage}
         previousStep={currentStage - 1}
         onClick={handleStepClick}
-      />
+      /> */}
       {currentStage === 3 && <TradeSummary />}
       {currentStage !== 3 && <AmazonCardImage />}
       {currentStage === 2 && (
@@ -253,6 +253,7 @@ const ActiveGiftCard = () => {
       <CardTermsModal
         openModal={openCardTermsModal}
         closeModal={() => setOpenCardTermsModal(false)}
+        handleCloseBtn={() => setOpenCardTermsModal(false)}
       />
     </ActiveGiftCardWrapper>
   );

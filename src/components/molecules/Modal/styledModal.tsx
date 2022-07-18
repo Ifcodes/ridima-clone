@@ -65,10 +65,27 @@ export const ModalWrapper = styled.div<{
     }
   }
 
-  @media screen {
+  @media screen and (max-width: 1007px) {
     .modal-card {
       width: 85%;
-      height: ${(props) => props.mobileCardHeight || "75%"};
+      max-width: 33rem;
+      height: 70%;
+      max-height: 48rem;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .modal-card {
+      width: 80%;
+      max-width: 25rem;
+      max-height: 40rem;
+      height: ${(props) => props.mobileCardHeight || "65%"};
+    }
+  }
+
+  @media screen and (max-height: 640px) {
+    .modal-card {
+      height: 75%;
     }
   }
 `;

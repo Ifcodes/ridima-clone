@@ -49,7 +49,7 @@ const EmailAndComments = () => {
           }
           mt="2rem"
         />
-        <div className="btn-cont">
+        <div className="buy-giftCard-cta">
           <Paragraph> Payment is made with Naira wallet </Paragraph>
           <Button
             btnText="Buy GiftCard"

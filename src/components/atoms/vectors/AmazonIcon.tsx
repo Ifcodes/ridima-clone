@@ -1,16 +1,16 @@
 import * as React from "react";
 import { SVGProps } from "react";
 
-const AmazonI = (props: SVGProps<SVGSVGElement>) => (
+const AmazonIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    width={93}
-    height={92}
+    // width={93}
+    // height={92}
     viewBox="0 0 93 92"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <circle cx={49.224} cy={43.264} r={43.131} fill="url(#amazon)" />
+    <circle cx={49.224} cy={43.264} r={43.131} fill="url(#amazon-trapccard)" />
     <circle
       cx={44.623}
       cy={46.714}
@@ -26,7 +26,7 @@ const AmazonI = (props: SVGProps<SVGSVGElement>) => (
     />
     <defs>
       <linearGradient
-        id="amazon"
+        id="amazon-trapccard"
         x1={17.159}
         y1={0.133}
         x2={41.329}
@@ -40,4 +40,4 @@ const AmazonI = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export default AmazonI;
+export default AmazonIcon;

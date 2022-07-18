@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import Button from "../../../../components/atoms/Buttons";
 import Input from "../../../../components/atoms/Forms/Input";
 import { Paragraph } from "../../../../components/atoms/Typography";
@@ -21,15 +21,17 @@ const CardAmountSelection = () => {
     if (cardAmount) setExpectedValue(Number(cardAmount) * rate);
   }, [cardAmount]);
 
-  const handleProceed = () => {
+  const handleProceed = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     if (buyGiftCardStates.currentStage < 1) setBuyGiftcardStage("next");
   };
 
   return (
     <CardAmountFormWrapper isActive={expectedValue > 0}>
-      <form action="" className="form-cont">
+      <form onSubmit={handleProceed} className="form-cont">
         <Input
-          width="27rem"
+          // width="27rem"
           label="Enter amount"
           symbol="$"
           placeholder="$1000"
@@ -44,15 +46,15 @@ const CardAmountSelection = () => {
           </div>
           <span>≠{rate}</span>
         </div>
-        <div className="btn-cont">
+        <div className="buy-giftCard-cta">
           <Paragraph> Payment is made with Naira wallet </Paragraph>
           <Button
             btnText="Buy GiftCard"
             disabled={!cardAmount}
-            width="27rem"
+            type={"submit"}
+            width="100%"
             mt="1rem"
             mb="5rem"
-            onClick={() => handleProceed()}
           />
         </div>
       </form>

@@ -1,12 +1,12 @@
-import * as React from "react"
-import { SVGProps } from "react"
-import { SvgIconProps } from "../../../types"
+import * as React from "react";
+import { SVGProps } from "react";
+import { SvgIconProps } from "../../../types";
 
 const ModalButtonBg = (props: SvgIconProps) => (
   <svg
-    width={props.width || 400}
-    height={80}
-    viewBox="0 0 436 80" 
+    // width={props.width || 400}
+    // height={80}
+    viewBox="0 0 436 80"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -16,6 +16,6 @@ const ModalButtonBg = (props: SvgIconProps) => (
       fill={props.bgColor || "#F5CF48"}
     />
   </svg>
-)
+);
 
-export default ModalButtonBg
+export default ModalButtonBg;

@@ -4,8 +4,6 @@ export const CardTypeCardWrapper = styled.div<{
   cardBgColor?: string;
   isActive?: boolean;
 }>`
-  width: 7.5rem;
-  height: 6.5rem;
   border-radius: 0.8rem;
   border: ${(props) => (props.isActive ? "1px solid #7165e3" : "none")};
   background-color: ${(props) =>
@@ -17,7 +15,7 @@ export const CardTypeCardWrapper = styled.div<{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.6rem 0.875rem;
+  padding: 1rem;
   cursor: pointer;
 
   :hover {

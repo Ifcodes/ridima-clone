@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const TrapCardWrapper = styled.div<{ cardType?: string }>`
-  width: max-content;
   height: max-content;
   cursor: pointer;
   position: relative;
@@ -11,13 +10,13 @@ export const TrapCardWrapper = styled.div<{ cardType?: string }>`
     height: 100%;
 
     svg {
-      width: auto;
+      width: 100%;
     }
   }
 
   .card-content {
     width: 100%;
-    margin: 1rem auto;
+    height: 100%;
     padding: 0 2rem;
     position: absolute;
     left: 0;
@@ -35,10 +34,20 @@ export const TrapCardWrapper = styled.div<{ cardType?: string }>`
         width: 70%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
 
         h1 {
           width: 10rem;
+          margin-top: 0.5rem;
+        }
+      }
+
+      .icon-wrapper {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 6rem;
+
+        svg {
+          width: 100%;
         }
       }
     }
@@ -59,48 +68,6 @@ export const TrapCardWrapper = styled.div<{ cardType?: string }>`
 
     .leftTrap-title {
       margin-top: 1.2rem;
-    }
-  }
-
-  img {
-    display: none;
-  }
-
-  @media screen and (max-width: 640px) {
-    width: 100%;
-    height: 7rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-
-    .card-content {
-      width: 100%;
-      /* max-width: 23rem; */
-      height: 100%;
-      margin-top: 0;
-
-      .icon-wrapper {
-        width: 5rem;
-        height: 5rem;
-
-        svg {
-          max-width: 100%;
-          max-height: 100%;
-        }
-      }
-
-      .text-cont {
-        width: 80%;
-      }
-    }
-
-    .trap-wrapper {
-      display: none;
-    }
-
-    img {
-      display: flex;
-      width: 100%;
-      height: 100%;
     }
   }
 `;

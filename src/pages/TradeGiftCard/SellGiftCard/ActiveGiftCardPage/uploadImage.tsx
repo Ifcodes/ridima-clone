@@ -26,7 +26,6 @@ const UploadImage = ({
   handleFormChange,
   removeImg = () => {},
 }: ImgUploadProps) => {
-  
   return (
     <UploadImageWrapper>
       <div className="title-cont">
@@ -51,17 +50,17 @@ const UploadImage = ({
           />
         </div>
         {formFields.imgSelected && (
-          <div className="img-list-cont">
+          <>
             {formFields.selectedImages &&
               formFields.selectedImages.map((img, index) => (
-                <div className="img-cont">
+                <div key={`${img}-${index}`} className="img-cont">
                   <div className="remove-img" onClick={() => removeImg(index)}>
                     -
                   </div>
                   <img src={`${img}`} alt="" />
                 </div>
               ))}
-          </div>
+          </>
         )}
       </div>
     </UploadImageWrapper>

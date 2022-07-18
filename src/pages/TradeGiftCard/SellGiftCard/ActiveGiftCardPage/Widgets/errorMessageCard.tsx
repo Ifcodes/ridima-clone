@@ -22,7 +22,7 @@ const ErrorMessageCard = () => {
         <Button
           buttonBgType="modalSm"
           btnText="Try again"
-          width="22rem"
+          width="100%"
           onClick={() => navigate("/trade-giftcards")}
         />
       </div>

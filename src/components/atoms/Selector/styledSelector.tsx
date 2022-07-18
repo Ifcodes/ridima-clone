@@ -62,5 +62,6 @@ export const SelectButtonWrapper = styled.div<{
 
   @media screen and (max-width: 640px) {
     width: ${(props) => props.mobileWidth || "100%"};
+    max-width: 25rem;
   }
 `;
