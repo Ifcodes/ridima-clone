@@ -1,7 +1,9 @@
 import styled, { createGlobalStyle } from "styled-components";
+import "antd/dist/antd.css";
 
 const GlobalStyles = createGlobalStyle` 
-
+  /* @import '~antd/dist/antd.css'; */
+  
   @font-face {
     font-family: "cera_problack";
     src: url('/fonts/CeraPro/cera_pro_black-webfont.woff2') format("trueType");
@@ -34,6 +36,14 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     font-size: 1vw;
 
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
     @media screen and (max-width: 640px) {
       font-size: 0.8rem;
     }
@@ -59,6 +69,7 @@ const GlobalStyles = createGlobalStyle`
   ::-webkit-scrollbar-thumb {
     background-color: #7165E3;
   }
+
 
   @media screen and (max-width: 640px) {
     ::-webkit-scrollbar {

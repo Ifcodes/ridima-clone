@@ -19,11 +19,11 @@ export const WalletCardWrapper = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 80%;
+    height: 90%;
     padding: 2rem 2rem 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 
     .title {
       color: white;
@@ -36,7 +36,8 @@ export const WalletCardWrapper = styled.div`
       color: white;
     }
 
-    .btn-cont {
+    .wallet-card-btn-cont {
+      margin-top: 1rem;
       width: 18rem;
     }
 
@@ -46,6 +47,9 @@ export const WalletCardWrapper = styled.div`
   }
 
   @media screen and (max-width: 640px) {
+    display: flex;
+    align-items: center;
+
     .cardbg-mobile {
       display: block;
     }
@@ -55,20 +59,38 @@ export const WalletCardWrapper = styled.div`
 
     .card-content {
       height: 90%;
-      padding: 2rem 0 0;
+      justify-content: space-around;
+      padding: 2rem 1rem 0;
 
       .text-cont {
-        margin-left: 1rem;
+        max-width: 100%;
+        h1 {
+          font-size: 2rem;
+        }
       }
 
-      .btn-cont {
+      .wallet-card-btn-cont {
         display: none;
       }
 
       .btn-cont-mobile {
-        display: block;
+        display: flex;
         width: 10rem;
-        margin-left: 0.4rem;
+        max-width: 100%;
+        /* margin: 0 0.4rem; */
+      }
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .card-content {
+      justify-content: space-between;
+
+      .text-cont {
+        max-width: 100%;
+        h1 {
+          font-size: 1.5rem;
+        }
       }
     }
   }

@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from "react";
 import { useNavigate } from "react-router-dom";
-import { createdCard } from "../../../Entity/CreatedVirtualCard";
+import { createdCard } from "../../../Entity/CreateVirtualCardEntity/CreatedVirtualCard";
 import { CardProps } from "../../../types";
 import Button from "../../atoms/Buttons";
 import MasterCardLogo from "../../atoms/vectors/MasterCardLogo";

@@ -1,10 +1,11 @@
-import * as React from "react"
-import { SvgIconProps } from "../../../types"
+import * as React from "react";
+import { SvgIconProps } from "../../../types";
 
 const MediumButtonBg = (props: SvgIconProps) => (
   <svg
-    width={286}
-    height={79}
+    // width={286}
+    // height={79}
+    viewBox={"0 0 286 79"}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -14,6 +15,6 @@ const MediumButtonBg = (props: SvgIconProps) => (
       fill={props.bgColor ? props.bgColor : "#F5CF48"}
     />
   </svg>
-)
+);
 
-export default MediumButtonBg
+export default MediumButtonBg;

@@ -85,7 +85,7 @@ const WithdrawToBank = () => {
   };
   return (
     <>
-      <DashboardLayout>
+      <DashboardLayout mobileChildPadding="0">
         <WithdrawPageWrapper>
           <StageTitleWrapper>
             <span className="home" onClick={() => navigate("/home")}>

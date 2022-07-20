@@ -3,7 +3,12 @@ import OtpInput from "react-otp-input";
 import { Link } from "react-router-dom";
 import ProfilePics from "../../../components/atoms/ProfilePics";
 import Avatar from "../../../components/atoms/vectors/Avatar";
+import Modal from "../../../components/molecules/Modal";
 import { PinVerificationWrapper } from "../../../components/molecules/PinVerificationModal/styledPinVerification";
+import {
+  createVirtualCardState,
+  setCreateVCardPinVerifyModal,
+} from "../../../Entity/CreateVirtualCardEntity";
 
 type PinVerificationProps = {
   imgUrl?: string;
@@ -18,6 +23,8 @@ const PinVerification = ({
   handlePinInput,
   pin,
 }: PinVerificationProps) => {
+  const showModal = createVirtualCardState.use().showPinVerificationModal;
+
   const pinInputStyle = {
     width: "4rem",
     height: "4rem",
@@ -34,28 +41,38 @@ const PinVerification = ({
     border: "none",
   };
 
+  const handleClose = () => {
+    console.log("show");
+  };
   return (
-    <PinVerificationWrapper>
-      <div className="modal-title-cont">
-        <div className="profile-pics">
-          <ProfilePics imgUrl={imgUrl || "/vectors/Avatar.svg"} />
+    <Modal
+      showModal={showModal}
+      showCloseBtn
+      closeModal={() => handleClose()}
+      handleCloseBtn={() => setCreateVCardPinVerifyModal(false)}
+    >
+      <PinVerificationWrapper>
+        <div className="modal-title-cont">
+          <div className="profile-pics">
+            <ProfilePics imgUrl={imgUrl || "/vectors/Avatar.svg"} />
+          </div>
+          <p className="user">{user}</p>
+          <OtpInput
+            numInputs={4}
+            onChange={handlePinInput}
+            value={pin}
+            separator={<span className="seperator"></span>}
+            containerStyle="pin-input-cont"
+            inputStyle={pinInputStyle}
+            focusStyle={focusStyle}
+            shouldAutoFocus={true}
+            isInputNum={true}
+            isInputSecure={true}
+          />
         </div>
-        <p className="user">{user}</p>
-        <OtpInput
-          numInputs={4}
-          onChange={handlePinInput}
-          value={pin}
-          separator={<span className="seperator"></span>}
-          containerStyle="pin-input-cont"
-          inputStyle={pinInputStyle}
-          focusStyle={focusStyle}
-          shouldAutoFocus={true}
-          isInputNum={true}
-          isInputSecure={true}
-        />
-      </div>
-      <Link to={"/forgot-pin"}>Forgot PIN</Link>
-    </PinVerificationWrapper>
+        <Link to={"/forgot-pin"}>Forgot PIN</Link>
+      </PinVerificationWrapper>
+    </Modal>
   );
 };
 

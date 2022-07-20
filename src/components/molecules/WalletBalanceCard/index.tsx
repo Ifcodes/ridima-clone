@@ -24,10 +24,11 @@ const WalletBalanceCard = ({
             <sup className="currency">{currency}</sup>
           </H1>
         </div>
-        <div className="btn-cont">
+        <div className="wallet-card-btn-cont">
           <Button
             width="100%"
-            buttonBgType="small"
+            height="100%"
+            buttonBgType="medium"
             bgColor={btnColor || "#F5CF48"}
             btnText={btnText}
             buttonPosition="left"

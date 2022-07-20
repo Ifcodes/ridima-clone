@@ -75,16 +75,18 @@ export const HomeWrapper = styled.section`
       align-items: center;
     }
 
-    h1 {
-      color: ${(props) => props.theme.colors.deepPurple};
+    .text-content {
       width: 20rem;
-      margin-top: 1.5rem;
-      text-align: center;
-    }
-    p {
-      text-align: center;
-      width: 100%;
-      max-width: 22rem;
+      h1 {
+        color: ${(props) => props.theme.colors.deepPurple};
+        margin-top: 1.5rem;
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+        width: 100%;
+      }
     }
 
     img {
@@ -148,6 +150,14 @@ export const HomeWrapper = styled.section`
       grid-gap: 0;
       padding-bottom: 6rem;
       margin: 0 auto;
+    }
+
+    .modal-content {
+      padding: 0 1.5rem;
+
+      .text-content {
+        width: 100%;
+      }
     }
   }
 `;

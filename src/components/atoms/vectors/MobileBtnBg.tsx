@@ -4,8 +4,8 @@ import { SvgIconProps } from "../../../types";
 
 const MobileBtnBg = (props: SvgIconProps) => (
   <svg
-    width={127}
-    height={47}
+    // width={127}
+    // height={47}
     viewBox={"0 0 127 47"}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../../../../components/atoms/Buttons";
 import { Paragraph } from "../../../../../components/atoms/Typography";
-import MessageCard from "../../../../../components/molecules/MessageCard";
+
 import Modal from "../../../../../components/molecules/Modal";
 import {
   hotGiftCardsStates,
@@ -22,10 +22,11 @@ const SellGcSuccessMessageCard = () => {
       navigate("/trade-giftcards");
     }
     if (type === "view-transaction") {
-      return; // TODO: add transaction link
+      navigate("/activities");
     }
     return;
   };
+
   return (
     <Modal
       showModal={openModal}
@@ -61,6 +62,7 @@ const SellGcSuccessMessageCard = () => {
             lineColor="#F5CF48"
             buttonBgType="reversedModal"
             btnText="See Transaction Status"
+            onClick={() => handleButtonClick("view-transactions")}
             width="100%"
             mt="0"
             mb="2rem"

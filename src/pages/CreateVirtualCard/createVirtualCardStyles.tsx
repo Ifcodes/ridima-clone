@@ -54,6 +54,7 @@ export const CreateVirtualCardWrapper = styled.div`
       font-size: 1.75rem;
       font-weight: 700;
       margin: 0;
+      text-align: center;
     }
 
     .cards-wrapper {
@@ -76,6 +77,10 @@ export const CreateVirtualCardWrapper = styled.div`
           text-align: center;
         }
       }
+    }
+
+    .btn-cont {
+      width: 100%;
     }
   }
 

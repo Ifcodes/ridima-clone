@@ -25,7 +25,7 @@ export const WalletpageDefaultWrapper = styled.div`
     width: 100%;
     height: 80%;
     overflow-y: auto;
-    padding: 1.5rem 1.5rem 4rem;
+    padding: 1.5rem 1.5rem 0;
 
     h1 {
       margin: 0;
@@ -33,12 +33,13 @@ export const WalletpageDefaultWrapper = styled.div`
 
     .wallet-card-cont {
       margin-top: 1.5rem;
-      width: 50%;
-      height: 12rem;
+      width: 100%;
+      min-width: 18rem;
+      max-width: 27rem;
     }
 
     .horizontal-line-cont {
-      margin-top: 6rem;
+      margin-top: 2rem;
     }
 
     .action-cards-wrapper {
@@ -74,6 +75,12 @@ export const WithdrawPageWrapper = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(23rem, 23rem));
     grid-gap: 2rem;
     margin-top: 2rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    height: 80%;
+    padding: 1rem 1.5rem 3rem;
+    overflow-y: auto;
   }
 `;
 
@@ -128,6 +135,15 @@ export const SendMoneyWrapper = styled.div`
       :hover .remove-img {
         visibility: visible;
       }
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    height: 80%;
+    overflow-y: auto;
+
+    .users-wrapper {
+      width: 100%;
     }
   }
 `;

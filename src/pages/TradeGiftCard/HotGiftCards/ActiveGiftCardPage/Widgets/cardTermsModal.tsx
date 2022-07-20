@@ -26,7 +26,12 @@ const CardTermsModal = () => {
     closeModal();
   };
   return (
-    <Modal showModal={openModal} closeModal={closeModal} showCloseBtn>
+    <Modal
+      showModal={openModal}
+      closeModal={closeModal}
+      showCloseBtn
+      mobileCardHeight="35%"
+    >
       <CardTermsModalWrapper>
         <div className="title">
           <h1>Card Terms</h1>

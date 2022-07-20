@@ -15,7 +15,7 @@ export const TradeCardWrapper = styled.div`
     justify-content: flex-end;
     align-items: center;
     position: absolute;
-    padding-right: 1.2rem;
+    padding-right: 3rem;
     top: 0;
     left: 0;
 
@@ -33,6 +33,8 @@ export const TradeCardWrapper = styled.div`
 
   @media screen and (max-width: 640px) {
     .card-content {
+      padding-right: 1.2rem;
+
       h3 {
         width: 8rem;
         font-size: 1.5rem;

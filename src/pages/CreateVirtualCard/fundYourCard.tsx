@@ -9,17 +9,21 @@ import ConfirmFunding from "./CardWidgets/confirmFunding";
 import PinVerification from "./CardWidgets/PinVerification";
 import PinVerificationSuccess from "./CardWidgets/PinVerificationSuccess";
 import { FundYourCardWrapper } from "./createVirtualCardStyles";
+import {
+  setCreateVCardConfirmFundModal,
+  setCreateVCardPinVerifyModal,
+  setCreateVCardSuccessMsgModal,
+} from "../../Entity/CreateVirtualCardEntity";
 
 const FundYourCard = ({ selectedCard }: { selectedCard: string }) => {
   const [fundAmount, setFundAmount] = useState("");
-  const [showModal, setShowModal] = useState(false);
   const [pin, setPin] = useState("");
   const [currentExchangeRate] = useState(550);
-  const [userDetails, setUserDetails] = useState({
+  const [userDetails] = useState({
     profileImage: "",
     userName: "Toyosil",
   });
-  const [modalStage, setModalStage] = useState(0);
+
   const nairaAmount = currentExchangeRate * Number(fundAmount);
 
   const handlePinChange = (val: string) => {
@@ -28,14 +32,15 @@ const FundYourCard = ({ selectedCard }: { selectedCard: string }) => {
 
   useEffect(() => {
     if (pin.length === 4) {
-      setModalStage(modalStage + 1);
+      setCreateVCardPinVerifyModal(false);
+      setCreateVCardSuccessMsgModal(true);
     }
   }, [pin]);
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    setShowModal(true);
+    setCreateVCardConfirmFundModal(true);
   };
 
   return (
@@ -70,35 +75,20 @@ const FundYourCard = ({ selectedCard }: { selectedCard: string }) => {
           cardExpiry="01/02"
         />
       </div>
-      <Modal
-        width="30%"
-        maxWidth="30rem"
-        cardHeight="95vh"
-        mobileCardHeight="70%"
-        showModal={showModal}
-        showCloseBtn
-        closeModal={() => setShowModal(false)}
-      >
-        <div className="modal-content">
-          {modalStage === 1 ? (
-            //TODO: Replace with pinverification from molecule
-            <PinVerification
-              imgUrl={userDetails.profileImage}
-              user={userDetails.userName}
-              handlePinInput={(val: string) => handlePinChange(val)}
-              pin={pin}
-            />
-          ) : modalStage === 2 ? (
-            <PinVerificationSuccess />
-          ) : (
-            <ConfirmFunding
-              nairaAmount={nairaAmount}
-              currentExchangeRate={currentExchangeRate}
-              setModalStage={() => setModalStage(modalStage + 1)}
-            />
-          )}
-        </div>
-      </Modal>
+
+      <PinVerification
+        imgUrl={userDetails.profileImage}
+        user={userDetails.userName}
+        handlePinInput={(val: string) => handlePinChange(val)}
+        pin={pin}
+      />
+
+      <PinVerificationSuccess />
+
+      <ConfirmFunding
+        nairaAmount={nairaAmount}
+        currentExchangeRate={currentExchangeRate}
+      />
     </FundYourCardWrapper>
   );
 };

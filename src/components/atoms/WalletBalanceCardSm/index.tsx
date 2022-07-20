@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import BlueCardRecMobile from "../vectors/BlueCardRecMobile";
 import ClosedEyeIconOutline from "../vectors/ClosedEyeIconOutlined";
 import OpenEyeIconOutline from "../vectors/OpenEyeIconOutline";
 import { WalletBalCardWrapper } from "./walletBalanceCardStyles";
@@ -39,7 +40,7 @@ const WalletBalanceCardSm = ({
       otherValueColor={otherValueColor}
       showDefault={showDefault}
     >
-      <div className="card-content">
+      <div className="wallet-card-content">
         <div className="title-amount-cont">
           <span className="title">{walletName}</span>
           {showValue ? (
@@ -68,11 +69,9 @@ const WalletBalanceCardSm = ({
       ) : (
         <img src="/vectors/WalletBalRectangle.svg" alt="" className="cardBg" />
       )}
-      <img
-        src="/vectors/BlueCardRecMobile.svg"
-        alt=""
-        className="cardBg-mobile"
-      />
+      {/* <div className="wallet-cardBg-mobile">
+        <BlueCardRecMobile />
+      </div> */}
     </WalletBalCardWrapper>
   );
 };

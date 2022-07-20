@@ -1,7 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import SemiTriangleCard from "../../atoms/vectors/SemiTriangleCard";
-import TradeGiftCardIcon from "../../atoms/vectors/TradeGiftCardIcon";
 import { TradeCardWrapper } from "./styledTradeCard";
 
 const TradeGiftcardActionCard = () => {

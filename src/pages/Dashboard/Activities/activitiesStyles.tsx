@@ -320,9 +320,77 @@ export const DateFilterWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem 1rem;
+  overflow-y: hidden;
+
+  ::-webkit-scrollbar {
+    width: 2px;
+    border-radius: 24px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+    border-radius: 24px;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #bdbdbd;
+    border-radius: 24px;
+  }
 
   h1 {
     color: ${(props) => props.theme.colors.deepPurple};
+    margin: 1rem auto;
+  }
+
+  .calendar-cont {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rdrCalendarWrapper {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    overflow-y: auto;
+  }
+
+  .rdrDateDisplayWrapper {
+    width: 100%;
+  }
+
+  .rdrMonthAndYearWrapper {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
+  @media screen and (max-width: 1075px) {
+    .rdrCalendarWrapper {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .rdrCalendarWrapper {
+      width: 100%;
+      font-size: 0.8rem;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .rdrCalendarWrapper {
+      font-size: 0.6rem;
+    }
   }
 `;

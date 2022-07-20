@@ -11,7 +11,7 @@ export const WalletBalCardWrapper = styled.div<{
   border-radius: 1.5rem;
   position: relative;
 
-  .card-content {
+  .wallet-card-content {
     width: 100%;
     height: 100%;
     display: flex;
@@ -64,15 +64,14 @@ export const WalletBalCardWrapper = styled.div<{
     width: 100%;
   }
 
-  .cardBg-mobile {
+  .wallet-cardBg-mobile {
     display: none;
   }
 
   @media screen and (max-width: 640px) {
     width: 100%;
-    height: 7rem;
 
-    .card-content {
+    .wallet-card-content {
       width: 100%;
 
       .eye-icon {
@@ -81,12 +80,17 @@ export const WalletBalCardWrapper = styled.div<{
       }
     }
     .cardBg {
-      display: ${(props) => (props.showDefault ? "block" : "none")};
+      display: ${(props) => (props.showDefault ? "none" : "block")};
     }
 
-    .cardBg-mobile {
+    .wallet-cardBg-mobile {
       display: ${(props) => (props.showDefault ? "none" : "block")};
       width: 100%;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 `;

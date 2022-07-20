@@ -50,6 +50,7 @@ const DefaultHomeScreen = ({
           <span>Hello, </span>
           <span className="user">{currentUser}</span>
         </div>
+        {/* div below is for mobile view */}
         <div className="secondary-tabs">
           <CircledBackground
             width="3rem"
@@ -101,10 +102,10 @@ const DefaultHomeScreen = ({
         showModal={showModal}
         closeModal={() => setShowModal(false)}
         width={"28%"}
-        // cardHeight={'95vh'}
+        mobileCardHeight={"55%"}
       >
         <div className="modal-content">
-          <div>
+          <div className="text-content">
             <H1>Create a Virtual US Dollar Card</H1>
             <Paragraph>
               Create your new 4-digit transaction PIN. Make sure its stronger

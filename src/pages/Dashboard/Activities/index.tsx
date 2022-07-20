@@ -10,6 +10,7 @@ import { transactionData } from "../../../utils/helpers/transactionsData";
 import { ActivitiesWrapper } from "./activitiesStyles";
 import EmptyTransactionpage from "./emptyTransactionpage";
 import TransactionsPage from "./transactionsPage";
+import DatefilterModal from "./widgets/datefilterModal";
 
 const Activities = () => {
   const cards = [
@@ -68,6 +69,7 @@ const Activities = () => {
         {transactionData.length === 0 && <EmptyTransactionpage />}
         <TransactionsPage />
       </ActivitiesWrapper>
+      <DatefilterModal />
     </DashboardLayout>
   );
 };

@@ -62,6 +62,7 @@ export const VirtualDollarCardWrapper = styled.div`
   @media screen and (max-width: 640px) {
     .card-content {
       left: 0;
+
       .btn-complete {
         display: none;
       }

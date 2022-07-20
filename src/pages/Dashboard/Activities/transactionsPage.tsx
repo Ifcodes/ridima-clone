@@ -134,7 +134,6 @@ const TransactionsPage = () => {
       <FilterModal onFilter={() => handleFilter("filter")} />
       <TradeGiftCardTransactionModal />
       <TransactionDetailsModal />
-      <DatefilterModal />
     </TransactionsPageWrapper>
   );
 };
