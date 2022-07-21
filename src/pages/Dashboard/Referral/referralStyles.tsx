@@ -113,7 +113,7 @@ export const ReferralPageWrapper = styled.div`
   }
 
   @media screen and (max-width: 640px) {
-    height: 80%;
+    height: 90%;
     overflow-y: hidden;
 
     .heading,
@@ -165,7 +165,7 @@ export const ReferralPageWrapper = styled.div`
     }
 
     .mobile-page-cont {
-      height: 100%;
+      height: 88%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -174,7 +174,8 @@ export const ReferralPageWrapper = styled.div`
       overflow-y: auto;
 
       .btn-cont {
-        padding: 0 2rem;
+        width: 100%;
+        padding: 0 1rem;
       }
       .content {
         padding: 1rem 2rem 2rem;

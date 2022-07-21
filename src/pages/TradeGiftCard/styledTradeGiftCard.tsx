@@ -99,9 +99,15 @@ export const ActiveGiftCardWrapper = styled.div<{
 }>`
   padding: ${(props) => props.padding || ""};
 
-  .stepper-cont {
-    margin-top: 3rem;
+  .stepper-wrap {
+    width: 100%;
+    margin-bottom: 3rem;
   }
+
+  .stepper-wrap-mobile {
+    display: none;
+  }
+
   .selector {
     margin-top: 2.5rem;
   }
@@ -124,9 +130,14 @@ export const ActiveGiftCardWrapper = styled.div<{
     align-items: center;
     padding-bottom: 5.5rem;
 
-    .stepper-cont {
-      margin-top: 1rem;
+    .stepper-wrap {
+      display: none;
+    }
+
+    .stepper-wrap-mobile {
       width: 100%;
+      display: block;
+      margin-bottom: 2rem;
     }
 
     .selector {
@@ -329,7 +340,7 @@ export const CardTermsModalWrapper = styled.div`
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    padding-bottom: 4rem;
+    padding: 1rem 1.3rem 4rem;
 
     .title {
       width: 100%;
@@ -341,15 +352,19 @@ export const CardTermsModalWrapper = styled.div`
   }
 `;
 
-export const SuccessMessageWrapper = styled.div<{ errorMessage?: boolean }>`
+export const SuccessMessageWrapper = styled.div<{
+  errorMessage?: boolean;
+  pl?: string;
+  pr?: string;
+}>`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: ${(props) => (props.errorMessage ? "1.7rem" : "")};
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
+  padding-left: ${(props) => props.pl || "1.2rem"};
+  padding-right: ${(props) => props.pr || "1.2rem"};
 
   .img-cont {
     width: 60%;

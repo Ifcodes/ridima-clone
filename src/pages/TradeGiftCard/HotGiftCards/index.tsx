@@ -30,21 +30,23 @@ const HotGiftCards = () => {
   return (
     <DashboardLayout>
       <HotGiftCardsWrapper>
-        <StageTitleWrapper darkBgShade>
-          <span className="home" onClick={() => navigate("/home")}>
-            Home
-          </span>
-          {tabs.map((tab, index) => (
-            <StageTitleWrapper
-              key={`key-${tab}-of-${index}`}
-              onClick={() => handleTabClick(tab, index)}
-              isActive={index === activeTab}
-            >
-              <span className="arrow"> {" > "} </span>
-              <span className="title"> {tab} </span>
-            </StageTitleWrapper>
-          ))}
-        </StageTitleWrapper>
+        <div className="stage-title-wrapper">
+          <StageTitleWrapper darkBgShade>
+            <span className="home" onClick={() => navigate("/home")}>
+              Home
+            </span>
+            {tabs.map((tab, index) => (
+              <StageTitleWrapper
+                key={`key-${tab}-of-${index}`}
+                onClick={() => handleTabClick(tab, index)}
+                isActive={index === activeTab}
+              >
+                <span className="arrow"> {" > "} </span>
+                <span className="title"> {tab} </span>
+              </StageTitleWrapper>
+            ))}
+          </StageTitleWrapper>
+        </div>
         {activeTab === 1 && <HotGiftCardsDefault />}
         {activeTab === 2 && <ActiveGiftCard />}
       </HotGiftCardsWrapper>

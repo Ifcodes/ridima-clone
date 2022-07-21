@@ -12,9 +12,8 @@ const SuccessMessageCard = ({
 }: {
   handleBtnClick?: Function;
 }) => {
-  
   return (
-    <SuccessMessageWrapper>
+    <SuccessMessageWrapper pl="0" pr="0">
       <div className="img-cont">
         <img
           src="/vectors/SuccessMessageIconGreen2.svg"

@@ -20,7 +20,6 @@ import { setTradeSummaryData } from "../../../../Entity/TradeSummaryData";
 import { tradeValue } from "../../../../Entity/TradeValue";
 import AmazonIconCircle from "../../../../components/atoms/vectors/AmazonIconCircle";
 import CardTermsModal from "./Widgets/cardTermsModal";
-import Stepper from "../../../../components/molecules/Stepper";
 import {
   hotGiftCardsStates,
   resetActiveCardStage,
@@ -33,6 +32,7 @@ import {
 import SuccessMessageCard from "./Widgets/successMessageCard";
 import SellGcSuccessMessageCard from "./Widgets/successMessageCard";
 import SellGcErrorMessageCard from "./Widgets/errorMessageCard";
+import StepperComponent from "../../../../components/molecules/Stepper";
 
 const giftCardTypes = [
   {
@@ -69,7 +69,17 @@ const ActiveGiftCard = () => {
     quantity: "",
   });
 
-  const steps = ["Giftcard Type", "Card Value", "Upload Image(s)"];
+  const steps = ["Card", "Giftcard Type", "Card Value", "Upload Image(s)"];
+
+  const mobileSteps = Array(3).fill("");
+
+  const handleStepClick = (step: string) => {
+    if (step === "Card") resetActiveCardStage(0);
+    else if (step === "Giftcard Type") resetActiveCardStage(0);
+    else if (step === "Card Value") resetActiveCardStage(1);
+    else if (step.includes("Upload")) resetActiveCardStage(2);
+    else return;
+  };
 
   const categoryFormIsFilled = Object.values(selectedCategory).every(
     (item) => item !== ""
@@ -160,21 +170,20 @@ const ActiveGiftCard = () => {
     });
   };
 
-  const handleStepClick = (index: number) => {
-    steps.map((step, stepIndex) => {
-      if (index === stepIndex) resetActiveCardStage(index);
-    });
-  };
-
   return (
     <ActiveGiftCardWrapper scrollOnMobile>
-      <div className="stepper-cont">
-        <Stepper
-          defaultTitle="Card"
+      <div className="stepper-wrap">
+        <StepperComponent
           steps={steps}
-          currentStep={currentStage}
-          previousStep={currentStage - 1}
-          onClick={handleStepClick}
+          activeStep={currentStage + 1}
+          toggleSteps={handleStepClick}
+        />
+      </div>
+      <div className="stepper-wrap-mobile">
+        <StepperComponent
+          steps={mobileSteps}
+          activeStep={currentStage + 1}
+          toggleSteps={handleStepClick}
         />
       </div>
       {currentStage === 3 && <TradeSummary />}

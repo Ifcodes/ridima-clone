@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../../components/atoms/Buttons";
-import Stepper from "../../../components/molecules/Stepper";
+import StepperComponent from "../../../components/molecules/Stepper";
+
 import DashboardLayout from "../../../components/templates/MainLayout";
 import {
   checkRatesStates,
   resetAllCheckRatesState,
   setCurrentCheckRateStage,
+  setFixedCheckRateStage,
 } from "../../../Entity/CheckRatesEntity";
 import { StageTitleWrapper } from "../../CreateVirtualCard/createVirtualCardStyles";
 import CardAmount from "./cardAmount";
@@ -23,7 +25,20 @@ const CheckRates = () => {
   const [tabs, setTabs] = useState(["Trade Gift Cards", "Check Rates"]);
   const [activeTab, setActiveTab] = useState(1);
 
-  const steps = ["Card type & Sub-category", "Card Amount"];
+  const steps = [
+    "Giftcard-Currency",
+    "Card type & Sub-category",
+    "Card Amount",
+  ];
+
+  const mobileSteps = Array(3).fill("");
+
+  const handleStepClick = (step: string) => {
+    if (step.includes("Giftcard")) setFixedCheckRateStage(0);
+    else if (step.includes("type")) setFixedCheckRateStage(1);
+    else if (step.includes("Amount")) setFixedCheckRateStage(2);
+    else return;
+  };
 
   const handleTabClick = (type: string, index: number) => {
     if (type === "Trade Gift Cards") {
@@ -37,7 +52,7 @@ const CheckRates = () => {
   };
 
   const handleProceed = () => {
-    if (activeStage === 3) {
+    if (activeStage === 2) {
       navigate("/trade-giftcards");
       resetAllCheckRatesState();
     } else {
@@ -45,7 +60,7 @@ const CheckRates = () => {
     }
   };
   return (
-    <DashboardLayout mobileChildPadding="0">
+    <DashboardLayout mobileChildPadding="0" childPadding="0">
       <CheckRatesMainWrapper>
         <div className="stage-title-wrap">
           <StageTitleWrapper darkBgShade>
@@ -65,17 +80,23 @@ const CheckRates = () => {
           </StageTitleWrapper>
         </div>
         <CheckRatesWrapper>
-          <div className="stepper-cont">
-            <Stepper
-              defaultTitle={"Gift Card & currency"}
+          <div className="stepper-wrap">
+            <StepperComponent
               steps={steps}
-              currentStep={activeStage}
-              previousStep={activeStage - 1}
+              activeStep={activeStage}
+              toggleSteps={handleStepClick}
             />
           </div>
-          {activeStage === 1 && <GiftCardsCurrency />}
-          {activeStage === 2 && <CardTypeAndSubCategory />}
-          {activeStage === 3 && <CardAmount />}
+          <div className="stepper-wrap-mobile">
+            <StepperComponent
+              steps={mobileSteps}
+              activeStep={activeStage}
+              toggleSteps={handleStepClick}
+            />
+          </div>
+          {activeStage === 0 && <GiftCardsCurrency />}
+          {activeStage === 1 && <CardTypeAndSubCategory />}
+          {activeStage === 2 && <CardAmount />}
           <Button
             btnText={activeStage === 3 ? "Close" : "Proceed"}
             width="27rem"

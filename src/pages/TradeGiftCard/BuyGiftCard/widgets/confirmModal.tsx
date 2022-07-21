@@ -51,6 +51,8 @@ const ConfirmModal = () => {
       showModal={showModal}
       closeModal={() => closeModal()}
       mobileCardHeight={stage === 1 ? "70%" : "45%"}
+      cardHeight="80%"
+      width="28%"
       showCloseBtn
       handleCloseBtn={() => closeModal()}
     >

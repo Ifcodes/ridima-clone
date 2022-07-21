@@ -24,6 +24,7 @@ export const BuyGiftCardTermsModalWrapper = styled.div`
   }
 
   .btn-cont {
+    width: 100%;
     margin: 1rem 0;
   }
 `;

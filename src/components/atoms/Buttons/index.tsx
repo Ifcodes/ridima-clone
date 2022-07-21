@@ -92,44 +92,44 @@ const Button = ({
         {suffix && <span>{suffix}</span>}
       </div>
       {buttonBgType === "plain" ? (
-        <IconBtnBg bgColor={bgColor} />
+        <IconBtnBg bgcolor={bgColor} />
       ) : buttonBgType === "mobile" ? (
         <MobileBtnBg
-          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          bgcolor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
           className="button-Bg"
         />
       ) : buttonBgType === "mobileReverse" ? (
         <ReverseMobileBtnBg
-          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          bgcolor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
           className="button-Bg"
         />
       ) : buttonBgType === "small" ? (
         <SmallButtonBg
-          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          bgcolor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
           className="button-Bg"
         />
       ) : buttonBgType === "medium" ? (
         <MediumButtonBg
-          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          bgcolor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
           className="button-Bg"
         />
       ) : buttonBgType === "modal" ? (
         <ModalButtonBg
-          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          bgcolor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
           width={width}
         />
       ) : buttonBgType === "modalSm" ? (
         <ModalButtonSm
-          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          bgcolor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
         />
       ) : buttonBgType === "reversedModal" ? (
         <ReversedModalBg
-          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          bgcolor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
           linecolor={lineColor}
         />
       ) : (
         <PrimaryButtonBg
-          bgColor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
+          bgcolor={bgColor ? `${bgColor}` : disabled ? "#FCF2CF" : "#F5CF48"}
           className="button-Bg"
         />
       )}

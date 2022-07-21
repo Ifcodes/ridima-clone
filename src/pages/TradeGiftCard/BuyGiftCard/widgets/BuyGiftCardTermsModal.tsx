@@ -31,7 +31,12 @@ const BuyGiftCardTermsModal = ({
     setShowBuyCardTermsModal(false);
   };
   return (
-    <Modal showModal={openModal} closeModal={closeModal} showCloseBtn>
+    <Modal
+      showModal={openModal}
+      closeModal={closeModal}
+      showCloseBtn
+      width="27%"
+    >
       <BuyGiftCardTermsModalWrapper>
         <H1>Terms and Conditions:</H1>
         <ol>

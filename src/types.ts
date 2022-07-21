@@ -4,6 +4,7 @@ export type SvgIconProps = {
   active?: boolean;
   color?: string;
   bgColor?: string;
+  bgcolor?: string;
   linecolor?: string;
   width?: string;
   height?: string;

@@ -15,7 +15,6 @@ const ReferralDetails = () => {
             titleColor="#000000"
             amountColor="#7165E3"
             otherValue="18 Jan, 12:45"
-            showDefault
           />
         </div>
         <div className="line-title">

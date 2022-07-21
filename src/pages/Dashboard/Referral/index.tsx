@@ -23,8 +23,8 @@ const Referral = () => {
   const handleBackButton = () => {
     if (activeTab === 1) {
       setActiveTab(activeTab - 1);
-    }
-    if (activeTab === 0) navigate("/home");
+    } else if (activeTab === 0) navigate("/home");
+    else return;
   };
 
   return (

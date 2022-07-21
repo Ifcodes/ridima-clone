@@ -2,8 +2,9 @@ import styled, { css } from "styled-components";
 
 export const CheckRatesWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
+  padding: 0rem 2.5rem;
   flex-direction: column;
   justify-content: space-between;
   overflow-y: auto;
@@ -144,6 +145,10 @@ export const CheckRatesFormWrapper = styled.div<{ isActive?: boolean }>`
     }
   }
 
+  .hr-line-title {
+    margin-top: 1rem;
+  }
+
   @media screen and (max-width: 640px) {
     width: 100%;
     display: flex;
@@ -211,16 +216,39 @@ export const IconWrapper = styled.div<{ iconIsSelected?: boolean }>`
 
 export const CheckRatesMainWrapper = styled.div`
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   overflow-y: hidden;
+
+  .stepper-wrap {
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  .stepper-wrap-mobile {
+    display: none;
+  }
 
   .stepper-cont {
     margin-top: 2rem;
   }
 
+  .stage-title-wrap {
+    padding: 2.5rem 2.5rem 0;
+  }
+
   @media screen and (max-width: 640px) {
+    .stepper-wrap {
+      display: none;
+    }
+
+    .stepper-wrap-mobile {
+      width: 100%;
+      display: block;
+      margin: 1rem 0;
+    }
+
     .stage-title-wrap {
-      margin: 1.5rem;
+      padding: 1rem;
     }
   }
 `;

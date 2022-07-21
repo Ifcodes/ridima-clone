@@ -2,7 +2,7 @@ import { entity } from "simpler-state";
 
 export const checkRatesStates = entity({
   testValue: 0,
-  currentStage: 1,
+  currentStage: 0,
   selectedGiftCard: "",
   selectedCurrency: "",
   selectedSubCategory: "",
@@ -50,6 +50,10 @@ export const setCurrentCheckRateStage = (type: string) => {
     checkRatesStates.set((prev) => ({ ...prev, currentStage: 1 }));
   }
   return;
+};
+
+export const setFixedCheckRateStage = (val: number) => {
+  checkRatesStates.set((prev) => ({ ...prev, currentStage: val }));
 };
 
 export const setSelectedGiftCard = (card: string) => {

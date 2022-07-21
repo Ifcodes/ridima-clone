@@ -140,6 +140,7 @@ const WalletDefaultpage = () => {
       <div className="action-cards-wrapper">
         {walletActionCards.map((card, index) => (
           <WalletActionCard
+            key={card.cardText}
             title={card.cardText}
             icon={<card.icon linecolor={card.iconColor} />}
             isYellowBg={card.isYellow}

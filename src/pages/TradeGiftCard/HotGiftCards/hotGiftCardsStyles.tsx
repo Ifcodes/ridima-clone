@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const HotGiftCardsWrapper = styled.div`
   width: 100%;
 
+  .stage-title-wrapper {
+    margin: 0 0 2rem;
+  }
+
   @media screen and (max-width: 640px) {
     height: 80vh;
   }

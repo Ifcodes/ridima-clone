@@ -44,11 +44,11 @@ const TrapCard = ({
       </div>
       {trapeCardType === "leftTrape" ? (
         <div className="trap-wrapper">
-          <LeftTrapezoid bgColor={bgColor} />
+          <LeftTrapezoid bgcolor={bgColor} />
         </div>
       ) : (
         <div className="trap-wrapper">
-          <RightTrapezoid bgColor={bgColor} />
+          <RightTrapezoid bgcolor={bgColor} />
         </div>
       )}
     </TrapCardWrapper>

@@ -20,7 +20,7 @@ import { setTradeSummaryData } from "../../../../Entity/TradeSummaryData";
 import { tradeValue } from "../../../../Entity/TradeValue";
 import AmazonIconCircle from "../../../../components/atoms/vectors/AmazonIconCircle";
 import CardTermsModal from "./Widgets/cardTermsModal";
-import Stepper from "../../../../components/molecules/Stepper";
+import StepperComponent from "../../../../components/molecules/Stepper";
 
 const giftCardTypes = [
   {
@@ -50,22 +50,6 @@ const giftCardTypes = [
   },
 ];
 
-const steps = [
-  {
-    title: "Card",
-    icon: <img src="/vectors/TickIcon.svg" alt="" />,
-  },
-  {
-    title: "Currency & Giftcard type",
-  },
-  {
-    title: "Card Value",
-  },
-  {
-    title: "Upload Images",
-  },
-];
-
 const ActiveGiftCard = () => {
   const tradeValues = tradeValue.use();
   const [showCurrencyModal, setShowCurrencyModal] = useState(false);
@@ -88,7 +72,15 @@ const ActiveGiftCard = () => {
     quantity: "",
   });
 
-  const steps = ["Giftcard Type", "Card Value", "Upload Image(s)"];
+  const steps = ["Card", "Giftcard Type", "Card Value", "Upload Image(s)"];
+
+  const handleStepClick = (step: string) => {
+    if(step === "Card") setCurrentStage(0)
+    else if (step === "Giftcard Type") setCurrentStage(1)
+    else if (step === "Card Value") setCurrentStage(2)
+    else if (step.includes("Upload")) setCurrentStage(3)
+    else return
+  };
 
   const categoryFormIsFilled = Object.values(selectedCategory).every(
     (item) => item !== ""
@@ -169,21 +161,27 @@ const ActiveGiftCard = () => {
     });
   };
 
-  const handleStepClick = (index: number) => {
-    steps.map((step, stepIndex) => {
-      if (index === stepIndex) setCurrentStage(index);
-    });
-  };
+  
+
+  const mobileSteps = Array(4).fill("");
 
   return (
     <ActiveGiftCardWrapper>
-      {/* <Stepper
-        defaultTitle="Card"
-        steps={steps}
-        currentStep={currentStage}
-        previousStep={currentStage - 1}
-        onClick={handleStepClick}
-      /> */}
+      <div className="stepper-wrap">
+        <StepperComponent
+          steps={steps}
+          activeStep={currentStage + 1}
+          toggleSteps={handleStepClick}
+        />
+      </div>
+      <div className="stepper-wrap-mobile">
+        <StepperComponent
+          steps={mobileSteps}
+          activeStep={currentStage + 1}
+          toggleSteps={handleStepClick}
+        />
+      </div>
+
       {currentStage === 3 && <TradeSummary />}
       {currentStage !== 3 && <AmazonCardImage />}
       {currentStage === 2 && (

@@ -1,9 +1,10 @@
 import React from "react";
 import AmazonCardImage from "../../../../components/atoms/vectors/AmazonCardIllus";
-import Stepper from "../../../../components/molecules/Stepper";
+import StepperComponent from "../../../../components/molecules/Stepper";
 import {
   buyGiftCardsState,
   setBuyGiftcardStage,
+  setFixedCurrentStage,
 } from "../../../../Entity/BuyGiftCardsEntity";
 import { ActiveGiftCardWrapper } from "../../styledTradeGiftCard";
 import { CardAmountFormWrapper } from "../buyGiftCardStyles";
@@ -12,23 +13,39 @@ import EmailAndComments from "./emailandcomments";
 
 const BuyGiftCardActive = () => {
   const activeStage = buyGiftCardsState.use().currentStage;
-  const steps = ["Card amount & Equivalent", "Email Address $ Comments"];
 
-  const handleStepClick = (index: number) => {
-    steps.map((step, stepIndex) => {
-      if (index === stepIndex) setBuyGiftcardStage("fixed", index);
-    });
+  const steps = [
+    "Cards",
+    "Card Amount & Equivalent",
+    "Email Address & Comments",
+  ];
+
+  const mobileSteps = Array(3).fill("");
+
+  const handleStepClick = (type: string) => {
+    if (type === "Cards" || type.includes("Amount")) {
+      console.log("clicked");
+      setFixedCurrentStage(0);
+      console.log(activeStage);
+    }
   };
 
   return (
-    <ActiveGiftCardWrapper padding="0 1.5rem">
-      {/* <Stepper
-        defaultTitle="Card"
-        steps={steps}
-        currentStep={activeStage}
-        previousStep={activeStage - 1}
-        onClick={handleStepClick}
-      /> */}
+    <ActiveGiftCardWrapper>
+      <div className="stepper-wrap">
+        <StepperComponent
+          steps={steps}
+          activeStep={activeStage + 1}
+          toggleSteps={handleStepClick}
+        />
+      </div>
+      <div className="stepper-wrap-mobile">
+        <StepperComponent
+          steps={mobileSteps}
+          activeStep={activeStage + 1}
+          toggleSteps={handleStepClick}
+        />
+      </div>
       <AmazonCardImage />
       {activeStage === 0 && <CardAmountSelection />}
       {activeStage === 1 && <EmailAndComments />}

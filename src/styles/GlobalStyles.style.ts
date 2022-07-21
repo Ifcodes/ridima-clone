@@ -1,8 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
-import "antd/dist/antd.css";
 
 const GlobalStyles = createGlobalStyle` 
-  /* @import '~antd/dist/antd.css'; */
   
   @font-face {
     font-family: "cera_problack";
