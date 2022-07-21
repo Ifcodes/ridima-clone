@@ -74,12 +74,14 @@ const ActiveGiftCard = () => {
 
   const steps = ["Card", "Giftcard Type", "Card Value", "Upload Image(s)"];
 
-  const handleStepClick = (step: string) => {
-    if(step === "Card") setCurrentStage(0)
-    else if (step === "Giftcard Type") setCurrentStage(1)
-    else if (step === "Card Value") setCurrentStage(2)
-    else if (step.includes("Upload")) setCurrentStage(3)
-    else return
+  const handleStepClick = (step: string, index: number) => {
+    if (step === "Card" || step.includes("Type")) setCurrentStage(0);
+    // else if (step === "Giftcard Type") setCurrentStage(1);
+    else if (step === "Card Value") setCurrentStage(1);
+    else if (step.includes("Upload")) setCurrentStage(2);
+    else if (step === "mobile" && index <= 1) setCurrentStage(0);
+    else if (step === "mobile") setCurrentStage(index - 1);
+    else return;
   };
 
   const categoryFormIsFilled = Object.values(selectedCategory).every(
@@ -161,9 +163,18 @@ const ActiveGiftCard = () => {
     });
   };
 
-  
-
   const mobileSteps = Array(4).fill("");
+
+  const onConfirm = () => {
+    setImgUploadFormData({ ecode: "", selectedImages: [], imgSelected: false });
+    setCurrentStage(0);
+    setSelectedCard(0);
+    setSelectedCategory({
+      amount: "",
+      quantity: "",
+    });
+    setSelectedCurrency("");
+  };
 
   return (
     <ActiveGiftCardWrapper>
@@ -176,7 +187,7 @@ const ActiveGiftCard = () => {
       </div>
       <div className="stepper-wrap-mobile">
         <StepperComponent
-          steps={mobileSteps}
+          mobileSteps={mobileSteps}
           activeStep={currentStage + 1}
           toggleSteps={handleStepClick}
         />
@@ -252,6 +263,7 @@ const ActiveGiftCard = () => {
         openModal={openCardTermsModal}
         closeModal={() => setOpenCardTermsModal(false)}
         handleCloseBtn={() => setOpenCardTermsModal(false)}
+        handleConfirm={onConfirm}
       />
     </ActiveGiftCardWrapper>
   );

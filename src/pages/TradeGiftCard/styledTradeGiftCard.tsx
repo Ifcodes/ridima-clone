@@ -362,13 +362,22 @@ export const SuccessMessageWrapper = styled.div<{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding-bottom: ${(props) => (props.errorMessage ? "3.5rem" : "2.5rem")};
   padding-top: ${(props) => (props.errorMessage ? "1.7rem" : "")};
   padding-left: ${(props) => props.pl || "1.2rem"};
   padding-right: ${(props) => props.pr || "1.2rem"};
 
+  .msg-modal-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .img-cont {
-    width: 60%;
-    height: 16rem;
+    width: 80%;
+    height: 14rem;
     max-width: 20rem;
 
     img {
@@ -377,16 +386,19 @@ export const SuccessMessageWrapper = styled.div<{
     }
   }
 
-  .text-cont {
+  .msg-text-cont {
+    justify-self: flex-end;
     text-align: center;
     width: 22rem;
+    margin: 1rem 0 0;
 
     h1 {
+      margin: 0;
+      font-size: 1.75rem;
       color: ${(props) =>
         props.errorMessage
           ? props.theme.colors.red
           : props.theme.colors.green2};
-      margin: ${(props) => (props.errorMessage ? "2rem" : "0")};
     }
   }
 
@@ -395,16 +407,27 @@ export const SuccessMessageWrapper = styled.div<{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem 0 0;
     padding: 0 1rem;
   }
 
   @media screen and (max-width: 640px) {
+    padding: 2rem;
+
     .img-cont {
+      width: 100%;
       height: 14rem;
     }
-    .text-cont {
-      width: 80%;
+
+    .msg-text-cont {
+      width: 90%;
+
+      h1 {
+        margin: 0;
+      }
+    }
+
+    .btn-wrapper {
+      padding: 0;
     }
   }
 `;

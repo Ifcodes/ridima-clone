@@ -17,3 +17,13 @@ export const setExpectedValue = (
   const newValue = { ...newState, expectedValue: newExpectedValue };
   return tradeValue.set(newValue);
 };
+
+export const resetTradeValue = () => {
+  tradeValue.set((prev) => ({
+    ...prev,
+    rate: 410,
+    amount: 0,
+    quantity: 0,
+    expectedValue: 0,
+  }));
+};

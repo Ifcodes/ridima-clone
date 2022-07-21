@@ -71,13 +71,14 @@ const ActiveGiftCard = () => {
 
   const steps = ["Card", "Giftcard Type", "Card Value", "Upload Image(s)"];
 
-  const mobileSteps = Array(3).fill("");
+  const mobileSteps = Array(4).fill("");
 
-  const handleStepClick = (step: string) => {
-    if (step === "Card") resetActiveCardStage(0);
-    else if (step === "Giftcard Type") resetActiveCardStage(0);
+  const handleStepClick = (step: string, index: number) => {
+    if (step === "Card" || step.includes("Type")) resetActiveCardStage(0);
     else if (step === "Card Value") resetActiveCardStage(1);
     else if (step.includes("Upload")) resetActiveCardStage(2);
+    else if (step === "mobile" && index <= 1) resetActiveCardStage(0);
+    else if (step === "mobile") resetActiveCardStage(index - 1);
     else return;
   };
 
@@ -100,6 +101,7 @@ const ActiveGiftCard = () => {
     setSelectedCurrency(currency);
     setShowCurrencyModal(false);
   };
+
   const date = new Date();
 
   const onProceed = () => {
@@ -181,7 +183,7 @@ const ActiveGiftCard = () => {
       </div>
       <div className="stepper-wrap-mobile">
         <StepperComponent
-          steps={mobileSteps}
+          mobileSteps={mobileSteps}
           activeStep={currentStage + 1}
           toggleSteps={handleStepClick}
         />

@@ -13,26 +13,28 @@ const SuccessMessageCard = ({
   handleBtnClick?: Function;
 }) => {
   return (
-    <SuccessMessageWrapper pl="0" pr="0">
-      <div className="img-cont">
-        <img
-          src="/vectors/SuccessMessageIconGreen2.svg"
-          alt=""
-          className={"illustration"}
-        />
-      </div>
-      <div className="text-cont">
-        <h1>Super Smooth</h1>
-        <Paragraph>
-          We’ve received your Giftcard trade and it is currently being
-          processed. We’ll notify you of your transaction status soon.
-        </Paragraph>
+    <SuccessMessageWrapper pl={"1rem"} pr={"1rem"}>
+      <div className="msg-modal-content">
+        <div className="img-cont">
+          <img
+            src="/vectors/SuccessMessageIconGreen2.svg"
+            alt=""
+            className={"illustration"}
+          />
+        </div>
+        <div className="msg-text-cont">
+          <h1>Super Smoooth!</h1>
+          <Paragraph>
+            We’ve received your Giftcard trade and it is currently being
+            processed. We’ll notify you of your transaction status soon.
+          </Paragraph>
+        </div>
       </div>
       <div className="btn-wrapper">
         <Button
           buttonBgType="modalSm"
           btnText="Make another trade"
-          width="22rem"
+          width="100%"
           onClick={() => handleBtnClick("trade")}
         />
         <Button
@@ -40,7 +42,7 @@ const SuccessMessageCard = ({
           lineColor="#F5CF48"
           buttonBgType="reversedModal"
           btnText="See Transaction Status"
-          width="22rem"
+          width="100%"
           mt="0"
           onClick={() => handleBtnClick("transactions")}
         />

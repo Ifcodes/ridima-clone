@@ -22,12 +22,12 @@ const BuyGiftCardActive = () => {
 
   const mobileSteps = Array(3).fill("");
 
-  const handleStepClick = (type: string) => {
-    if (type === "Cards" || type.includes("Amount")) {
-      console.log("clicked");
-      setFixedCurrentStage(0);
-      console.log(activeStage);
-    }
+  const handleStepClick = (type: string, index: number) => {
+    if (type === "Cards" || type.includes("Amount")) setFixedCurrentStage(0);
+    else if (type.includes("Email")) setFixedCurrentStage(1);
+    else if (type === "mobile" && index <= 1) setFixedCurrentStage(0);
+    else if (type === "mobile") setFixedCurrentStage(index - 1);
+    else return;
   };
 
   return (
@@ -41,7 +41,7 @@ const BuyGiftCardActive = () => {
       </div>
       <div className="stepper-wrap-mobile">
         <StepperComponent
-          steps={mobileSteps}
+          mobileSteps={mobileSteps}
           activeStep={activeStage + 1}
           toggleSteps={handleStepClick}
         />

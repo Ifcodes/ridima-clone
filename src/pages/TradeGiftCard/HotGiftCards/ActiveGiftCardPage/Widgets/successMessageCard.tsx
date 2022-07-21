@@ -32,23 +32,25 @@ const SellGcSuccessMessageCard = () => {
       showModal={openModal}
       closeModal={() => setOpenTradeSuccessMessage(false)}
       showCloseBtn
-      cardHeight="85%"
+      cardHeight="90%"
       mobileCardHeight="85%"
     >
       <SuccessMessageWrapper>
-        <div className="img-cont">
-          <img
-            src="/vectors/SuccessMessageIconGreen2.svg"
-            alt=""
-            className={"illustration"}
-          />
-        </div>
-        <div className="text-cont">
-          <h1>Super Smooth</h1>
-          <Paragraph>
-            We’ve received your Giftcard trade and it is currently being
-            processed. We’ll notify you of your transaction status soon.
-          </Paragraph>
+        <div className="msg-modal-content">
+          <div className="img-cont">
+            <img
+              src="/vectors/SuccessMessageIconGreen2.svg"
+              alt=""
+              className={"illustration"}
+            />
+          </div>
+          <div className="msg-text-cont">
+            <h1>Super Smoooth!</h1>
+            <Paragraph>
+              We’ve received your Giftcard trade and it is currently being
+              processed. We’ll notify you of your transaction status soon.
+            </Paragraph>
+          </div>
         </div>
         <div className="btn-wrapper">
           <Button
@@ -65,7 +67,6 @@ const SellGcSuccessMessageCard = () => {
             onClick={() => handleButtonClick("view-transactions")}
             width="100%"
             mt="0"
-            mb="2rem"
           />
         </div>
       </SuccessMessageWrapper>

@@ -30,14 +30,16 @@ const SellGcErrorMessageCard = () => {
       mobileCardHeight={"65%"}
     >
       <SuccessMessageWrapper errorMessage>
-        <div className="img-cont">
-          <img src="/vectors/ErrorMessageIcon.svg" alt="" />
-        </div>
-        <div className="text-cont">
-          <H1 mt="2rem">Oh Snap!</H1>
-          <Paragraph>
-            Your Giftcard trade didn’t go through, please try again.
-          </Paragraph>
+        <div className="msg-modal-content">
+          <div className="img-cont">
+            <img src="/vectors/ErrorMessageIcon.svg" alt="" />
+          </div>
+          <div className="msg-text-cont">
+            <H1 mt="2rem">Oh Snap!</H1>
+            <Paragraph>
+              Your Giftcard trade didn’t go through, please try again.
+            </Paragraph>
+          </div>
         </div>
         <div className="btn-wrapper">
           <Button
