@@ -24,7 +24,9 @@ const SelectServiceModal = () => {
         selectorList={["Airtime", "Data"]}
         onServiceClick={handleSelection}
         title="Select Service"
-        modalHeight="65vh"
+        modalWidth="22%"
+        modalHeight="45%"
+        mobileModalHeight="35%"
       />
     </div>
   );

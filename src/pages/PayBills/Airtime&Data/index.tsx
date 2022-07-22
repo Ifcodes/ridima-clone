@@ -68,10 +68,10 @@ const AirtimeAndData = () => {
     setReadOnly(type);
   };
 
-  const handleClearForm = (type: string) => {
-    if (type === "airtime")
-      setAirtimeFormField({ phoneNumber: "", airtimeAmount: "" });
+  const handleClearForm = () => {
+    setAirtimeFormField({ phoneNumber: "", airtimeAmount: "" });
   };
+
   return (
     <SelectedBillWrapper>
       <div className="billcard-cont">
@@ -173,11 +173,12 @@ const AirtimeAndData = () => {
       <AirtimeRefillSuccessMsg
         amount={airtimeFormField.airtimeAmount}
         phoneNumber={airtimeFormField.phoneNumber}
-        handleClear={() => handleClearForm("airtime")}
+        handleClear={() => handleClearForm()}
       />
       <DataRefilledSuccessMsg
         amount={airtimeFormField.airtimeAmount}
         phoneNumber={airtimeFormField.phoneNumber}
+        handleClear={() => handleClearForm()}
       />
     </SelectedBillWrapper>
   );

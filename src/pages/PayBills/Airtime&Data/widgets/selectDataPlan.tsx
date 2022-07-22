@@ -38,7 +38,7 @@ const SelectDataPlanModal = () => {
         closeModal={() => setShowSelectDataPlan(false)}
         selectorList={dataPlans}
         onServiceClick={handleSelection}
-        title="Select Network"
+        title="Select Data Plan"
       />
     </div>
   );

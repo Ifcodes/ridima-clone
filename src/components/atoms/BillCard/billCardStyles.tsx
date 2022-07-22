@@ -24,4 +24,9 @@ export const BillCardWrapper = styled.div<{
     font-size: 1.18rem;
     text-align: center;
   }
+
+  @media screen and (max-width: 640px) {
+    width: ${(props) => (props.isHorizontal ? "80%" : "10rem")};
+    height: ${(props) => (props.isHorizontal ? "9rem" : "15rem")};
+  }
 `;

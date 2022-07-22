@@ -6,25 +6,11 @@ import Input from "../../../components/atoms/Forms/Input";
 import Selector from "../../../components/atoms/Selector";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
 import BettingWalletIcon from "../../../components/atoms/vectors/BettingWalletIcon";
-import TvOulineIcon from "../../../components/atoms/vectors/TVIcon";
-import WifiOutlineIcon from "../../../components/atoms/vectors/WifiOutlineIcon";
 import {
   bettingWalletStates,
   setShowConfirmBettingPayment,
   setShowSelectPlaform,
 } from "../../../Entity/BettingWalletEntity";
-import {
-  internetWifiStates,
-  setShowConfirmWifiPurchaseModal,
-  setShowInternetPlanModal,
-  setShowNetworkProviderModal,
-} from "../../../Entity/InteretAndWifiEntity";
-import {
-  setShowConfirmTvCableModal,
-  setShowServiceProviderModal,
-  setShowTvCablePlanModal,
-  tvCableStates,
-} from "../../../Entity/TvCablesEntity";
 import { FormWrapper, SelectedBillWrapper } from "../payBillsStyles";
 import BetPaySuccessModal from "./widgets/betPaySuccessModal";
 import ConfirmBettingPayment from "./widgets/confirmBettingPayment";
@@ -68,6 +54,14 @@ const BettingWallets = () => {
   const onFocus = (type: boolean) => {
     setReadOnly(type);
   };
+
+  const clearForm = () => {
+    setFormField({
+      customerId: "",
+      amount: "",
+    });
+  };
+
   return (
     <SelectedBillWrapper>
       <div className="billcard-cont">
@@ -140,6 +134,7 @@ const BettingWallets = () => {
       <BetPaySuccessModal
         amount={formField.amount}
         customerID={formField.customerId}
+        handleClear={() => clearForm()}
       />
     </SelectedBillWrapper>
   );

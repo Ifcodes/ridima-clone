@@ -62,6 +62,13 @@ export const SelectedBillWrapper = styled.div`
   .title-cont {
     margin-top: 2.6rem;
   }
+
+  @media screen and (max-width: 640px) {
+    .billcard-cont {
+      display: flex;
+      justify-content: center;
+    }
+  }
 `;
 
 export const FormWrapper = styled.div<{ isData?: boolean }>`
@@ -97,6 +104,38 @@ export const FormWrapper = styled.div<{ isData?: boolean }>`
     @media screen and (max-width: 640px) {
       .amount-cont {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .airtime-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1rem;
+
+      .inputField-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > div {
+          margin-bottom: 1rem;
+          margin-right: 0;
+        }
+
+        .amount-cont {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
       }
     }
   }
@@ -104,9 +143,11 @@ export const FormWrapper = styled.div<{ isData?: boolean }>`
 
 export const ConfirmModalWrapper = styled.div`
   width: 100%;
+  height: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   padding: 0 2rem;
 
   h1 {
@@ -118,7 +159,6 @@ export const ConfirmModalWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 3rem;
 
     .account-name,
     .data-bundle {

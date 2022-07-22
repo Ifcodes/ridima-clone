@@ -27,6 +27,9 @@ const SelectNetworkModal = () => {
         selectorList={["Airtel", "Glo", "MTN", "9Mobile"]}
         onServiceClick={handleSelection}
         title="Select Network"
+        modalWidth="26%"
+        modalHeight="55%"
+        mobileModalHeight="50%"
       />
     </div>
   );

@@ -35,6 +35,13 @@ const TvCables = () => {
   const handleRefill = () => {
     setShowConfirmTvCableModal(true);
   };
+
+  const clearForm = () => {
+    setFormField({
+      deviceNumber: "",
+      amount: "",
+    });
+  };
   return (
     <SelectedBillWrapper>
       <div className="billcard-cont">
@@ -113,6 +120,7 @@ const TvCables = () => {
       <TvCableSuccessMsgModal
         deviceNumber={formField.deviceNumber}
         amount={formField.amount}
+        handleClear={() => clearForm()}
       />
     </SelectedBillWrapper>
   );

@@ -34,3 +34,13 @@ export const setShowBettingPaySuccessModal = (val: boolean) => {
     showBettingPaySuccessModal: val,
   }));
 };
+
+export const resetBettingState = () => {
+  bettingWalletStates.set((prev) => ({
+    ...prev,
+    selectedPlatform: "",
+    showSelectPlatFormModal: false,
+    showConfirmBettingPayment: false,
+    showBettingPaySuccessModal: false,
+  }));
+};

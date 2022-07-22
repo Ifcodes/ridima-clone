@@ -18,6 +18,7 @@ const Content = styled.div`
 type ServiceModalProps = {
   openModal: boolean;
   modalHeight?: string;
+  mobileModalHeight?: string;
   modalWidth?: string;
   title?: string;
   selectedOption?: string;
@@ -32,6 +33,7 @@ const SelectorModal = ({
   selectorList,
   modalHeight,
   modalWidth,
+  mobileModalHeight,
   closeModal = () => {},
   onServiceClick = () => {},
 }: ServiceModalProps) => {
@@ -40,6 +42,7 @@ const SelectorModal = ({
       showModal={openModal}
       closeModal={closeModal}
       cardHeight={modalHeight}
+      mobileCardHeight={mobileModalHeight}
       width={modalWidth}
       showCloseBtn
     >

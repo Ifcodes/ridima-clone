@@ -39,7 +39,7 @@ const SelectInteretPlanModal = () => {
         onServiceClick={handleSelection}
         title="Select Internet Plan"
         modalHeight="90vh"
-        modalWidth="34%"
+        modalWidth="28%"
       />
     </div>
   );

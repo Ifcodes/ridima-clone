@@ -54,6 +54,13 @@ const ElectricityBill = () => {
   const onFocus = (type: boolean) => {
     setReadOnly(type);
   };
+
+  const clearForm = () => {
+    setFormField({
+      cardNumber: "",
+      amount: "",
+    });
+  };
   return (
     <SelectedBillWrapper>
       <div className="billcard-cont">
@@ -126,6 +133,7 @@ const ElectricityBill = () => {
       <ElectBillPaySuccessModal
         cardNumber={formField.cardNumber}
         amount={formField.amount}
+        handleClear={() => clearForm()}
       />
     </SelectedBillWrapper>
   );

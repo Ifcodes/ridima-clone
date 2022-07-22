@@ -25,7 +25,9 @@ const SelectNetworkProviderModal = () => {
         selectorList={["Spectranet", "Smile 4G LTE", "Ntel Network"]}
         onServiceClick={handleProviderSelection}
         title="Select Network"
-        modalHeight="65vh"
+        modalWidth="26%"
+        modalHeight="55%"
+        mobileModalHeight="45%"
       />
     </div>
   );

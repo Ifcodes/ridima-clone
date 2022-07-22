@@ -34,3 +34,13 @@ export const setShowElectPaySuccessModal = (val: boolean) => {
     showElectrictyBillSuccessModal: val,
   }));
 };
+
+export const resetElectricityState = () => {
+  electricityBillStates.set((prev) => ({
+    ...prev,
+    selectedProvider: "",
+    showSelectProviderModal: false,
+    showConfirmPaymentModal: false,
+    showElectrictyBillSuccessModal: false,
+  }));
+};

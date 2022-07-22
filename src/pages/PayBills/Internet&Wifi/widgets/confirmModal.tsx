@@ -31,7 +31,8 @@ const ConfirmInternetPurchaseModal = ({
       showModal={openModal}
       closeModal={() => setShowConfirmWifiPurchaseModal(false)}
       showCloseBtn
-      cardHeight="65vh"
+      cardHeight="55%"
+      mobileCardHeight="55%"
       width="25%"
     >
       <ConfirmModalWrapper>
@@ -49,7 +50,6 @@ const ConfirmInternetPurchaseModal = ({
           buttonBgType="modal"
           width="100%"
           onClick={() => handleConfirm()}
-          mt="6.5rem"
         />
       </ConfirmModalWrapper>
     </Modal>

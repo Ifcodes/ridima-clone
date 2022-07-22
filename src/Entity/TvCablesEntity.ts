@@ -45,13 +45,14 @@ export const setShowTvCableSuccessMsgModal = (val: boolean) => {
   }));
 };
 
-// export const resetAirtimeDataState = () => {
-//   tvCableStates.set((prev) => ({
-//     ...prev,
-//     selectedService: "",
-//     selectedNetwork: "",
-//     showAirtimeSuccessMsg: false,
-//     showServicesModal: false,
-//     showSelectNetworkModal: false,
-//   }));
-// };
+export const resetTvCableEntity = () => {
+  tvCableStates.set((prev) => ({
+    ...prev,
+    selectedTvCablePlan: "",
+    selectedServiceProvider: "",
+    showServiceProviderModal: false,
+    showSelectTvCableModal: false,
+    showConfirmTvCablePurchaseModal: false,
+    showTvCableSuccessModal: false,
+  }));
+};

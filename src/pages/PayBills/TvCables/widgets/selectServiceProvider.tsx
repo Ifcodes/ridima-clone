@@ -24,6 +24,7 @@ const SelectCableServiceProviderModal = () => {
         onServiceClick={handleProviderSelection}
         title="Select Service Provider"
         modalHeight="65vh"
+        mobileModalHeight="45%"
       />
     </div>
   );

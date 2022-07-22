@@ -30,7 +30,7 @@ const AddMinusInput = ({
       <CircledBackground onClick={() => handleButtons("minus")}>
         <MinusIcon />
       </CircledBackground>
-      <div className="input-cont">
+      <div className="add-input-cont">
         <Input
           value={inputValue}
           placeholder={placeholder}

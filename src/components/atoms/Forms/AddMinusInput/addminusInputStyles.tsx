@@ -20,11 +20,15 @@ export const AddMinusWrapper = styled.div<{
   }
 
   @media screen and (max-width: 640px) {
+    width: 100%;
     max-width: 100%;
 
-    .input-cont {
+    .add-input-cont {
       width: 60%;
       margin-top: 0;
+      display: flex;
+      align-items: center;
+      padding: 0;
 
       > div {
         display: flex;

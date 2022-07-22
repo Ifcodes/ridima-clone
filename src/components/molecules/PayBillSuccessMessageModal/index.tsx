@@ -8,6 +8,7 @@ const Wrapper = styled.div<{ messageTitleWidth?: string }>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
 
   .modal-title {
@@ -15,7 +16,6 @@ const Wrapper = styled.div<{ messageTitleWidth?: string }>`
   }
 
   .content {
-    margin-top: 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,6 +46,25 @@ const Wrapper = styled.div<{ messageTitleWidth?: string }>`
       width: 20rem;
       margin: 1rem 0;
     }
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .content {
+      width: 100%;
+    }
+    .icon-cont {
+      width: 80%;
+    }
+
+    .text-cont {
+      p {
+        width: 80%;
+      }
+    }
   }
 `;
 
@@ -74,6 +93,9 @@ const PayBillSuccessMessageModal = ({
       closeModal={closeModal}
       handleCloseBtn={handleCloseBtn}
       showCloseBtn
+      width="25%"
+      cardHeight="65%"
+      mobileCardHeight="60%"
     >
       <Wrapper messageTitleWidth={titleWidth}>
         {modalTitle && <H1 className="modal-title">{modalTitle}</H1>}

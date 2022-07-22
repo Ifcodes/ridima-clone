@@ -48,8 +48,11 @@ export const resetAirtimeDataState = () => {
     ...prev,
     selectedService: "",
     selectedNetwork: "",
+    selectedDataPlan: "",
     showAirtimeSuccessMsg: false,
+    showDataRefillSuccessMsg: false,
     showServicesModal: false,
     showSelectNetworkModal: false,
+    showSelectDataPlanModal: false,
   }));
 };
