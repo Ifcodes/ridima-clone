@@ -9,8 +9,6 @@ export const AccountCardWrapper = styled.div<{
   border-radius: 1.875rem;
   position: relative;
   cursor: pointer;
-  box-shadow: ${(props) =>
-    props.isActive ? "0 0 24px 2px rgba(0, 0, 0, 0.3)" : ""};
 
   :hover {
     box-shadow: 0 0 24px 2px rgba(0, 0, 0, 0.3);

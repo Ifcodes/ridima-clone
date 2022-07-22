@@ -346,7 +346,7 @@ export const DateFilterWrapper = styled.div`
 
   .calendar-cont {
     width: 100%;
-    height: 90%;
+    height: 80%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -361,7 +361,7 @@ export const DateFilterWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
     overflow-y: auto;
   }
 
@@ -372,7 +372,6 @@ export const DateFilterWrapper = styled.div`
   .rdrMonthAndYearWrapper {
     width: 100%;
     max-width: 100%;
-    margin-top: 1rem;
   }
 
   @media screen and (max-width: 1075px) {

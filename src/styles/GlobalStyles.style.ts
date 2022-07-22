@@ -57,7 +57,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 3px;
+    width: 1px;
     height: 50%;
     border-radius: 20px;
   }

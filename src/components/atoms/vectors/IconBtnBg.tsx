@@ -5,15 +5,15 @@ import { SvgIconProps } from "../../../types";
 const IconBtnBg = (props: SvgIconProps) => (
   <svg
     // width={70}
-    // height={47}
-    viewBox="0 0 70 47"
+    // height={66}
     fill="none"
+    viewBox="0 0 70 66"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <path
-      d="M0 23.395C0 10.475 10.475 0 23.395 0h23.81C59.794 0 70 10.206 70 22.796c0 12.143-9.52 22.155-21.648 22.766l-23.778 1.199C11.206 47.435 0 36.779 0 23.395Z"
-      fill={props.bgcolor || "#7165E3"}
+      d="M0 32.787C0 14.68 14.68 0 32.787 0h4.59C55.393 0 70 14.606 70 32.624c0 17.115-13.227 31.32-30.3 32.54l-4.577.327C16.143 66.847 0 51.815 0 32.787Z"
+      fill={props.bgcolor ? props.bgcolor : "#7165E3"}
     />
   </svg>
 );

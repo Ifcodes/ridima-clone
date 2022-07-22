@@ -6,7 +6,6 @@ import Input from "../../../components/atoms/Forms/Input";
 import Selector from "../../../components/atoms/Selector";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
 import TelephoneOutlineIcon from "../../../components/atoms/vectors/TelephoneIcon";
-import SelectorModal from "../../../components/molecules/SelectorModal";
 import {
   airtimeDataStates,
   resetAirtimeDataState,
@@ -67,6 +66,11 @@ const AirtimeAndData = () => {
 
   const onFocus = (type: boolean) => {
     setReadOnly(type);
+  };
+
+  const handleClearForm = (type: string) => {
+    if (type === "airtime")
+      setAirtimeFormField({ phoneNumber: "", airtimeAmount: "" });
   };
   return (
     <SelectedBillWrapper>
@@ -169,6 +173,7 @@ const AirtimeAndData = () => {
       <AirtimeRefillSuccessMsg
         amount={airtimeFormField.airtimeAmount}
         phoneNumber={airtimeFormField.phoneNumber}
+        handleClear={() => handleClearForm("airtime")}
       />
       <DataRefilledSuccessMsg
         amount={airtimeFormField.airtimeAmount}

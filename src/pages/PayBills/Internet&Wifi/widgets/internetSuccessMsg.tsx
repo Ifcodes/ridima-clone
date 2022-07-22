@@ -8,15 +8,18 @@ import {
 } from "../../../../Entity/AirtimeAndDataEntity";
 import {
   internetWifiStates,
+  resetInternetWifiState,
   setShowWifiSuccessMsgModal,
 } from "../../../../Entity/InteretAndWifiEntity";
 
 const InternetWifiSuccessMsgModal = ({
   deviceNumber,
   amount,
+  handleClear = () => {},
 }: {
   deviceNumber?: string;
   amount?: string;
+  handleClear?: Function;
 }) => {
   const showModal = internetWifiStates.use().showInternetWifiSuccessModal;
   const selectedPlan = internetWifiStates.use().selectedInternetPlan;
@@ -25,11 +28,17 @@ const InternetWifiSuccessMsgModal = ({
     setShowWifiSuccessMsgModal(val);
   };
 
+  const handleCloseBtn = () => {
+    resetInternetWifiState();
+    handleClear()
+  };
+
   return (
     <div>
       <PayBillSuccessMessageModal
         openModal={showModal}
         closeModal={closeModal}
+        handleCloseBtn={handleCloseBtn}
         icon={<img src="/vectors/SuccessMessageIconGreen2.svg" alt="" />}
         messageTitle="Internet Subscription Successfully"
         message={`Your ${selectedPlan} plan for ${deviceNumber} of N${amount} was successful `}

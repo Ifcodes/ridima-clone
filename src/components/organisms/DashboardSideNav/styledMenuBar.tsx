@@ -4,18 +4,17 @@ export const SideNavWrapper = styled.aside<{
   logout?: boolean;
   collapse?: boolean;
 }>`
-  width: ${(props) => (props.collapse ? "5rem" : "100%")};
+  width: ${(props) => (props.collapse ? "7rem" : "100%")};
   background: linear-gradient(
       0deg,
       rgba(113, 101, 227, 0.05),
       rgba(113, 101, 227, 0.05)
     ),
     #ffffff;
-  padding: ${(props) => (props.collapse ? "" : "1rem 1.5rem")};
   height: 100vh;
-  overflow: auto;
+  overflow-y: hidden;
   position: relative;
-  transition: 0.5s ease-out;
+  transition: 0.5s ease-in-out;
 
   .logo-cont {
     width: 100%;
@@ -29,7 +28,8 @@ export const SideNavWrapper = styled.aside<{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0.5rem;
+    padding: ${(props) =>
+      props.collapse ? " 1rem 0.5rem" : "1.5rem 1.5rem 0"};
     position: sticky;
     top: -1rem;
     left: 0;
@@ -42,18 +42,51 @@ export const SideNavWrapper = styled.aside<{
 
   .menu-items {
     width: 100%;
-    margin-top: 2rem;
+    height: 90%;
+    overflow-y: auto;
+    margin-top: 1rem;
+    padding: ${(props) => (props.collapse ? "" : "1rem 1.5rem")};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .menu {
       width: 100%;
+      max-width: ${(props) => (props.collapse ? "4.5rem" : "100%")};
       display: flex;
       align-items: center;
-      margin-top: ${(props) => (props.collapse ? "1rem" : "")};
+      margin-top: ${(props) => (props.collapse ? "0.2rem" : "")};
     }
   }
 
   .secondary {
     margin-top: 0;
+  }
+
+  @media screen and (max-width: 1240px) {
+    width: ${(props) => (props.collapse ? "7rem" : "100%")};
+
+    .menu-items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .menu {
+        max-width: ${(props) => (props.collapse ? "6.5rem" : "100%")};
+        height: 6.5rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1007px) {
+    width: ${(props) => (props.collapse ? "10rem" : "100%")};
+
+    .menu-items {
+      .menu {
+        max-width: ${(props) => (props.collapse ? "8rem" : "100%")};
+        height: 6.5rem;
+      }
+    }
   }
 
   @media screen and (max-width: 640px) {

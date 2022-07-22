@@ -59,6 +59,7 @@ const Input = ({
   return (
     <InputWrapper
       width={width}
+      label={label}
       mt={mt}
       mb={mb}
       ml={ml}

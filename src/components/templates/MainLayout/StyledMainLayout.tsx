@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const LayoutWrapper = styled.section<{
   padding?: string;
   mobilePadding?: string;
+  isCollapsed?: boolean;
 }>`
   width: 100%;
   display: grid;

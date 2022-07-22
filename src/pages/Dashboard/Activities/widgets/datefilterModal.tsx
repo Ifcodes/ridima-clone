@@ -34,8 +34,8 @@ const DatefilterModal = () => {
       mobileCardHeight="70%"
     >
       <DateFilterWrapper>
+        <H1>Filter Date</H1>
         <div className="calendar-cont">
-          <H1>Filter Date</H1>
           <DateRange
             ranges={[dateSelected]}
             onChange={handleRangeSelection}
@@ -47,6 +47,7 @@ const DatefilterModal = () => {
           width="100%"
           btnText="Apply Dates"
           onClick={() => applyDateFilter()}
+          mt={"0"}
         />
       </DateFilterWrapper>
     </Modal>

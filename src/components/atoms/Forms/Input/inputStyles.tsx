@@ -11,12 +11,18 @@ export type InputStyleProps = {
   bgColor?: string;
   isFocused?: boolean | string | number;
   shownError?: boolean;
+  label?: string;
 };
 
 export const InputWrapper = styled.div<InputStyleProps>`
   width: ${(props) => props.width || "100%"};
   background-color: ${(props) => props.bgColor || props.theme.colors.grey6};
-  padding: ${(props) => props.padding || "0.8rem 1.5rem"};
+  padding: ${(props) =>
+    props.padding
+      ? props.padding
+      : !props.label
+      ? "1.2rem 1.5rem"
+      : "0.8rem 1.5rem"};
   position: relative;
   border-radius: 3.125rem;
   border: ${(props) => props.shownError && "1px solid #E81313"};

@@ -35,6 +35,10 @@ const InternetAndWifi = () => {
   const handleRefill = () => {
     setShowConfirmWifiPurchaseModal(true);
   };
+
+  const clearForm = () => {
+    setFormField({ deviceNumber: "", amount: "" });
+  };
   return (
     <SelectedBillWrapper>
       <div className="billcard-cont">
@@ -113,6 +117,7 @@ const InternetAndWifi = () => {
       <InternetWifiSuccessMsgModal
         deviceNumber={formField.deviceNumber}
         amount={formField.amount}
+        handleClear={() => clearForm()}
       />
     </SelectedBillWrapper>
   );

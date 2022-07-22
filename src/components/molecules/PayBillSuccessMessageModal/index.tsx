@@ -4,6 +4,7 @@ import { H1, Paragraph } from "../../atoms/Typography";
 import Modal from "../Modal";
 
 const Wrapper = styled.div<{ messageTitleWidth?: string }>`
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +13,14 @@ const Wrapper = styled.div<{ messageTitleWidth?: string }>`
   .modal-title {
     color: ${(props) => props.theme.colors.deepPurple};
   }
+
+  .content {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .icon-cont {
     width: 20rem;
     height: 16rem;
@@ -22,7 +31,7 @@ const Wrapper = styled.div<{ messageTitleWidth?: string }>`
   }
 
   .text-cont {
-    margin: 5rem auto;
+    margin: 1rem auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,6 +48,7 @@ const Wrapper = styled.div<{ messageTitleWidth?: string }>`
     }
   }
 `;
+
 const PayBillSuccessMessageModal = ({
   icon,
   messageTitle,
@@ -66,11 +76,13 @@ const PayBillSuccessMessageModal = ({
       showCloseBtn
     >
       <Wrapper messageTitleWidth={titleWidth}>
-        <H1 className="modal-title">{modalTitle}</H1>
-        <div className="icon-cont">{icon}</div>
-        <div className="text-cont">
-          <H1 className="message-title">{messageTitle}</H1>
-          <Paragraph>{message}</Paragraph>
+        {modalTitle && <H1 className="modal-title">{modalTitle}</H1>}
+        <div className="content">
+          <div className="icon-cont">{icon}</div>
+          <div className="text-cont">
+            <H1 className="message-title">{messageTitle}</H1>
+            <Paragraph>{message}</Paragraph>
+          </div>
         </div>
       </Wrapper>
     </Modal>

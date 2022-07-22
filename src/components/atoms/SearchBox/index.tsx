@@ -18,7 +18,7 @@ type SearchBoxProps = {
 };
 const SearchBox = ({
   placeholder,
-  value,
+  value = "",
   onChange,
   borderRadius,
   bgColor,

@@ -45,13 +45,14 @@ export const setShowWifiSuccessMsgModal = (val: boolean) => {
   }));
 };
 
-// export const resetAirtimeDataState = () => {
-//   internetWifiStates.set((prev) => ({
-//     ...prev,
-//     selectedService: "",
-//     selectedNetwork: "",
-//     showAirtimeSuccessMsg: false,
-//     showServicesModal: false,
-//     showSelectNetworkModal: false,
-//   }));
-// };
+export const resetInternetWifiState = () => {
+  internetWifiStates.set((prev) => ({
+    ...prev,
+    selectedInternetPlan: "",
+    selectedNetworkProvider: "",
+    showNetworkProviderModal: false,
+    showSelectIntertPlanModal: false,
+    showConfirmWifiPurchaseModal: false,
+    showInternetWifiSuccessModal: false,
+  }));
+};

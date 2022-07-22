@@ -24,9 +24,9 @@ const WalletActionCard = ({
         <span>{title}</span>
       </div>
       {cardType === "right" ? (
-        <WalletActionCardRightBg bgColor={bgColor} />
+        <WalletActionCardRightBg bgcolor={bgColor} />
       ) : (
-        <WalletActionCardLeftBg bgColor={bgColor} />
+        <WalletActionCardLeftBg bgcolor={bgColor} />
       )}
     </WalletActionCardWrap>
   );

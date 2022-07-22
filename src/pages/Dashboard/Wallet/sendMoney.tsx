@@ -31,6 +31,12 @@ const SendMoney = () => {
     userName: "",
   });
 
+  const filteredUser = recentUsers.filter((user) =>
+    user.userName.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
+  const usersToRender = searchValue ? filteredUser : users;
+
   const handleTabClick = (type: string) => {
     if (type === "Send Money" || type === "Quick Action") {
       navigate("/wallet");
@@ -96,9 +102,9 @@ const SendMoney = () => {
           <HorizontalLinedTitle text="Recent" />
         </div>
         <div className="users-wrapper">
-          {users.map((account, index) => (
+          {usersToRender.map((account, index) => (
             <div key={`${account.userName}-${index}`} className="img-cont">
-              <div className="remove-img" onClick={() => removeImg(index)}>
+              <div className="remove-img" onClick={() => removeImg(account)}>
                 -
               </div>
               <img

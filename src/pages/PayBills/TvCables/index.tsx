@@ -5,13 +5,6 @@ import Input from "../../../components/atoms/Forms/Input";
 import Selector from "../../../components/atoms/Selector";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
 import TvOulineIcon from "../../../components/atoms/vectors/TVIcon";
-import WifiOutlineIcon from "../../../components/atoms/vectors/WifiOutlineIcon";
-import {
-  internetWifiStates,
-  setShowConfirmWifiPurchaseModal,
-  setShowInternetPlanModal,
-  setShowNetworkProviderModal,
-} from "../../../Entity/InteretAndWifiEntity";
 import {
   setShowConfirmTvCableModal,
   setShowServiceProviderModal,

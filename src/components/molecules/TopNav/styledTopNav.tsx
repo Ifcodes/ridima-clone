@@ -12,6 +12,10 @@ export const NavWrapper = styled.nav`
   top: 0;
   left: 0;
 
+  .info-icon {
+    cursor: pointer;
+  }
+
   @media screen and (max-width: 640px) {
     height: 4rem;
     padding: 0.5rem 1rem;

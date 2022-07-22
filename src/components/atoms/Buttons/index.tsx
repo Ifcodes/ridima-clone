@@ -88,7 +88,7 @@ const Button = ({
     >
       <div className="text-cont">
         {btnPrefix && <span>{btnPrefix}</span>}
-        <span>{btnText}</span>
+        {buttonBgType !== "plain" && <span>{btnText}</span>}
         {suffix && <span>{suffix}</span>}
       </div>
       {buttonBgType === "plain" ? (

@@ -34,7 +34,7 @@ const DashboardSideNav = () => {
                 buttonBgType={isCollapsed ? "plain" : "small"}
                 btnPrefix={isActive ? <item.iconFilled /> : <item.icon />}
                 menuBtn={!isCollapsed}
-                buttonPosition="left"
+                buttonPosition={isCollapsed ? "center" : "left"}
                 btnText={isCollapsed === true ? "" : item.text}
                 bgColor={isActive ? "#7165E3" : "transparent"}
                 textColor={isActive ? "white" : "#7165E3"}

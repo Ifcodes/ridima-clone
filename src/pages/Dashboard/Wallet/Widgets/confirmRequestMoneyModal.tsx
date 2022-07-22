@@ -29,7 +29,7 @@ const ConfirmRequestMoneyModal = ({ userName }: { userName?: string }) => {
         <div className="text-content">
           <H1>Confirm</H1>
           <Paragraph>
-            You are about to send N{amount} to @{userName}. Confirm that this is
+            You are about to request N{amount} to @{userName}. Confirm that this is
             correct by clciking on the button below.
           </Paragraph>
         </div>

@@ -1,5 +1,5 @@
-import * as React from "react"
-import { SVGProps } from "react"
+import * as React from "react";
+import { SVGProps } from "react";
 
 const DashboardLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -50,6 +50,6 @@ const DashboardLogo = (props: SVGProps<SVGSVGElement>) => (
       </linearGradient>
     </defs>
   </svg>
-)
+);
 
-export default DashboardLogo
+export default DashboardLogo;

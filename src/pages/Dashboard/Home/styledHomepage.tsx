@@ -4,11 +4,14 @@ export const HomeWrapper = styled.section`
   width: 100%;
 
   .salutation {
+    font-size: 1.5rem;
+
     span {
       color: ${(props) => props.theme.colors.grey4};
     }
     .user {
       color: ${(props) => props.theme.colors.primary};
+      font-weight: 500;
     }
   }
 
@@ -31,17 +34,15 @@ export const HomeWrapper = styled.section`
     margin: 1.5rem 0;
 
     span {
-      width: 12rem;
+      width: 10rem;
       color: ${(props) => props.theme.colors.primary};
       font-size: 1.125rem;
       font-weight: 500;
-      margin-right: 0.5rem;
     }
 
     hr {
-      border: 1px solid #d7d4f7;
+      border: 0.2px solid rgba(215, 212, 247, 0.5);
       width: 100%;
-      height: 0;
     }
   }
 
