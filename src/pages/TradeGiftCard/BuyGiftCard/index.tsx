@@ -8,8 +8,7 @@ import DashboardLayout from "../../../components/templates/MainLayout";
 import {
   activeTradeGiftCardTab,
   setActiveTabChange,
-} from "../../../Entity/TradeGiftCardsTabs";
-import { navigateHome } from "../../../utils/helpers";
+} from "../../../Entity/TradeGiftCardsEntity";
 import { StageTitleWrapper } from "../../CreateVirtualCard/createVirtualCardStyles";
 import { trapCardIemList } from "../SellGiftCard";
 import { SellGiftCardWrapper } from "../styledTradeGiftCard";

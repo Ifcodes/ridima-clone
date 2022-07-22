@@ -48,6 +48,7 @@ export const PinVerificationWrapper = styled.div`
   }
 
   .success-title-cont {
+    margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,13 +62,30 @@ export const PinVerificationWrapper = styled.div`
     }
 
     .illustration {
-      width: 12rem;
-      height: 12rem;
+      width: 100%;
+      /* height: 12rem; */
     }
 
     p {
       text-align: center;
       width: 20rem;
+    }
+  }
+
+  .pin-verify-btn-cont {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 640px) {
+    .success-title-cont {
+      margin-top: 3rem;
+      .illustration {
+        width: 80%;
+      }
+
+      p {
+        width: 80%;
+      }
     }
   }
 `;

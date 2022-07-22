@@ -25,7 +25,7 @@ const PinVerificationSuccess = ({
         <h1 className="success-msg-title">{messageTitle}</h1>
         <Paragraph>{message}</Paragraph>
       </div>
-      <div>
+      <div className="pin-verify-btn-cont">
         <Button
           buttonBgType="modal"
           btnText={btnText}

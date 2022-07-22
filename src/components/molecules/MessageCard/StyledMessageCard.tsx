@@ -16,6 +16,14 @@ export const MessageCardWrapper = styled.div<{
   align-items: center;
   position: relative;
 
+  .msg-content {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .close-Icon {
     width: 100%;
     display: flex;
@@ -24,7 +32,7 @@ export const MessageCardWrapper = styled.div<{
     cursor: pointer;
   }
   .icon-cont {
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;

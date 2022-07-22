@@ -28,6 +28,7 @@ import {
   setOpenTermsModal,
   setOpenTradeFailureMessage,
   setOpenTradeSuccessMessage,
+  setSelectedSubCategory,
 } from "../../../../Entity/HotGiftCardsEntity";
 import SuccessMessageCard from "./Widgets/successMessageCard";
 import SellGcSuccessMessageCard from "./Widgets/successMessageCard";
@@ -124,7 +125,6 @@ const ActiveGiftCard = () => {
       setActiveCardStage("next");
     } else if (currentStage === 3) {
       setIsTradeSuccessfull(true);
-      console.log(tradeIsSuccessfull);
       if (tradeIsSuccessfull) {
         setOpenTradeSuccessMessage(true);
       } else {
@@ -189,7 +189,11 @@ const ActiveGiftCard = () => {
         />
       </div>
       {currentStage === 3 && <TradeSummary />}
-      {currentStage !== 3 && <AmazonCardImage />}
+      {currentStage !== 3 && (
+        <div className="card-img-wrap">
+          <AmazonCardImage />
+        </div>
+      )}
       {currentStage === 2 && (
         <UploadImage
           handleEcodeInput={handleEcodeInputChange}

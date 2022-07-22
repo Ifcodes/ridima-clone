@@ -7,9 +7,13 @@ import {
   buyGiftCardsState,
   resetBuyGiftCardsState,
   setBuyGiftcardConfirmModalStage,
+  setCardPurchaseAmount,
+  setExpectedValue,
+  setFixedCurrentStage,
   setIsConfirmed,
   setShowConfirmationModal,
 } from "../../../../Entity/BuyGiftCardsEntity";
+import ErrorMessageCard from "../../SellGiftCard/ActiveGiftCardPage/Widgets/errorMessageCard";
 import SuccessMessageCard from "../../SellGiftCard/ActiveGiftCardPage/Widgets/successMessageCard";
 import { CardTermsModalWrapper } from "../../styledTradeGiftCard";
 
@@ -24,6 +28,9 @@ const ConfirmModal = () => {
   const handleConfirmation = () => {
     setIsConfirmed(true);
     setBuyGiftcardConfirmModalStage("next");
+    // setFixedCurrentStage(0);
+    setExpectedValue(0);
+    setCardPurchaseAmount(null);
   };
 
   const closeModal = () => {
@@ -37,12 +44,7 @@ const ConfirmModal = () => {
   };
 
   const handleSuccessModalBtn = (type: string) => {
-    if (type === "trade") {
-      navigate("/trade-giftcards");
-    }
-    if (type === "transactions") {
-      navigate("/activities");
-    }
+    console.log("others");
     resetBuyGiftCardsState();
   };
 
@@ -50,37 +52,48 @@ const ConfirmModal = () => {
     <Modal
       showModal={showModal}
       closeModal={() => closeModal()}
-      mobileCardHeight={stage === 1 ? "70%" : "45%"}
-      cardHeight="80%"
+      cardHeight={
+        stage === 1 && successfull
+          ? ""
+          : stage === 1 && !successfull
+          ? ""
+          : "45%"
+      }
+      mobileCardHeight={
+        stage === 1 && successfull
+          ? "85%"
+          : stage === 1 && !successfull
+          ? "65%"
+          : "45%"
+      }
       width="28%"
       showCloseBtn
       handleCloseBtn={() => closeModal()}
     >
-      <CardTermsModalWrapper>
-        {stage === 1 && successfull && (
-          <SuccessMessageCard handleBtnClick={handleSuccessModalBtn} />
-        )}
-        {stage === 0 && (
-          <>
-            <div className="title">
-              <h1>Confirm</h1>
-              <Paragraph>
-                You’re about to purchase ${`${cardAmount}`} of Amazon Giftcard,
-                worth N{`${expectedValue}`}. By clicking Confirm below, you
-                agree to our terms of purchase.
-              </Paragraph>
-            </div>
-            <div className="btn-cont">
-              <Button
-                buttonBgType="modal"
-                btnText="Confirm"
-                width="100%"
-                onClick={() => handleConfirmation()}
-              />
-            </div>
-          </>
-        )}
-      </CardTermsModalWrapper>
+      {stage === 1 && successfull && (
+        <SuccessMessageCard handleOtherActions={handleSuccessModalBtn} />
+      )}
+      {stage === 1 && !successfull && <ErrorMessageCard />}
+      {stage === 0 && (
+        <CardTermsModalWrapper>
+          <div className="title">
+            <h1>Confirm</h1>
+            <Paragraph>
+              You’re about to purchase ${`${cardAmount}`} of Amazon Giftcard,
+              worth N{`${expectedValue}`}. By clicking Confirm below, you agree
+              to our terms of purchase.
+            </Paragraph>
+          </div>
+          <div className="btn-cont">
+            <Button
+              buttonBgType="modal"
+              btnText="Confirm"
+              width="100%"
+              onClick={() => handleConfirmation()}
+            />
+          </div>
+        </CardTermsModalWrapper>
+      )}
     </Modal>
   );
 };

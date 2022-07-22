@@ -24,7 +24,7 @@ export const setBuyGiftcardStage = (type: string) => {
 };
 
 export const setFixedCurrentStage = (val: number) => {
-  buyGiftCardsState.set(prev => ({...prev, currentStage: val}));
+  buyGiftCardsState.set((prev) => ({ ...prev, currentStage: val }));
 };
 
 export const setShowBuyCardTermsModal = (val: boolean) => {
@@ -61,18 +61,19 @@ export const setExpectedValue = (val: number) => {
 };
 
 export const setCardPurchaseAmount = (
-  e: React.ChangeEvent<HTMLInputElement>
+  e: React.ChangeEvent<HTMLInputElement> | null
 ) => {
   const newState = buyGiftCardsState.get();
-  buyGiftCardsState.set({ ...newState, cardPurchaseAmount: e.target.value });
+  if (e)
+    buyGiftCardsState.set({ ...newState, cardPurchaseAmount: e.target.value });
 };
 
 export const resetBuyGiftCardsState = () => {
   buyGiftCardsState.set((prev) => ({
     ...prev,
     currentStage: 0,
-    modalStage: 0,
     showTermsModal: false,
+    modalStage: 0,
     showConfirmationModal: false,
     confirmed: false,
     cardPurchaseAmount: "",

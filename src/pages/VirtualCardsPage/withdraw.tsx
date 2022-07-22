@@ -81,7 +81,7 @@ const Withdraw = () => {
             placeholder="0"
             symbol="NGN"
             value={nairaValue}
-            readOnly={nairaValue > 0}
+            readOnly
           />
           <Button disabled={!fundAmount} btnText="Withdraw" mt="4.5rem" />
         </form>

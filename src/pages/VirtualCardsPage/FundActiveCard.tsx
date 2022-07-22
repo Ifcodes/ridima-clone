@@ -83,7 +83,7 @@ const FundActiveCard = () => {
             placeholder="0"
             symbol="NGN"
             value={nairaValue}
-            readOnly={nairaValue > 0}
+            readOnly
           />
           <Button
             type="submit"

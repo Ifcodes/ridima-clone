@@ -47,7 +47,7 @@ export const setCurrentCheckRateStage = (type: string) => {
       currentStage: prev.currentStage - 1,
     }));
   } else if (type === "reset") {
-    checkRatesStates.set((prev) => ({ ...prev, currentStage: 1 }));
+    checkRatesStates.set((prev) => ({ ...prev, currentStage: 0 }));
   }
   return;
 };

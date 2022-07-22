@@ -18,7 +18,7 @@ const CreateCard = ({ onClick, onCardClick }: CardProps) => {
         <div className="btn-complete">
           <Button
             width="18rem"
-            buttonBgType="small"
+            buttonBgType="medium"
             bgColor="#3F1E4B"
             textColor="white"
             btnText="Create card"

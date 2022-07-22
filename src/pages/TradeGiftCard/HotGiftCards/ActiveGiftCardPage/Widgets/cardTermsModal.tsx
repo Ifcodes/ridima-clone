@@ -12,7 +12,11 @@ import { CardTermsModalWrapper } from "../../../styledTradeGiftCard";
 import ErrorMessageCard from "./errorMessageCard";
 import SuccessMessageCard from "./successMessageCard";
 
-const CardTermsModal = () => {
+const CardTermsModal = ({
+  handleOtherActions = () => {},
+}: {
+  handleOtherActions?: Function;
+}) => {
   const states = hotGiftCardsStates.use();
   const openModal = states.openTermsModal;
   const selectedCategory = states.selectedSubCategory;
@@ -23,6 +27,7 @@ const CardTermsModal = () => {
 
   const acceptTerms = () => {
     setActiveCardStage("next");
+    handleOtherActions();
     closeModal();
   };
   return (
@@ -30,6 +35,7 @@ const CardTermsModal = () => {
       showModal={openModal}
       closeModal={closeModal}
       showCloseBtn
+      cardHeight="50%"
       mobileCardHeight="35%"
     >
       <CardTermsModalWrapper>

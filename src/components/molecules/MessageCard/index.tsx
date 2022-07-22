@@ -1,9 +1,9 @@
-import React, { MouseEventHandler, ReactNode } from 'react'
-import CloseIcon from '../../atoms/CloseIcon';
-import { H1, Paragraph } from '../../atoms/Typography';
-import { MessageCardWrapper } from './StyledMessageCard'
+import React, { MouseEventHandler, ReactNode } from "react";
+import CloseIcon from "../../atoms/CloseIcon";
+import { H1, Paragraph } from "../../atoms/Typography";
+import { MessageCardWrapper } from "./StyledMessageCard";
 
-type MessageCardProp ={
+type MessageCardProp = {
   cardIcon?: ReactNode;
   title?: string;
   description?: string;
@@ -14,7 +14,7 @@ type MessageCardProp ={
   height?: string;
   titleColor?: string;
   handleClick?: MouseEventHandler<HTMLDivElement>;
-}
+};
 
 const MessageCard = ({
   cardIcon,
@@ -27,31 +27,25 @@ const MessageCard = ({
   height,
   titleColor,
   handleClick,
-} : MessageCardProp) => {
+}: MessageCardProp) => {
   return (
-    <MessageCardWrapper
-      width={width}
-      height={height}
-    >
-      {closeIcon &&
-        <div 
-          className='close-Icon'
-          onClick={handleClick}
-        >
+    <MessageCardWrapper width={width} height={height}>
+      {closeIcon && (
+        <div className="close-Icon" onClick={handleClick}>
           <CloseIcon />
         </div>
-      }
-      <div className='icon-cont'>
-        {cardIcon}
-      </div>
-      <div className='title-cont'>
-        <H1 color={titleColor}>{title}</H1>
-        <Paragraph>{description}</Paragraph>
+      )}
+      <div className="msg-content">
+        <div className="icon-cont">{cardIcon}</div>
+        <div className="title-cont">
+          <H1 color={titleColor}>{title}</H1>
+          <Paragraph>{description}</Paragraph>
+        </div>
       </div>
       {primaryCta && primaryCta}
       {secondaryCta && secondaryCta}
     </MessageCardWrapper>
-  )
-}
+  );
+};
 
-export default MessageCard
+export default MessageCard;

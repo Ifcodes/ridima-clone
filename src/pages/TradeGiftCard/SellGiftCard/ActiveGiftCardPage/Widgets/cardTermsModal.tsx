@@ -44,6 +44,13 @@ const CardTermsModal = ({
       closeModal={onModalClose}
       handleCloseBtn={() => onModalClose()}
       width={"28%"}
+      cardHeight={
+        stage === 1 && successFull
+          ? ""
+          : stage === 1 && !successFull
+          ? ""
+          : "50%"
+      }
       mobileCardHeight={
         stage === 1 && successFull
           ? "85%"

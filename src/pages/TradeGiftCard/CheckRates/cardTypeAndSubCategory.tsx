@@ -58,7 +58,7 @@ const CardTypeAndSubCategory = () => {
       </div>
       <div className="form-content">
         <Selector
-          selectorTitle={selectedCategory || "Select currency"}
+          selectorTitle={selectedCategory || "Select Sub-category"}
           onClick={() => setCheckRatesSubCatModal(true)}
         />
       </div>

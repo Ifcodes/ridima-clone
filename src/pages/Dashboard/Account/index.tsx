@@ -11,7 +11,9 @@ import MessageNotificationIcon from "../../../components/atoms/vectors/MessageNo
 import ReferralIcon from "../../../components/atoms/vectors/ReferralIcon";
 import SaveIcon from "../../../components/atoms/vectors/SaveIcon";
 import ShieldIcon from "../../../components/atoms/vectors/ShieldIcon";
+import Logout from "../../../components/molecules/LogoutModal";
 import DashboardLayout from "../../../components/templates/MainLayout";
+import { setLogout } from "../../../Entity/LogoutEntity";
 import { AccountPageWrapper } from "./accountStyles";
 
 const Profile = () => {
@@ -29,7 +31,7 @@ const Profile = () => {
 
   const handleMobileActionClick = (type: string, location?: string) => {
     if (type === "Logout") {
-      return;
+      return setLogout(true);
     } else if (location) {
       navigate(location);
     }
@@ -105,6 +107,7 @@ const Profile = () => {
           ))}
         </div>
       </AccountPageWrapper>
+      <Logout />
     </DashboardLayout>
   );
 };

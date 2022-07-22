@@ -108,6 +108,16 @@ export const ActiveGiftCardWrapper = styled.div<{
     display: none;
   }
 
+  .card-img-wrap {
+    width: 18.25rem;
+    height: 9rem;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   .selector {
     margin-top: 2.5rem;
   }
@@ -140,6 +150,10 @@ export const ActiveGiftCardWrapper = styled.div<{
       margin-bottom: 2rem;
     }
 
+    .card-img-wrap {
+      width: 100%;
+    }
+
     .selector {
       width: 100%;
       display: flex;
@@ -152,6 +166,7 @@ export const ActiveGiftCardWrapper = styled.div<{
     }
     .card-types-cont {
       width: 100%;
+      grid-template-columns: repeat(auto-fill, minmax(7.125rem, 1fr));
       align-items: center;
       justify-content: center;
     }
@@ -373,6 +388,7 @@ export const SuccessMessageWrapper = styled.div<{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: ${(props) => (props.errorMessage ? "3rem 0 0" : "")};
   }
 
   .img-cont {

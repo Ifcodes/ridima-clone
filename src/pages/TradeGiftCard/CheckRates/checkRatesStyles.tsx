@@ -22,10 +22,11 @@ export const CheckRatesModalWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  padding: 1rem 1rem 1.5rem;
+  padding: 1rem 2rem 1.5rem;
 
   .content {
     width: 100%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +42,7 @@ export const CheckRatesModalWrapper = styled.div`
     .img-cont {
       width: 17rem;
       height: 18rem;
-      margin: 1.5rem 0;
+      margin: 2rem 0 0;
 
       img {
         width: 100%;
@@ -68,7 +69,7 @@ export const CheckRatesModalWrapper = styled.div`
       .img-cont {
         width: 60%;
         height: 10rem;
-        margin-top: 3rem;
+        margin-top: 3.5rem;
       }
     }
   }

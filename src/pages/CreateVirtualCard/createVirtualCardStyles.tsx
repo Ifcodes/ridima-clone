@@ -252,8 +252,9 @@ export const FundYourCardWrapper = styled.div`
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    grid-gap: 0;
+    justify-content: flex-end;
     overflow-y: auto;
+    grid-gap: 0;
 
     .form-cont {
       margin-top: 2rem;
@@ -281,7 +282,11 @@ export const FundYourCardWrapper = styled.div`
     }
 
     .virtual-card-cont {
-      margin-top: 1rem;
+      margin-top: 0;
+
+      img {
+        max-width: 100%;
+      }
     }
     .modal-content {
       padding: 1rem;

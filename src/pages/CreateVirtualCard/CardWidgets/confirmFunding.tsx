@@ -32,6 +32,8 @@ const ConfirmFunding = ({
       closeModal={() => setCreateVCardConfirmFundModal(false)}
       showCloseBtn
       handleCloseBtn={() => setCreateVCardConfirmFundModal(false)}
+      width="28%"
+      cardHeight={"50%"}
       mobileCardHeight={"45%"}
     >
       <CardTermsModalWrapper>

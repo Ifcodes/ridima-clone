@@ -8,10 +8,17 @@ import {
 import { SuccessMessageWrapper } from "../../../styledTradeGiftCard";
 
 const SuccessMessageCard = ({
-  handleBtnClick = () => {},
+  handleOtherActions = () => {},
 }: {
-  handleBtnClick?: Function;
+  handleOtherActions?: Function;
 }) => {
+  const navigate = useNavigate();
+
+  const handleBtnActions = (type: string) => {
+    handleOtherActions();
+    if (type === "trade") navigate("/trade-giftcards");
+    if (type === "transactions") navigate("/activities");
+  };
   return (
     <SuccessMessageWrapper pl={"1rem"} pr={"1rem"}>
       <div className="msg-modal-content">
@@ -35,7 +42,7 @@ const SuccessMessageCard = ({
           buttonBgType="modalSm"
           btnText="Make another trade"
           width="100%"
-          onClick={() => handleBtnClick("trade")}
+          onClick={() => handleBtnActions("trade")}
         />
         <Button
           bgColor="white"
@@ -44,7 +51,7 @@ const SuccessMessageCard = ({
           btnText="See Transaction Status"
           width="100%"
           mt="0"
-          onClick={() => handleBtnClick("transactions")}
+          onClick={() => handleBtnActions("transactions")}
         />
       </div>
     </SuccessMessageWrapper>

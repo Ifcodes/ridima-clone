@@ -9,6 +9,7 @@ import { PinVerificationWrapper } from "../../../components/molecules/PinVerific
 import {
   createVirtualCardState,
   setCreateVCardPinVerifyModal,
+  setCreateVCardSuccessMsgModal,
 } from "../../../Entity/CreateVirtualCardEntity";
 
 // TODO: Remove this component
@@ -23,9 +24,10 @@ const PinVerificationSuccess = () => {
   return (
     <Modal
       showModal={showModal}
-      closeModal={() => setCreateVCardPinVerifyModal(false)}
+      closeModal={() => setCreateVCardSuccessMsgModal(false)}
       showCloseBtn
-      handleCloseBtn={() => setCreateVCardPinVerifyModal(false)}
+      handleCloseBtn={() => setCreateVCardSuccessMsgModal(false)}
+      width={"28%"}
     >
       <PinVerificationWrapper>
         <div className="success-title-cont">
@@ -40,12 +42,11 @@ const PinVerificationSuccess = () => {
             start paying online.
           </Paragraph>
         </div>
-        <div>
+        <div className="pin-verify-btn-cont">
           <Button
             buttonBgType="modal"
             btnText="Go to virtual card"
             width="100%"
-            mobileWidth="100%"
             onClick={() => handleClick()}
           />
         </div>

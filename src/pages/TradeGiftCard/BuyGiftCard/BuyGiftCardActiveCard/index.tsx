@@ -46,7 +46,9 @@ const BuyGiftCardActive = () => {
           toggleSteps={handleStepClick}
         />
       </div>
-      <AmazonCardImage />
+      <div className="card-img-wrap">
+        <AmazonCardImage />
+      </div>
       {activeStage === 0 && <CardAmountSelection />}
       {activeStage === 1 && <EmailAndComments />}
     </ActiveGiftCardWrapper>

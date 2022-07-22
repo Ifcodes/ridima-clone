@@ -4,7 +4,7 @@ import Button from "../../../../components/atoms/Buttons";
 import { H1 } from "../../../../components/atoms/Typography";
 import Modal from "../../../../components/molecules/Modal";
 import { setShowBuyCardTermsModal } from "../../../../Entity/BuyGiftCardsEntity";
-import { setActiveTabChange } from "../../../../Entity/TradeGiftCardsTabs";
+import { setActiveTabChange } from "../../../../Entity/TradeGiftCardsEntity";
 import { BuyGiftCardTermsModalWrapper } from "../buyGiftCardStyles";
 
 const termsList = [

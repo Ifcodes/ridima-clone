@@ -8,7 +8,6 @@ import {
 } from "../CreateVirtualCard/createVirtualCardStyles";
 import DashboardLayout from "../../components/templates/MainLayout";
 import { setProfileComplete } from "../../Entity/ProfileComplete";
-import { generateId } from "../../utils/generateId";
 import { cardDataList } from "../../utils/helpers/cardsData";
 import { VirtualCardsWrapper } from "./styledVirtualCards";
 import MobileHeader from "../../components/atoms/MobileHeader";

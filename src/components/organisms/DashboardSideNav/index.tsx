@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { setLogout } from "../../../Entity/LogoutEntity";
 import { primaryMenuList } from "../../../utils/helpers/menuList";
 import Button from "../../atoms/Buttons";
 import ArrowLeftClosePanel from "../../atoms/vectors/ArrowLeftClosePanel";
@@ -7,6 +8,7 @@ import ArrowRightLogoutIcon from "../../atoms/vectors/ArrowRightLogoutIcon";
 import DashboardLogo from "../../atoms/vectors/LogoDashboard";
 import LogoIcon from "../../atoms/vectors/LogoIcon";
 import LogoutIconFilled from "../../atoms/vectors/LogoutIconFilled";
+import Logout from "../../molecules/LogoutModal";
 import { setIsCollapsed, sideNavState } from "./dashboardSideNavEntity";
 import { SideNavWrapper } from "./styledMenuBar";
 
@@ -55,6 +57,7 @@ const DashboardSideNav = () => {
             textColor={logoutIsActive ? "white" : "#7165E3"}
             mt="0"
             hideBg={!logoutIsActive}
+            onClick={() => setLogout(true)}
           />
         </div>
       </div>

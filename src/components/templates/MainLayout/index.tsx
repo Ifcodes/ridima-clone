@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import Logout from "../../molecules/LogoutModal";
 import TopNav from "../../molecules/TopNav";
 import DashboardSideNav from "../../organisms/DashboardSideNav";
 import MobileBottomNav from "../../organisms/MobileBottomNav";
@@ -21,6 +22,7 @@ const DashboardLayout = ({
         <div className="child-cont">{children}</div>
         <MobileBottomNav />
       </main>
+      <Logout />
     </LayoutWrapper>
   );
 };

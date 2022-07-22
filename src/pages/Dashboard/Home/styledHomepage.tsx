@@ -86,11 +86,12 @@ export const HomeWrapper = styled.section`
       p {
         text-align: center;
         width: 100%;
+        margin-bottom: 0;
       }
     }
 
     img {
-      width: 35%;
+      width: 50%;
     }
 
     .modal-btn-cont {
@@ -98,6 +99,7 @@ export const HomeWrapper = styled.section`
     }
     .creation-fee {
       color: ${(props) => props.theme.colors.grey2};
+      margin-bottom: 0.5rem;
     }
   }
 

@@ -33,10 +33,11 @@ const CheckRates = () => {
 
   const mobileSteps = Array(3).fill("");
 
-  const handleStepClick = (step: string) => {
+  const handleStepClick = (step: string, index: number) => {
     if (step.includes("Giftcard")) setFixedCheckRateStage(0);
     else if (step.includes("type")) setFixedCheckRateStage(1);
     else if (step.includes("Amount")) setFixedCheckRateStage(2);
+    else if (step === "mobile") setFixedCheckRateStage(index);
     else return;
   };
 
@@ -89,7 +90,7 @@ const CheckRates = () => {
           </div>
           <div className="stepper-wrap-mobile">
             <StepperComponent
-              steps={mobileSteps}
+              mobileSteps={mobileSteps}
               activeStep={activeStage}
               toggleSteps={handleStepClick}
             />
@@ -101,10 +102,10 @@ const CheckRates = () => {
             btnText={activeStage === 3 ? "Close" : "Proceed"}
             width="27rem"
             disabled={
-              (activeStage === 1 && selectedCard === "") ||
+              (activeStage === 0 && selectedCard === "") ||
               selectedCurrency === ""
                 ? true
-                : activeStage === 2 && selectedCategory === ""
+                : activeStage === 1 && selectedCategory === ""
                 ? true
                 : false
             }

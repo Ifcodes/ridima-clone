@@ -6,17 +6,16 @@ export const VirtualCardWrapper = styled.div<{
 }>`
   width: 22rem;
   height: 13rem;
-  color: ${props => props.cardBg === 'blue'
-    ? 'white'
-    : props.theme.colors.deepPurple
-  };
+  color: ${(props) =>
+    props.cardBg === "blue" ? "white" : props.theme.colors.deepPurple};
   position: relative;
 
-  img{
+  img {
+    width: 100%;
     max-width: 100%;
   }
 
-  .card-content{
+  .card-content {
     width: 100%;
     height: 100%;
     padding: 1.5rem;
@@ -27,70 +26,55 @@ export const VirtualCardWrapper = styled.div<{
     flex-direction: column;
     justify-content: space-between;
 
-    .card-name-cont{
+    .card-name-cont {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      .fund{
-        opacity: ${props => props.isActive
-          ? '1'
-          : '0.3'
-        };
-        font-weight: ${props => props.isActive
-          ? '700'
-          : '400'
-        };
-        font-size: ${props => props.isActive
-          ? '1.5rem'
-          : '1rem'
-        };
+      .fund {
+        opacity: ${(props) => (props.isActive ? "1" : "0.3")};
+        font-weight: ${(props) => (props.isActive ? "700" : "400")};
+        font-size: ${(props) => (props.isActive ? "1.5rem" : "1rem")};
 
-        sup{
+        sup {
           font-size: 0.75;
           font-weight: 400;
         }
       }
     }
 
-    .card-user-name{
+    .card-user-name {
       display: flex;
       flex-direction: column;
 
-      .description{
+      .description {
         opacity: 0.3;
       }
 
-      .owner-name{
+      .owner-name {
         font-weight: 500;
         font-size: 1.125rem;
         margin: 0.5rem 0;
       }
 
-      .card-number{
+      .card-number {
         font-size: 1.5rem;
-        font-weight: ${props => props.isActive
-          ? '700'
-          : '500'
-        };
-        opacity: ${props => props.isActive
-          ? '1'
-          : '0.3'
-        };
+        font-weight: ${(props) => (props.isActive ? "700" : "500")};
+        opacity: ${(props) => (props.isActive ? "1" : "0.3")};
       }
     }
 
-    .card-exp-cont{
+    .card-exp-cont {
       display: flex;
 
-      .exp-title{
+      .exp-title {
         opacity: 0.3;
       }
 
-      .card-exp{
+      .card-exp {
         margin-left: 0.5rem;
       }
     }
   }
-`
+`;

@@ -26,7 +26,6 @@ const CardDetails = () => {
   const navigate = useNavigate();
   const cardData = selectedVirtualCardData.use();
   const params = useParams();
-  console.log("params:", params);
   const [showDetailsModal, setShowDetails] = useState(false);
   const [showFreezeCardModal, setShowFreezeCardModal] = useState(false);
   const [activeAction, setActiveAction] = useState("");
@@ -143,6 +142,7 @@ const CardDetails = () => {
             <div className="transactions">
               {cardData.transactions.map((transaction, index) => (
                 <TransactionDetailsCard
+                  key={`${transaction.transactionType}-${index}`}
                   transactionType={transaction.transactionType}
                   title={transaction.transactionTitle}
                   amount={transaction.transactionAmount.amount}
