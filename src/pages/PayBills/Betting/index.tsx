@@ -98,23 +98,23 @@ const BettingWallets = () => {
               width={"27rem"}
               mt={"1.5rem"}
             />
-            <div className="amount-cont">
-              <span className="enter-amount">Enter Amount</span>
-              <AddMinusInput
-                inputValue={formField.amount}
-                placeholder="₦0"
-                symbol={formField.amount ? "₦" : ""}
-                isReadOnly={readOnly}
-                handleButtons={handleAddMinus}
-                onChange={(e) =>
-                  setFormField({
-                    ...formField,
-                    amount: e.target.value,
-                  })
-                }
-                setFocus={onFocus}
-              />
-            </div>
+          </div>
+          <div className="amount-cont">
+            <span className="enter-amount">Enter Amount</span>
+            <AddMinusInput
+              inputValue={formField.amount}
+              placeholder="₦0"
+              symbol={formField.amount ? "₦" : ""}
+              isReadOnly={readOnly}
+              handleButtons={handleAddMinus}
+              onChange={(e) =>
+                setFormField({
+                  ...formField,
+                  amount: e.target.value,
+                })
+              }
+              setFocus={onFocus}
+            />
           </div>
         </div>
         <Button

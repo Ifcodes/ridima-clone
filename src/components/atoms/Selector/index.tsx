@@ -1,7 +1,6 @@
 import React, { MouseEventHandler, ReactNode } from "react";
 import ListItemCard from "../ListItemCard";
 import ListItemWithRadio from "../ListItemWithRadio";
-import { ScrollableModalContent } from "../ScrollableModalContent";
 import CalendarIcon from "../vectors/CalendarIcon";
 import CaretDown from "../vectors/CaretDown";
 import CaretUpIcon from "../vectors/CaretUpIcon";

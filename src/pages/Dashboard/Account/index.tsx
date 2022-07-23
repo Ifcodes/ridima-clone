@@ -52,12 +52,12 @@ const Profile = () => {
               <span className="user-handle">@toyosil</span>
             </div>
           </div>
-          <button
+          <div
             className="edit-btn"
             onClick={() => navigate("/profile/edit-profile")}
           >
             Edit Profile
-          </button>
+          </div>
           <div
             className="edit-arrow"
             onClick={() => navigate("/profile/edit-profile")}
@@ -65,14 +65,15 @@ const Profile = () => {
             <ArrowRightIcon />
           </div>
         </div>
-        <div className="hr-line">
-          <hr />
-        </div>
+
         <div className="content-wrapper">
           {actions.map((content, index) => (
             <div key={content.text} className="content">
               <div className="icon-cont">
-                <CircledBackground>
+                <CircledBackground
+                  bgColor="rgb(248, 247, 254)"
+                  border="1px solid rgba(113, 101, 227, .1)"
+                >
                   <content.icon />
                 </CircledBackground>
                 <span className="content-text">{content.text}</span>

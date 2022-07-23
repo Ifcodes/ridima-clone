@@ -23,6 +23,7 @@ type ServiceModalProps = {
   title?: string;
   selectedOption?: string;
   closeModal?: Function;
+  handleCloseBtn?: Function;
   onServiceClick?: Function;
   selectorList?: Array<string>;
 };
@@ -35,6 +36,7 @@ const SelectorModal = ({
   modalWidth,
   mobileModalHeight,
   closeModal = () => {},
+  handleCloseBtn = () => {},
   onServiceClick = () => {},
 }: ServiceModalProps) => {
   return (
@@ -42,6 +44,7 @@ const SelectorModal = ({
       showModal={openModal}
       closeModal={closeModal}
       cardHeight={modalHeight}
+      handleCloseBtn={handleCloseBtn}
       mobileCardHeight={mobileModalHeight}
       width={modalWidth}
       showCloseBtn

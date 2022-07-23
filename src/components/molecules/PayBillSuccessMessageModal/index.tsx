@@ -30,8 +30,8 @@ const Wrapper = styled.div<{ messageTitleWidth?: string }>`
     }
   }
 
-  .text-cont {
-    margin: 1rem auto;
+  .sucess-msg-text-cont {
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,7 +60,7 @@ const Wrapper = styled.div<{ messageTitleWidth?: string }>`
       width: 80%;
     }
 
-    .text-cont {
+    .sucess-msg-text-cont {
       p {
         width: 80%;
       }
@@ -101,7 +101,7 @@ const PayBillSuccessMessageModal = ({
         {modalTitle && <H1 className="modal-title">{modalTitle}</H1>}
         <div className="content">
           <div className="icon-cont">{icon}</div>
-          <div className="text-cont">
+          <div className="sucess-msg-text-cont">
             <H1 className="message-title">{messageTitle}</H1>
             <Paragraph>{message}</Paragraph>
           </div>

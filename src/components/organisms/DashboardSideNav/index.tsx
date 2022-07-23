@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { setLogout } from "../../../Entity/LogoutEntity";
 import { primaryMenuList } from "../../../utils/helpers/menuList";
 import Button from "../../atoms/Buttons";
+import TotalUnreadNotificationSuffix from "../../atoms/TotalUnreadNotificationSuffix";
 import ArrowLeftClosePanel from "../../atoms/vectors/ArrowLeftClosePanel";
 import ArrowRightLogoutIcon from "../../atoms/vectors/ArrowRightLogoutIcon";
 import DashboardLogo from "../../atoms/vectors/LogoDashboard";
@@ -40,6 +41,11 @@ const DashboardSideNav = () => {
                 textColor={isActive ? "white" : "#7165E3"}
                 mt="0"
                 hideBg={!isActive}
+                suffix={
+                  item.text === "Notification" && (
+                    <TotalUnreadNotificationSuffix isActive={isActive} />
+                  )
+                }
               />
             </Link>
           );

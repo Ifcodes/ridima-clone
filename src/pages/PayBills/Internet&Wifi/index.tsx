@@ -104,7 +104,7 @@ const InternetAndWifi = () => {
           width="27rem"
           disabled={!formIsFilled}
           onClick={() => handleRefill()}
-          mb="6rem"
+          // mb="6rem"
           mt="6rem"
         />
       </FormWrapper>

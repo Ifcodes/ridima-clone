@@ -9,7 +9,7 @@ export const AddMinusWrapper = styled.div<{
   justify-content: space-between;
   margin-top: 1rem;
 
-  .input-cont {
+  .add-input-cont {
     width: 16rem;
 
     input {
@@ -21,7 +21,7 @@ export const AddMinusWrapper = styled.div<{
 
   @media screen and (max-width: 640px) {
     width: 100%;
-    max-width: 100%;
+    justify-content: space-around;
 
     .add-input-cont {
       width: 60%;
@@ -33,6 +33,7 @@ export const AddMinusWrapper = styled.div<{
       > div {
         display: flex;
         justify-content: center;
+        align-items: center;
       }
     }
   }

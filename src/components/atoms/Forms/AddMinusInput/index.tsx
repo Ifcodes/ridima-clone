@@ -27,7 +27,11 @@ const AddMinusInput = ({
 }: AddMinusProps) => {
   return (
     <AddMinusWrapper>
-      <CircledBackground onClick={() => handleButtons("minus")}>
+      <CircledBackground
+        onClick={() => handleButtons("minus")}
+        mobileWidth="2.5rem"
+        mobileHeight="2.5rem"
+      >
         <MinusIcon />
       </CircledBackground>
       <div className="add-input-cont">
@@ -43,7 +47,11 @@ const AddMinusInput = ({
           onBlur={() => setFocus(true)}
         />
       </div>
-      <CircledBackground onClick={() => handleButtons("add")}>
+      <CircledBackground
+        onClick={() => handleButtons("add")}
+        mobileWidth="2.5rem"
+        mobileHeight="2.5rem"
+      >
         <PlusIcon />
       </CircledBackground>
     </AddMinusWrapper>

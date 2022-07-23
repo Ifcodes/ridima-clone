@@ -4,7 +4,7 @@ export const AccountPageWrapper = styled.div`
   width: 100%;
 
   .profile-detail {
-    width: 40%;
+    width: 45%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,14 +35,16 @@ export const AccountPageWrapper = styled.div`
     }
 
     .edit-btn {
-      width: 7rem;
+      width: 8rem;
       height: max-content;
       border-radius: 1.5rem;
       color: white;
       background-color: ${(props) => props.theme.colors.blue};
       padding: 0.9rem 1rem;
-      border: none;
       cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .edit-arrow {
@@ -60,18 +62,19 @@ export const AccountPageWrapper = styled.div`
   }
 
   .content-wrapper {
-    width: 60%;
+    width: 55%;
     display: flex;
     flex-direction: column;
     background-color: #f8f7fe;
     border-radius: 2.5rem;
-    padding: 2rem 2.5rem;
+    padding: 1rem 2.5rem;
+    margin-top: 5rem;
 
     .content {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 1.5rem 0;
+      margin: 1rem 0;
       cursor: pointer;
 
       .icon-cont {

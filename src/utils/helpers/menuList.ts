@@ -23,6 +23,7 @@ import ActivitiesIconMobile from "../../components/atoms/vectors/ActivitesIconMo
 import WalletIconMobile from "../../components/atoms/vectors/WalletIconMobile";
 import SupportIconMobile from "../../components/atoms/vectors/SupportIconMobile";
 import UserIconMobile from "../../components/atoms/vectors/UserIconMobile";
+import NotificationIconFilled from "../../components/atoms/vectors/NotificationIconFilled";
 
 export const primaryMenuList = [
   {
@@ -56,7 +57,7 @@ export const primaryMenuList = [
   {
     id: 5,
     icon: NotificationIcon,
-    iconFilled: NotificationFilledIcon,
+    iconFilled: NotificationIconFilled,
     text: "Notification",
     location: "/notification",
   },

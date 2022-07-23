@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CircledBackground } from "../../../components/atoms/CircledBackground";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
+import TotalUnreadNotificationSuffix from "../../../components/atoms/TotalUnreadNotificationSuffix";
 import { H1 } from "../../../components/atoms/Typography";
 import NotificationIconSecondary from "../../../components/atoms/vectors/NotificationIconSecondary";
 import DashboardLayout from "../../../components/templates/MainLayout";
+import {
+  notificationStates,
+  setUnreadNotifications,
+} from "../../../Entity/NotificationsEntity";
 import {
   NotificationItemCard,
   NotificationPageWrapper,
@@ -71,7 +76,17 @@ const notifications = [
 
 const Notification = () => {
   const navigate = useNavigate();
+  const unreadNote = notificationStates.use().totalUnread;
   const [allNotifications, setAllNotifications] = useState(notifications);
+
+  const filterUnread = () => {
+    const notRead = allNotifications.filter((note) => note.read === false);
+    setUnreadNotifications(notRead.length);
+  };
+
+  useEffect(() => {
+    filterUnread();
+  }, []);
 
   const todayNotification = allNotifications.filter(
     (note) => note.date === today
@@ -89,6 +104,7 @@ const Notification = () => {
         return note;
       })
     );
+    filterUnread();
   };
   return (
     <DashboardLayout childPadding="0" mobileChildPadding="0">
@@ -97,11 +113,11 @@ const Notification = () => {
           <div className="title-cont">
             <H1>Notifications</H1>
             <div className="number">
-              <span>{notifications.length}</span>
+              <span>{unreadNote}</span>
             </div>
           </div>
         </div>
-        <div className="content">
+        <div className="notification-content">
           <span className="today-date">Today 27th June, 2022</span>
 
           <div className="notifications-wrapper">

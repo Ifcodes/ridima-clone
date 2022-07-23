@@ -38,7 +38,7 @@ const SelectTvCablePlanModal = () => {
         onServiceClick={handleSelection}
         title="Select Tv Cable Plan"
         modalHeight="90vh"
-        modalWidth="34%"
+        modalWidth="28%"
       />
     </div>
   );

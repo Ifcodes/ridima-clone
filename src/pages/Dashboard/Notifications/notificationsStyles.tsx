@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 export const NotificationPageWrapper = styled.div`
   width: 100%;
+  height: 100%;
+  overflow-y: hidden;
 
   .heading {
     width: 100%;
-    height: 14.7rem;
+    height: 10.7rem;
     background-color: ${(props) => props.theme.colors.blue};
     background-image: url("/vectors/BlueHeadingRecWithPattern.svg");
     background-size: cover;
@@ -40,7 +42,9 @@ export const NotificationPageWrapper = styled.div`
     }
   }
 
-  .content {
+  .notification-content {
+    height: 80%;
+    overflow-y: auto;
     padding: 2rem 3rem;
 
     .today-date {
@@ -72,7 +76,7 @@ export const NotificationPageWrapper = styled.div`
       height: 8rem;
     }
 
-    .content {
+    .notification-content {
       height: 80%;
       overflow-y: auto;
       padding: 2rem 1.5rem;

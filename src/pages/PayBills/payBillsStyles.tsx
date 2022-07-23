@@ -57,6 +57,8 @@ export const PayBillsDefaultWrapper = styled.div`
 
 export const SelectedBillWrapper = styled.div`
   margin-top: 3.75rem;
+  padding: 0 0 6rem;
+
   width: 100%;
 
   .title-cont {
@@ -64,6 +66,8 @@ export const SelectedBillWrapper = styled.div`
   }
 
   @media screen and (max-width: 640px) {
+    padding-bottom: 0;
+
     .billcard-cont {
       display: flex;
       justify-content: center;
@@ -100,15 +104,6 @@ export const FormWrapper = styled.div<{ isData?: boolean }>`
         font-weight: 700;
       }
     }
-
-    @media screen and (max-width: 640px) {
-      .amount-cont {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    }
   }
 
   @media screen and (max-width: 640px) {
@@ -129,12 +124,16 @@ export const FormWrapper = styled.div<{ isData?: boolean }>`
           margin-bottom: 1rem;
           margin-right: 0;
         }
+      }
 
-        .amount-cont {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+      .amount-cont {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > div {
+          margin-right: 0;
         }
       }
     }

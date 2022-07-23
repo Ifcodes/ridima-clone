@@ -26,7 +26,7 @@ export const BillCardWrapper = styled.div<{
   }
 
   @media screen and (max-width: 640px) {
-    width: ${(props) => (props.isHorizontal ? "80%" : "10rem")};
+    width: ${(props) => (props.isHorizontal ? "80%" : "100%")};
     height: ${(props) => (props.isHorizontal ? "9rem" : "15rem")};
   }
 `;

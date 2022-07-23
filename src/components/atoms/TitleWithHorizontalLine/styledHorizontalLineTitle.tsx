@@ -18,7 +18,8 @@ export const TitleWrapper = styled.div<TitleProps>`
   hr {
     width: 100%;
     height: 1px;
-    border: 1px solid ${(props) => props.lineColor || "#d7d4f7"};
+    border: 0.5px solid
+      ${(props) => props.lineColor || "rgba(215, 212, 247, .5)"};
     margin-left: 1.5rem;
   }
 `;

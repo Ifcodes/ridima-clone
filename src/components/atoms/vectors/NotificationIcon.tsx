@@ -1,5 +1,5 @@
-import * as React from "react"
-import { SvgIconProps } from "../../../types"
+import * as React from "react";
+import { SvgIconProps } from "../../../types";
 
 const NotificationIcon = (props: SvgIconProps) => (
   <svg
@@ -19,9 +19,9 @@ const NotificationIcon = (props: SvgIconProps) => (
     />
     <path
       d="M14.023 26.612a4.39 4.39 0 0 1-3.091-1.284 4.39 4.39 0 0 1-1.284-3.091h1.75c0 .688.28 1.365.77 1.855s1.167.77 1.855.77a2.629 2.629 0 0 0 2.625-2.625h1.75a4.377 4.377 0 0 1-4.375 4.375Z"
-      fill={props.active ? "#FFFFFE" : "#292D32"}
+      fill={props.active ? "#FFFFFE" : "#7165E3"}
     />
   </svg>
-)
+);
 
-export default NotificationIcon
+export default NotificationIcon;

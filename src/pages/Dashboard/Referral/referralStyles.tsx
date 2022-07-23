@@ -7,7 +7,7 @@ export const ReferralPageWrapper = styled.div`
 
   .heading {
     width: 100%;
-    height: 14.7rem;
+    height: 9rem;
     background-color: ${(props) => props.theme.colors.blue};
     background-image: url("/vectors/BlueHeadingRecWithPattern.svg");
     background-size: cover;
@@ -28,10 +28,12 @@ export const ReferralPageWrapper = styled.div`
         h1 {
           font-size: 2.25rem;
           color: white;
+          margin: 1rem 0 0;
         }
 
         p {
           color: rgba(255, 255, 254, 0.3);
+          margin-top: 0;
         }
       }
     }
@@ -69,7 +71,7 @@ export const ReferralPageWrapper = styled.div`
     overflow-y: auto;
 
     .page-content {
-      padding: 3.125rem 3rem 8rem;
+      padding: 3.125rem 3rem 0;
 
       .line-title {
         margin: 2rem 0;

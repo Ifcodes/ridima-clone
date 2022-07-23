@@ -11,7 +11,7 @@ const MinusIcon = (props: SVGProps<SVGSVGElement>) => (
   >
     <path
       d="M7.883 15.5h15.25"
-      stroke="#828282"
+      stroke="#7165E3"
       strokeWidth={1.75}
       strokeLinecap="round"
       strokeLinejoin="round"
