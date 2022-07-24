@@ -7,6 +7,7 @@ export type InputStyleProps = {
   mb?: string;
   ml?: string;
   mr?: string;
+  mobileMt?: string;
   padding?: string;
   bgColor?: string;
   isFocused?: boolean | string | number;
@@ -82,6 +83,6 @@ export const InputWrapper = styled.div<InputStyleProps>`
   @media screen and (max-width: 640px) {
     max-width: 100%;
     padding: 0.85rem 1rem 0.85rem 1.5rem;
-    margin-top: 1.5rem;
+    margin-top: ${(props) => props.mobileMt || "1rem"};
   }
 `;

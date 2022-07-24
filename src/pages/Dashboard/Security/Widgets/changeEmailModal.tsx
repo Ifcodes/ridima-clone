@@ -27,6 +27,9 @@ const ChangeEmailModal = () => {
       closeModal={() => setChangeEmailModal(false)}
       showCloseBtn
       handleCloseBtn={() => setChangeEmailModal(false)}
+      width="27%"
+      cardHeight={"55%"}
+      mobileCardHeight="45%"
     >
       <ChangePasswordModalWrapper>
         <H1>Change Email Address</H1>
@@ -46,7 +49,6 @@ const ChangeEmailModal = () => {
             width="100%"
             disabled={!formField}
             type="submit"
-            mt="15rem"
           />
         </form>
       </ChangePasswordModalWrapper>

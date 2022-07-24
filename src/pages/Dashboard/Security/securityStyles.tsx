@@ -37,6 +37,11 @@ export const ChangePinWrapper = styled.div`
     align-items: center;
   }
 
+  .error-alert {
+    color: ${(props) => props.theme.colors.red};
+    margin-top: 0.7rem;
+  }
+
   .profile-pics {
     width: 100%;
     display: flex;
@@ -75,20 +80,44 @@ export const ChangePasswordModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 2rem 2rem;
 
   h1,
   p {
     color: ${(props) => props.theme.colors.deepPurple};
   }
+
   form {
+    width: 100%;
+    height: 80%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    margin: 1.5rem 0;
+    margin: 0.5rem 0;
 
     a {
       margin-top: 3rem;
+    }
+
+    .password-input-fields {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .error-alert {
+        color: ${(props) => props.theme.colors.red};
+        margin-top: 0.5rem;
+      }
+    }
+
+    .password-cta-cont {
+      width: 100%;
+      display: text;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
   }
 `;

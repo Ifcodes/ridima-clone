@@ -45,10 +45,10 @@ const Security = () => {
       icon: PasswordCheckIcon,
       title: "Change Email Address",
     },
-    {
-      icon: SecuritySafeIcon,
-      title: "Allow Biometrics",
-    },
+    // {
+    //   icon: SecuritySafeIcon,
+    //   title: "Allow Biometrics",
+    // },
   ];
 
   const handleTabClick = (type: string) => {
@@ -111,14 +111,14 @@ const Security = () => {
               }
               title={action.title}
               lastIcon={
-                index === 3 ? (
-                  <ToggleButton
-                    onToggle={switchBiometrics}
-                    isActive={allowBiometrics}
-                  />
-                ) : (
-                  <ArrowRightIcon />
-                )
+                // index === 3 ? (
+                //   <ToggleButton
+                //     onToggle={switchBiometrics}
+                //     isActive={allowBiometrics}
+                //   />
+                // ) : (
+                <ArrowRightIcon />
+                // )
               }
               showTextBorder
               onCardClick={() => handleActionClick(action.title)}

@@ -4,7 +4,7 @@ export const changePinStates = entity({
   currentPin: "",
   newPin: "",
   confirmedNewPIn: "",
-  newPinMatch: false,
+  newPinMatch: true,
   showChangePinModal: false,
   showChangePinSuccessMsg: false,
 });

@@ -29,7 +29,7 @@ const ChangePinModal = () => {
   const pinInputStyle = {
     width: "4rem",
     height: "4rem",
-    border: "none",
+    border: `${newPinMatch === false ? "1px solid red" : "none"}`,
     borderRadius: "100%",
     backgroundColor: "#6a5ee114",
     color: "#7165E3",
@@ -39,7 +39,7 @@ const ChangePinModal = () => {
   };
 
   const focusStyle = {
-    border: "none",
+    border: `${newPinMatch === false ? "1px solid red" : "none"}`,
   };
 
   const handlePinChange = (val: string) => {
@@ -67,7 +67,9 @@ const ChangePinModal = () => {
       if (confirmNewPin.length === 4) {
         if (confirmNewPin !== newPin) {
           setNewPinMatch(false);
-          alert("New PIN do not match");
+          setCurrentStage(1);
+          setConfirmNewPin("");
+          setNewPin("");
         } else {
           setNewPinMatch(true);
         }
@@ -83,6 +85,7 @@ const ChangePinModal = () => {
     } else if (currentStage === 2) {
       setChangePinModal(false);
       setChangePinSuccessMsg(true);
+      setCurrentStage(0);
     } else {
       return;
     }
@@ -123,6 +126,9 @@ const ChangePinModal = () => {
             isInputNum={true}
             isInputSecure={true}
           />
+          {!newPinMatch && (
+            <span className="error-alert">New PINs do not match!</span>
+          )}
           <Link to={"/forgot-pin"}>Forgot PIN</Link>
         </div>
         <Button

@@ -25,6 +25,8 @@ export type InputProps = {
   required?: boolean;
   symbol?: string;
   padding?: string;
+  mobileMt?: string;
+  errorShown?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   onChange?: Function;
   showCheckIcon?: boolean;
@@ -41,6 +43,7 @@ const Input = ({
   mb,
   ml,
   mr,
+  mobileMt,
   padding,
   width,
   bgColor,
@@ -49,12 +52,12 @@ const Input = ({
   className,
   inputClassName,
   symbol,
+  errorShown,
   showCheckIcon,
   ...props
 }: InputProps) => {
   const [showPassword, setShowPassword] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
-  const [errorShown, setErrorShown] = useState(false);
 
   return (
     <InputWrapper
@@ -64,6 +67,7 @@ const Input = ({
       mb={mb}
       ml={ml}
       mr={mr}
+      mobileMt={mobileMt}
       padding={padding}
       bgColor={bgColor}
       isFocused={isFocused || value}
