@@ -5,18 +5,21 @@ export const AccountCardWrapper = styled.div<{
   isActive?: boolean;
 }>`
   width: 23rem;
-  height: 11.25rem;
+  height: 11.5rem;
   border-radius: 1.875rem;
   position: relative;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: ${(props) => (props.isActive ? "1px solid #7165E3" : "")};
 
   :hover {
-    box-shadow: 0 0 24px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid #7165e3;
   }
 
   img {
     width: 100%;
-    height: 100%;
+    height: 95%;
   }
 
   .card-content {
@@ -32,15 +35,17 @@ export const AccountCardWrapper = styled.div<{
       props.cardType === "Primary" ? "white" : props.theme.colors.deepPurple};
 
     .card-type {
-      background-color: ${(props) =>
-        props.cardType === "Primary"
-          ? props.theme.colors.yellow
-          : props.theme.colors.blue};
-      color: ${(props) =>
-        props.cardType === "Primary" ? props.theme.colors.deepPurple : "white"};
-      width: max-content;
-      padding: 0.5rem 1rem;
-      border-radius: 1rem;
+      background-color: ${({ cardType, theme }) =>
+        cardType === "Primary" ? theme.colors.yellow : theme.colors.blue};
+      color: ${({ cardType, theme }) =>
+        cardType === "Primary" ? theme.colors.deepPurple : "white"};
+      width: ${({ cardType }) =>
+        cardType === "Primary" ? "max-content" : "2rem"};
+      height: ${({ cardType }) => (cardType === "Primary" ? "" : "2rem")};
+      padding: ${({ cardType }) =>
+        cardType === "Primary" ? " 0.5rem 1rem" : "0"};
+      border-radius: ${({ cardType }) =>
+        cardType === "Primary" ? "1.3rem" : "100%"};
       align-self: flex-end;
     }
 

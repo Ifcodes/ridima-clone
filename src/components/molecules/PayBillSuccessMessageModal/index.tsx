@@ -16,6 +16,7 @@ const Wrapper = styled.div<{ messageTitleWidth?: string }>`
   }
 
   .content {
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CircledBackground } from "../../../components/atoms/CircledBackground";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
-import TotalUnreadNotificationSuffix from "../../../components/atoms/TotalUnreadNotificationSuffix";
+
 import { H1 } from "../../../components/atoms/Typography";
 import NotificationIconSecondary from "../../../components/atoms/vectors/NotificationIconSecondary";
 import DashboardLayout from "../../../components/templates/MainLayout";
@@ -84,16 +84,17 @@ const Notification = () => {
     setUnreadNotifications(notRead.length);
   };
 
-  useEffect(() => {
-    filterUnread();
-  }, []);
+  // useEffect(() => {
+  //   setAllNotifications(notifications);
+  //   filterUnread();
+  // }, []);
 
   const todayNotification = allNotifications.filter(
-    (note) => note.date === today
+    ({ date }) => date === today
   );
 
   const yesterdayNotifications = allNotifications.filter(
-    (note) => note.date === yesterday
+    ({ date }) => date === yesterday
   );
 
   const handleNotificationClick = (path: string, indx: number) => {
@@ -106,6 +107,7 @@ const Notification = () => {
     );
     filterUnread();
   };
+
   return (
     <DashboardLayout childPadding="0" mobileChildPadding="0">
       <NotificationPageWrapper>

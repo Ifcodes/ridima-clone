@@ -2,11 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PayBillSuccessMessageModal from "../../../../components/molecules/PayBillSuccessMessageModal";
 import {
-  airtimeDataStates,
-  resetAirtimeDataState,
-  setShowAirtimeSuccessMsg,
-} from "../../../../Entity/AirtimeAndDataEntity";
-import {
   clearWithdrawalStates,
   // clearWithdrawalStates,
   setWithdrawSuccessMsgModal,

@@ -93,38 +93,40 @@ const ChangePinModal = () => {
       showModal={showModal}
       closeModal={() => setChangePinModal(false)}
       showCloseBtn
+      width="27%"
     >
       <ChangePinWrapper>
-        <div className="profile-pics">
-          <ProfilePics imgUrl={"/vectors/Avatar.svg"} />
+        <div className="pin-modal-content">
+          <div className="profile-pics">
+            <ProfilePics imgUrl={"/vectors/Avatar.svg"} />
+          </div>
+          <p className="modal-title">
+            {currentStage === 0 && "Enter Current PIN"}
+            {currentStage === 1 && "Create New PIN"}
+            {currentStage === 2 && "Confirm New PIN"}
+          </p>
+          <OtpInput
+            numInputs={4}
+            onChange={handlePinChange}
+            value={
+              currentStage === 0
+                ? currentPin
+                : currentStage === 1
+                ? newPin
+                : confirmNewPin
+            }
+            separator={<span className="seperator"></span>}
+            containerStyle="pin-input-cont"
+            inputStyle={pinInputStyle}
+            focusStyle={focusStyle}
+            shouldAutoFocus={true}
+            isInputNum={true}
+            isInputSecure={true}
+          />
+          <Link to={"/forgot-pin"}>Forgot PIN</Link>
         </div>
-        <p className="modal-title">
-          {currentStage === 0 && "Enter Current PIN"}
-          {currentStage === 1 && "Create New PIN"}
-          {currentStage === 2 && "Confirm New PIN"}
-        </p>
-        <OtpInput
-          numInputs={4}
-          onChange={handlePinChange}
-          value={
-            currentStage === 0
-              ? currentPin
-              : currentStage === 1
-              ? newPin
-              : confirmNewPin
-          }
-          separator={<span className="seperator"></span>}
-          containerStyle="pin-input-cont"
-          inputStyle={pinInputStyle}
-          focusStyle={focusStyle}
-          shouldAutoFocus={true}
-          isInputNum={true}
-          isInputSecure={true}
-        />
-        <Link to={"/forgot-pin"}>Forgot PIN</Link>
         <Button
           btnText="Proceed"
-          mt="6rem"
           disabled={
             currentStage === 0 && currentPin.length < 4
               ? true

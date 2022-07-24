@@ -30,6 +30,8 @@ export const LeaderBoardWrapper = styled.div`
       p {
         color: rgba(255, 255, 254, 0.3);
         margin: 4px;
+        font-size: 400;
+        font-size: 1rem;
       }
     }
 

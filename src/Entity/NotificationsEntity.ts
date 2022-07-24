@@ -1,7 +1,7 @@
 import { entity } from "simpler-state";
 
 export const notificationStates = entity({
-  totalUnread: 6,
+  totalUnread: 0,
 });
 
 export const setUnreadNotifications = (val: number) => {

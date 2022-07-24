@@ -28,6 +28,14 @@ export const ChangePinWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem 2.5rem;
+
+  .pin-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   .profile-pics {
     width: 100%;

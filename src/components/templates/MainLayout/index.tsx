@@ -1,4 +1,6 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
+import { setUnreadNotifications } from "../../../Entity/NotificationsEntity";
+import { notifications } from "../../../utils/helpers/notificationsList";
 import Logout from "../../molecules/LogoutModal";
 import TopNav from "../../molecules/TopNav";
 import DashboardSideNav from "../../organisms/DashboardSideNav";
@@ -17,6 +19,16 @@ const DashboardLayout = ({
 }) => {
   const isCollapsed = sideNavState.use().isCollapsed;
 
+  const filterUnread = () => {
+    const notRead = notifications.filter((note) => note.read === false);
+    setUnreadNotifications(notRead.length);
+  };
+
+  useEffect(() => {
+    filterUnread();
+  }, []);
+
+  useEffect(() => {}, []);
   return (
     <LayoutWrapper
       padding={childPadding}

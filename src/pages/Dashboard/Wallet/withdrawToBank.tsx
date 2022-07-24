@@ -116,7 +116,7 @@ const WithdrawToBank = () => {
                 accountName={account.accountName}
                 accountNumber={account.accountNumber}
                 bankName={account.bankName}
-                cardType={index === 0 ? "Primary" : "Secondary"}
+                cardType={index === 0 ? "Primary" : ""}
                 onCardClick={() => handleSelectAccount(account, index)}
                 isActive={activeAccount === index}
               />
