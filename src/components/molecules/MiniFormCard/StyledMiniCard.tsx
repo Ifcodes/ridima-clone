@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MiniFormCardWrapper = styled.div<{ height?: string }>`
   width: 30%;
-  height: ${(props) => props.height || "70vh"};
+  height: ${(props) => props.height || "75vh"};
   max-width: 32rem;
   max-height: 42rem;
   background-color: white;
@@ -25,6 +25,18 @@ export const MiniFormCardWrapper = styled.div<{ height?: string }>`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    .mini-form-input-field {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .error-alert {
+        color: ${({ theme }) => theme.colors.red};
+        margin-top: 0.5rem;
+      }
+    }
 
     .secondary-cta {
       width: 100%;
@@ -49,6 +61,7 @@ export const MiniFormCardWrapper = styled.div<{ height?: string }>`
 
     form {
       height: 80%;
+      /* justify-content: flex-start; */
 
       .secondary-cta {
         margin: 2rem 0;

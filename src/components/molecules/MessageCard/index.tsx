@@ -11,6 +11,7 @@ type MessageCardProp = {
   secondaryCta?: ReactNode;
   closeIcon?: boolean;
   width?: string;
+  imgWidth?: string;
   height?: string;
   titleColor?: string;
   handleClick?: MouseEventHandler<HTMLDivElement>;
@@ -24,12 +25,13 @@ const MessageCard = ({
   secondaryCta,
   closeIcon,
   width,
+  imgWidth,
   height,
   titleColor,
   handleClick,
 }: MessageCardProp) => {
   return (
-    <MessageCardWrapper width={width} height={height}>
+    <MessageCardWrapper imgWidth={imgWidth} width={width} height={height}>
       {closeIcon && (
         <div className="close-Icon" onClick={handleClick}>
           <CloseIcon />

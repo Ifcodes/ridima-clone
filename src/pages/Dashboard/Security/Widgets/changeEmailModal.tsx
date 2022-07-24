@@ -39,6 +39,7 @@ const ChangeEmailModal = () => {
             value={formField}
             label="New Email Address"
             placeholder="e.g you@email.com"
+            type={"email"}
             required
             onChange={(e) => setFormField(e.target.value)}
           />

@@ -1,8 +1,10 @@
 import styled, { css } from "styled-components";
+import ProfilePics from "../../atoms/ProfilePics";
 
 export const MessageCardWrapper = styled.div<{
   height?: string;
   width?: string;
+  imgWidth?: string;
 }>`
   width: ${(props) => props.width || "30%"};
   height: ${(props) => props.height || "75vh"};
@@ -17,6 +19,7 @@ export const MessageCardWrapper = styled.div<{
   position: relative;
 
   .msg-content {
+    width: 100%;
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -31,8 +34,9 @@ export const MessageCardWrapper = styled.div<{
     margin-top: 1rem;
     cursor: pointer;
   }
+
   .icon-cont {
-    width: 60%;
+    width: ${({ imgWidth }) => imgWidth || "60%"};
     display: flex;
     justify-content: center;
     align-items: center;

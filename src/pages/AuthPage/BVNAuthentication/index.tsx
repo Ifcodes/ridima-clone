@@ -76,7 +76,7 @@ const BVNAuthentication = () => {
         <BvnVerificationSuccessCard />
       ) : (
         <MiniFormCard
-          cardHeight="80vh"
+          cardHeight="90vh"
           cardTitle="BVN Verification"
           cardTitleDescription="Enter the details of your BVN to unlock the rest of Ridima features."
           btnText={loading ? "Verifying BVN" : "Verify BVN"}
@@ -92,52 +92,56 @@ const BVNAuthentication = () => {
             />
           }
         >
-          <Input
-            id={generateId()}
-            label="First name"
-            placeholder="e.g Omotoyosi"
-            type="text"
-            required
-            value={bvnFormField.firstName}
-            onChange={(e) => handleFormChange(e, "firstName")}
-          />
+          <div className="mini-form-input-field">
+            <Input
+              id={generateId()}
+              label="First name"
+              placeholder="e.g Omotoyosi"
+              type="text"
+              required
+              value={bvnFormField.firstName}
+              onChange={(e) => handleFormChange(e, "firstName")}
+            />
 
-          <Input
-            id={generateId()}
-            label="Last name"
-            placeholder="e.g Lawal"
-            type="text"
-            required
-            value={bvnFormField.lastName}
-            onChange={(e) => handleFormChange(e, "lastName")}
-          />
+            <Input
+              id={generateId()}
+              label="Last name"
+              placeholder="e.g Lawal"
+              type="text"
+              required
+              value={bvnFormField.lastName}
+              onChange={(e) => handleFormChange(e, "lastName")}
+            />
 
-          <Input
-            id={generateId()}
-            label="BVN"
-            placeholder="e.g 1234567890"
-            type="text"
-            required
-            minLength={10}
-            maxLength={10}
-            value={bvnFormField.bvn}
-            onChange={(e) => handleFormChange(e, "bvn")}
-          />
-          <Input
-            id={generateId()}
-            label="Date of Birth"
-            placeholder="e.g DD/MM/YYYY"
-            type="text"
-            required
-            value={bvnFormField.dob}
-            onChange={(e) => handleFormChange(e, "dob")}
-          />
+            <Input
+              id={generateId()}
+              label="BVN"
+              placeholder="e.g 1234567890"
+              type="text"
+              required
+              minLength={10}
+              maxLength={10}
+              value={bvnFormField.bvn}
+              onChange={(e) => handleFormChange(e, "bvn")}
+            />
+            <Input
+              id={generateId()}
+              label="Date of Birth"
+              placeholder="e.g DD/MM/YYYY"
+              type="text"
+              required
+              value={bvnFormField.dob}
+              onChange={(e) => handleFormChange(e, "dob")}
+            />
+          </div>
         </MiniFormCard>
       )}
       <Modal
         showModal={showModal}
         closeModal={() => setShowModal(false)}
         showCloseBtn={true}
+        width="25%"
+        cardHeight="65%"
       >
         <BvnAuthModalContent>
           <div className="title-cont">
@@ -154,7 +158,7 @@ const BVNAuthentication = () => {
             buttonBgType="modal"
             btnText="Send code"
             mt="0"
-            mb="3rem"
+            mb="2rem"
             width={"100%"}
             onClick={() => sendCode()}
           />

@@ -1,6 +1,7 @@
 import { entity } from "simpler-state";
 
 export const changePinStates = entity({
+  stage: 0,
   currentPin: "",
   newPin: "",
   confirmedNewPIn: "",
@@ -33,9 +34,14 @@ export const setNewPinMatch = (val: boolean) => {
   changePinStates.set((prev) => ({ ...prev, newPinMatch: val }));
 };
 
+export const setChangePinStage = (val: number) => {
+  changePinStates.set((prev) => ({ ...prev, stage: val }));
+};
+
 export const resetAllChangePinState = () => {
   changePinStates.set((prev) => ({
     ...prev,
+    stage: 0,
     currentPin: "",
     newPin: "",
     confirmedNewPIn: "",

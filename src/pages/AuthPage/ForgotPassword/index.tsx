@@ -1,18 +1,24 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Input from "../../../components/atoms/Forms/Input";
 import MiniFormCard from "../../../components/molecules/MiniFormCard";
 import AuthLayout from "../../../components/templates/AuthLayout";
+import {
+  changePasswordState,
+  setChangePasswordStage,
+} from "../../../Entity/ChangePasswordEntity";
 import { generateId } from "../../../utils/generateId";
 import ResetPassword from "./resetPassword";
 import SuccessMessageCard from "./successMessageCard";
 
 const ForgotPassword = () => {
-  const [currentStage, setCurrentStage] = useState(0);
+  const navigate = useNavigate();
+  const currentStage = changePasswordState.use().stage;
   const [emailField, setEmailField] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setCurrentStage(currentStage + 1);
+    setChangePasswordStage(currentStage + 1);
   };
 
   return (
@@ -21,9 +27,11 @@ const ForgotPassword = () => {
       secondaryAuth={true}
       forPasswordReset={true}
       showLogo={true}
+      showCloseIcon={currentStage === 2}
+      handleCloseIcon={() => navigate("/login")}
     >
       {currentStage === 1 ? (
-        <ResetPassword handleFormSubmit={(e) => handleSubmit(e)} />
+        <ResetPassword />
       ) : currentStage === 2 ? (
         <SuccessMessageCard />
       ) : (

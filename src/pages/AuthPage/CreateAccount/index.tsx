@@ -78,6 +78,7 @@ const CreateAccountPage = () => {
               maxLength={11}
               required
               value={formField.phoneNumber}
+              type="tel"
               onChange={(e) => handleChange("phoneNumber", e)}
             />
             <Input
