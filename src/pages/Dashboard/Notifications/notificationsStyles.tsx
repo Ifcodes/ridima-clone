@@ -79,7 +79,7 @@ export const NotificationPageWrapper = styled.div`
     .notification-content {
       height: 80%;
       overflow-y: auto;
-      padding: 2rem 1.5rem;
+      padding: 2rem 1.5rem 3rem;
 
       .today-date {
         color: ${(props) => props.theme.colors.grey3};

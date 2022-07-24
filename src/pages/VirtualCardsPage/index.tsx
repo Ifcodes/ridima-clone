@@ -65,7 +65,7 @@ const VirtualCardsPage = () => {
             bgColor="#F5CF48"
             width="50%"
             mobileWidth="50%"
-            mt="0"
+            mt="1rem"
           />
         </div>
 

@@ -126,7 +126,7 @@ export const HomeWrapper = styled.section`
       }
 
       .secondary-tabs {
-        width: 7rem;
+        width: 8.5rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
