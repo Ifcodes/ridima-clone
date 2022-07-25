@@ -4,7 +4,6 @@ export const SideNavWrapper = styled.aside<{
   logout?: boolean;
   collapse?: boolean;
 }>`
-  width: ${(props) => (props.collapse ? "7rem" : "100%")};
   background: linear-gradient(
       0deg,
       rgba(113, 101, 227, 0.05),
@@ -28,8 +27,7 @@ export const SideNavWrapper = styled.aside<{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: ${(props) =>
-      props.collapse ? " 1rem 0.5rem" : "1.5rem 1.5rem 0"};
+    padding: ${(props) => (props.collapse ? " 1rem" : "1.5rem 1.5rem 0")};
     position: sticky;
     top: -1rem;
     left: 0;
@@ -37,6 +35,14 @@ export const SideNavWrapper = styled.aside<{
     .arrow {
       cursor: pointer;
       transform: ${(props) => (props.collapse ? "rotate(180deg)" : "")};
+    }
+
+    .logo {
+      width: 70%;
+    }
+
+    svg {
+      width: 100%;
     }
   }
 

@@ -1,10 +1,11 @@
-import * as React from "react"
-import { SVGProps } from "react"
+import * as React from "react";
+import { SVGProps } from "react";
 
 const WalletFilledIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width={28}
     height={28}
+    viewBox={"0 0 28 28"}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -14,6 +15,6 @@ const WalletFilledIcon = (props: SVGProps<SVGSVGElement>) => (
       fill="#FFFFFE"
     />
   </svg>
-)
+);
 
-export default WalletFilledIcon
+export default WalletFilledIcon;

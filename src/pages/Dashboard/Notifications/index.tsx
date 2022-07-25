@@ -135,7 +135,7 @@ const Notification = () => {
                     bgColor={note.read === false ? "#EBE9FB" : "#F8F7FE"}
                   >
                     <NotificationIconSecondary
-                      bgColor={note.read === true ? "#BDBDBD" : ""}
+                      bgcolor={note.read === true ? "#BDBDBD" : ""}
                     />
                   </CircledBackground>
                   <div className="text-cont">
@@ -167,7 +167,7 @@ const Notification = () => {
                     bgColor={note.read === false ? "#EBE9FB" : "#F8F7FE"}
                   >
                     <NotificationIconSecondary
-                      bgColor={note.read === true ? "#BDBDBD" : ""}
+                      bgcolor={note.read === true ? "#BDBDBD" : ""}
                     />
                   </CircledBackground>
                   <div className="text-cont">

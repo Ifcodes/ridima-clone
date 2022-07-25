@@ -1,10 +1,11 @@
-import * as React from "react"
-import { SVGProps } from "react"
+import * as React from "react";
+import { SVGProps } from "react";
 
 const ActivitiesFilledIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width={26}
     height={26}
+    viewBox="0 0 26 26"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -14,6 +15,6 @@ const ActivitiesFilledIcon = (props: SVGProps<SVGSVGElement>) => (
       fill="#FFFFFE"
     />
   </svg>
-)
+);
 
-export default ActivitiesFilledIcon
+export default ActivitiesFilledIcon;

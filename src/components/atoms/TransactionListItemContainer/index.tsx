@@ -56,7 +56,7 @@ const TransactionDetailContainer = ({
           <TransactionStatusWrapper status={transactionStatus}>
             <span>{transactionStatus}</span>
           </TransactionStatusWrapper>
-          <VerticalOptionIcon />
+          {/* <VerticalOptionIcon /> */}
         </div>
       </div>
     </TransactionDetailWrapper>

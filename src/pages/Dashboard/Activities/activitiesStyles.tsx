@@ -39,16 +39,17 @@ export const ActivitiesWrapper = styled.div`
 
   @media screen and (max-width: 640px) {
     .heading {
-      padding: 1rem 1rem 0;
+      padding: 1rem 0 0 1rem;
       display: block;
 
       .bars-cont {
-        padding: 0 1rem;
+        padding: 0 1rem 0 4rem;
+        right: 0;
         gap: 0;
         left: 0;
 
         .bar:not(:first-child) {
-          margin-left: -6rem;
+          margin-left: -5rem;
         }
         .bar:nth-child(1) {
           z-index: 25;

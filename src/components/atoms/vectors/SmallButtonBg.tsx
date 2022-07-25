@@ -4,8 +4,8 @@ import { SvgIconProps } from "../../../types";
 
 const SmallButtonBg = (props: SvgIconProps) => (
   <svg
-    width={239}
-    height={68}
+    // width={239}
+    // height={68}
     viewBox="0 0 239 68"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

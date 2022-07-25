@@ -1,11 +1,12 @@
-import * as React from "react"
-import { SVGProps } from "react"
-import { SvgIconProps } from "../../../types"
+import * as React from "react";
+import { SVGProps } from "react";
+import { SvgIconProps } from "../../../types";
 
 const ActivitiesIcon = (props: SvgIconProps) => (
   <svg
     width={28}
     height={28}
+    viewBox={"0 0 28 28"}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -19,6 +20,6 @@ const ActivitiesIcon = (props: SvgIconProps) => (
       fill={props.active ? "#FFFFFE" : "#7165E3"}
     />
   </svg>
-)
+);
 
-export default ActivitiesIcon
+export default ActivitiesIcon;

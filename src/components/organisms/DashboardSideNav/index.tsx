@@ -21,7 +21,9 @@ const DashboardSideNav = () => {
   return (
     <SideNavWrapper collapse={isCollapsed}>
       <div className="logo-cont">
-        <div>{isCollapsed ? <LogoIcon /> : <DashboardLogo />}</div>
+        <div className="logo">
+          {isCollapsed ? <LogoIcon /> : <DashboardLogo />}
+        </div>
         <div className="arrow">
           <ArrowLeftClosePanel onClick={() => setIsCollapsed(!isCollapsed)} />
         </div>
@@ -42,8 +44,10 @@ const DashboardSideNav = () => {
                 mt="0"
                 hideBg={!isActive}
                 suffix={
-                  item.text === "Notification" && (
+                  item.text === "Notification" && !isCollapsed ? (
                     <TotalUnreadNotificationSuffix isActive={isActive} />
+                  ) : (
+                    ""
                   )
                 }
               />

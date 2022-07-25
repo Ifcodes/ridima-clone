@@ -42,11 +42,38 @@ export const ButtonWrapper = styled.button<ButtonProps>`
 
   span {
     margin: 0.5rem;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .button-Bg {
     max-width: 100%;
     visibility: ${(props) => (props.hideBg ? "hidden" : "visible")};
+  }
+
+  @media screen and (max-width: 1007px) {
+    span {
+      font-size: ${({ menuBtn }) => (menuBtn ? "1rem" : "")};
+
+      svg {
+        width: 70%;
+        height: 70%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1007px) {
+    span {
+      font-size: ${({ menuBtn }) => (menuBtn ? "1rem" : "")};
+
+      svg {
+        width: 70%;
+        height: 70%;
+      }
+    }
   }
 
   @media screen and (max-width: 640px) {
