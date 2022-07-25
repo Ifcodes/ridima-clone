@@ -7,6 +7,7 @@ export const ActivitiesWrapper = styled.div`
 
   .heading {
     width: 100%;
+    max-width: 100%;
     height: 14.7rem;
     background-color: ${(props) => props.theme.colors.blue};
     background-image: url("/vectors/BlueHeadingRecWithPattern.svg");
@@ -46,10 +47,10 @@ export const ActivitiesWrapper = styled.div`
         padding: 0 1rem 0 4rem;
         right: 0;
         gap: 0;
-        left: 0;
+        /* left: 0; */
 
         .bar:not(:first-child) {
-          margin-left: -5rem;
+          margin-left: -4rem;
         }
         .bar:nth-child(1) {
           z-index: 25;
@@ -74,6 +75,34 @@ export const ActivitiesWrapper = styled.div`
         }
         p {
           display: none;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 440px) {
+    .heading {
+      padding: 1rem 0 0 1rem;
+      display: block;
+
+      .bars-cont {
+        padding: 0 1rem 0 4rem;
+        right: 0;
+        gap: 0;
+        /* left: 0; */
+
+        .bar:not(:first-child) {
+          margin-left: -6rem;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .heading {
+      .bars-cont {
+        padding: 0 1rem 0 1rem;
+
+        .bar:not(:first-child) {
+          margin-left: -7rem;
         }
       }
     }

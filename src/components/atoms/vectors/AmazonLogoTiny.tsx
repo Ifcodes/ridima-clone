@@ -3,8 +3,9 @@ import { SVGProps } from "react";
 
 const AmazonLogoTiny = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    width={66}
-    height={19}
+    // width={66}
+    // height={19}
+    viewBox="0 0 66 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

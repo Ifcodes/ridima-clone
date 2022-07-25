@@ -28,7 +28,6 @@ export const LayoutWrapper = styled.section<{
   display: grid;
   grid-template-columns: ${({ isCollapsed }) =>
     isCollapsed ? "7rem 1fr" : "20% 1fr"};
-  transition: 1s ease-in-out;
   overflow: hidden;
 
   main {
@@ -46,7 +45,7 @@ export const LayoutWrapper = styled.section<{
 
   @media screen and (max-width: 1007px) {
     grid-template-columns: ${({ isCollapsed }) =>
-      isCollapsed ? "8rem 1fr" : "20% 1fr"};
+      isCollapsed ? "10rem 1fr" : "20% 1fr"};
   }
   @media screen and (max-width: 640px) {
     display: block;

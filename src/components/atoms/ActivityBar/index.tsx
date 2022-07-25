@@ -14,6 +14,12 @@ const Container = styled.div<{ height?: string; bgColor?: string }>`
     align-items: center;
     justify-content: space-between;
 
+    .activity-bar-logo {
+      svg {
+        width: 80%;
+      }
+    }
+
     .number {
       width: max-content;
       height: max-content;
@@ -44,7 +50,7 @@ const ActivityBar = ({
   return (
     <Container bgColor={bgColor} height={height}>
       <div className="content-cont">
-        <div>{logo}</div>
+        <div className="activity-bar-logo">{logo}</div>
         <div className="number">
           <span>{number}</span>
         </div>

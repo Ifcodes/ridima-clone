@@ -4,6 +4,7 @@ export const SideNavWrapper = styled.aside<{
   logout?: boolean;
   collapse?: boolean;
 }>`
+  width: 100%;
   background: linear-gradient(
       0deg,
       rgba(113, 101, 227, 0.05),
