@@ -50,6 +50,7 @@ const giftCardTypes = [
 
 const ActiveGiftCard = () => {
   const tradeValues = tradeValue.use();
+  const selectedGiftCard = hotGiftCardsStates.use().selectedGiftCard;
   const currentStage = hotGiftCardsStates.use().currentActiveCardStage;
   const tradeIsSuccessfull = hotGiftCardsStates.use().tradeSuccessful;
   const [showCurrencyModal, setShowCurrencyModal] = useState(false);
@@ -191,7 +192,7 @@ const ActiveGiftCard = () => {
       {currentStage === 3 && <TradeSummary />}
       {currentStage !== 3 && (
         <div className="card-img-wrap">
-          <AmazonCardImage />
+          {selectedGiftCard.activeCardImg && <selectedGiftCard.activeCardImg />}
         </div>
       )}
       {currentStage === 2 && (

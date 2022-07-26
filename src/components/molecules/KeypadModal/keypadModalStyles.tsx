@@ -10,11 +10,11 @@ export const KeypadModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 0.5rem 2rem;
 
   .input-cont {
     width: 100%;
-    margin-top: 2rem;
+    /* margin-top: 1rem; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,27 +29,40 @@ export const KeypadModalWrapper = styled.div`
   }
 
   .digits-cont {
-    width: 80%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 3rem;
-    margin-top: 3rem;
+    grid-gap: 1rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
 
     .clear-btn {
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 100%;
       cursor: pointer;
     }
+  }
+`;
 
-    .digit {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.2rem;
-      color: ${(props) => props.theme.colors.deepPurple};
-      font-weight: 500;
-      cursor: pointer;
-    }
+export const DigitWrapper = styled.div<{ isActive?: boolean }>`
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: ${(props) => props.theme.colors.deepPurple};
+  background-color: ${({ isActive, theme }) =>
+    isActive ? theme.colors.grey5 : ""};
+  font-weight: 500;
+  cursor: pointer;
+
+  :hover {
+    background-color: ${({ theme }) => theme.colors.grey5};
   }
 `;

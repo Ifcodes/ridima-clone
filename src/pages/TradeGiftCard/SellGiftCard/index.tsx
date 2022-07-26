@@ -3,9 +3,13 @@ import { useNavigate } from "react-router-dom";
 import SearchBox from "../../../components/atoms/SearchBox";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
 import TrapCard from "../../../components/atoms/TrapezoidCard";
+import AmazonCardImage from "../../../components/atoms/vectors/AmazonCardIllus";
 import AmazonIcon from "../../../components/atoms/vectors/AmazonIcon";
 import AppleLogoRedBgIcon from "../../../components/atoms/vectors/AppleLogoRedBgIcon";
+import GooglePlayImg from "../../../components/atoms/vectors/GooglePlayCardIllus";
 import GooglePlayLogoIcon from "../../../components/atoms/vectors/GooglePlayLogoIcon";
+import ItunesCardImg from "../../../components/atoms/vectors/ItunesCardIllus";
+import SteamCardImg from "../../../components/atoms/vectors/SteamCardIllus";
 import SteamLogoIcon from "../../../components/atoms/vectors/SteamLogoIcon";
 import WalmartLogoIcon from "../../../components/atoms/vectors/WalmartLogoIcon";
 import DashboardLayout from "../../../components/templates/MainLayout";
@@ -20,6 +24,7 @@ export const trapCardIemList = [
     cardType: "rightTrape",
     cardBgImgUrl: "/vectors/PeachRightTrapezoid.svg",
     cardtitle: "Amazon",
+    activeCardImg: AmazonCardImage,
     cardIcon: AmazonIcon,
     titleDescription: "19 Gift Cards",
   },
@@ -28,6 +33,7 @@ export const trapCardIemList = [
     cardBgImgUrl: "/vectors/PinkRightTrapezoid.svg",
     cardType: "rightTrape",
     cardtitle: "Apple iTunes",
+    activeCardImg: ItunesCardImg,
     cardIcon: AppleLogoRedBgIcon,
     titleDescription: "19 Gift Cards",
   },
@@ -36,6 +42,7 @@ export const trapCardIemList = [
     cardType: "rightTrape",
     cardBgImgUrl: "/vectors/GreenRightTrapezoid.svg",
     cardtitle: "Google Play",
+    activeCardImg: GooglePlayImg,
     cardIcon: GooglePlayLogoIcon,
     titleDescription: "19 Gift Cards",
   },
@@ -44,6 +51,7 @@ export const trapCardIemList = [
     cardType: "leftTrape",
     cardBgImgUrl: "/vectors/LighterBlueLeftTrapezoid.svg",
     cardtitle: "Steam",
+    activeCardImg: SteamCardImg,
     cardIcon: SteamLogoIcon,
     titleDescription: "6 Gift Cards",
   },
@@ -52,6 +60,7 @@ export const trapCardIemList = [
     cardType: "leftTrape",
     cardBgImgUrl: "/vectors/LightBlueLeftTrapezoid.svg",
     cardtitle: "Walmart",
+    activeCardImg: AmazonCardImage,
     cardIcon: WalmartLogoIcon,
     titleDescription: "6 Gift Cards",
   },
@@ -63,6 +72,7 @@ const SellGiftCards = () => {
   const [activeTab, setActiveTab] = useState(1);
   const [tabs, setTabs] = useState(["Trade Gift Cards", "Sell Gift Cards"]);
   const [activeCard, setActiveCard] = useState("");
+  const [selectedCard, setSelectedCard] = useState<any>();
 
   const handleTabClick = (type: string, index: number) => {
     if (type === "Trade Gift Cards") {
@@ -76,11 +86,13 @@ const SellGiftCards = () => {
     return;
   };
 
-  const handleCardClick = (actionType: string) => {
-    setActiveCard(actionType);
-    setTabs(tabs.concat(actionType));
+  const handleCardClick = (cardItems: any) => {
+    setSelectedCard(cardItems);
+    setActiveCard(cardItems.cardtitle);
+    setTabs(tabs.concat(cardItems.cardtitle));
     setActiveTab(activeTab + 1);
   };
+
   return (
     <DashboardLayout childPadding="0" mobileChildPadding="0">
       <SellGiftCardWrapper>
@@ -120,7 +132,7 @@ const SellGiftCards = () => {
         <div className="main-content">
           {activeTab === 2 ? (
             <>
-              <ActiveGiftCard />
+              <ActiveGiftCard selectedCarditems={selectedCard} />
             </>
           ) : (
             <>
@@ -137,7 +149,7 @@ const SellGiftCards = () => {
                     icon={<item.cardIcon />}
                     titleDescription={item.titleDescription}
                     mobileCardUrl={item.cardBgImgUrl}
-                    onCardClick={() => handleCardClick(item.cardtitle)}
+                    onCardClick={() => handleCardClick(item)}
                   />
                 ))}
               </div>

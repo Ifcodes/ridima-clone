@@ -11,7 +11,11 @@ import { CardAmountFormWrapper } from "../buyGiftCardStyles";
 import CardAmountSelection from "./cardAmount";
 import EmailAndComments from "./emailandcomments";
 
-const BuyGiftCardActive = () => {
+const BuyGiftCardActive = ({
+  selectedCarditems,
+}: {
+  selectedCarditems?: any;
+}) => {
   const activeStage = buyGiftCardsState.use().currentStage;
 
   const steps = [
@@ -47,7 +51,7 @@ const BuyGiftCardActive = () => {
         />
       </div>
       <div className="card-img-wrap">
-        <AmazonCardImage />
+        {selectedCarditems.activeCardImg && <selectedCarditems.activeCardImg />}
       </div>
       {activeStage === 0 && <CardAmountSelection />}
       {activeStage === 1 && <EmailAndComments />}

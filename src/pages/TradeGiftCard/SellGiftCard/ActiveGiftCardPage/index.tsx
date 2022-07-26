@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, Fragment, ReactNode, useState } from "react";
 // import Stepper from "react-simple-stepper-component";
 import Button from "../../../../components/atoms/Buttons";
 import CardTypeCard from "../../../../components/atoms/CardTypeCard";
@@ -50,7 +50,7 @@ const giftCardTypes = [
   },
 ];
 
-const ActiveGiftCard = () => {
+const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
   const tradeValues = tradeValue.use();
   const [showCurrencyModal, setShowCurrencyModal] = useState(false);
   const [selectedCard, setSelectedCard] = useState<number | undefined>();
@@ -196,7 +196,9 @@ const ActiveGiftCard = () => {
       {currentStage === 3 && <TradeSummary />}
       {currentStage !== 3 && (
         <div className="card-img-wrap">
-          <AmazonCardImage />
+          {selectedCarditems.activeCardImg && (
+            <selectedCarditems.activeCardImg />
+          )}
         </div>
       )}
       {currentStage === 2 && (

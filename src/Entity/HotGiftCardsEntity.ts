@@ -1,8 +1,16 @@
 import { entity, resetAll } from "simpler-state";
+import AmazonCardImage from "../components/atoms/vectors/AmazonCardIllus";
 
 export const hotGiftCardsStates = entity({
   currentTab: 1,
   currentActiveCardStage: 0,
+  selectedGiftCard: {
+    icon: null,
+    activeCardImg: AmazonCardImage,
+    title: "",
+    description: "",
+    amount: null,
+  },
   tabs: ["Trade Gift Cards", "Hot Gift Cards"],
   selectedSubCategory: "",
   tradeSuccessful: false,
@@ -97,11 +105,22 @@ export const setIsTradeSuccessfull = (val: boolean) => {
   hotGiftCardsStates.set((prev) => ({ ...prev, tradeSuccessful: val }));
 };
 
+export const setSelectedHotGiftCard = (val: any) => {
+  hotGiftCardsStates.set((prev) => ({ ...prev, selectedGiftCard: val }));
+};
+
 export const resetAllHotGiftCardState = () => {
   hotGiftCardsStates.set((prev) => ({
     ...prev,
     currentTab: 1,
     currentActiveCardStage: 0,
+    selectedGiftCard: {
+      icon: null,
+      activeCardImg: AmazonCardImage,
+      title: "",
+      description: "",
+      amount: null,
+    },
     tabs: ["Trade Gift Cards", "Hot Gift Cards"],
     selectedSubCategory: "",
     tradeSuccessful: false,

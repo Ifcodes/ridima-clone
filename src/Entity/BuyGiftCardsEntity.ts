@@ -3,6 +3,7 @@ import { entity } from "simpler-state";
 export const buyGiftCardsState = entity({
   currentStage: 0,
   modalStage: 0,
+  selectedCard: {},
   showTermsModal: false,
   showConfirmationModal: false,
   confirmed: false,

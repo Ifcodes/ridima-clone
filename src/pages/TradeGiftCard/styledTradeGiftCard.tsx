@@ -111,10 +111,12 @@ export const ActiveGiftCardWrapper = styled.div<{
   .card-img-wrap {
     width: 18.25rem;
     height: 9rem;
+    border-radius: 0.875rem;
 
     svg {
       width: 100%;
       height: 100%;
+      border-radius: 0.875rem;
     }
   }
 

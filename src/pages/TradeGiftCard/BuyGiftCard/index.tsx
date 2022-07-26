@@ -19,6 +19,7 @@ const BuyGiftCards = () => {
   const navigate = useNavigate();
   const [searchField, setSearchField] = useState("");
   const [tabs, setTabs] = useState(["Trade Gift Cards", "Buy Gift Cards"]);
+  const [selectedCard, setSelectedCard] = useState<any>();
 
   useEffect(() => {
     setActiveTabChange("reset");
@@ -35,8 +36,9 @@ const BuyGiftCards = () => {
     return;
   };
 
-  const handleCardClick = (actionType: string) => {
-    setTabs(tabs.concat(actionType));
+  const handleCardClick = (cardItems: any) => {
+    setSelectedCard(cardItems);
+    setTabs(tabs.concat(cardItems.cardtitle));
     setActiveTabChange("next");
   };
 
@@ -78,7 +80,7 @@ const BuyGiftCards = () => {
         </div>
         <div className="main-content">
           {activeTab === 2 ? (
-            <BuyGiftCardActive />
+            <BuyGiftCardActive selectedCarditems={selectedCard} />
           ) : (
             <>
               <div className="title-cont">
@@ -93,7 +95,7 @@ const BuyGiftCards = () => {
                     title={item.cardtitle}
                     icon={<item.cardIcon />}
                     titleDescription={item.titleDescription}
-                    onCardClick={() => handleCardClick(item.cardtitle)}
+                    onCardClick={() => handleCardClick(item)}
                   />
                 ))}
               </div>

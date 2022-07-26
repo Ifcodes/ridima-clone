@@ -5,6 +5,7 @@ import React, {
   useState,
 } from "react";
 import {
+  clearKeypadStates,
   keypadModalStates,
   setAmount,
   setSelectedDigits,
@@ -14,7 +15,7 @@ import MoneyInputField from "../../atoms/Forms/MoneyInputField";
 import { H1 } from "../../atoms/Typography";
 import ClearArrowIcon from "../../atoms/vectors/ClearArrowIcon";
 import Modal from "../Modal";
-import { KeypadModalWrapper } from "./keypadModalStyles";
+import { DigitWrapper, KeypadModalWrapper } from "./keypadModalStyles";
 
 const KeypadModal = ({
   modalTitle,
@@ -29,8 +30,8 @@ const KeypadModal = ({
   ctaText?: string;
   handleBtnClick?: MouseEventHandler<HTMLButtonElement>;
 }) => {
-  // const [amount, setAmount] = useState("");
-  // const [selectedDigit, setSelectedDigits] = useState([""]);
+  const [delSelected, setdelSelected] = useState(false);
+  const [selectedNumber, setSelectedNumber] = useState<string | null>(null);
   const amount = keypadModalStates.use().amount;
   const selectedDigit = keypadModalStates.use().selectedDigit;
 
@@ -40,7 +41,17 @@ const KeypadModal = ({
     setAmount(selectedDigit.join(""));
   }, [selectedDigit]);
 
+  const handleKeyHighlight = (number: string, type: string) => {
+    if (type === "del") setdelSelected(true);
+    else setSelectedNumber(number);
+    setTimeout(() => {
+      setSelectedNumber(null);
+      setdelSelected(false);
+    }, 100);
+  };
+
   const handleDigitClick = (type: string) => {
+    handleKeyHighlight(type, "");
     if (amount.length <= 6) {
       setSelectedDigits(selectedDigit.concat(type));
     }
@@ -49,12 +60,21 @@ const KeypadModal = ({
   };
 
   const handleDelete = () => {
+    handleKeyHighlight("", "del");
     setSelectedDigits(selectedDigit.slice(0, selectedDigit.length - 1));
   };
+
+  const handleCloseModal = () => {
+    closeModal();
+    clearKeypadStates();
+  };
+
   return (
     <Modal
       showModal={showModal}
-      closeModal={closeModal}
+      closeModal={() => {}} //helps handleCloseModal to perform as required. Do not remove unless you know what to you want to do.
+      showCloseBtn
+      handleCloseBtn={handleCloseModal}
       cardHeight={"80%"}
       mobileCardHeight={"90%"}
       width={"25%"}
@@ -73,20 +93,20 @@ const KeypadModal = ({
         </div>
         <div className="digits-cont">
           {digits.map((digit, index) => (
-            <div
+            <DigitWrapper
               key={digit}
-              className="digit"
+              isActive={digit === selectedNumber}
               onClick={() => handleDigitClick(digit)}
             >
               <span>{digit}</span>
-            </div>
+            </DigitWrapper>
           ))}
-          <div className="clear-btn" onClick={() => handleDelete()}>
+          <DigitWrapper isActive={delSelected} onClick={() => handleDelete()}>
             <ClearArrowIcon />
-          </div>
+          </DigitWrapper>
         </div>
         {amount !== "" && (
-          <Button btnText={ctaText} mt="3rem" onClick={handleBtnClick} />
+          <Button btnText={ctaText} mt="2.5rem" onClick={handleBtnClick} />
         )}
       </KeypadModalWrapper>
     </Modal>
