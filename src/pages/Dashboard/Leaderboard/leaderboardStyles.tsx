@@ -61,18 +61,17 @@ export const LeaderBoardWrapper = styled.div`
   }
 
   .main-content {
-    padding: 0 3rem;
+    height: calc(100vh - 16rem);
+    padding: 0 3rem 6rem;
+    overflow-y: auto;
 
     .line-title {
       margin: 2.5rem 0 0;
     }
 
-    .other-leader {
+    .other-leaders-wrapper {
       width: 100%;
       margin-top: 1.5rem;
-      img {
-        max-width: 100%;
-      }
     }
   }
 
@@ -80,25 +79,19 @@ export const LeaderBoardWrapper = styled.div`
     .heading {
       padding: 1rem;
 
+      .title-cont {
+        p {
+          font-size: 0.7rem;
+        }
+      }
+
       .leaders {
         width: 100%;
-        gap: 1rem;
+        gap: 2rem;
         bottom: 1rem;
-
-        .leader {
-          width: 4.5rem;
-
-          :nth-child(2) {
-            width: 6rem;
-          }
-          img {
-            max-width: 100%;
-          }
-        }
       }
     }
     .main-content {
-      height: 70%;
       overflow-y: auto;
       padding: 0 1.5rem 14rem;
 

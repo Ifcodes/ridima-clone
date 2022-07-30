@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import OtherLeaderCard from "../../../components/atoms/LeadeboardCards/otherLeaderCard";
 import TopThreeCard from "../../../components/atoms/LeadeboardCards/TopThreeCard";
 import PeriodSelector from "../../../components/atoms/PeriodSelector";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
@@ -11,12 +10,24 @@ import DashboardLayout from "../../../components/templates/MainLayout";
 import { leadersList } from "../../../utils/helpers/leadersList";
 import { LeaderBoardWrapper } from "./leaderboardStyles";
 
-const Leaderboard = () => {
+const LeaderboardMain = () => {
   const [selectedPeriod, setSelectedPeriod] = useState("Daily");
 
   const topThree = leadersList.slice(0, 4);
 
-  const otherLeaders = leadersList.slice(3);
+  const leaders = [
+    "/vectors/LeaderboardHeadingImg2.svg",
+    "/vectors/CenterLeaderBoardImg.svg",
+    "/vectors/LeaderboardHeadingImg3.svg",
+  ];
+
+  const otherLeaders = [
+    "/vectors/leader4.svg",
+    "/vectors/Leader5.svg",
+    "/vectors/Leader6.svg",
+    "/vectors/Leader7.svg",
+    "/vectors/leader8.svg",
+  ];
 
   const handleSelectPeriod = (period: string) => {
     setSelectedPeriod(period);
@@ -78,31 +89,15 @@ const Leaderboard = () => {
           <div className="line-title">
             <HorizontalLinedTitle text="Other Top Traders" />
           </div>
-          <div className="other-leaders-wrapper">
-            {otherLeaders.map(
-              (
-                { username, date, amount, avatar, imgUrl, isPositive },
-                index
-              ) => (
-                <OtherLeaderCard
-                  key={`${username}-${index}`}
-                  arrowIndicator={
-                    isPositive ? <TriangleUpIcon /> : <TriangleDownIcon />
-                  }
-                  imgUrl={imgUrl}
-                  avatar={avatar}
-                  amount={amount}
-                  date={date}
-                  username={username}
-                  position={index + 4}
-                />
-              )
-            )}
-          </div>
+          {otherLeaders.map((leader, index) => (
+            <div className="other-leader" key={leader}>
+              <img src={leader} alt="" />
+            </div>
+          ))}
         </div>
       </LeaderBoardWrapper>
     </DashboardLayout>
   );
 };
 
-export default Leaderboard;
+export default LeaderboardMain;

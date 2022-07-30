@@ -61,8 +61,4 @@ export const DigitWrapper = styled.div<{ isActive?: boolean }>`
     isActive ? theme.colors.grey5 : ""};
   font-weight: 500;
   cursor: pointer;
-
-  :hover {
-    background-color: ${({ theme }) => theme.colors.grey5};
-  }
 `;

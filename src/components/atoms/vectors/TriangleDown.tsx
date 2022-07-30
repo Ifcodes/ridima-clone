@@ -1,5 +1,3 @@
-import * as React from "react";
-import { SVGProps } from "react";
 import { SvgIconProps } from "../../../types";
 
 const TriangleDownIcon = (props: SvgIconProps) => (

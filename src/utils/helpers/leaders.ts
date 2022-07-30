@@ -1,0 +1,58 @@
+export const leadersList = [
+  {
+    name: "Toyosi",
+    amount: 31450,
+    profileImg: "",
+    profileAvatar: "",
+    date: "Oct 12, 3:52 AM",
+  },
+  {
+    name: "lawrence",
+    amount: 20000,
+    profileImg: "",
+    profileAvatar: "",
+    date: "Oct 12, 3:52 AM",
+  },
+  {
+    name: "rheman",
+    amount: 19945,
+    profileImg: "",
+    profileAvatar: "",
+    date: "Oct 12, 3:52 AM",
+  },
+  {
+    name: "rogers",
+    amount: 31450,
+    profileImg: "",
+    profileAvatar: "",
+    date: "Oct 12, 3:52 AM",
+  },
+  {
+    name: "rogers",
+    amount: 31450,
+    profileImg: "",
+    profileAvatar: "",
+    date: "Oct 12, 3:52 AM",
+  },
+  {
+    name: "rogers",
+    amount: 31450,
+    profileImg: "",
+    profileAvatar: "",
+    date: "Oct 12, 3:52 AM",
+  },
+  {
+    name: "rogers",
+    amount: 31450,
+    profileImg: "",
+    profileAvatar: "",
+    date: "Oct 12, 3:52 AM",
+  },
+  {
+    name: "rogers",
+    amount: 31450,
+    profileImg: "",
+    profileAvatar: "",
+    date: "Oct 12, 3:52 AM",
+  },
+];
