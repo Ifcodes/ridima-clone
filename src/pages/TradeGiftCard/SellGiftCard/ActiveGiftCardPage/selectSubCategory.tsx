@@ -4,6 +4,7 @@ import Selector from "../../../../components/atoms/Selector";
 import { setExpectedValue, tradeValue } from "../../../../Entity/TradeValue";
 import { SubCategoryWrapper } from "../../styledTradeGiftCard";
 import SelectSubCategoryModal from "../../../../components/molecules/SelectGiftCardSubCategoryModal";
+import { sellGiftCardsStates, setSellGiftCardSelectedCategory } from "../../../../Entity/SellGiftCardEntity";
 
 type SubCategoryProps = {
   formField?: {
@@ -18,8 +19,8 @@ const SelectSubCategory = ({
   handleChange = () => {},
 }: SubCategoryProps) => {
   const tradeValues = tradeValue.use();
+  const selectedCategory = sellGiftCardsStates.use().selectedSubCatecory
   const [showModal, setShowModal] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("");
 
   const rate = 410;
 
@@ -32,7 +33,7 @@ const SelectSubCategory = ({
   }, [formField?.amount, formField?.quantity]);
 
   const selectCategory = (category: string) => {
-    setSelectedCategory(category);
+    setSellGiftCardSelectedCategory(category);
     setShowModal(false);
   };
 

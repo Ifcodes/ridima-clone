@@ -270,6 +270,7 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
         closeModal={() => setOpenCardTermsModal(false)}
         handleCloseBtn={() => setOpenCardTermsModal(false)}
         handleConfirm={onConfirm}
+        selectedCardTitle={selectedCarditems.cardtitle}
       />
     </ActiveGiftCardWrapper>
   );

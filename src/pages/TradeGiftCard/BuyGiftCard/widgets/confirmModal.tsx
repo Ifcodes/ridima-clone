@@ -14,7 +14,7 @@ import {
   setShowConfirmationModal,
 } from "../../../../Entity/BuyGiftCardsEntity";
 import ErrorMessageCard from "../../SellGiftCard/ActiveGiftCardPage/Widgets/errorMessageCard";
-import SuccessMessageCard from "../../SellGiftCard/ActiveGiftCardPage/Widgets/successMessageCard";
+import SuccessMessageCard from "../../../../components/molecules/SuccessMessageCard/successMessageCard";
 import { CardTermsModalWrapper } from "../../styledTradeGiftCard";
 
 const ConfirmModal = () => {

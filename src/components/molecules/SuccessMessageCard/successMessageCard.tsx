@@ -1,11 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import Button from "../../../../../components/atoms/Buttons";
-import { Paragraph } from "../../../../../components/atoms/Typography";
-import {
-  setIsConfirmed,
-  setShowConfirmationModal,
-} from "../../../../../Entity/BuyGiftCardsEntity";
-import { SuccessMessageWrapper } from "../../../styledTradeGiftCard";
+import Button from "../../atoms/Buttons";
+import { Paragraph } from "../../atoms/Typography";
+import { SuccessMessageWrapper } from "./successMsgStyles";
 
 const SuccessMessageCard = ({
   handleOtherActions = () => {},

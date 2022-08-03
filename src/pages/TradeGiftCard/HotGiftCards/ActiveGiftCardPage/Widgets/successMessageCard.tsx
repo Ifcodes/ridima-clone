@@ -4,13 +4,13 @@ import Button from "../../../../../components/atoms/Buttons";
 import { Paragraph } from "../../../../../components/atoms/Typography";
 
 import Modal from "../../../../../components/molecules/Modal";
+import { SuccessMessageWrapper } from "../../../../../components/molecules/SuccessMessageCard/successMsgStyles";
 import {
   hotGiftCardsStates,
   resetAllHotGiftCardState,
   setOpenTradeFailureMessage,
   setOpenTradeSuccessMessage,
 } from "../../../../../Entity/HotGiftCardsEntity";
-import { SuccessMessageWrapper } from "../../../styledTradeGiftCard";
 
 const SellGcSuccessMessageCard = () => {
   const navigate = useNavigate();
