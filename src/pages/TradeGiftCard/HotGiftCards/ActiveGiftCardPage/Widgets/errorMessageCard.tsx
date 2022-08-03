@@ -2,15 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../../../../components/atoms/Buttons";
 import { H1, Paragraph } from "../../../../../components/atoms/Typography";
-import MessageCard from "../../../../../components/molecules/MessageCard";
 import Modal from "../../../../../components/molecules/Modal";
+import { SuccessMessageWrapper } from "../../../../../components/molecules/SuccessMessageCard/successMsgStyles";
 import {
   hotGiftCardsStates,
   resetAllHotGiftCardState,
   setOpenTradeFailureMessage,
   setOpenTradeSuccessMessage,
 } from "../../../../../Entity/HotGiftCardsEntity";
-import { SuccessMessageWrapper } from "../../../styledTradeGiftCard";
 
 const SellGcErrorMessageCard = () => {
   const navigate = useNavigate();
