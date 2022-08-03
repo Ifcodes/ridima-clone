@@ -27,7 +27,7 @@ export const TradeCardWrapper = styled.div`
     }
   }
 
-  img {
+  svg {
     width: 100%;
   }
 

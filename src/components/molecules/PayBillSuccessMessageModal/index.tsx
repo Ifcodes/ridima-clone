@@ -10,6 +10,7 @@ const Wrapper = styled.div<{ messageTitleWidth?: string }>`
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow-y: auto;
 
   .modal-title {
     color: ${(props) => props.theme.colors.deepPurple};

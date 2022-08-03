@@ -1,11 +1,12 @@
 import { entity, resetAll } from "simpler-state";
 import AmazonCardImage from "../components/atoms/vectors/AmazonCardIllus";
+import AmazonIconCircle from "../components/atoms/vectors/AmazonIconCircle";
 
 export const hotGiftCardsStates = entity({
   currentTab: 1,
   currentActiveCardStage: 0,
   selectedGiftCard: {
-    icon: null,
+    icon: AmazonIconCircle,
     activeCardImg: AmazonCardImage,
     title: "",
     description: "",
@@ -115,7 +116,7 @@ export const resetAllHotGiftCardState = () => {
     currentTab: 1,
     currentActiveCardStage: 0,
     selectedGiftCard: {
-      icon: null,
+      icon: AmazonIconCircle,
       activeCardImg: AmazonCardImage,
       title: "",
       description: "",

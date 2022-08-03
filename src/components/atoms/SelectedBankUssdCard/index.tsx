@@ -46,10 +46,12 @@ const SelectedBankUssdCard = ({
   code,
   onTelIconClick,
   onCopyIconClick,
+  isCopied,
 }: {
   code?: string;
   onTelIconClick?: MouseEventHandler<SVGSVGElement>;
-  onCopyIconClick?: MouseEventHandler<SVGSVGElement>;
+  onCopyIconClick?: MouseEventHandler<HTMLDivElement>;
+  isCopied?: boolean;
 }) => {
   return (
     <Container>
@@ -57,8 +59,20 @@ const SelectedBankUssdCard = ({
       <div className="code-wrapper">
         <span>{code}</span>
         <div className="icons-wrapper">
-          <TelephoneIconOutline onClick={onTelIconClick} />
-          <CopyIconLg onClick={onCopyIconClick} />
+          <a href={`tel:${code}`}>
+            <TelephoneIconOutline onClick={onTelIconClick} />
+          </a>
+          <div onClick={onCopyIconClick}>
+            {isCopied ? (
+              <img
+                src="/vectors/icons8-done.gif"
+                alt=""
+                style={{ width: "32px", height: "32px" }}
+              />
+            ) : (
+              <CopyIconLg />
+            )}
+          </div>
         </div>
       </div>
     </Container>

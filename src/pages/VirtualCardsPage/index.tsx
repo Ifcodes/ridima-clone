@@ -63,9 +63,9 @@ const VirtualCardsPage = () => {
             btnText="Create card"
             buttonBgType="small"
             bgColor="#F5CF48"
-            width="50%"
+            width="30%"
             mobileWidth="50%"
-            mt="1rem"
+            mt="0"
           />
         </div>
 

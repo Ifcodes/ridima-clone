@@ -60,8 +60,12 @@ export const WalletBalCardWrapper = styled.div<{
     }
   }
 
-  img {
+  .wallet-cardBg {
     width: 100%;
+
+    svg {
+      width: 100%;
+    }
   }
 
   .wallet-cardBg-mobile {
@@ -79,18 +83,9 @@ export const WalletBalCardWrapper = styled.div<{
         justify-content: flex-end;
       }
     }
-    .cardBg {
-      display: ${(props) => (props.showDefault ? "none" : "block")};
-    }
 
-    .wallet-cardBg-mobile {
+    .wallet-cardBg {
       display: ${(props) => (props.showDefault ? "none" : "block")};
-      width: 100%;
-
-      svg {
-        width: 100%;
-        height: 100%;
-      }
     }
   }
 `;

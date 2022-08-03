@@ -1,5 +1,6 @@
-import React, { MouseEventHandler } from "react";
+import React, { MouseEventHandler, useState } from "react";
 import CopyIcon from "../vectors/CopyIcon";
+import CopyIconLg from "../vectors/CopyIconLg";
 import { BankTfPayMethodWrapper } from "./bankTfPayMethodStyles";
 
 const BankTransferPayMethodCard = ({
@@ -13,12 +14,43 @@ const BankTransferPayMethodCard = ({
   accountNumber?: string;
   onClick?: MouseEventHandler<HTMLDivElement>;
 }) => {
+  const [isCopied, setIsCopied] = useState(false);
+
+  async function copyTextToClipboard(text: string) {
+    if ("clipboard" in navigator) {
+      return await navigator.clipboard.writeText(text);
+    } else {
+      return document.execCommand("copy", true, text);
+    }
+  }
+
+  const handleCopyClick = () => {
+    copyTextToClipboard(`${accountNumber}`)
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 2500);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <BankTfPayMethodWrapper onClick={onClick}>
       <div className="card-heading">
         <span className="head-title">Bank Transfer</span>
-        <div className="copyicon-cont">
-          <CopyIcon />
+        <div className="copyicon-cont" onClick={handleCopyClick}>
+          {isCopied ? (
+            <img
+              src="/vectors/icons8-done.gif"
+              alt=""
+              style={{ width: "24px", height: "24px" }}
+            />
+          ) : (
+            <CopyIconLg />
+          )}
         </div>
       </div>
       <div className="detail">

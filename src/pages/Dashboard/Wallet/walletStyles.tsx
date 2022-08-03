@@ -158,9 +158,9 @@ export const ConfirmModalWrapper = styled.div`
   padding: 2rem;
   text-align: center;
 
-  .text-content {
+  /* .text-content {
     padding: 0 2rem;
-  }
+  } */
   h1 {
     color: ${(props) => props.theme.colors.deepPurple};
   }

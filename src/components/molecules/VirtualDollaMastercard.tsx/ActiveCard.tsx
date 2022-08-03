@@ -1,6 +1,7 @@
 import React, { MouseEventHandler } from "react";
 import { cardDataList } from "../../../utils/helpers/cardsData";
 import ProfileCardMobile from "../../atoms/vectors/ProfileCardMobile";
+import YellowCardRectangle from "../../atoms/vectors/YellowCardRectangle";
 import { ActiveCardWrapper } from "./styledCard";
 
 const ActiveCard = ({
@@ -23,9 +24,11 @@ const ActiveCard = ({
           className="card-illustrations"
         />
       </div>
-      <img src="/vectors/PeachRectangleCard.svg" className="cardBg" />
+      <div className="cardBg">
+        <YellowCardRectangle bgcolor="#FCF2CF" />
+      </div>
       <div className="mobile-card-bg">
-        <ProfileCardMobile bgColor={"#FCF2CF"} />
+        <ProfileCardMobile bgcolor={"#FCF2CF"} />
       </div>
     </ActiveCardWrapper>
   );

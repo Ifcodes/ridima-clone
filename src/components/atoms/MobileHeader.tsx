@@ -20,6 +20,7 @@ const HeaderWrapper = styled.header<{
 
     .back-btn {
       position: absolute;
+      top: 0;
       left: 0;
       z-index: 10;
     }

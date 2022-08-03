@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import PayBillsRectangle from "../../atoms/vectors/PayBillsActionCard";
 import { PayBillsCardWrapper } from "./styledPayBillsCard";
 
 const PayBillsActionCard = () => {
@@ -12,7 +13,7 @@ const PayBillsActionCard = () => {
           <span>2.0% Off</span>
         </div>
       </div>
-      <img src="/vectors/PayBillsActionCard.svg" />
+      <PayBillsRectangle />
     </PayBillsCardWrapper>
   );
 };

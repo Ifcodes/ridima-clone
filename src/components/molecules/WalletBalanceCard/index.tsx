@@ -5,6 +5,7 @@ import { H1 } from "../../atoms/Typography";
 import BlueCardRectangle from "../../atoms/vectors/BlueCardRectangle";
 import cardRactangle from "/vectors/BlueCardRectangle.svg";
 import { WalletCardWrapper } from "./styledWalletBalance";
+import BlueCardRecMobile from "../../atoms/vectors/BlueCardRecMobile";
 
 const WalletBalanceCard = ({
   title,
@@ -46,12 +47,12 @@ const WalletBalanceCard = ({
           />
         </div>
       </div>
-      <img src={`${cardRactangle}`} alt="" className="cardbg" />
-      <img
-        src={`/vectors/BlueCardRecMobile.svg`}
-        alt=""
-        className="cardbg-mobile"
-      />
+      <div className="cardbg">
+        <BlueCardRectangle />
+      </div>
+      <div className="cardbg-mobile">
+        <BlueCardRecMobile />
+      </div>
     </WalletCardWrapper>
   );
 };

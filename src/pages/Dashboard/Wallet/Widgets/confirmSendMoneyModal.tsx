@@ -17,8 +17,9 @@ const ConfirmSendMoneyModal = ({ userName }: { userName?: string }) => {
     <Modal
       showModal={showModal}
       closeModal={() => setConfirmSendMoneyModal(false)}
-      cardHeight="65vh"
-      width="28%"
+      cardHeight="55vh"
+      mobileCardHeight="45%"
+      width="25%"
     >
       <ConfirmModalWrapper>
         <div className="text-content">

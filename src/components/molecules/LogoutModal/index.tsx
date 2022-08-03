@@ -9,6 +9,11 @@ const Logout = () => {
   const showModal = logoutState.use();
   const navigate = useNavigate();
 
+  const handleLogout = () => {
+    navigate("/login");
+    setLogout(false);
+  };
+
   return (
     <Modal
       showModal={showModal}
@@ -28,7 +33,7 @@ const Logout = () => {
             buttonBgType="modalSm"
             btnText="Logout"
             width="100%"
-            onClick={() => navigate("/login")}
+            onClick={() => handleLogout()}
           />
           <Button
             bgColor="white"

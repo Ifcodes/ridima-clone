@@ -7,7 +7,7 @@ interface TradeSummaryItems {
   cardAmount?: string;
   rate?: number;
   expectedValue?: number;
-  cardIcon?: ReactNode;
+  cardIcon?: any;
   cardName?: string;
   cardDescription?: string;
   images: Array<string>;

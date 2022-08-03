@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import DashboardLayout from "../../../components/templates/MainLayout";
 import {
   hotGiftCardsStates,
+  resetAllHotGiftCardState,
   setHotGiftCardsTabs,
   setHotGiftCardTab,
 } from "../../../Entity/HotGiftCardsEntity";
@@ -23,6 +24,7 @@ const HotGiftCards = () => {
       setHotGiftCardTab("prev");
     } else {
       setHotGiftCardsTabs("remove", undefined, index);
+      resetAllHotGiftCardState();
     }
     return;
   };

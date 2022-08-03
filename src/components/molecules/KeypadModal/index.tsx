@@ -32,7 +32,7 @@ const KeypadModal = ({
 }) => {
   const [delSelected, setdelSelected] = useState(false);
   const [selectedNumber, setSelectedNumber] = useState<string | null>(null);
-  const amount = keypadModalStates.use().amount;
+  const amount = Number(keypadModalStates.use().amount);
   const selectedDigit = keypadModalStates.use().selectedDigit;
 
   const digits = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0"];
@@ -52,7 +52,7 @@ const KeypadModal = ({
 
   const handleDigitClick = (type: string) => {
     handleKeyHighlight(type, "");
-    if (amount.length <= 6) {
+    if (selectedDigit.length <= 6) {
       setSelectedDigits(selectedDigit.concat(type));
     }
 
@@ -85,10 +85,10 @@ const KeypadModal = ({
           <MoneyInputField
             placeholder="0"
             symbol="₦"
-            value={amount || "0"}
+            value={amount.toLocaleString() || "0"}
             readOnly={true}
             width={"80%"}
-            valueIsPlaceholder={amount === ""}
+            valueIsPlaceholder={amount === 0}
           />
         </div>
         <div className="digits-cont">
@@ -105,7 +105,7 @@ const KeypadModal = ({
             <ClearArrowIcon />
           </DigitWrapper>
         </div>
-        {amount !== "" && (
+        {amount !== 0 && (
           <Button btnText={ctaText} mt="2.5rem" onClick={handleBtnClick} />
         )}
       </KeypadModalWrapper>

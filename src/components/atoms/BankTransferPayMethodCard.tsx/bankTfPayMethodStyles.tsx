@@ -30,7 +30,7 @@ export const BankTfPayMethodWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 
     .title {
       font-size: 0.875rem;

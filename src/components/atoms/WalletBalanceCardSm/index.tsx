@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import BlueCardRecMobile from "../vectors/BlueCardRecMobile";
 import ClosedEyeIconOutline from "../vectors/ClosedEyeIconOutlined";
 import OpenEyeIconOutline from "../vectors/OpenEyeIconOutline";
+import WalletBalRectangleBlue from "../vectors/WalletBalRectangleBlue";
+import WalletBalRectangleLight from "../vectors/WalletBalRectangleLight";
 import { WalletBalCardWrapper } from "./walletBalanceCardStyles";
 
 const WalletBalanceCardSm = ({
@@ -9,6 +11,7 @@ const WalletBalanceCardSm = ({
   walletAmount,
   currency,
   lightBlueCard,
+  bgColor,
   titleColor,
   amountColor,
   showEyeIcon,
@@ -26,6 +29,7 @@ const WalletBalanceCardSm = ({
   otherValue?: string;
   otherValueColor?: string;
   showDefault?: boolean;
+  bgColor?: string;
 }) => {
   const [showValue, setShowValue] = useState(false);
 
@@ -60,18 +64,11 @@ const WalletBalanceCardSm = ({
         )}
         {otherValue && <span className="other-value">{otherValue}</span>}
       </div>
-      {lightBlueCard ? (
-        <img
-          src="/vectors/WalletBalRectangleLight.svg"
-          alt=""
-          className="cardBg"
-        />
-      ) : (
-        <img src="/vectors/WalletBalRectangle.svg" alt="" className="cardBg" />
-      )}
-      {/* <div className="wallet-cardBg-mobile">
-        <BlueCardRecMobile />
-      </div> */}
+      {
+        <div className="wallet-cardBg">
+          <WalletBalRectangleBlue bgcolor={bgColor} />
+        </div>
+      }
     </WalletBalCardWrapper>
   );
 };

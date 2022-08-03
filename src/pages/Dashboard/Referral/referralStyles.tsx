@@ -73,6 +73,11 @@ export const ReferralPageWrapper = styled.div`
     .page-content {
       padding: 3.125rem 3rem 0;
 
+      .wallet-bal-card {
+        width: 27rem;
+        height: max-content;
+      }
+
       .line-title {
         margin: 2rem 0;
       }

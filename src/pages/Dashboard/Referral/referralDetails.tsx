@@ -11,7 +11,7 @@ const ReferralDetails = () => {
             walletName="Referral Earnings"
             walletAmount="0.00"
             currency="NGN"
-            lightBlueCard
+            bgColor="#EBE9FB"
             titleColor="#000000"
             amountColor="#7165E3"
             otherValue="18 Jan, 12:45"

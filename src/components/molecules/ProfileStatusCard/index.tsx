@@ -3,6 +3,7 @@ import { CardProps } from "../../../types";
 import Button from "../../atoms/Buttons";
 import { H1, Paragraph } from "../../atoms/Typography";
 import ProfileCardMobile from "../../atoms/vectors/ProfileCardMobile";
+import YellowCardRectangle from "../../atoms/vectors/YellowCardRectangle";
 import { VirtualDollarCardWrapper } from "../VirtualDollaMastercard.tsx/styledCard";
 
 const ProfileStatusCard = ({ onClick, onCardClick }: CardProps) => {
@@ -30,8 +31,9 @@ const ProfileStatusCard = ({ onClick, onCardClick }: CardProps) => {
           />
         </div>
       </div>
-
-      <img src="/vectors/YellowCardRectangle.svg" alt="" className="cardBg" />
+      <div className="cardBg">
+        <YellowCardRectangle />
+      </div>
       <div className="mobile-card-bg">
         <ProfileCardMobile />
       </div>

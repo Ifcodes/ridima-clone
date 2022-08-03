@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import {
   setShowFundWarningModal,
   setShowUseUssdCodeModal,
 } from "../../../Entity/WalletEntities/FundWalletEntity";
-import SelecInput from "../../atoms/Forms/Select";
 import SelectedBankUssdCard from "../../atoms/SelectedBankUssdCard";
 import Selector from "../../atoms/Selector";
 import { H1 } from "../../atoms/Typography";
@@ -23,6 +21,7 @@ const UseUssdCodeModal = ({
   accountNumber?: string;
 }) => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
   const [selectedItem, setSelectedItem] = useState<{
     label?: string;
     code?: string;
@@ -67,6 +66,28 @@ const UseUssdCodeModal = ({
     setShowUseUssdCodeModal(false);
     setShowFundWarningModal(true);
   };
+
+  async function copyTextToClipboard(text: string) {
+    if ("clipboard" in navigator) {
+      return await navigator.clipboard.writeText(text);
+    } else {
+      return document.execCommand("copy", true, text);
+    }
+  }
+
+  const handleCopyClick = () => {
+    copyTextToClipboard(`${selectedItem.code}${accountNumber}#`)
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 2500);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <Modal showModal={openModal} closeModal={closeModal} width={"28rem"}>
       <UseUssdCodeContainer>
@@ -87,6 +108,8 @@ const UseUssdCodeModal = ({
             <SelectedBankUssdCard
               code={`${selectedItem.code}${accountNumber}#`}
               onTelIconClick={() => handleTelIconClick()}
+              onCopyIconClick={handleCopyClick}
+              isCopied={isCopied}
             />
           </div>
           <p className="description">

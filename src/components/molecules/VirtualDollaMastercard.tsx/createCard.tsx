@@ -3,6 +3,7 @@ import { CardProps } from "../../../types";
 import Button from "../../atoms/Buttons";
 import MasterCardLogo from "../../atoms/vectors/MasterCardLogo";
 import ProfileCardMobile from "../../atoms/vectors/ProfileCardMobile";
+import YellowCardRectangle from "../../atoms/vectors/YellowCardRectangle";
 
 const CreateCard = ({ onClick, onCardClick }: CardProps) => {
   return (
@@ -29,7 +30,9 @@ const CreateCard = ({ onClick, onCardClick }: CardProps) => {
         </div>
       </div>
 
-      <img src="/vectors/YellowCardRectangle.svg" alt="" className="cardBg" />
+      <div className="cardBg">
+        <YellowCardRectangle />
+      </div>
       <div className="mobile-card-bg">
         <ProfileCardMobile />
       </div>

@@ -14,6 +14,14 @@ export const WalletCardWrapper = styled.div`
     display: none;
   }
 
+  .cardbg {
+    width: 100%;
+
+    svg {
+      width: 100%;
+    }
+  }
+
   .card-content {
     position: absolute;
     top: 0;
@@ -52,6 +60,11 @@ export const WalletCardWrapper = styled.div`
 
     .cardbg-mobile {
       display: block;
+      width: 100%;
+
+      svg {
+        width: 100%;
+      }
     }
     .cardbg {
       display: none;

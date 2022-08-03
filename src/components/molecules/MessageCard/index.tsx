@@ -14,6 +14,8 @@ type MessageCardProp = {
   imgWidth?: string;
   height?: string;
   titleColor?: string;
+  svgWidth?: string;
+  svgHeight?: string;
   handleClick?: MouseEventHandler<HTMLDivElement>;
 };
 
@@ -28,10 +30,18 @@ const MessageCard = ({
   imgWidth,
   height,
   titleColor,
+  svgWidth,
+  svgHeight,
   handleClick,
 }: MessageCardProp) => {
   return (
-    <MessageCardWrapper imgWidth={imgWidth} width={width} height={height}>
+    <MessageCardWrapper
+      imgWidth={imgWidth}
+      width={width}
+      height={height}
+      svgHeight={svgHeight}
+      svgWidth={svgWidth}
+    >
       {closeIcon && (
         <div className="close-Icon" onClick={handleClick}>
           <CloseIcon />

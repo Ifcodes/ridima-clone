@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { clearCreateCard } from "../../../Entity/CreateVirtualCardEntity/CreatedVirtualCard";
 import { setLogout } from "../../../Entity/LogoutEntity";
+import { clearProfileComplete } from "../../../Entity/ProfileComplete";
 import { primaryMenuList } from "../../../utils/helpers/menuList";
 import Button from "../../atoms/Buttons";
 import TotalUnreadNotificationSuffix from "../../atoms/TotalUnreadNotificationSuffix";
@@ -17,6 +19,12 @@ const DashboardSideNav = () => {
   const [activePath] = useState(window.location.pathname);
   const isCollapsed = sideNavState.use().isCollapsed;
   const [logoutIsActive, setLogoutIsActive] = useState(false);
+
+  const handleLogout = () => {
+    setLogout(true);
+    clearProfileComplete();
+    clearCreateCard();
+  };
 
   return (
     <SideNavWrapper collapse={isCollapsed}>
@@ -67,7 +75,7 @@ const DashboardSideNav = () => {
             textColor={logoutIsActive ? "white" : "#7165E3"}
             mt="0"
             hideBg={!logoutIsActive}
-            onClick={() => setLogout(true)}
+            onClick={() => handleLogout()}
           />
         </div>
       </div>

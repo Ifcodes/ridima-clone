@@ -13,7 +13,9 @@ import SaveIcon from "../../../components/atoms/vectors/SaveIcon";
 import ShieldIcon from "../../../components/atoms/vectors/ShieldIcon";
 import Logout from "../../../components/molecules/LogoutModal";
 import DashboardLayout from "../../../components/templates/MainLayout";
+import { clearCreateCard } from "../../../Entity/CreateVirtualCardEntity/CreatedVirtualCard";
 import { setLogout } from "../../../Entity/LogoutEntity";
+import { clearProfileComplete } from "../../../Entity/ProfileComplete";
 import { AccountPageWrapper } from "./accountStyles";
 
 const Profile = () => {
@@ -31,7 +33,9 @@ const Profile = () => {
 
   const handleMobileActionClick = (type: string, location?: string) => {
     if (type === "Logout") {
-      return setLogout(true);
+      setLogout(true);
+      clearProfileComplete();
+      clearCreateCard();
     } else if (location) {
       navigate(location);
     }

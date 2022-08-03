@@ -113,9 +113,9 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
         cardAmount: selectedCategory.amount,
         rate: tradeValues.rate,
         expectedValue: tradeValues.expectedValue,
-        cardIcon: <AmazonIconCircle />,
-        cardName: "Amazon",
-        cardDescription: "USA No Receipt ($25)",
+        cardIcon: <selectedCarditems.miniIcon />,
+        cardName: selectedCarditems.cardtitle,
+        cardDescription: selectedCarditems.titleDescription,
         images: imgUploadFormData.selectedImages,
       };
       setTradeSummaryData(summaryData);

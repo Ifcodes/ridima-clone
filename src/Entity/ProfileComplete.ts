@@ -1,7 +1,20 @@
-import { entity } from 'simpler-state'
+import { persistence } from "simpler-state";
+import { entity } from "simpler-state";
 
-export const profileComplete = entity(false)
+const defaultState = false;
+
+const storedValue = window.localStorage.getItem("Profile_Completed");
+
+const initialValue = storedValue ? JSON.parse(storedValue) : defaultState;
+
+export const profileComplete = entity(initialValue, [
+  persistence("Profile_Completed"),
+]);
 
 export const setProfileComplete = (val: boolean) => {
-  profileComplete.set(val)
-}
+  profileComplete.set(val);
+};
+
+export const clearProfileComplete = () => {
+  profileComplete.set(defaultState);
+};

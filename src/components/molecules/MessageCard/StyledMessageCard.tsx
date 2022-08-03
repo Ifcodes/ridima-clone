@@ -5,6 +5,8 @@ export const MessageCardWrapper = styled.div<{
   height?: string;
   width?: string;
   imgWidth?: string;
+  svgWidth?: string;
+  svgHeight?: string;
 }>`
   width: ${(props) => props.width || "30%"};
   height: ${(props) => props.height || "75vh"};
@@ -43,9 +45,10 @@ export const MessageCardWrapper = styled.div<{
     margin: 1rem auto;
 
     svg {
-      width: 80%;
-      height: 80%;
+      width: ${({ svgWidth }) => svgWidth || "80%"};
+      height: ${({ svgHeight }) => svgHeight || "80%"};
     }
+
     img {
       width: 100%;
     }

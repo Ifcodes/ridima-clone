@@ -55,6 +55,14 @@ export const VirtualDollarCardWrapper = styled.div`
     width: 100%;
   }
 
+  .cardBg {
+    width: 100%;
+
+    svg {
+      width: 100%;
+    }
+  }
+
   .mobile-card-bg {
     display: none;
   }
@@ -144,7 +152,7 @@ export const ActiveCardWrapper = styled.div`
       width: 60%;
       position: absolute;
       right: 0;
-      bottom: 0;
+      bottom: 0.3rem;
       max-width: 100%;
     }
   }

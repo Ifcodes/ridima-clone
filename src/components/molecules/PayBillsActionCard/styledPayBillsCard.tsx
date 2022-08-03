@@ -31,7 +31,7 @@ export const PayBillsCardWrapper = styled.div`
     }
   }
 
-  img {
+  svg {
     width: 100%;
   }
 

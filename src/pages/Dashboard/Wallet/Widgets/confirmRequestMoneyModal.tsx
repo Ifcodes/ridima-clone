@@ -7,7 +7,7 @@ import {
   requestMoneyStates,
   setConfirmRequestMoneyModal,
   setRequestMoneySuccessModal,
-} from "../../../../Entity/WalletEntities/RequestMoneyEntity";;
+} from "../../../../Entity/WalletEntities/RequestMoneyEntity";
 import { ConfirmModalWrapper } from "../walletStyles";
 
 const ConfirmRequestMoneyModal = ({ userName }: { userName?: string }) => {
@@ -22,15 +22,16 @@ const ConfirmRequestMoneyModal = ({ userName }: { userName?: string }) => {
     <Modal
       showModal={showModal}
       closeModal={() => setConfirmRequestMoneyModal(false)}
-      cardHeight="65vh"
-      width="28%"
+      cardHeight="55vh"
+      mobileCardHeight="45%"
+      width="25%"
     >
       <ConfirmModalWrapper>
         <div className="text-content">
           <H1>Confirm</H1>
           <Paragraph>
-            You are about to request N{amount} to @{userName}. Confirm that this is
-            correct by clciking on the button below.
+            You are about to request N{amount} to @{userName}. Confirm that this
+            is correct by clciking on the button below.
           </Paragraph>
         </div>
         <Button
