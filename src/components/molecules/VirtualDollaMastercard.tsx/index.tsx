@@ -14,7 +14,7 @@ const VirtualDollarMastercard = ({ onClick, onCardClick }: CardProps) => {
   return (
     <VirtualDollarCardWrapper>
       {cardCreated ? (
-        <ActiveCard onClick={() => navigate("/virtual-cards")} />
+        <ActiveCard onClick={() => {}} />
       ) : (
         <CreateCard onClick={onClick} onCardClick={onCardClick} />
       )}

@@ -6,72 +6,146 @@ import TrapCard from "../../../components/atoms/TrapezoidCard";
 import AmazonCardImage from "../../../components/atoms/vectors/AmazonCardIllus";
 import AmazonIcon from "../../../components/atoms/vectors/AmazonIcon";
 import AmazonIconCircle from "../../../components/atoms/vectors/AmazonIconCircle";
+import AmericaExpressLogoSm from "../../../components/atoms/vectors/AmericaExpressLogosm";
+import AmericanExpressCardImg from "../../../components/atoms/vectors/AmericanExpressCardIllus";
+import AmexCardImg from "../../../components/atoms/vectors/AmexCardImg";
+import AMExpressLogoIcon from "../../../components/atoms/vectors/AMExpressLogoIcon";
 import AppleLogoIcon from "../../../components/atoms/vectors/AppleLogoIcon";
 import AppleLogoRedBgIcon from "../../../components/atoms/vectors/AppleLogoRedBgIcon";
+import EbayCardImg from "../../../components/atoms/vectors/EbayCardImg";
+import EbayLogoIcon from "../../../components/atoms/vectors/EbayLogoIcon";
+import EbayLogoSm from "../../../components/atoms/vectors/EbayLogoSm";
 import GooglePlayImg from "../../../components/atoms/vectors/GooglePlayCardIllus";
 import GooglePlayLogoIcon from "../../../components/atoms/vectors/GooglePlayLogoIcon";
 import GooglePlayLogoSm from "../../../components/atoms/vectors/GooglePlayLogoSm";
 import ItunesCardImg from "../../../components/atoms/vectors/ItunesCardIllus";
+import MacyCardImg from "../../../components/atoms/vectors/MacyCardImg";
+import MacyLogoIcon from "../../../components/atoms/vectors/MacyLogoIcon";
+import MacyLogoSm from "../../../components/atoms/vectors/MacyLogoSm";
+import NikeCardImg from "../../../components/atoms/vectors/NikeCardImg";
+import NikeLogoIcon from "../../../components/atoms/vectors/NikeLogoIcon";
+import NikeLogoSm from "../../../components/atoms/vectors/NikeLogoPlain";
+import RazerGoldImg from "../../../components/atoms/vectors/RazerGoldCardIllus";
+import RazerGoldLogoSm from "../../../components/atoms/vectors/RazerGoldLogo";
+import RazerGoldLogoIcon from "../../../components/atoms/vectors/RazerGoldLogoIcon";
+import SephoraCardImg from "../../../components/atoms/vectors/SephoraCardIllus";
+import SephoraLogoIcon from "../../../components/atoms/vectors/SephoraLogoIcon";
+import SephoraLogoSm from "../../../components/atoms/vectors/SephoraLogoSm";
 import SteamCardImg from "../../../components/atoms/vectors/SteamCardIllus";
 import SteamLogoIcon from "../../../components/atoms/vectors/SteamLogoIcon";
 import SteamLogoSm from "../../../components/atoms/vectors/SteamLogoSm";
+import VanillaCardImg from "../../../components/atoms/vectors/VanillaCardImg";
+import VanillaLogoIcon from "../../../components/atoms/vectors/VanillaLogoIcon";
+import VanillaLogoSm from "../../../components/atoms/vectors/VanillaLogoSm";
+import WalmartCardImg from "../../../components/atoms/vectors/WalmartCardImage";
 import WalmartLogoIcon from "../../../components/atoms/vectors/WalmartLogoIcon";
+import WalmartLogoSm from "../../../components/atoms/vectors/WalmartLogoSm";
 import DashboardLayout from "../../../components/templates/MainLayout";
+import {
+  clearSellGiftCardStates,
+  setSellGiftCardSelectedCategory,
+} from "../../../Entity/SellGiftCardEntity";
 import { navigateHome } from "../../../utils/helpers";
 import { StageTitleWrapper } from "../../CreateVirtualCard/createVirtualCardStyles";
 import { SellGiftCardWrapper } from "../styledTradeGiftCard";
 import ActiveGiftCard from "./ActiveGiftCardPage";
 
-export const trapCardIemList = [
+export const trapCardItemList = [
   {
     cardBg: "#F9D89F",
     cardType: "rightTrape",
-    cardBgImgUrl: "/vectors/PeachRightTrapezoid.svg",
     cardtitle: "Amazon",
     activeCardImg: AmazonCardImage,
     cardIcon: AmazonIcon,
     miniIcon: AmazonIconCircle,
-    titleDescription: "19 Gift Cards",
   },
   {
     cardBg: "#F8DAD3",
-    cardBgImgUrl: "/vectors/PinkRightTrapezoid.svg",
     cardType: "rightTrape",
     cardtitle: "Apple iTunes",
     activeCardImg: ItunesCardImg,
     cardIcon: AppleLogoRedBgIcon,
     miniIcon: AppleLogoIcon,
-    titleDescription: "19 Gift Cards",
   },
   {
     cardBg: "#9AFED3",
     cardType: "rightTrape",
-    cardBgImgUrl: "/vectors/GreenRightTrapezoid.svg",
     cardtitle: "Google Play",
     activeCardImg: GooglePlayImg,
     miniIcon: GooglePlayLogoSm,
     cardIcon: GooglePlayLogoIcon,
-    titleDescription: "19 Gift Cards",
   },
   {
     cardBg: "#DCE5EF",
     cardType: "leftTrape",
-    cardBgImgUrl: "/vectors/LighterBlueLeftTrapezoid.svg",
     cardtitle: "Steam",
     activeCardImg: SteamCardImg,
     cardIcon: SteamLogoIcon,
     miniIcon: SteamLogoSm,
-    titleDescription: "6 Gift Cards",
   },
   {
     cardBg: "#D8D4F7",
     cardType: "leftTrape",
-    cardBgImgUrl: "/vectors/LightBlueLeftTrapezoid.svg",
     cardtitle: "Walmart",
-    activeCardImg: AmazonCardImage,
+    activeCardImg: WalmartCardImg,
     cardIcon: WalmartLogoIcon,
-    miniIcon: AmazonIconCircle,
-    titleDescription: "6 Gift Cards",
+    miniIcon: WalmartLogoSm,
+  },
+  {
+    cardBg: "#E0E0E0",
+    cardType: "leftTrape",
+    cardtitle: "Nike",
+    activeCardImg: NikeCardImg,
+    cardIcon: NikeLogoIcon,
+    miniIcon: NikeLogoSm,
+  },
+  {
+    cardBg: "#E0E0E0",
+    cardType: "rightTrape",
+    cardtitle: "Razer",
+    activeCardImg: RazerGoldImg,
+    cardIcon: RazerGoldLogoIcon,
+    miniIcon: RazerGoldLogoSm,
+  },
+  {
+    cardBg: "#F2F2F2",
+    cardType: "rightTrape",
+    cardtitle: "Vanilla",
+    activeCardImg: VanillaCardImg,
+    cardIcon: VanillaLogoIcon,
+    miniIcon: VanillaLogoSm,
+  },
+  {
+    cardBg: "#F6EAD5",
+    cardType: "rightTrape",
+    cardtitle: "Ebay",
+    activeCardImg: EbayCardImg,
+    cardIcon: EbayLogoIcon,
+    miniIcon: EbayLogoSm,
+  },
+  {
+    cardBg: "#DCE5EF",
+    cardType: "leftTrape",
+    cardtitle: "Sephora",
+    activeCardImg: SephoraCardImg,
+    cardIcon: SephoraLogoIcon,
+    miniIcon: SephoraLogoSm,
+  },
+  {
+    cardBg: "#D8D4F7",
+    cardType: "leftTrape",
+    cardtitle: "American Express",
+    activeCardImg: AmexCardImg,
+    cardIcon: AMExpressLogoIcon,
+    miniIcon: AmericaExpressLogoSm,
+  },
+  {
+    cardBg: "#f1c2b8",
+    cardType: "leftTrape",
+    cardtitle: "Macy",
+    activeCardImg: MacyCardImg,
+    cardIcon: MacyLogoIcon,
+    miniIcon: MacyLogoSm,
   },
 ];
 
@@ -87,10 +161,12 @@ const SellGiftCards = () => {
     if (type === "Trade Gift Cards") {
       navigate("/trade-giftcards");
       setActiveTab(0);
+      clearSellGiftCardStates();
     } else if (index !== tabs.length - 1) {
       setTabs(tabs.slice(0, index + 1));
       setActiveCard("");
       setActiveTab(activeTab - 1);
+      clearSellGiftCardStates();
     }
     return;
   };
@@ -104,10 +180,16 @@ const SellGiftCards = () => {
 
   return (
     <DashboardLayout childPadding="0" mobileChildPadding="0">
-      <SellGiftCardWrapper>
+      <SellGiftCardWrapper stage={activeTab}>
         <div className={activeTab === 1 ? "heading" : "default"}>
           <StageTitleWrapper darkBgShade>
-            <span className="home" onClick={() => navigate("/home")}>
+            <span
+              className="home"
+              onClick={() => {
+                setSellGiftCardSelectedCategory("");
+                navigate("/home");
+              }}
+            >
               Home
             </span>
             {tabs.map((tab, index) => (
@@ -149,15 +231,13 @@ const SellGiftCards = () => {
                 <HorizontalLinedTitle text="Available giftcards" />
               </div>
               <div className="content">
-                {trapCardIemList.map((item, index) => (
+                {trapCardItemList.map((item, index) => (
                   <TrapCard
                     key={item.cardtitle}
                     bgColor={item.cardBg}
                     trapeCardType={item.cardType}
                     title={item.cardtitle}
                     icon={<item.cardIcon />}
-                    titleDescription={item.titleDescription}
-                    mobileCardUrl={item.cardBgImgUrl}
                     onCardClick={() => handleCardClick(item)}
                   />
                 ))}

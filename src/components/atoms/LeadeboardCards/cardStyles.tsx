@@ -75,7 +75,7 @@ export const OtherLeaderCardWrapper = styled.div`
   .number-indicator-wrapper {
     display: flex;
     align-items: center;
-    margin-right: 1rem;
+    margin-left: 1rem;
 
     .position {
       margin-left: 0.5rem;
@@ -114,10 +114,10 @@ export const OtherLeaderCardWrapper = styled.div`
         font-size: 1rem;
         color: ${(props) => props.theme.colors.deepPurple};
       }
+    }
 
-      .date-mobile {
-        display: none;
-      }
+    .date-mobile {
+      display: none;
     }
   }
 
@@ -133,13 +133,14 @@ export const OtherLeaderCardWrapper = styled.div`
       .amount-cont {
         display: flex;
         flex-direction: column;
+      }
 
-        .date-mobile {
-          display: block;
-          line-height: 16px;
-          color: ${(props) => props.theme.colors.grey2};
-          font-size: 0.625rem;
-        }
+      .date-mobile {
+        display: block;
+        line-height: 16px;
+        color: ${(props) => props.theme.colors.grey2};
+        font-size: 0.625rem;
+        margin-left: 1rem;
       }
     }
   }

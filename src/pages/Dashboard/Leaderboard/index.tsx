@@ -28,12 +28,20 @@ const Leaderboard = () => {
           <div className="title-cont">
             <div>
               <H1>Leaderboard</H1>
-              <Paragraph>Monitor user level with ridima</Paragraph>
             </div>
-            <PeriodSelector
-              selectedPeriod={selectedPeriod}
-              handleClick={handleSelectPeriod}
-            />
+            <div className="period-wrapper">
+              <PeriodSelector
+                periods={["Daily", "Monthly", "Yearly"]}
+                selectorPadding="0.93rem 1.5rem"
+                mainPadding="0 .5rem"
+                selectedPeriod={selectedPeriod}
+                handleClick={handleSelectPeriod}
+                selectedOption={{
+                  activeBgColor: "white",
+                  activeTextColor: "#7165E3",
+                }}
+              />
+            </div>
           </div>
           <div className="leaders">
             <TopThreeCard
@@ -47,7 +55,6 @@ const Leaderboard = () => {
                 )
               }
               avatar={topThree[1].avatar}
-              amount={topThree[1].amount}
               username={topThree[1].username}
             />
             <TopThreeCard
@@ -55,7 +62,6 @@ const Leaderboard = () => {
               imgUrl={topThree[0].imgUrl}
               arrowIndicator={<StarIcon />}
               avatar={topThree[0].avatar}
-              amount={topThree[0].amount}
               username={topThree[0].username}
             />
             <TopThreeCard
@@ -69,9 +75,11 @@ const Leaderboard = () => {
                 )
               }
               avatar={topThree[2].avatar}
-              amount={topThree[2].amount}
               username={topThree[2].username}
             />
+          </div>
+          <div className="desc">
+            <span>Yesterday's Winners</span>
           </div>
         </div>
         <div className="main-content">

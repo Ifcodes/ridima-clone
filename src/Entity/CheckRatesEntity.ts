@@ -4,7 +4,7 @@ export const checkRatesStates = entity({
   testValue: 0,
   currentStage: 0,
   selectedGiftCard: "",
-  selectedCurrency: "",
+  selectedCurrency: { currency: "", code: "" },
   selectedSubCategory: "",
   showSelectedSubCategoryModal: false,
   showCheckRateCurrencyModal: false,
@@ -61,7 +61,7 @@ export const setSelectedGiftCard = (card: string) => {
   setShowSelectGiftCardModal(false);
 };
 
-export const setSelectedCurrencyForCheckRates = (currency: string) => {
+export const setSelectedCurrencyForCheckRates = (currency: any) => {
   checkRatesStates.set((prev) => ({ ...prev, selectedCurrency: currency }));
   setShowCheckRateCurrencyModal(false);
 };
@@ -77,7 +77,7 @@ export const resetAllCheckRatesState = () => {
     testValue: 0,
     currentStage: 1,
     selectedGiftCard: "",
-    selectedCurrency: "",
+    selectedCurrency: { currency: "", code: "" },
     selectedSubCategory: "",
     showSelectedSubCategoryModal: false,
     showCheckRateCurrencyModal: false,

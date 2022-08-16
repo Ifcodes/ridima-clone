@@ -15,7 +15,7 @@ export const ActivitiesWrapper = styled.div`
     background-repeat: none;
     padding: 2rem 3rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     position: relative;
 
     .title-cont {
@@ -26,6 +26,10 @@ export const ActivitiesWrapper = styled.div`
       p {
         color: rgba(255, 255, 254, 0.3);
       }
+    }
+
+    .activity-toggle-wrapper {
+      margin-top: 2rem;
     }
 
     .bars-cont {

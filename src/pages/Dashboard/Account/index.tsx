@@ -27,7 +27,6 @@ const Profile = () => {
   ];
   const mobileActions = [
     { text: "Security", icon: ShieldIcon, location: "/security" },
-    { text: "Referral", icon: ReferralIcon, location: "/referral" },
     { text: "Logout", icon: LogoutIconFilled },
   ];
 

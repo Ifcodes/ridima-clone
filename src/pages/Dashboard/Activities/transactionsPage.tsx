@@ -7,6 +7,7 @@ import { H1 } from "../../../components/atoms/Typography";
 import {
   activitiesStates,
   setGiftCardTransactionModal,
+  setSelectedFilterOption,
   setSelectedTransaction,
   setShowDateModal,
   setShowFilterModal,
@@ -21,44 +22,47 @@ import {
 import { TransactionsPageWrapper } from "./activitiesStyles";
 import DatefilterModal from "./widgets/datefilterModal";
 import FilterModal from "./widgets/filterModal";
-import TradeGiftCardTransactionModal from "./widgets/tradegiftcardTransactionModal";
-import TransactionDetailsModal from "./widgets/transactionDetailModal";
+import TradeGiftCardTransactionModal from "./widgets/giftcardsTransactionDetailModal";
+import TransactionDetailsModal from "./widgets/billPaymentTransactionDetailModal";
+import GiftCardsTransactionDetailModal from "./widgets/giftcardsTransactionDetailModal";
+import BillPaymentTransactionDetailsModal from "./widgets/billPaymentTransactionDetailModal";
 
-const TransactionsPage = () => {
+const TransactionsPage = ({
+  transactionType,
+}: {
+  transactionType?: string;
+}) => {
   const selectedFilterOption = activitiesStates.use().selectedFilterOption;
   const selectedFilterStatus = activitiesStates.use().selectedFilterStatus;
   const [transactions, setTransactions] = useState(transactionData);
 
-  const currentTransactions = transactions.filter(
-    (transaction) => transaction.date === today.toDateString()
-  );
+  const currentTransactions = transactions
+    .filter((transaction) => transaction.date === today.toDateString())
+    .filter((transac) => transac.category === transactionType);
 
-  const previousTransactions = transactions.filter(
-    (transaction) => transaction.date === yesterday.toDateString()
-  );
+  const previousTransactions = transactions
+    .filter((transaction) => transaction.date === yesterday.toDateString())
+    .filter((transac) => transac.category === transactionType);
 
   const handleFilter = (type: string) => {
     setShowFilterModal(false);
-    if (type === "filter" && selectedFilterOption !== "") {
+    if (type === "filter") {
       if (selectedFilterOption === "All") {
         setTransactions(transactionData);
+        setSelectedFilterOption("");
+      } else if (selectedFilterStatus === "Success") {
+        setTransactions(
+          transactions.filter(
+            (transaction) => transaction.status === "Successfull"
+          )
+        );
       } else {
         setTransactions(
-          transactions.filter((transaction) => {
-            return (
-              transaction.transactionTitle.toLowerCase() ===
-              selectedFilterOption.toLowerCase()
-            );
-          })
+          transactions.filter(
+            (transaction) => transaction.status === selectedFilterStatus
+          )
         );
       }
-    }
-    if (type === "filter" && selectedFilterStatus !== "") {
-      setTransactions(
-        transactions.filter((transaction) => {
-          transaction.status === selectedFilterStatus;
-        })
-      );
     }
     return;
   };
@@ -69,7 +73,7 @@ const TransactionsPage = () => {
   };
 
   const handleTransactionClick = (selectedTransaction: any) => {
-    if (selectedTransaction.transactionTitle === "Giftcard Trade") {
+    if (selectedTransaction.category === "Gift Cards") {
       setSelectedTransaction(selectedTransaction);
       setGiftCardTransactionModal(true);
     } else {
@@ -100,6 +104,7 @@ const TransactionsPage = () => {
         {currentTransactions.map((transaction, index) => (
           <TransactionDetailContainer
             key={transaction.id}
+            imgUrl={transaction.productIconUrl}
             icon={<transaction.icon />}
             transactionTitle={transaction.transactionTitle}
             transactionType={transaction.type}
@@ -119,6 +124,7 @@ const TransactionsPage = () => {
         {previousTransactions.map((transaction, index) => (
           <TransactionDetailContainer
             key={transaction.id}
+            imgUrl={transaction.productIconUrl}
             icon={<transaction.icon />}
             transactionTitle={transaction.transactionTitle}
             transactionType={transaction.type}
@@ -132,8 +138,8 @@ const TransactionsPage = () => {
         ))}
       </div>
       <FilterModal onFilter={() => handleFilter("filter")} />
-      <TradeGiftCardTransactionModal />
-      <TransactionDetailsModal />
+      <GiftCardsTransactionDetailModal />
+      <BillPaymentTransactionDetailsModal />
     </TransactionsPageWrapper>
   );
 };

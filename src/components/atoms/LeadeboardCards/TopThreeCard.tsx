@@ -32,7 +32,7 @@ const TopThreeCard = ({
       </div>
       <div className="leader-text-cont">
         <span className="username">@{username?.substring(0, 4)}***</span>
-        <span className="leader-amount">₦{amount?.toLocaleString()}</span>
+        {/* <span className="leader-amount">₦{amount?.toLocaleString()}</span> */}
       </div>
     </TopThreeCardWrapper>
   );

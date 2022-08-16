@@ -10,6 +10,7 @@ interface ListItemProps extends CardProps {
   titleFs?: string;
   titleColor?: string;
   padding?: string;
+  imgUrl?: string;
 }
 const ListItemCard = ({
   icon,
@@ -22,6 +23,7 @@ const ListItemCard = ({
   titleFs,
   titleColor,
   padding,
+  imgUrl,
   showTextBorder,
   onCardClick,
 }: ListItemProps) => {
@@ -35,7 +37,11 @@ const ListItemCard = ({
       onClick={onCardClick}
       padding={padding}
     >
-      {icon && (
+      {imgUrl ? (
+        <div className="icon-cont">
+          <img src={imgUrl} alt="" />
+        </div>
+      ) : (
         <div className="icon-cont">
           <>{icon}</>
         </div>

@@ -21,15 +21,6 @@ const FilterModal = ({
   const selectedOption = activitiesStates.use().selectedFilterOption;
   const selectedStatus = activitiesStates.use().selectedFilterStatus;
 
-  const filterOptions = [
-    "All",
-    "Giftcard trade",
-    "Wallet funding",
-    "Bill payment",
-    "Withdrawal",
-    "Status",
-  ];
-
   const statuses = ["Pending", "Success", "Rejected"];
 
   return (
@@ -37,20 +28,17 @@ const FilterModal = ({
       width="28%"
       showModal={showModal}
       closeModal={() => setShowFilterModal(false)}
-      height={"85%"}
+      cardHeight={"65%"}
     >
       <FilterModalContentWrapper>
         <H1>Filter</H1>
         <ScrollableModalContent>
           <div className="options-cont">
-            {filterOptions.map((option, index) => (
-              <ListItemWithRadio
-                key={option}
-                text={option}
-                isChecked={option === selectedOption}
-                onClick={() => setSelectedFilterOption(option)}
-              />
-            ))}
+            <ListItemWithRadio
+              text={"All"}
+              isChecked={selectedOption === "All"}
+              onClick={() => setSelectedFilterOption("All")}
+            />
           </div>
           <div className="statuses-cont">
             <p>Status</p>
@@ -71,7 +59,7 @@ const FilterModal = ({
           <Button
             btnText="Apply Filter"
             disabled={selectedOption === "" && selectedStatus === ""}
-            mt="3rem"
+            mt="5rem"
             width="100%"
             buttonBgType="modal"
             onClick={onFilter}

@@ -16,6 +16,14 @@ export const TransactionDetailWrapper = styled.div<{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    img {
+      width: 80%;
+    }
+
+    svg {
+      max-width: 100%;
+    }
   }
 
   .detail-cont {
@@ -81,6 +89,10 @@ export const TransactionDetailWrapper = styled.div<{
     .icon-cont {
       width: 3.7rem;
       height: 3.2rem;
+
+      svg {
+        width: 80%;
+      }
     }
     .detail-cont {
       display: flex;

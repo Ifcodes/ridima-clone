@@ -23,7 +23,7 @@ export const TradeGiftCardWrapper = styled.div`
   }
 `;
 
-export const SellGiftCardWrapper = styled.div`
+export const SellGiftCardWrapper = styled.div<{ stage?: number }>`
   width: 100%;
   height: 100%;
   max-width: 100%;
@@ -54,7 +54,8 @@ export const SellGiftCardWrapper = styled.div`
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: 2rem 3rem;
+    padding: ${(props) =>
+      props.stage === 2 ? "2rem 3rem 0" : "2rem 3rem 12rem"};
 
     .content {
       max-width: 100%;

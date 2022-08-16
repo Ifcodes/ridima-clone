@@ -79,10 +79,7 @@ const DefaultHomeScreen = ({
           onClick={() => handleWithdrawClick()}
         />
         {profileIsComplete ? (
-          <VirtualDollarMastercard
-            onClick={() => setShowModal(true)}
-            onCardClick={() => setShowModal(true)}
-          />
+          <VirtualDollarMastercard onClick={() => {}} onCardClick={() => {}} />
         ) : (
           <ProfileStatusCard
             onClick={() => navigate("/bvn-authentication")}

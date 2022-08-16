@@ -1,4 +1,5 @@
 import { entity } from "simpler-state";
+import AmazonIconCircle from "../components/atoms/vectors/AmazonIconCircle";
 import { generateId } from "../utils/generateId";
 
 export const activitiesStates = entity({
@@ -10,7 +11,8 @@ export const activitiesStates = entity({
   showDateModal: false,
   selectedTransaction: {
     id: generateId(),
-    icon: "",
+    icon: AmazonIconCircle,
+    category: "",
     transactionTitle: " ",
     type: undefined,
     product: "",

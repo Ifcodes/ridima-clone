@@ -45,6 +45,7 @@ const CheckRates = () => {
     if (type === "Trade Gift Cards") {
       navigate("/trade-giftcards");
       setCurrentCheckRateStage("prev");
+      resetAllCheckRatesState();
     } else if (index !== tabs.length - 1) {
       setTabs(tabs.slice(0, index + 1));
       setCurrentCheckRateStage("next");
@@ -65,7 +66,13 @@ const CheckRates = () => {
       <CheckRatesMainWrapper>
         <div className="stage-title-wrap">
           <StageTitleWrapper darkBgShade>
-            <span className="home" onClick={() => navigate("/home")}>
+            <span
+              className="home"
+              onClick={() => {
+                resetAllCheckRatesState();
+                navigate("/home");
+              }}
+            >
               Home
             </span>
             {tabs.map((tab, index) => (
@@ -103,7 +110,7 @@ const CheckRates = () => {
             width="27rem"
             disabled={
               (activeStage === 0 && selectedCard === "") ||
-              selectedCurrency === ""
+              selectedCurrency.currency === ""
                 ? true
                 : activeStage === 1 && selectedCategory === ""
                 ? true

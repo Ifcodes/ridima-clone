@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
+import TransactionDetailContainer from "../../../components/atoms/TransactionListItemContainer";
 import { H1 } from "../../../components/atoms/Typography";
 import MoneyAddIcon from "../../../components/atoms/vectors/MoneyAddIcon";
 import MoneyRemoveIcon from "../../../components/atoms/vectors/MoneyRemoveIcon";
@@ -10,6 +11,10 @@ import KeypadModal from "../../../components/molecules/KeypadModal";
 import PaymentMethodModal from "../../../components/molecules/PaymentMethodModal";
 import UseUssdCodeModal from "../../../components/molecules/UseUssdCodeModal";
 import WarningModal from "../../../components/molecules/WarningModal";
+import {
+  setSelectedTransaction,
+  setShowTransactionModal,
+} from "../../../Entity/ActivitieEntities";
 import { keypadModalStates } from "../../../Entity/KeypadModalEntity";
 import {
   fundWalletStates,
@@ -31,6 +36,8 @@ import {
   setWithdrawKeypadModal,
   withdrawToBankStates,
 } from "../../../Entity/WalletEntities/WithdrawToBankEntity";
+import { walletTransactions } from "../../../utils/helpers/transactionsData";
+import BillPaymentTransactionDetailsModal from "../Activities/widgets/billPaymentTransactionDetailModal";
 import { WalletpageDefaultWrapper } from "./walletStyles";
 import WithdrawSuccessMsg from "./Widgets/withdrawSuccessMsg";
 
@@ -83,17 +90,14 @@ const WalletDefaultpage = () => {
   const keypadAmount = keypadModalStates.use().amount;
 
   const handleCardClick = (type: string) => {
-    if (type === "Fund Wallet") {
+    if (type === "Fund") {
       setShowFundWalletModal(true);
     }
-    if (type === "Withdraw to Bank") {
+    if (type === "Withdraw") {
       setWithdrawKeypadModal(true);
     }
-    if (type === "Send Money") {
+    if (type === "Transfer") {
       setSendMoneyKeypadModal(true);
-    }
-    if (type === "Request Money") {
-      setRequestMoneyKeypadModal(true);
     }
     return;
   };
@@ -123,6 +127,11 @@ const WalletDefaultpage = () => {
     return;
   };
 
+  const handleTransactionClick = (selectedTransaction: any) => {
+    setSelectedTransaction(selectedTransaction);
+    setShowTransactionModal(true);
+  };
+
   return (
     <WalletpageDefaultWrapper>
       <H1>Wallet</H1>
@@ -132,12 +141,15 @@ const WalletDefaultpage = () => {
           walletAmount="25,000"
           currency="NGN"
           showEyeIcon
+          isDefault
+          width="100%"
+          handleAction={handleCardClick}
         />
       </div>
       <div className="horizontal-line-cont">
-        <HorizontalLinedTitle text="Wallet Quick Actions" />
+        <HorizontalLinedTitle text="Wallet History" />
       </div>
-      <div className="action-cards-wrapper">
+      {/* <div className="action-cards-wrapper">
         {walletActionCards.map((card, index) => (
           <WalletActionCard
             key={card.cardText}
@@ -147,6 +159,23 @@ const WalletDefaultpage = () => {
             cardType={card.cardType}
             bgColor={card.bgColor}
             onCardClick={() => handleCardClick(card.cardText)}
+          />
+        ))}
+      </div> */}
+      <div className="transaction-cont">
+        {walletTransactions.map((transaction, index) => (
+          <TransactionDetailContainer
+            key={transaction.id}
+            imgUrl={transaction.productIconUrl}
+            icon={<transaction.icon />}
+            transactionTitle={transaction.transactionTitle}
+            transactionType={transaction.type}
+            product={transaction.product}
+            date={transaction.date}
+            amount={transaction.amount.value}
+            currency={transaction.amount.currency}
+            transactionStatus={transaction.status}
+            onTitleClick={() => handleTransactionClick(transaction)}
           />
         ))}
       </div>
@@ -196,6 +225,7 @@ const WalletDefaultpage = () => {
         handleBtnClick={() => handleModalCtaClick("requestMoney")}
         ctaText="Proceed"
       />
+      <BillPaymentTransactionDetailsModal />
     </WalletpageDefaultWrapper>
   );
 };

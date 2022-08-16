@@ -1,10 +1,11 @@
-import * as React from "react"
-import { SVGProps } from "react"
+import * as React from "react";
+import { SVGProps } from "react";
 
 const MasterCardLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    width={69}
-    height={42}
+    // width={69}
+    // height={42}
+    viewBox="0 0 69 42"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -19,6 +20,6 @@ const MasterCardLogo = (props: SVGProps<SVGSVGElement>) => (
       fill="#F79E1B"
     />
   </svg>
-)
+);
 
-export default MasterCardLogo
+export default MasterCardLogo;

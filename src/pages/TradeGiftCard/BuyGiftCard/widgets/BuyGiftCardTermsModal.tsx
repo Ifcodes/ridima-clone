@@ -27,7 +27,6 @@ const BuyGiftCardTermsModal = ({
 
   const proceed = () => {
     navigate("/trade-giftcards/buy-giftcards");
-    setActiveTabChange("next");
     setShowBuyCardTermsModal(false);
   };
   return (

@@ -12,9 +12,10 @@ export const setActiveTabChange = (type: string) => {
     activeTradeGiftCardTab.set(newState + 1);
   } else if (type === "prev") {
     activeTradeGiftCardTab.set(newState - 1);
-  } else {
+  } else if (type === "reset") {
     activeTradeGiftCardTab.set(1);
   }
+  return;
 };
 
 export const setSelectedGiftCardUrl = (url: string) => {

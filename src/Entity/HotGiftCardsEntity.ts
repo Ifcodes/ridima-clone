@@ -11,6 +11,7 @@ export const hotGiftCardsStates = entity({
     title: "",
     description: "",
     amount: null,
+    cardType: "",
   },
   tabs: ["Trade Gift Cards", "Hot Gift Cards"],
   selectedSubCategory: "",
@@ -110,6 +111,15 @@ export const setSelectedHotGiftCard = (val: any) => {
   hotGiftCardsStates.set((prev) => ({ ...prev, selectedGiftCard: val }));
 };
 
+export const setHotGiftCardType = (val: string) => {
+  const selectedGiftCardCopy = hotGiftCardsStates.get().selectedGiftCard;
+  const newCardType = { ...selectedGiftCardCopy, cardType: val };
+  hotGiftCardsStates.set((prev) => ({
+    ...prev,
+    selectedGiftCard: newCardType,
+  }));
+};
+
 export const resetAllHotGiftCardState = () => {
   hotGiftCardsStates.set((prev) => ({
     ...prev,
@@ -121,6 +131,7 @@ export const resetAllHotGiftCardState = () => {
       title: "",
       description: "",
       amount: null,
+      cardType: "",
     },
     tabs: ["Trade Gift Cards", "Hot Gift Cards"],
     selectedSubCategory: "",

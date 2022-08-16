@@ -24,6 +24,8 @@ import {
   hotGiftCardsStates,
   resetActiveCardStage,
   setActiveCardStage,
+  setHotGiftCardTab,
+  setHotGiftCardType,
   setIsTradeSuccessfull,
   setOpenTermsModal,
   setOpenTradeFailureMessage,
@@ -39,23 +41,26 @@ const giftCardTypes = [
   {
     cardTitle: "Physical Card",
     cardIcon: PhysicalCardTypeIcon,
-    description: "$10 - $10,000",
   },
   {
     cardTitle: "Ecode",
     cardIcon: EcodeCardIcon,
-    description: "$10 - $10,000",
   },
 ];
 
 const ActiveGiftCard = () => {
   const tradeValues = tradeValue.use();
-  const selectedGiftCard = hotGiftCardsStates.use().selectedGiftCard;
-  const currentStage = hotGiftCardsStates.use().currentActiveCardStage;
-  const tradeIsSuccessfull = hotGiftCardsStates.use().tradeSuccessful;
+  const hotGiftCardState = hotGiftCardsStates.use();
+  const selectedGiftCard = hotGiftCardState.selectedGiftCard;
+  const currentStage = hotGiftCardState.currentActiveCardStage;
+  const tradeIsSuccessfull = hotGiftCardState.tradeSuccessful;
+  const selectedSubCategory = hotGiftCardState.selectedSubCategory;
   const [showCurrencyModal, setShowCurrencyModal] = useState(false);
   const [selectedCard, setSelectedCard] = useState<number | undefined>();
-  const [selectedCurrency, setSelectedCurrency] = useState("");
+  const [selectedCurrency, setSelectedCurrency] = useState({
+    currency: "",
+    code: "",
+  });
   const [imgUploadFormData, setImgUploadFormData] = useState<{
     ecode?: string;
     selectedImages: Array<string>;
@@ -94,12 +99,10 @@ const ActiveGiftCard = () => {
 
   const handleCardTypeClick = (card: string, index: number) => {
     setSelectedCard(index);
-    // if (card === "Physical Card") {
-    //   setShowCurrencyModal(true);
-    // }
+    setHotGiftCardType(card);
   };
 
-  const handleSelectCurrency = (currency: string) => {
+  const handleSelectCurrency = (currency: any) => {
     setSelectedCurrency(currency);
     setShowCurrencyModal(false);
   };
@@ -114,7 +117,7 @@ const ActiveGiftCard = () => {
       expectedValue: tradeValues.expectedValue,
       cardIcon: <selectedGiftCard.icon />,
       cardName: selectedGiftCard.title,
-      cardDescription: selectedGiftCard.description,
+      cardDescription: `${selectedCurrency?.code} ${selectedGiftCard.cardType} (${selectedSubCategory})`,
       images: imgUploadFormData.selectedImages,
     };
     if (currentStage === 0) {
@@ -213,7 +216,11 @@ const ActiveGiftCard = () => {
 
         {currentStage === 0 && (
           <Selector
-            selectorTitle={selectedCurrency || "Select currency"}
+            selectorTitle={
+              selectedCurrency?.currency
+                ? `${selectedCurrency?.currency} (${selectedCurrency?.code})`
+                : "Select currency"
+            }
             onClick={() => setShowCurrencyModal(true)}
           />
         )}
@@ -229,7 +236,6 @@ const ActiveGiftCard = () => {
                 key={card.cardTitle}
                 icon={<card.cardIcon />}
                 title={card.cardTitle}
-                titleDescription={card.description}
                 onCardClick={() => handleCardTypeClick(card.cardTitle, index)}
                 isActive={selectedCard === index}
               />

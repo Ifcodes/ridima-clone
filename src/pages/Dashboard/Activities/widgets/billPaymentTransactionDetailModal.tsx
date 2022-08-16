@@ -4,6 +4,7 @@ import ListItemCard from "../../../../components/atoms/ListItemCard";
 import { ScrollableModalContent } from "../../../../components/atoms/ScrollableModalContent";
 import { TransactionStatusWrapper } from "../../../../components/atoms/TransactionListItemContainer/transactionListItemstyles";
 import { H1 } from "../../../../components/atoms/Typography";
+import AmazonIconCircle from "../../../../components/atoms/vectors/AmazonIconCircle";
 import CopyIconLg from "../../../../components/atoms/vectors/CopyIconLg";
 import Modal from "../../../../components/molecules/Modal";
 import {
@@ -15,7 +16,7 @@ import {
   TransactionDetailModalWrapper,
 } from "../activitiesStyles";
 
-const TransactionDetailsModal = () => {
+const BillPaymentTransactionDetailsModal = () => {
   const activityState = activitiesStates.use();
   const showModal = activityState.showTransactionModal;
   const selectedTransaction = activityState.selectedTransaction;
@@ -32,7 +33,8 @@ const TransactionDetailsModal = () => {
         <ScrollableModalContent>
           <div className="product">
             <ListItemCard
-              icon={<img src={selectedTransaction.productIconUrl} alt="" />}
+              imgUrl={selectedTransaction.productIconUrl}
+              icon={<selectedTransaction.icon />}
               title={selectedTransaction.productOrigin}
               titleDescription={selectedTransaction.productOriginDesc}
               showMainBorder={false}
@@ -97,4 +99,4 @@ const TransactionDetailsModal = () => {
   );
 };
 
-export default TransactionDetailsModal;
+export default BillPaymentTransactionDetailsModal;

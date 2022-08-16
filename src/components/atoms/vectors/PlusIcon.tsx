@@ -13,7 +13,7 @@ const PlusIcon = (props: SvgIconProps) => (
   >
     <path
       d="M9 18h18M18 27V9"
-      stroke="#7165E3"
+      stroke={props.linecolor || "#7165E3"}
       strokeWidth={1.5}
       strokeLinecap="round"
       strokeLinejoin="round"

@@ -21,6 +21,7 @@ import { tradeValue } from "../../../../Entity/TradeValue";
 import AmazonIconCircle from "../../../../components/atoms/vectors/AmazonIconCircle";
 import CardTermsModal from "./Widgets/cardTermsModal";
 import StepperComponent from "../../../../components/molecules/Stepper";
+import { sellGiftCardsStates } from "../../../../Entity/SellGiftCardEntity";
 
 const giftCardTypes = [
   {
@@ -53,8 +54,15 @@ const giftCardTypes = [
 const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
   const tradeValues = tradeValue.use();
   const [showCurrencyModal, setShowCurrencyModal] = useState(false);
-  const [selectedCard, setSelectedCard] = useState<number | undefined>();
-  const [selectedCurrency, setSelectedCurrency] = useState("");
+  const selectedSubCategory = sellGiftCardsStates.use().selectedSubCatecory;
+  const [selectedCardType, setSelectedCardType] = useState({
+    index: 0,
+    cardType: "",
+  });
+  const [selectedCurrency, setSelectedCurrency] = useState({
+    currency: "",
+    code: "",
+  });
   const [currentStage, setCurrentStage] = useState(0);
   const [openCardTermsModal, setOpenCardTermsModal] = useState(false);
   const [imgUploadFormData, setImgUploadFormData] = useState<{
@@ -93,13 +101,13 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
     Object.values(imgUploadFormData).every((item) => item !== "");
 
   const handleCardTypeClick = (card: string, index: number) => {
-    setSelectedCard(index);
+    setSelectedCardType((prev) => ({ ...prev, index: index, cardType: card }));
     // if (card === "Physical Card") {
     //   setShowCurrencyModal(true);
     // }
   };
 
-  const handleSelectCurrency = (currency: string) => {
+  const handleSelectCurrency = (currency: any) => {
     setSelectedCurrency(currency);
     setShowCurrencyModal(false);
   };
@@ -115,7 +123,7 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
         expectedValue: tradeValues.expectedValue,
         cardIcon: <selectedCarditems.miniIcon />,
         cardName: selectedCarditems.cardtitle,
-        cardDescription: selectedCarditems.titleDescription,
+        cardDescription: `${selectedCurrency.code} ${selectedCardType.cardType} (${selectedSubCategory})`,
         images: imgUploadFormData.selectedImages,
       };
       setTradeSummaryData(summaryData);
@@ -168,12 +176,12 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
   const onConfirm = () => {
     setImgUploadFormData({ ecode: "", selectedImages: [], imgSelected: false });
     setCurrentStage(0);
-    setSelectedCard(0);
+    setSelectedCardType({ index: 0, cardType: "" });
     setSelectedCategory({
       amount: "",
       quantity: "",
     });
-    setSelectedCurrency("");
+    setSelectedCurrency({ currency: "", code: "" });
   };
 
   return (
@@ -219,7 +227,11 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
 
         {currentStage === 0 && (
           <Selector
-            selectorTitle={selectedCurrency || "Select currency"}
+            selectorTitle={
+              selectedCurrency.currency
+                ? `${selectedCurrency.currency} (${selectedCurrency.code})`
+                : "Select currency"
+            }
             onClick={() => setShowCurrencyModal(true)}
           />
         )}
@@ -235,9 +247,8 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
                 key={card.cardTitle}
                 icon={<card.cardIcon />}
                 title={card.cardTitle}
-                titleDescription={card.description}
                 onCardClick={() => handleCardTypeClick(card.cardTitle, index)}
-                isActive={selectedCard === index}
+                isActive={selectedCardType.index === index}
               />
             ))}
           </div>
@@ -255,7 +266,7 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
           }
           width="27rem"
           mt="5rem"
-          mb="5rem"
+          mb="2rem"
           onClick={() => onProceed()}
         />
       </div>

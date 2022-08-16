@@ -13,15 +13,39 @@ const SelectCurrencyModal = ({
   openModal: boolean;
   closeModal?: Function;
   selectCurrency?: Function;
-  selectedCurrency?: string;
+  selectedCurrency?: { currency: string; code: string };
 }) => {
+  // const currencyList = [
+  //   "🇺🇸 United State Dollars (USD)",
+  //   "🇬🇧 British Pounds (GBP)",
+  //   "🇪🇺 Europian Euros (EUR)",
+  //   "🇨🇦 Canadian Dollars (CAD)",
+  //   "🇦🇺 Australian Dollars (AUD)",
+  // ];
+
   const currencyList = [
-    "🇺🇸 United State Dollars (USD)",
-    "🇬🇧 British Pounds (GBP)",
-    "🇪🇺 Europian Euros (EUR)",
-    "🇨🇦 Canadian Dollars (CAD)",
-    "🇦🇺 Australian Dollars (AUD)",
+    {
+      currency: "🇺🇸 United State Dollars",
+      code: "USD",
+    },
+    {
+      currency: "🇬🇧 British Pounds",
+      code: "GBP",
+    },
+    {
+      currency: "🇪🇺 European Euros",
+      code: "EUR",
+    },
+    {
+      currency: "🇨🇦 Canadian Dollars",
+      code: "CAD",
+    },
+    {
+      currency: "🇦🇺 Australian Dollars",
+      code: "AUD",
+    },
   ];
+
   return (
     <Modal showModal={openModal} closeModal={closeModal} showCloseBtn>
       <SelectedCurrencyModalWrapper>
@@ -29,13 +53,15 @@ const SelectCurrencyModal = ({
         <div className="currency-list-cont">
           {currencyList.map((currency, index) => (
             <div
-              key={currency}
+              key={currency.code}
               className="currency-cont"
               onClick={() => selectCurrency(currency)}
             >
-              <span className="currency">{currency}</span>
+              <span className="currency">
+                {currency.currency} ({currency.code})
+              </span>
               <CustomRadioButton
-                isChecked={selectedCurrency === currency}
+                isChecked={selectedCurrency?.currency === currency.currency}
                 checkedColor={"#7165E3"}
               />
             </div>

@@ -75,13 +75,13 @@ export const primaryMenuList = [
     text: "Leaderboard",
     location: "/leaderboard",
   },
-  {
-    id: 8,
-    icon: ReferralIcon,
-    iconFilled: ReferralIconFilled,
-    text: "Referral",
-    location: "/referral",
-  },
+  // {
+  //   id: 8,
+  //   icon: ReferralIcon,
+  //   iconFilled: ReferralIconFilled,
+  //   text: "Referral",
+  //   location: "/referral",
+  // },
   {
     id: 9,
     icon: ShieldIcon,

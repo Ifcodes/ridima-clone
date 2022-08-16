@@ -3,6 +3,8 @@ import Selector from "../../../components/atoms/Selector";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
 import AmazonEcodeLogo from "../../../components/atoms/vectors/AmazonEcodeLogo";
 import AmazonLogoCircleLg from "../../../components/atoms/vectors/AmazonLogoCircleLg";
+import EcodeCardTypeCircle from "../../../components/atoms/vectors/EcodeCardTypeCircle";
+import PhysicalCardCircleIcon from "../../../components/atoms/vectors/PhysicalCardCirlcleIcon";
 import SelectSubCategoryModal from "../../../components/molecules/SelectGiftCardSubCategoryModal";
 import {
   checkRatesStates,
@@ -22,11 +24,11 @@ const CardTypeAndSubCategory = () => {
 
   const cards = [
     {
-      icon: AmazonLogoCircleLg,
+      icon: PhysicalCardCircleIcon,
       title: "Physical card",
     },
     {
-      icon: AmazonEcodeLogo,
+      icon: EcodeCardTypeCircle,
       title: "Ecode",
     },
   ];

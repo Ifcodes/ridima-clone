@@ -43,7 +43,11 @@ const GiftCardsCurrency = () => {
       </div>
       <div className="form-content">
         <Selector
-          selectorTitle={selectedCurrency || "Select currency"}
+          selectorTitle={
+            selectedCurrency.currency
+              ? `${selectedCurrency.currency} (${selectedCurrency.code})`
+              : "Select currency"
+          }
           onClick={() => openModal("selectCurrency")}
         />
       </div>

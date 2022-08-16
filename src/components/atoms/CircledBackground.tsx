@@ -9,6 +9,7 @@ export const CircledBackground = styled.div<{
   border?: string;
   borderRadius?: string;
   textColor?: string;
+  svgWidth?: string;
 }>`
   width: ${(props) => props.width || "3.8rem"};
   height: ${(props) => props.height || "3.8rem"};
@@ -21,6 +22,10 @@ export const CircledBackground = styled.div<{
   color: ${(props) => props.textColor || props.theme.colors.red};
   font-weight: 700;
   cursor: pointer;
+
+  svg {
+    width: ${(props) => props.svgWidth || ""};
+  }
 
   @media screen and (max-width: 640px) {
     width: ${(props) => props.mobileWidth || "3.8rem"};

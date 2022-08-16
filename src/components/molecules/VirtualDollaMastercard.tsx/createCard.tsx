@@ -11,8 +11,15 @@ const CreateCard = ({ onClick, onCardClick }: CardProps) => {
       <div className="card-content" onClick={onCardClick}>
         <div>
           <div className="title-cont">
-            <h3 className="v-dollar-title">Virtual US Dollar Mastercard</h3>
-            <MasterCardLogo />
+            <h3 className="v-dollar-title">Virtual US Dollar Mastercard </h3>
+            <div className="v-dollar-title-mobile">
+              <h3>Virtual US Dollar </h3>
+              <h3 className="mastercard-title">Mastercard</h3>
+            </div>
+
+            <div className="master-card-logo">
+              <MasterCardLogo />
+            </div>
           </div>
           <span className="description">$2 Creation Fee</span>
         </div>
@@ -20,12 +27,23 @@ const CreateCard = ({ onClick, onCardClick }: CardProps) => {
           <Button
             width="18rem"
             buttonBgType="medium"
-            bgColor="#3F1E4B"
-            textColor="white"
-            btnText="Create card"
+            bgColor="rgba(63, 30, 75, 0.1)"
+            textColor="rgba(63, 30, 75, 1)"
+            btnText="Coming Soon!"
             buttonPosition="left"
             onClick={onClick}
             mt="0"
+          />
+        </div>
+        <div className="btn-coming-soon">
+          <Button
+            width="100%"
+            buttonBgType="mobileReverse"
+            bgColor="rgba(63, 30, 75, 0.1)"
+            btnText="Coming Soon!"
+            buttonPosition="left"
+            mt="1.5rem"
+            onClick={onClick}
           />
         </div>
       </div>

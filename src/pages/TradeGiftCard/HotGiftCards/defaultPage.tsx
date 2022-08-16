@@ -9,6 +9,7 @@ import AppleLogoIcon from "../../../components/atoms/vectors/AppleLogoIcon";
 import GooglePlayImg from "../../../components/atoms/vectors/GooglePlayCardIllus";
 import GooglePlayLogoSm from "../../../components/atoms/vectors/GooglePlayLogoSm";
 import ItunesCardImg from "../../../components/atoms/vectors/ItunesCardIllus";
+import MacyCardImg from "../../../components/atoms/vectors/MacyCardImg";
 import MacyLogoSm from "../../../components/atoms/vectors/MacyLogoSm";
 import RazerGoldImg from "../../../components/atoms/vectors/RazerGoldCardIllus";
 import RazerGoldLogoSm from "../../../components/atoms/vectors/RazerGoldLogo";
@@ -55,7 +56,7 @@ const hotGiftCardsList = [
   },
   {
     icon: MacyLogoSm,
-    activeCardImg: GooglePlayImg,
+    activeCardImg: MacyCardImg,
     title: "Macy's",
     description: "USA, Cash Receipt ($25)",
     amount: 31000,

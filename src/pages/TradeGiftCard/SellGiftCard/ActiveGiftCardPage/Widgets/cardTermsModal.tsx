@@ -40,17 +40,19 @@ const CardTermsModal = ({
     return;
   };
 
+  const handleClearStates = () => {
+    clearSellGiftCardStates();
+  };
+
   const onModalClose = () => {
     if (stage === 1) {
       setStage(0);
+      handleClearStates();
     }
     handleCloseBtn();
     closeModal();
   };
 
-  const handleClearStates = () => {
-    clearSellGiftCardStates();
-  };
   return (
     <Modal
       showModal={openModal}

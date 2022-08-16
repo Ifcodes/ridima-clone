@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { setUnreadNotifications } from "../../../Entity/NotificationsEntity";
 import { notifications } from "../../../utils/helpers/notificationsList";
 import Logout from "../../molecules/LogoutModal";

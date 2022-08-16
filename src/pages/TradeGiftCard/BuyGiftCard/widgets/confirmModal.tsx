@@ -16,6 +16,7 @@ import {
 import ErrorMessageCard from "../../SellGiftCard/ActiveGiftCardPage/Widgets/errorMessageCard";
 import SuccessMessageCard from "../../../../components/molecules/SuccessMessageCard/successMessageCard";
 import { CardTermsModalWrapper } from "../../styledTradeGiftCard";
+import { setActiveTabChange } from "../../../../Entity/TradeGiftCardsEntity";
 
 const ConfirmModal = () => {
   const navigate = useNavigate();
@@ -37,6 +38,7 @@ const ConfirmModal = () => {
     if (stage === 1) {
       navigate("/trade-giftcards");
       resetBuyGiftCardsState();
+      setActiveTabChange("reset");
     } else {
       setShowConfirmationModal(false);
       setIsConfirmed(false);
@@ -44,8 +46,8 @@ const ConfirmModal = () => {
   };
 
   const handleSuccessModalBtn = (type: string) => {
-    console.log("others");
     resetBuyGiftCardsState();
+    setActiveTabChange("reset");
   };
 
   return (

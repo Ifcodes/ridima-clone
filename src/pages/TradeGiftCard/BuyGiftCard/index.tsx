@@ -4,13 +4,14 @@ import SearchBox from "../../../components/atoms/SearchBox";
 import HorizontalLinedTitle from "../../../components/atoms/TitleWithHorizontalLine";
 import TrapCard from "../../../components/atoms/TrapezoidCard";
 import DashboardLayout from "../../../components/templates/MainLayout";
+import { resetBuyGiftCardsState } from "../../../Entity/BuyGiftCardsEntity";
 
 import {
   activeTradeGiftCardTab,
   setActiveTabChange,
 } from "../../../Entity/TradeGiftCardsEntity";
 import { StageTitleWrapper } from "../../CreateVirtualCard/createVirtualCardStyles";
-import { trapCardIemList } from "../SellGiftCard";
+import { trapCardItemList } from "../SellGiftCard";
 import { SellGiftCardWrapper } from "../styledTradeGiftCard";
 import BuyGiftCardActive from "./BuyGiftCardActiveCard";
 
@@ -29,9 +30,11 @@ const BuyGiftCards = () => {
     if (type === "Trade Gift Cards") {
       navigate("/trade-giftcards");
       setActiveTabChange("prev");
+      resetBuyGiftCardsState();
     } else if (index !== tabs.length - 1) {
       setTabs(tabs.slice(0, index + 1));
       setActiveTabChange("prev");
+      resetBuyGiftCardsState();
     }
     return;
   };
@@ -44,10 +47,17 @@ const BuyGiftCards = () => {
 
   return (
     <DashboardLayout childPadding="0" mobileChildPadding="0">
-      <SellGiftCardWrapper>
+      <SellGiftCardWrapper stage={activeTab}>
         <div className={activeTab === 1 ? "heading" : "default"}>
           <StageTitleWrapper darkBgShade>
-            <span className="home" onClick={() => navigate("/home")}>
+            <span
+              className="home"
+              onClick={() => {
+                resetBuyGiftCardsState();
+                setActiveTabChange("reset");
+                navigate("/home");
+              }}
+            >
               Home
             </span>
             {tabs.map((tab, index) => (
@@ -87,14 +97,13 @@ const BuyGiftCards = () => {
                 <HorizontalLinedTitle text="Available giftcards" />
               </div>
               <div className="content">
-                {trapCardIemList.map((item, index) => (
+                {trapCardItemList.map((item, index) => (
                   <TrapCard
                     key={item.cardtitle}
                     bgColor={item.cardBg}
                     trapeCardType={item.cardType}
                     title={item.cardtitle}
                     icon={<item.cardIcon />}
-                    titleDescription={item.titleDescription}
                     onCardClick={() => handleCardClick(item)}
                   />
                 ))}

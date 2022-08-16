@@ -4,19 +4,42 @@ export const WalletBalCardWrapper = styled.div<{
   titleColor?: string;
   amountColor?: string;
   otherValueColor?: string;
-  showDefault?: boolean;
+  width?: string;
+  isDefault?: boolean;
 }>`
-  width: 27rem;
+  width: ${(props) => props.width || "27rem"};
   height: 8.4rem;
   border-radius: 1.5rem;
   position: relative;
 
+  .card-actions-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 4rem;
+    /* top: 1.5rem; */
+
+    .action-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 5rem;
+
+      span {
+        margin-top: 0.3rem;
+        color: white;
+      }
+    }
+  }
+
   .wallet-card-content {
-    width: 100%;
+    width: ${(isDefault) => (isDefault ? "20rem" : "100%")};
     height: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1.8rem 2rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -68,12 +91,31 @@ export const WalletBalCardWrapper = styled.div<{
     }
   }
 
+  .default-cardBg {
+    width: 100%;
+    height: 100%;
+
+    .large-screen {
+      width: 100%;
+
+      svg {
+        width: 100%;
+        height: 8.4rem;
+      }
+    }
+
+    .mobile-screen {
+      display: none;
+    }
+  }
+
   .wallet-cardBg-mobile {
     display: none;
   }
 
   @media screen and (max-width: 640px) {
     width: 100%;
+    height: ${(props) => (props.isDefault ? "max-content" : "8.4rem")};
 
     .wallet-card-content {
       width: 100%;
@@ -84,8 +126,35 @@ export const WalletBalCardWrapper = styled.div<{
       }
     }
 
-    .wallet-cardBg {
-      display: ${(props) => (props.showDefault ? "none" : "block")};
+    .card-actions-wrapper {
+      height: 50%;
+      bottom: 2rem;
+      left: 0;
+      width: 100%;
+      justify-content: space-around;
+
+      .action-wrapper {
+        margin-left: 0;
+      }
+    }
+
+    .default-cardBg {
+      width: 100%;
+      height: 100%;
+
+      .large-screen {
+        display: none;
+      }
+
+      .mobile-screen {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        svg {
+          width: 100%;
+        }
+      }
     }
   }
 `;

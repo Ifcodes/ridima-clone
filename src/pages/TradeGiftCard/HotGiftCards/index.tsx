@@ -22,6 +22,7 @@ const HotGiftCards = () => {
     if (type === "Trade Gift Cards") {
       navigate("/trade-giftcards");
       setHotGiftCardTab("prev");
+      resetAllHotGiftCardState();
     } else {
       setHotGiftCardsTabs("remove", undefined, index);
       resetAllHotGiftCardState();
@@ -34,7 +35,13 @@ const HotGiftCards = () => {
       <HotGiftCardsWrapper>
         <div className="stage-title-wrapper">
           <StageTitleWrapper darkBgShade>
-            <span className="home" onClick={() => navigate("/home")}>
+            <span
+              className="home"
+              onClick={() => {
+                resetAllHotGiftCardState();
+                navigate("/home");
+              }}
+            >
               Home
             </span>
             {tabs.map((tab, index) => (

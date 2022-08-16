@@ -7,12 +7,12 @@ export const LeaderBoardWrapper = styled.div`
 
   .heading {
     width: 100%;
-    height: 16rem;
+    height: 19rem;
     background-color: ${(props) => props.theme.colors.blue};
     background-image: url("/vectors/BlueHeadingRecWithPattern.svg");
     background-size: cover;
     background-repeat: none;
-    padding: 2rem 3rem;
+    padding: 1rem 3rem;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -41,7 +41,7 @@ export const LeaderBoardWrapper = styled.div`
       justify-content: center;
       align-items: center;
       position: absolute;
-      bottom: 2rem;
+      bottom: 4rem;
       left: 0;
       gap: 3rem;
 
@@ -58,11 +58,23 @@ export const LeaderBoardWrapper = styled.div`
         }
       }
     }
+
+    .desc {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 0;
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #f5cf48;
+      font-weight: 500;
+    }
   }
 
   .main-content {
     height: calc(100vh - 16rem);
-    padding: 0 3rem 6rem;
+    padding: 0 3rem 8rem;
     overflow-y: auto;
 
     .line-title {
@@ -78,22 +90,37 @@ export const LeaderBoardWrapper = styled.div`
   @media screen and (max-width: 640px) {
     .heading {
       padding: 1rem;
+      height: 22rem;
 
       .title-cont {
+        height: 35%;
+        flex-direction: column;
+
         p {
           font-size: 0.7rem;
+        }
+
+        .period-wrapper {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin: 0.5rem 0;
         }
       }
 
       .leaders {
         width: 100%;
         gap: 2rem;
-        bottom: 1rem;
+        bottom: 4rem;
+      }
+
+      .desc {
+        width: 100%;
       }
     }
     .main-content {
       overflow-y: auto;
-      padding: 0 1.5rem 14rem;
+      padding: 0 1.5rem 16rem;
 
       .line-title {
         margin: 1rem 0 0;
