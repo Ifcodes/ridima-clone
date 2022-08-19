@@ -25,8 +25,8 @@ const SelectServiceModal = () => {
         onServiceClick={handleSelection}
         title="Select Service"
         modalWidth="22%"
-        modalHeight="45%"
-        mobileModalHeight="35%"
+        modalHeight="20rem"
+        mobileModalHeight="20rem"
       />
     </div>
   );

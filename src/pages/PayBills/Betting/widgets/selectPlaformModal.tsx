@@ -37,8 +37,10 @@ const SelectPlatformModal = () => {
         selectorList={bettingPlatforms}
         onServiceClick={handleSelection}
         title="Select Platform"
-        modalHeight="90vh"
-        modalWidth="34%"
+        modalHeight="40rem"
+        mobileModalHeight="40rem"
+        modalContentHeight="40rem"
+        modalWidth="28%"
       />
     </div>
   );

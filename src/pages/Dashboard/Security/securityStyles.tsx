@@ -24,7 +24,7 @@ export const SecurityPageWrapper = styled.div`
 
 export const ChangePinWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 35rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,7 +76,7 @@ export const ChangePinWrapper = styled.div`
 
 export const ChangePasswordModalWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 35rem;
   display: flex;
   flex-direction: column;
   align-items: center;

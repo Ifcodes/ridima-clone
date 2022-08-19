@@ -29,11 +29,11 @@ const ConfirmBettingPayment = ({
     <Modal
       showModal={openModal}
       closeModal={() => setShowConfirmBettingPayment(false)}
-      showCloseBtn
-      cardHeight="65vh"
+      cardHeight="30rem"
+      mobileCardHeight="30rem"
       width="25%"
     >
-      <ConfirmModalWrapper>
+      <ConfirmModalWrapper height="30rem">
         <H1>Confirm</H1>
         <div className="content">
           <span className="account-name">

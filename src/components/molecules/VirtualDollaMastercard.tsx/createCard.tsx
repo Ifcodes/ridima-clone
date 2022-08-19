@@ -21,7 +21,7 @@ const CreateCard = ({ onClick, onCardClick }: CardProps) => {
               <MasterCardLogo />
             </div>
           </div>
-          <span className="description">$2 Creation Fee</span>
+          <span className="create-fee-text">$2 Creation Fee</span>
         </div>
         <div className="btn-complete">
           <Button
@@ -44,6 +44,7 @@ const CreateCard = ({ onClick, onCardClick }: CardProps) => {
             buttonPosition="left"
             mt="1.5rem"
             onClick={onClick}
+            fs="3vw"
           />
         </div>
       </div>

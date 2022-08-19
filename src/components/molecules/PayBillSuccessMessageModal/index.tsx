@@ -4,13 +4,14 @@ import { H1, Paragraph } from "../../atoms/Typography";
 import Modal from "../Modal";
 
 const Wrapper = styled.div<{ messageTitleWidth?: string }>`
-  height: 100%;
+  height: 32rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow-y: auto;
+  padding: 0 1rem;
 
   .modal-title {
     color: ${(props) => props.theme.colors.deepPurple};
@@ -63,6 +64,9 @@ const Wrapper = styled.div<{ messageTitleWidth?: string }>`
     }
 
     .sucess-msg-text-cont {
+      width: 100%;
+      margin-top: 0;
+
       p {
         width: 80%;
       }
@@ -96,8 +100,8 @@ const PayBillSuccessMessageModal = ({
       handleCloseBtn={handleCloseBtn}
       showCloseBtn
       width="25%"
-      cardHeight="65%"
-      mobileCardHeight="60%"
+      cardHeight="32rem"
+      mobileCardHeight="32rem"
     >
       <Wrapper messageTitleWidth={titleWidth}>
         {modalTitle && <H1 className="modal-title">{modalTitle}</H1>}

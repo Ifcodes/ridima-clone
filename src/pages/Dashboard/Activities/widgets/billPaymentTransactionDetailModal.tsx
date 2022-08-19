@@ -25,7 +25,6 @@ const BillPaymentTransactionDetailsModal = () => {
       width="28%"
       showModal={showModal}
       closeModal={() => setShowTransactionModal(false)}
-      height={"85%"}
       showModalFooterDesign
     >
       <TransactionDetailModalWrapper>

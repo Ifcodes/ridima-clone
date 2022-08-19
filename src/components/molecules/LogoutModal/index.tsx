@@ -12,6 +12,7 @@ const Logout = () => {
   const handleLogout = () => {
     navigate("/login");
     setLogout(false);
+    console.log(showModal);
   };
 
   return (
@@ -19,10 +20,10 @@ const Logout = () => {
       showModal={showModal}
       closeModal={() => setLogout(false)}
       showCloseBtn
-      handleCloseBtn={() => setLogout(false)}
+      // handleCloseBtn={() => setLogout(false)}
       width={"25%"}
-      cardHeight="50%"
-      mobileCardHeight="40%"
+      cardHeight="25rem"
+      mobileCardHeight="25rem"
     >
       <LogoutModalWrapper>
         <div className="logout-text-wrapper">

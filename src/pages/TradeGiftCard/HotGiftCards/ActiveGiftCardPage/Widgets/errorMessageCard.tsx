@@ -24,9 +24,10 @@ const SellGcErrorMessageCard = () => {
     <Modal
       showModal={openModal}
       closeModal={() => setOpenTradeFailureMessage(false)}
+      handleCloseBtn={() => setOpenTradeFailureMessage(false)}
       showCloseBtn
-      cardHeight="85%"
-      mobileCardHeight={"65%"}
+      cardHeight="35rem"
+      mobileCardHeight={"35rem"}
     >
       <SuccessMessageWrapper errorMessage>
         <div className="msg-modal-content">
@@ -46,6 +47,7 @@ const SellGcErrorMessageCard = () => {
             btnText="Try again"
             width="100%"
             onClick={() => handleButtonClick()}
+            mt="2rem"
           />
         </div>
       </SuccessMessageWrapper>

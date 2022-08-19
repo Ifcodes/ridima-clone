@@ -3,8 +3,9 @@ import { SVGProps } from "react";
 
 const FlutterWaveLogoIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    width={71}
-    height={69}
+    // width={71}
+    // height={69}
+    viewBox="0 0 71 69"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"

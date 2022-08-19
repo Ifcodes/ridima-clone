@@ -163,7 +163,7 @@ const AirtimeAndData = () => {
           width="27rem"
           disabled={!airtimeFormIsFilled}
           onClick={() => handleRefill()}
-          mb="6rem"
+          // mb="1rem"
           mt="6rem"
         />
       </FormWrapper>

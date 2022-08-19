@@ -26,8 +26,9 @@ const SelectNetworkProviderModal = () => {
         onServiceClick={handleProviderSelection}
         title="Select Network"
         modalWidth="26%"
-        modalHeight="55%"
-        mobileModalHeight="45%"
+        modalHeight="25rem"
+        mobileModalHeight="25rem"
+        modalContentHeight="25rem"
       />
     </div>
   );

@@ -107,7 +107,7 @@ const TvCables = () => {
           width="27rem"
           disabled={!formIsFilled}
           onClick={() => handleRefill()}
-          mb="6rem"
+          mb="2rem"
           mt="6rem"
         />
       </FormWrapper>

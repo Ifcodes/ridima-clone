@@ -89,7 +89,13 @@ const UseUssdCodeModal = ({
   };
 
   return (
-    <Modal showModal={openModal} closeModal={closeModal} width={"28rem"}>
+    <Modal
+      showModal={openModal}
+      closeModal={closeModal}
+      width={"28rem"}
+      cardHeight="38rem"
+      mobileCardHeight="38rem"
+    >
       <UseUssdCodeContainer>
         <H1 mt="0">Use USSD Code</H1>
         <H1 mt="3rem">₦ {amount}</H1>

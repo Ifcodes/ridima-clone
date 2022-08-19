@@ -72,15 +72,17 @@ const KeypadModal = ({
   return (
     <Modal
       showModal={showModal}
-      closeModal={() => {}} //helps handleCloseModal to perform as required. Do not remove unless you know what to you want to do.
+      closeModal={handleCloseModal}
       showCloseBtn
       handleCloseBtn={handleCloseModal}
-      cardHeight={"80%"}
-      mobileCardHeight={"90%"}
+      cardHeight={"40rem"}
+      mobileCardHeight={"40rem"}
       width={"25%"}
     >
       <KeypadModalWrapper>
-        <H1 color="#3F1E4B">{modalTitle}</H1>
+        <H1 color="#3F1E4B" mt="1rem">
+          {modalTitle}
+        </H1>
         <div className="input-cont">
           <MoneyInputField
             placeholder="0"
@@ -106,7 +108,12 @@ const KeypadModal = ({
           </DigitWrapper>
         </div>
         {amount !== 0 && (
-          <Button btnText={ctaText} mt="2.5rem" onClick={handleBtnClick} />
+          <Button
+            btnText={ctaText}
+            mt="2rem"
+            mb="1rem"
+            onClick={handleBtnClick}
+          />
         )}
       </KeypadModalWrapper>
     </Modal>

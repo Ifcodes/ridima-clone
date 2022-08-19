@@ -47,7 +47,14 @@ const SelectCurrencyModal = ({
   ];
 
   return (
-    <Modal showModal={openModal} closeModal={closeModal} showCloseBtn>
+    <Modal
+      showModal={openModal}
+      closeModal={closeModal}
+      showCloseBtn
+      handleCloseBtn={closeModal}
+      cardHeight="25rem"
+      mobileCardHeight="20rem"
+    >
       <SelectedCurrencyModalWrapper>
         <H1 mt="0">Select Currency</H1>
         <div className="currency-list-cont">

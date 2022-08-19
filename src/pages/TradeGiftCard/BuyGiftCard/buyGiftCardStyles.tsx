@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const BuyGiftCardTermsModalWrapper = styled.div`
   width: 100%;
-  height: 100%;
-  padding: 0 2rem 1rem;
+  height: 40rem;
+  padding: 0 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;

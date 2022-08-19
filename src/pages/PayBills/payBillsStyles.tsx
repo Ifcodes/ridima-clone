@@ -4,8 +4,8 @@ export const PayBillsWrapper = styled.div`
   width: 100%;
 
   @media screen and (max-width: 640px) {
-    height: 80%;
-    padding-bottom: 4rem;
+    height: 90%;
+    /* padding-bottom: 4rem; */
     overflow-y: auto;
 
     ::-webkit-scrollbar {
@@ -140,14 +140,14 @@ export const FormWrapper = styled.div<{ isData?: boolean }>`
   }
 `;
 
-export const ConfirmModalWrapper = styled.div`
+export const ConfirmModalWrapper = styled.div<{ height?: string }>`
   width: 100%;
-  height: 95%;
+  height: ${({ height }) => height || "95%"};
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  padding: 0 2rem;
+  justify-content: space-between;
+  padding: 1rem 2rem;
 
   h1 {
     color: ${(props) => props.theme.colors.deepPurple};

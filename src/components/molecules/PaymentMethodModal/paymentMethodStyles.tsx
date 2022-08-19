@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PayMethodWrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 2rem 2.5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;

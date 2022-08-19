@@ -105,7 +105,7 @@ export const HomeWrapper = styled.section`
   }
 
   @media screen and (max-width: 640px) {
-    height: 80vh;
+    height: 90vh;
     padding: 1rem;
 
     overflow-y: auto;

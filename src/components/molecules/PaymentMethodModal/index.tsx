@@ -27,7 +27,8 @@ const PaymentMethodModal = ({
     <Modal
       showModal={showModal}
       closeModal={closeModal}
-      cardHeight={"80vh"}
+      cardHeight={"40rem"}
+      mobileCardHeight="40rem"
       width={"28%"}
     >
       <PayMethodWrapper>

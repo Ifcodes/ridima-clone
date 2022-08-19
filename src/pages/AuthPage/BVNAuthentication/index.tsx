@@ -117,7 +117,8 @@ const BVNAuthentication = () => {
               id={generateId()}
               label="BVN"
               placeholder="e.g 1234567890"
-              type="text"
+              type="number"
+              pattern="\d*"
               required
               minLength={10}
               maxLength={10}
@@ -128,7 +129,7 @@ const BVNAuthentication = () => {
               id={generateId()}
               label="Date of Birth"
               placeholder="e.g DD/MM/YYYY"
-              type="text"
+              type="date"
               required
               value={bvnFormField.dob}
               onChange={(e) => handleFormChange(e, "dob")}
@@ -141,7 +142,8 @@ const BVNAuthentication = () => {
         closeModal={() => setShowModal(false)}
         showCloseBtn={true}
         width="25%"
-        cardHeight="65%"
+        cardHeight="15rem"
+        mobileCardHeight="15rem"
       >
         <BvnAuthModalContent>
           <div className="title-cont">

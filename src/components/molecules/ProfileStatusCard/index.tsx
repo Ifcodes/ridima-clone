@@ -8,7 +8,7 @@ import { VirtualDollarCardWrapper } from "../VirtualDollaMastercard.tsx/styledCa
 
 const ProfileStatusCard = ({ onClick, onCardClick }: CardProps) => {
   return (
-    <VirtualDollarCardWrapper onClick={onCardClick}>
+    <VirtualDollarCardWrapper>
       <div className="card-content">
         <div className="title-cont">
           <div>
@@ -28,6 +28,21 @@ const ProfileStatusCard = ({ onClick, onCardClick }: CardProps) => {
             btnText="Complete profile"
             buttonPosition="left"
             onClick={onClick}
+            mt="0"
+            fs="0.8rem"
+          />
+        </div>
+        <div className="btn-coming-soon">
+          <Button
+            width="100%"
+            buttonBgType="mobileReverse"
+            bgColor="#3F1E4B"
+            textColor="white"
+            btnText="Complete Profile!"
+            buttonPosition="left"
+            mt="1.5rem"
+            onClick={onClick}
+            fs="2.5vw"
           />
         </div>
       </div>

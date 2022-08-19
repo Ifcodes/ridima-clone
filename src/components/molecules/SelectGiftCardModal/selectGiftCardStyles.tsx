@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const SelectGiftCardModalWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 40rem;
   padding-bottom: 5rem;
+  overflow-y: auto;
 
   h1 {
     color: ${(props) => props.theme.colors.deepPurple};

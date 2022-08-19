@@ -1,10 +1,31 @@
 import styled from "styled-components";
 
 export const SupportPageWrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  .support-header-title-mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 640px) {
+    .support-header-title {
+      display: none;
+    }
+
+    .support-header-title-mobile {
+      display: block;
+      padding: 1rem;
+    }
+  }
+`;
+
+export const SupportContentWrapper = styled.div`
   width: 60%;
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   .icon-wrapper {
     width: 35%;
@@ -79,9 +100,11 @@ export const SupportPageWrapper = styled.div`
 
   @media screen and (max-width: 640px) {
     width: 100%;
+    height: 90%;
+    padding-bottom: 8rem;
+    overflow-y: auto;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 8rem;
 
     .icon-wrapper {
       width: 80%;

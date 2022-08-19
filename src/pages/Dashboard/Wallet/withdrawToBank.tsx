@@ -82,6 +82,7 @@ const WithdrawToBank = () => {
   const handleAddNewAccount = () => {
     setWithdrawAccounts(newAccountDetails);
     setAddAccountModal(false);
+    clearAddBankAccountStates();
   };
   return (
     <>

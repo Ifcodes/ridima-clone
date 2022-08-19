@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const HotGiftCardsWrapper = styled.div`
   width: 100%;
 
-  .stage-title-wrapper {
-    margin: 0 0 2rem;
-  }
-
   @media screen and (max-width: 640px) {
     height: 80vh;
+
+    .stage-title-wrapper {
+      margin: 1.5rem;
+    }
   }
 `;
 
@@ -38,7 +38,7 @@ export const HotGiftCardDefaultWrapper = styled.div`
 
   @media screen and (max-width: 640px) {
     width: 100%;
-    padding-bottom: 6rem;
+    padding: 0 1.5rem 6rem;
 
     .list-wrapper {
       padding-bottom: 4rem;

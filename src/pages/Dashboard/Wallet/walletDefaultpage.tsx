@@ -179,13 +179,15 @@ const WalletDefaultpage = () => {
           />
         ))}
       </div>
-      <KeypadModal
-        showModal={showFundWalletModal}
-        closeModal={() => setShowFundWalletModal(false)}
-        modalTitle="Fund Wallet"
-        handleBtnClick={() => handleModalCtaClick("amount")}
-        ctaText="Fund Wallet"
-      />
+      {showFundWalletModal && (
+        <KeypadModal
+          showModal={showFundWalletModal}
+          closeModal={() => setShowFundWalletModal(false)}
+          modalTitle="Fund Wallet"
+          handleBtnClick={() => handleModalCtaClick("amount")}
+          ctaText="Fund Wallet"
+        />
+      )}
       <PaymentMethodModal
         showModal={showPayMethodModal}
         closeModal={() => setShowPayMethodModal(false)}
@@ -204,27 +206,33 @@ const WalletDefaultpage = () => {
         showModal={showWarningModal}
         closeModal={() => setShowFundWarningModal(false)}
       />
-      <KeypadModal
-        showModal={showWithdrawKeypadModal}
-        closeModal={() => setWithdrawKeypadModal(false)}
-        modalTitle="Withdraw to Bank"
-        handleBtnClick={() => handleModalCtaClick("withdraw-amount")}
-        ctaText="Select Account"
-      />
-      <KeypadModal
-        showModal={showSendMoneyKeypadModal}
-        closeModal={() => setSendMoneyKeypadModal(false)}
-        modalTitle="Send Money"
-        handleBtnClick={() => handleModalCtaClick("sendMoney")}
-        ctaText="Proceed"
-      />
-      <KeypadModal
-        showModal={showRequestMoneyKeypad}
-        closeModal={() => setRequestMoneyKeypadModal(false)}
-        modalTitle="Request Money"
-        handleBtnClick={() => handleModalCtaClick("requestMoney")}
-        ctaText="Proceed"
-      />
+      {showWithdrawKeypadModal && (
+        <KeypadModal
+          showModal={showWithdrawKeypadModal}
+          closeModal={() => setWithdrawKeypadModal(false)}
+          modalTitle="Withdraw to Bank"
+          handleBtnClick={() => handleModalCtaClick("withdraw-amount")}
+          ctaText="Select Account"
+        />
+      )}
+      {showSendMoneyKeypadModal && (
+        <KeypadModal
+          showModal={showSendMoneyKeypadModal}
+          closeModal={() => setSendMoneyKeypadModal(false)}
+          modalTitle="Send Money"
+          handleBtnClick={() => handleModalCtaClick("sendMoney")}
+          ctaText="Proceed"
+        />
+      )}
+      {showRequestMoneyKeypad && (
+        <KeypadModal
+          showModal={showRequestMoneyKeypad}
+          closeModal={() => setRequestMoneyKeypadModal(false)}
+          modalTitle="Request Money"
+          handleBtnClick={() => handleModalCtaClick("requestMoney")}
+          ctaText="Proceed"
+        />
+      )}
       <BillPaymentTransactionDetailsModal />
     </WalletpageDefaultWrapper>
   );

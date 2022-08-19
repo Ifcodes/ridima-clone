@@ -35,11 +35,11 @@ const ConfirmTvCablePurchaseModal = ({
     <Modal
       showModal={openModal}
       closeModal={() => setShowConfirmTvCableModal(false)}
-      showCloseBtn
-      cardHeight="65vh"
+      cardHeight="28rem"
+      mobileCardHeight="28rem"
       width="25%"
     >
-      <ConfirmModalWrapper>
+      <ConfirmModalWrapper height="28rem">
         <H1>Confirm</H1>
         <div className="content">
           <span className="account-name">

@@ -23,8 +23,9 @@ const SelectCableServiceProviderModal = () => {
         selectorList={["Startimes", "GoTv", "DSTV"]}
         onServiceClick={handleProviderSelection}
         title="Select Service Provider"
-        modalHeight="65vh"
-        mobileModalHeight="45%"
+        modalHeight="25rem"
+        mobileModalHeight="25rem"
+        modalContentHeight="25rem"
       />
     </div>
   );

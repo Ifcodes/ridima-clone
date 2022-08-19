@@ -31,7 +31,6 @@ const Loginpage = () => {
 
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("submitted");
     navigate("/home");
   };
   return (

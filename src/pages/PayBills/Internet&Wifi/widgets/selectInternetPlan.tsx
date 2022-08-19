@@ -38,8 +38,10 @@ const SelectInteretPlanModal = () => {
         selectorList={internetPlans}
         onServiceClick={handleSelection}
         title="Select Internet Plan"
-        modalHeight="90vh"
-        modalWidth="28%"
+        modalHeight="40rem"
+        modalWidth="29%"
+        modalContentHeight="40rem"
+        mobileModalHeight="40rem"
       />
     </div>
   );

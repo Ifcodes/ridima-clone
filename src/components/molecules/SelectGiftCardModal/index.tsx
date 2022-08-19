@@ -31,8 +31,8 @@ const SelectGiftCardModal = () => {
     <Modal
       showModal={openModal}
       closeModal={() => setShowSelectGiftCardModal(false)}
-      showCloseBtn
-      cardHeight="85%"
+      cardHeight="40rem"
+      mobileCardHeight="40rem"
     >
       <SelectGiftCardModalWrapper>
         <H1>Select Giftcard</H1>

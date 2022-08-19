@@ -12,6 +12,17 @@ const Container = styled.div`
   border-radius: 0.625rem;
   cursor: pointer;
 
+  .icon-wrap {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   .text-content {
     display: block;
     margin-left: 1.5rem;
@@ -25,8 +36,16 @@ const Container = styled.div`
     }
 
     span {
-      font-size: 0.875rem;
+      font-size: 0.8rem;
       color: white;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .text-content {
+      span {
+        font-size: 2vw;
+      }
     }
   }
 `;

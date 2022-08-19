@@ -111,7 +111,6 @@ const Profile = () => {
           ))}
         </div>
       </AccountPageWrapper>
-      <Logout />
     </DashboardLayout>
   );
 };

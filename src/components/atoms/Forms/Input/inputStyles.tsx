@@ -80,6 +80,26 @@ export const InputWrapper = styled.div<InputStyleProps>`
     }
   }
 
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+  input[type="date"] {
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
   @media screen and (max-width: 640px) {
     max-width: 100%;
     padding: 0.85rem 1rem 0.85rem 1.5rem;

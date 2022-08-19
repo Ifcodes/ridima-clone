@@ -39,6 +39,9 @@ const SelectDataPlanModal = () => {
         selectorList={dataPlans}
         onServiceClick={handleSelection}
         title="Select Data Plan"
+        modalContentHeight="38rem"
+        modalHeight="38rem"
+        mobileModalHeight="38rem"
       />
     </div>
   );

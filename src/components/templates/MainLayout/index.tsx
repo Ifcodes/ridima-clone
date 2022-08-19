@@ -37,7 +37,7 @@ const DashboardLayout = ({
     >
       <DashboardSideNav />
       <main>
-        <TopNav />
+        {/* <TopNav /> */}
         <div className="child-cont">{children}</div>
         <MobileBottomNav />
       </main>

@@ -51,6 +51,8 @@ const ChangePasswordModal = () => {
       showCloseBtn
       handleCloseBtn={() => setChangePasswordModal(false)}
       width="27%"
+      cardHeight="35rem"
+      mobileCardHeight="35rem"
     >
       <ChangePasswordModalWrapper>
         <H1>Reset Password</H1>

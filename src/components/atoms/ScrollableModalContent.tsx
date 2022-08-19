@@ -1,8 +1,11 @@
 import styled, { css } from "styled-components";
 
-export const ScrollableModalContent = styled.div<{ mt?: string }>`
+export const ScrollableModalContent = styled.div<{
+  mt?: string;
+  height?: string;
+}>`
   width: 90%;
-  height: 90%;
+  height: ${({ height }) => height || "90%"};
   padding: 0 1rem;
   margin: 1rem auto;
   overflow-y: auto;

@@ -97,6 +97,8 @@ const ChangePinModal = () => {
       closeModal={() => setChangePinModal(false)}
       showCloseBtn
       width="27%"
+      cardHeight="35rem"
+      mobileCardHeight="35rem"
     >
       <ChangePinWrapper>
         <div className="pin-modal-content">

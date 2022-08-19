@@ -46,7 +46,13 @@ const AddBankAccountModal = ({
   }, [formField.accountNumber]);
 
   return (
-    <Modal showModal={showModal} closeModal={() => setAddAccountModal(false)}>
+    <Modal
+      showModal={showModal}
+      closeModal={() => setAddAccountModal(false)}
+      width="25%"
+      cardHeight="30rem"
+      mobileCardHeight="30rem"
+    >
       <AddBankAccountWrapper>
         <div className="text-form-content">
           <div className="title-cont">

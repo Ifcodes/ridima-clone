@@ -19,6 +19,8 @@ import ReverseMobileBtnBg from "../vectors/ReverseMobileBtnBg";
 export type ButtonProps = {
   width?: string;
   height?: string;
+  fs?: string;
+  fw?: string;
   disabled?: boolean;
   btnText?: string;
   mt?: string;
@@ -56,6 +58,8 @@ const Button = ({
   btnType,
   mt,
   mb,
+  fw,
+  fs,
   suffix,
   btnPrefix,
   hideBg = false,
@@ -77,6 +81,8 @@ const Button = ({
       disabled={disabled}
       mt={mt}
       mb={mb}
+      fs={fs}
+      fw={fw}
       type={btnType}
       hideBg={hideBg}
       textColor={textColor}

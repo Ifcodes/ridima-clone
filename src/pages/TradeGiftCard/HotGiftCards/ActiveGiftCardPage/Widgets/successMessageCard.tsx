@@ -27,13 +27,19 @@ const SellGcSuccessMessageCard = () => {
     return;
   };
 
+  const handleCloseModal = () => {
+    resetAllHotGiftCardState();
+    setOpenTradeSuccessMessage(false);
+  };
+
   return (
     <Modal
       showModal={openModal}
       closeModal={() => setOpenTradeSuccessMessage(false)}
+      handleCloseBtn={handleCloseModal}
       showCloseBtn
-      cardHeight="90%"
-      mobileCardHeight="85%"
+      cardHeight="40rem"
+      mobileCardHeight="35rem"
     >
       <SuccessMessageWrapper>
         <div className="msg-modal-content">

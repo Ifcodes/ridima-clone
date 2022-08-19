@@ -12,9 +12,14 @@ export const KeypadModalWrapper = styled.div`
   align-items: center;
   padding: 0.5rem 2rem;
 
+  h1 {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
   .input-cont {
     width: 100%;
-    /* margin-top: 1rem; */
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,6 +51,12 @@ export const KeypadModalWrapper = styled.div`
       cursor: pointer;
     }
   }
+
+  @media screen and (max-width: 640px) {
+    .digits-cont {
+      width: 100%;
+    }
+  }
 `;
 
 export const DigitWrapper = styled.div<{ isActive?: boolean }>`
@@ -55,10 +66,16 @@ export const DigitWrapper = styled.div<{ isActive?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: ${(props) => props.theme.colors.deepPurple};
   background-color: ${({ isActive, theme }) =>
     isActive ? theme.colors.grey5 : ""};
   font-weight: 500;
   cursor: pointer;
+
+  /* @media screen and (max-width: 640px) {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  } */
 `;

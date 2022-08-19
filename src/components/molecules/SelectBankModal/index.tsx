@@ -41,10 +41,11 @@ const SelectBankModal = ({
     <Modal
       showModal={showModal}
       closeModal={() => setShowSelectBankModal(false)}
-      showCloseBtn
       handleCloseBtn={() => closeModal()}
+      cardHeight="38rem"
+      mobileCardHeight="38rem"
     >
-      <ScrollableModalContent>
+      <ScrollableModalContent height="36rem">
         {banks.map((bank) => (
           <ListItemWrapper
             key={bank}

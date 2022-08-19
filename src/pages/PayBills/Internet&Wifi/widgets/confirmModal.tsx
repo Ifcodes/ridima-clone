@@ -30,12 +30,11 @@ const ConfirmInternetPurchaseModal = ({
     <Modal
       showModal={openModal}
       closeModal={() => setShowConfirmWifiPurchaseModal(false)}
-      showCloseBtn
-      cardHeight="55%"
-      mobileCardHeight="55%"
+      cardHeight="30rem"
+      mobileCardHeight="30rem"
       width="25%"
     >
-      <ConfirmModalWrapper>
+      <ConfirmModalWrapper height="30rem">
         <H1>Confirm</H1>
         <div className="content">
           <span className="account-name">

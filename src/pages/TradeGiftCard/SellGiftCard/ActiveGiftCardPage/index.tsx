@@ -186,75 +186,77 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
 
   return (
     <ActiveGiftCardWrapper>
-      <div className="stepper-wrap">
-        <StepperComponent
-          steps={steps}
-          activeStep={currentStage + 1}
-          toggleSteps={handleStepClick}
-        />
-      </div>
-      <div className="stepper-wrap-mobile">
-        <StepperComponent
-          mobileSteps={mobileSteps}
-          activeStep={currentStage + 1}
-          toggleSteps={handleStepClick}
-        />
-      </div>
+      <div className="active-card-cont-wrap">
+        <div className="stepper-wrap">
+          <StepperComponent
+            steps={steps}
+            activeStep={currentStage + 1}
+            toggleSteps={handleStepClick}
+          />
+        </div>
+        <div className="stepper-wrap-mobile">
+          <StepperComponent
+            mobileSteps={mobileSteps}
+            activeStep={currentStage + 1}
+            toggleSteps={handleStepClick}
+          />
+        </div>
 
-      {currentStage === 3 && <TradeSummary />}
-      {currentStage !== 3 && (
-        <div className="card-img-wrap">
-          {selectedCarditems.activeCardImg && (
-            <selectedCarditems.activeCardImg />
+        {currentStage === 3 && <TradeSummary />}
+        {currentStage !== 3 && (
+          <div className="card-img-wrap">
+            {selectedCarditems.activeCardImg && (
+              <selectedCarditems.activeCardImg />
+            )}
+          </div>
+        )}
+        {currentStage === 2 && (
+          <UploadImage
+            handleEcodeInput={handleEcodeInputChange}
+            handleFormChange={handleImgUploadFormChange}
+            formFields={imgUploadFormData}
+            removeImg={removeImg}
+          />
+        )}
+        <div className="selector">
+          {currentStage === 1 && (
+            <SelectSubCategory
+              formField={selectedCategory}
+              handleChange={handleSubCategoryFormChange}
+            />
+          )}
+
+          {currentStage === 0 && (
+            <Selector
+              selectorTitle={
+                selectedCurrency.currency
+                  ? `${selectedCurrency.currency} (${selectedCurrency.code})`
+                  : "Select currency"
+              }
+              onClick={() => setShowCurrencyModal(true)}
+            />
           )}
         </div>
-      )}
-      {currentStage === 2 && (
-        <UploadImage
-          handleEcodeInput={handleEcodeInputChange}
-          handleFormChange={handleImgUploadFormChange}
-          formFields={imgUploadFormData}
-          removeImg={removeImg}
-        />
-      )}
-      <div className="selector">
-        {currentStage === 1 && (
-          <SelectSubCategory
-            formField={selectedCategory}
-            handleChange={handleSubCategoryFormChange}
-          />
-        )}
-
-        {currentStage === 0 && (
-          <Selector
-            selectorTitle={
-              selectedCurrency.currency
-                ? `${selectedCurrency.currency} (${selectedCurrency.code})`
-                : "Select currency"
-            }
-            onClick={() => setShowCurrencyModal(true)}
-          />
+        {currentStage === 0 && selectedCurrency.currency && (
+          <>
+            <div className="card-types-heading">
+              <HorizontalLinedTitle text="Select GiftCard Type" />
+            </div>
+            <div className="card-types-cont">
+              {giftCardTypes.map((card, index) => (
+                <CardTypeCard
+                  key={card.cardTitle}
+                  icon={<card.cardIcon />}
+                  title={card.cardTitle}
+                  onCardClick={() => handleCardTypeClick(card.cardTitle, index)}
+                  isActive={selectedCardType.index === index}
+                />
+              ))}
+            </div>
+          </>
         )}
       </div>
-      {currentStage < 2 && (
-        <>
-          <div className="card-types-heading">
-            <HorizontalLinedTitle text="Select GiftCard Type" />
-          </div>
-          <div className="card-types-cont">
-            {giftCardTypes.map((card, index) => (
-              <CardTypeCard
-                key={card.cardTitle}
-                icon={<card.cardIcon />}
-                title={card.cardTitle}
-                onCardClick={() => handleCardTypeClick(card.cardTitle, index)}
-                isActive={selectedCardType.index === index}
-              />
-            ))}
-          </div>
-        </>
-      )}
-      <div className="btn-cont">
+      <div className="tradecard-btn-cont">
         <Button
           btnText={currentStage === 3 ? "Sell Giftcard" : "Proceed"}
           disabled={
@@ -265,8 +267,6 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
               : !selectedCurrency
           }
           width="27rem"
-          mt="5rem"
-          mb="2rem"
           onClick={() => onProceed()}
         />
       </div>

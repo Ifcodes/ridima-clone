@@ -23,7 +23,6 @@ const DatefilterModal = () => {
   };
 
   const applyDateFilter = () => {
-    console.log(dateSelected);
     setShowDatePicker(false);
   };
   return (
@@ -31,7 +30,8 @@ const DatefilterModal = () => {
       showModal={showModal}
       closeModal={() => setShowDatePicker(false)}
       width="28%"
-      mobileCardHeight="70%"
+      mobileCardHeight="30rem"
+      cardHeight="35rem"
     >
       <DateFilterWrapper>
         <H1>Filter Date</H1>

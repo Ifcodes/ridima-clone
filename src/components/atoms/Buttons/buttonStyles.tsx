@@ -3,9 +3,9 @@ import { ButtonProps } from ".";
 
 export const ButtonWrapper = styled.button<ButtonProps>`
   width: ${(props) => props.width || "100%"};
-  font-size: 1rem;
+  font-size: ${(props) => props.fs || "1rem"};
   font-family: "cera_prolight";
-  font-weight: 700;
+  font-weight: ${(props) => props.fw || "700"};
   color: ${(props) =>
     props.textColor
       ? props.textColor
@@ -52,17 +52,6 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   .button-Bg {
     max-width: 100%;
     visibility: ${(props) => (props.hideBg ? "hidden" : "visible")};
-  }
-
-  @media screen and (max-width: 1007px) {
-    span {
-      font-size: ${({ menuBtn }) => (menuBtn ? "1rem" : "")};
-
-      svg {
-        width: 70%;
-        height: 70%;
-      }
-    }
   }
 
   @media screen and (max-width: 1007px) {

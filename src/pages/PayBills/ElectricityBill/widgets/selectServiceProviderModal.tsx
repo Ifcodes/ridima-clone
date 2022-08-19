@@ -43,8 +43,10 @@ const SelectServiceProviderModal = () => {
         selectorList={serviceProviders}
         onServiceClick={handleSelection}
         title="Select Service Provider"
-        modalHeight="90vh"
-        modalWidth="34%"
+        modalHeight="40rem"
+        mobileModalHeight="40rem"
+        modalContentHeight="40rem"
+        modalWidth="28%"
       />
     </div>
   );

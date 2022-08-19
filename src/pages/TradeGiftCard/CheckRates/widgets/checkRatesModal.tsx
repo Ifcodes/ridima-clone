@@ -23,7 +23,8 @@ const CheckRatesModal = () => {
     <Modal
       showModal={showModal}
       closeModal={() => setCheckRatesModal(false)}
-      // mobileCardHeight={"40vh"}
+      cardHeight="40rem"
+      mobileCardHeight="30rem"
     >
       <CheckRatesModalWrapper>
         <div className="content">

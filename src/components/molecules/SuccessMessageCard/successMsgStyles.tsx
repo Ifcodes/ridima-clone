@@ -21,7 +21,7 @@ export const SuccessMessageWrapper = styled.div<{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: ${(props) => (props.errorMessage ? "3rem 0 0" : "")};
+    margin: ${(props) => (props.errorMessage ? "2rem 0 0" : "")};
   }
 
   .img-cont {

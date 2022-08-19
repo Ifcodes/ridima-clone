@@ -31,7 +31,7 @@ const HotGiftCards = () => {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout mobileChildPadding="0">
       <HotGiftCardsWrapper>
         <div className="stage-title-wrapper">
           <StageTitleWrapper darkBgShade>

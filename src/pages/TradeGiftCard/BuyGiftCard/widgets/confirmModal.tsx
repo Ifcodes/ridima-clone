@@ -56,17 +56,17 @@ const ConfirmModal = () => {
       closeModal={() => closeModal()}
       cardHeight={
         stage === 1 && successfull
-          ? ""
+          ? "40rem"
           : stage === 1 && !successfull
-          ? ""
-          : "45%"
+          ? "40rem"
+          : "25rem"
       }
       mobileCardHeight={
         stage === 1 && successfull
-          ? "85%"
+          ? "41rem"
           : stage === 1 && !successfull
-          ? "65%"
-          : "45%"
+          ? "40rem"
+          : "15rem"
       }
       width="28%"
       showCloseBtn

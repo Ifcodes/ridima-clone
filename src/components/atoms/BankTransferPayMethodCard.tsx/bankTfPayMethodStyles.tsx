@@ -6,7 +6,7 @@ export const BankTfPayMethodWrapper = styled.div`
   background-color: #f6f6f6;
   border-radius: 0.625rem;
   border: 1px solid rgba(63, 30, 75, 0.1);
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1rem;
 
   .card-heading {
     display: flex;
@@ -41,6 +41,15 @@ export const BankTfPayMethodWrapper = styled.div`
       font-size: 0.875rem;
       font-weight: 500;
       color: ${(props) => props.theme.colors.deepPurple};
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .detail {
+      .value {
+        font-size: 2vw;
+        font-weight: 500;
+      }
     }
   }
 `;

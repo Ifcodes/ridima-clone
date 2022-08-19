@@ -2,6 +2,9 @@ import React, { ReactNode, useRef, useState } from "react";
 import { ModalWrapper } from "./styledModal";
 import { useClickAway } from "react-use";
 import ModalFooterDesign from "../../atoms/vectors/modalFooterDesign";
+import CloseIcon from "../../atoms/CloseIcon";
+import { CircledBackground } from "../../atoms/CircledBackground";
+import CloseIconNoBg from "../../atoms/vectors/CloseIconNoBg";
 
 type ModalProps = {
   children: ReactNode;
@@ -30,7 +33,7 @@ const Modal = ({
 }: ModalProps) => {
   const clickRef = useRef(null);
 
-  useClickAway(clickRef, () => {
+  useClickAway(clickRef, (e) => {
     closeModal();
   });
 
@@ -46,9 +49,22 @@ const Modal = ({
     >
       <div className="modal-card" ref={clickRef}>
         {showCloseBtn && (
-          <div className="closeModal-btn" onClick={() => handleCloseBtn()}>
-            <hr />
-          </div>
+          <>
+            {/* <div className="closeModal-btn" onClick={() => handleCloseBtn()}>
+              <hr />
+            </div> */}
+            <div className="closeicon-cont" onClick={() => handleCloseBtn()}>
+              <CircledBackground
+                width="3rem"
+                height="3rem"
+                svgWidth="60%"
+                mobileWidth="2rem"
+                mobileHeight="2rem"
+              >
+                <CloseIconNoBg />
+              </CircledBackground>
+            </div>
+          </>
         )}
         {children}
         {showModalFooterDesign && (

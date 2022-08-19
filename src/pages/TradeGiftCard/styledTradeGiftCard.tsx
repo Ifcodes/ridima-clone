@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const TradeGiftCardWrapper = styled.div`
   width: 100%;
+  height: 100vh;
   overflow: auto;
   font-size: 1rem;
 
@@ -49,7 +50,7 @@ export const SellGiftCardWrapper = styled.div<{ stage?: number }>`
 
   .main-content {
     max-width: 100%;
-    height: 80%;
+    height: 90%;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -57,12 +58,17 @@ export const SellGiftCardWrapper = styled.div<{ stage?: number }>`
     padding: ${(props) =>
       props.stage === 2 ? "2rem 3rem 0" : "2rem 3rem 12rem"};
 
+    .title-cont {
+      padding: 0 1.5rem;
+    }
+
     .content {
       max-width: 100%;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
       margin-top: 2rem;
       grid-gap: 2rem;
+      padding: 1rem 1.5rem;
     }
   }
 
@@ -77,8 +83,9 @@ export const SellGiftCardWrapper = styled.div<{ stage?: number }>`
 
     .main-content {
       width: 100%;
+      height: 85%;
       align-items: center;
-      padding: 1rem 1rem 2rem;
+      padding: 1rem 0;
 
       .title-cont {
         align-self: flex-start;
@@ -98,11 +105,23 @@ export const ActiveGiftCardWrapper = styled.div<{
   padding?: string;
   scrollOnMobile?: boolean;
 }>`
+  display: flex;
+  flex-direction: column;
   padding: ${(props) => props.padding || ""};
+  height: 100%;
+  padding: 1rem;
+
+  .active-card-cont-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
   .stepper-wrap {
     width: 100%;
-    margin-bottom: 3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .stepper-wrap-mobile {
@@ -126,22 +145,36 @@ export const ActiveGiftCardWrapper = styled.div<{
   }
 
   .card-types-heading {
-    margin: 2.5rem 0 1.5rem;
+    margin: 2.5rem 0 0;
   }
 
   .card-types-cont {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(7.125rem, 8rem));
-    margin-top: 2rem;
+    margin: 1.5rem 0;
     grid-gap: 1rem;
+  }
+
+  .tradecard-btn-cont {
+    justify-self: flex-end;
+    margin-top: 2rem;
   }
 
   @media screen and (max-width: 640px) {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 5.5rem;
+    justify-content: space-between;
+    overflow-y: auto;
+
+    .active-card-cont-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .stepper-wrap {
       display: none;
@@ -153,15 +186,15 @@ export const ActiveGiftCardWrapper = styled.div<{
       margin-bottom: 2rem;
     }
 
-    .card-img-wrap {
-      width: 100%;
-    }
-
     .selector {
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    .card-img-wrap {
+      width: 100;
     }
 
     .card-types-heading {
@@ -174,8 +207,9 @@ export const ActiveGiftCardWrapper = styled.div<{
       justify-content: center;
     }
 
-    .btn-cont {
+    .tradecard-btn-cont {
       width: 100%;
+      max-width: 27rem;
 
       button {
         margin: 4rem 0 0;
@@ -315,10 +349,6 @@ export const UploadImageWrapper = styled.div`
 `;
 
 export const TradeSummaryWrapper = styled.div`
-  .hr-line {
-    margin-top: 2rem;
-  }
-
   .card-wrapper {
     margin-top: 1.5rem;
   }
@@ -339,7 +369,7 @@ export const CardTermsModalWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem 2rem;
+  padding: 1rem 2rem 0;
 
   .title {
     width: 23rem;
@@ -352,13 +382,14 @@ export const CardTermsModalWrapper = styled.div`
 
   .btn-cont {
     width: 100%;
+    margin-top: 6rem;
   }
 
   @media screen and (max-width: 640px) {
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    padding: 1rem 1.3rem 4rem;
+    padding: 1rem 1.3rem;
 
     .title {
       width: 100%;
@@ -366,6 +397,10 @@ export const CardTermsModalWrapper = styled.div`
       flex-direction: column;
       align-items: center;
       text-align: center;
+    }
+
+    .btn-cont {
+      margin-top: 4rem;
     }
   }
 `;

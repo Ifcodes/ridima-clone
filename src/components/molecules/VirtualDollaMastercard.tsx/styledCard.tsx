@@ -61,9 +61,8 @@ export const VirtualDollarCardWrapper = styled.div`
       display: none;
     }
 
-    .description {
+    .create-fee-text {
       color: ${(props) => props.theme.colors.grey2};
-      margin-top: 1.5rem;
     }
   }
 
@@ -92,10 +91,19 @@ export const VirtualDollarCardWrapper = styled.div`
         display: none;
       }
 
+      p {
+        margin-top: 0.5rem;
+        font-size: 2.5vw;
+      }
+
       .btn-coming-soon {
         display: flex;
-        width: 10rem;
+        width: 100%;
         max-width: 100%;
+
+        /* button {
+          margin-top: 0.5rem;
+        } */
       }
 
       .mobile-btn-create-card {
@@ -107,6 +115,11 @@ export const VirtualDollarCardWrapper = styled.div`
         flex-direction: column-reverse;
         justify-content: flex-start;
         align-items: flex-start;
+        /* margin-top: 0; */
+
+        p {
+          margin-bottom: 0;
+        }
 
         .v-dollar-title-mobile {
           display: flex;
@@ -120,7 +133,7 @@ export const VirtualDollarCardWrapper = styled.div`
           }
 
           .mastercard-title {
-            margin: 0 0 1rem;
+            margin: 0 0 0.5rem;
           }
         }
 
@@ -147,6 +160,26 @@ export const VirtualDollarCardWrapper = styled.div`
       svg {
         width: 100%;
         height: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .card-content {
+      .title-cont {
+        .v-dollar-title-mobile {
+          font-size: 3vw;
+        }
+      }
+
+      .create-fee-text {
+        font-size: 3vw;
+      }
+
+      .btn-coming-soon {
+        button {
+          margin-top: 0.5rem;
+        }
       }
     }
   }

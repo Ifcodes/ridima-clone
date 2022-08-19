@@ -28,11 +28,11 @@ export const ModalWrapper = styled.div<{
   display: ${(props) => (props.openModal ? "flex" : "none")};
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 1000;
 
   .modal-card {
     width: ${(props) => props.width || "30%"};
-    height: ${(props) => props.cardHeight || "75%"};
+    min-height: ${(props) => props.cardHeight || "35%"};
     max-height: 40rem;
     max-width: ${(props) => props.maxWidth || "37rem"};
     background-color: white;
@@ -40,14 +40,25 @@ export const ModalWrapper = styled.div<{
       props.showModalFooter ? "2.5rem 2.5rem 0 0" : "2.5rem"};
     animation: ${slideIn} 700ms ease-in-out 1;
     overflow-y: ${(props) => !props.showModalFooter && "hidden"};
+    padding-top: ${({ showCloseBtn }) => showCloseBtn && "2rem"};
     position: relative;
+
+    .closeicon-cont {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     .modal-footer {
       position: absolute;
-      bottom: -1.5rem;
+      bottom: -1rem;
       left: 0;
       width: 100%;
-      z-index: 150;
+      z-index: 1150;
     }
   }
 
@@ -55,6 +66,7 @@ export const ModalWrapper = styled.div<{
     width: 100%;
     display: ${(props) => (props.showCloseBtn ? "flex" : "none")};
     justify-content: center;
+    /* margin-bottom: ${({ showCloseBtn }) => showCloseBtn && "2rem"}; */
 
     hr {
       width: 3rem;
@@ -65,27 +77,12 @@ export const ModalWrapper = styled.div<{
     }
   }
 
-  @media screen and (max-width: 1007px) {
-    .modal-card {
-      width: 85%;
-      max-width: 33rem;
-      height: 70%;
-      max-height: 48rem;
-    }
-  }
-
   @media screen and (max-width: 640px) {
     .modal-card {
       width: 80%;
       max-width: 25rem;
       max-height: 40rem;
-      height: ${(props) => props.mobileCardHeight || "65%"};
-    }
-  }
-
-  @media screen and (max-height: 640px) {
-    .modal-card {
-      height: 75%;
+      min-height: ${(props) => props.mobileCardHeight || "45%"};
     }
   }
 `;

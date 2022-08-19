@@ -35,6 +35,8 @@ const SelectSubCategoryModal = ({
       closeModal={closeModal}
       width="28%"
       maxWidth="30%"
+      cardHeight="40rem"
+      mobileCardHeight="40rem"
       handleCloseBtn={() => handleCloseBtn()}
       showCloseBtn
     >

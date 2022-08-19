@@ -5,9 +5,11 @@ import { ScrollableModalContent } from "../../atoms/ScrollableModalContent";
 import { H1 } from "../../atoms/Typography";
 import Modal from "../Modal";
 
-const Content = styled.div`
-  height: 100%;
+const Content = styled.div<{ modalContentHeight?: string }>`
+  height: ${({ modalContentHeight }) => modalContentHeight || "100%"};
   padding-bottom: 4rem;
+  padding-top: 1rem;
+
   h1 {
     text-align: center;
     color: ${(props) => props.theme.colors.deepPurple};
@@ -20,6 +22,7 @@ type ServiceModalProps = {
   modalHeight?: string;
   mobileModalHeight?: string;
   modalWidth?: string;
+  modalContentHeight?: string;
   title?: string;
   selectedOption?: string;
   closeModal?: Function;
@@ -33,6 +36,7 @@ const SelectorModal = ({
   title,
   selectorList,
   modalHeight,
+  modalContentHeight,
   modalWidth,
   mobileModalHeight,
   closeModal = () => {},
@@ -47,9 +51,8 @@ const SelectorModal = ({
       handleCloseBtn={handleCloseBtn}
       mobileCardHeight={mobileModalHeight}
       width={modalWidth}
-      showCloseBtn
     >
-      <Content>
+      <Content modalContentHeight={modalContentHeight}>
         <H1>{title}</H1>
         <ScrollableModalContent>
           {selectorList &&
