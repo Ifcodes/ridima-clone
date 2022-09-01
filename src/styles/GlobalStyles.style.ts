@@ -26,7 +26,6 @@ const GlobalStyles = createGlobalStyle`
   html,
   body{
     width: 100%;
-    overflow: hidden;
     position: relative;
     margin: 0;
     padding: 0;
@@ -43,6 +42,7 @@ const GlobalStyles = createGlobalStyle`
     user-select: none;
 
     @media screen and (max-width: 640px) {
+      height: 100vh;
       font-size: 0.8rem;
     }
   }

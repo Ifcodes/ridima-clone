@@ -177,7 +177,7 @@ const ActiveGiftCard = () => {
   };
 
   return (
-    <ActiveGiftCardWrapper scrollOnMobile>
+    <ActiveGiftCardWrapper>
       <div className="active-card-cont-wrap">
         <div className="stepper-wrap">
           <StepperComponent

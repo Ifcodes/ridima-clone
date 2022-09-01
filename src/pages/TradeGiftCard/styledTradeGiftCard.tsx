@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const TradeGiftCardWrapper = styled.div`
   width: 100%;
   height: 100vh;
-  overflow: auto;
-  font-size: 1rem;
+  overflow: hidden;
+  /* font-size: 1rem; */
 
   .default {
     display: grid;
@@ -14,11 +14,18 @@ export const TradeGiftCardWrapper = styled.div`
   }
 
   @media screen and (max-width: 640px) {
+    height: 90vh;
+
+    .tabs-wrapper {
+      padding: 1.5rem;
+    }
+
     .default {
-      height: 80%;
-      padding-bottom: 12rem;
-      margin-top: 1rem;
+      width: 100%;
+      height: 100%;
+      padding: 0 1.5rem 4rem;
       overflow-y: auto;
+      margin-top: 0;
       display: block;
     }
   }
@@ -54,7 +61,6 @@ export const SellGiftCardWrapper = styled.div<{ stage?: number }>`
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     padding: ${(props) =>
       props.stage === 2 ? "2rem 3rem 0" : "2rem 3rem 12rem"};
 
@@ -83,9 +89,9 @@ export const SellGiftCardWrapper = styled.div<{ stage?: number }>`
 
     .main-content {
       width: 100%;
-      height: 85%;
+      height: 100%;
       align-items: center;
-      padding: 1rem 0;
+      padding: 1rem 0 5rem;
 
       .title-cont {
         align-self: flex-start;
@@ -95,7 +101,7 @@ export const SellGiftCardWrapper = styled.div<{ stage?: number }>`
       .content {
         width: 100%;
         grid-column-gap: 3rem;
-        margin-bottom: 12rem;
+        padding-bottom: 18rem;
       }
     }
   }
@@ -105,22 +111,21 @@ export const ActiveGiftCardWrapper = styled.div<{
   padding?: string;
   scrollOnMobile?: boolean;
 }>`
+  min-height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: ${(props) => props.padding || ""};
-  height: 100%;
   padding: 1rem;
 
   .active-card-cont-wrap {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
   }
 
   .stepper-wrap {
     width: 100%;
-    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
 
@@ -156,7 +161,6 @@ export const ActiveGiftCardWrapper = styled.div<{
   }
 
   .tradecard-btn-cont {
-    justify-self: flex-end;
     margin-top: 2rem;
   }
 
@@ -168,6 +172,7 @@ export const ActiveGiftCardWrapper = styled.div<{
     align-items: center;
     justify-content: space-between;
     overflow-y: auto;
+    padding-bottom: 4rem;
 
     .active-card-cont-wrap {
       width: 100%;
@@ -200,6 +205,7 @@ export const ActiveGiftCardWrapper = styled.div<{
     .card-types-heading {
       width: 100%;
     }
+
     .card-types-cont {
       width: 100%;
       grid-template-columns: repeat(auto-fill, minmax(7.125rem, 1fr));
@@ -210,10 +216,11 @@ export const ActiveGiftCardWrapper = styled.div<{
     .tradecard-btn-cont {
       width: 100%;
       max-width: 27rem;
+      margin-bottom: 2.5rem;
 
-      button {
+      /* button {
         margin: 4rem 0 0;
-      }
+      } */
     }
   }
 `;
@@ -269,8 +276,13 @@ export const SubCategoryWrapper = styled.div<{
 
   @media screen and (max-width: 640px) {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+
     .amount-field-cont {
       width: 100%;
+      max-width: 27rem;
+      align-self: center;
     }
 
     .subcat-cont {

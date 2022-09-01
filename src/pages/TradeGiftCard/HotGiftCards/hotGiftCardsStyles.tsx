@@ -4,7 +4,7 @@ export const HotGiftCardsWrapper = styled.div`
   width: 100%;
 
   @media screen and (max-width: 640px) {
-    height: 80vh;
+    height: 90vh;
 
     .stage-title-wrapper {
       margin: 1.5rem;
@@ -38,7 +38,7 @@ export const HotGiftCardDefaultWrapper = styled.div`
 
   @media screen and (max-width: 640px) {
     width: 100%;
-    padding: 0 1.5rem 6rem;
+    padding: 0 1.5rem 4rem;
 
     .list-wrapper {
       padding-bottom: 4rem;

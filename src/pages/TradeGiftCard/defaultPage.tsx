@@ -25,9 +25,9 @@ const TradeGiftCardDefaultPage = ({
           cardTextWidth={
             content.cardTitle === "Check Gift Card Rates" ? "12rem" : ""
           }
-          mobileTextWidth={
-            content.cardTitle === "Check Gift Card Rates" ? "8rem" : ""
-          }
+          // mobileTextWidth={
+          //   content.cardTitle === "Check Gift Card Rates" ? "8rem" : ""
+          // }
           imgBottomPosition={
             content.cardTitle === "Buy Gift Cards"
               ? "-7rem"

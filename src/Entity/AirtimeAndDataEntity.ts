@@ -4,6 +4,7 @@ export const airtimeDataStates = entity({
   selectedService: "",
   selectedNetwork: "",
   selectedDataPlan: "",
+  selectedDataAmount: 0,
   showAirtimeSuccessMsg: false,
   showDataRefillSuccessMsg: false,
   showServicesModal: false,
@@ -31,6 +32,10 @@ export const setSelectedDataPlan = (val: string) => {
   airtimeDataStates.set((prev) => ({ ...prev, selectedDataPlan: val }));
 };
 
+export const setSelectedDataAmount = (val: any) => {
+  airtimeDataStates.set((prev) => ({ ...prev, selectedDataAmount: val }));
+};
+
 export const setShowNetworksModal = (val: boolean) => {
   airtimeDataStates.set((prev) => ({ ...prev, showSelectNetworkModal: val }));
 };
@@ -49,6 +54,7 @@ export const resetAirtimeDataState = () => {
     selectedService: "",
     selectedNetwork: "",
     selectedDataPlan: "",
+    selectedDataAmount: 0,
     showAirtimeSuccessMsg: false,
     showDataRefillSuccessMsg: false,
     showServicesModal: false,

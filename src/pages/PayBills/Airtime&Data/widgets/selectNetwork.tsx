@@ -13,7 +13,6 @@ const SelectNetworkModal = () => {
   const selectedNetwork = airtimeDataStates.use().selectedNetwork;
 
   const handleSelection = (network: string) => {
-    console.log("selected network");
     setSelectedNetwork(network);
     setShowNetworksModal(false);
   };

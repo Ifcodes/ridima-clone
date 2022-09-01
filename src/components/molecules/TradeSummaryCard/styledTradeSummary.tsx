@@ -28,6 +28,7 @@ export const TradeSummaryWrapper = styled.div`
       span {
         font-size: 0.875rem;
         color: ${(props) => props.theme.colors.grey3};
+        line-height: 24px;
       }
     }
   }

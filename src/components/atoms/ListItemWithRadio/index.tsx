@@ -9,7 +9,7 @@ const ItemWrapper = styled.div<{ mt?: string }>`
   align-items: center;
   border-bottom: 1px solid #f2f2f2;
   padding: 2rem 1rem 1rem;
-  /* margin-top: ${(props) => props.mt || "1rem"}; */
+
   cursor: pointer;
 
   :hover {
@@ -18,6 +18,7 @@ const ItemWrapper = styled.div<{ mt?: string }>`
 
   .text {
     color: ${(props) => props.theme.colors.grey2};
+    margin-right: 1rem;
   }
 `;
 

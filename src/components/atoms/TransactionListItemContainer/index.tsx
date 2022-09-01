@@ -51,7 +51,7 @@ const TransactionDetailContainer = ({
               ? "-"
               : ""}{" "}
             {currency}
-            {amount}
+            {amount?.toLocaleString()}
           </span>
           <span className="status-mobile">{transactionStatus}</span>
         </div>

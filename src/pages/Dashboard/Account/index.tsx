@@ -23,7 +23,7 @@ const Profile = () => {
   const actions = [
     { text: "Terms of Service", icon: SaveIcon },
     { text: "Customer Support", icon: MessageNotificationIcon },
-    { text: "Share App", icon: LikeDislikeIcon },
+    { text: "Download Mobile App", icon: LikeDislikeIcon },
   ];
   const mobileActions = [
     { text: "Security", icon: ShieldIcon, location: "/security" },

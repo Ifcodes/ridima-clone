@@ -27,6 +27,7 @@ const AirtimeAndData = () => {
   const selectedService = airtimeDataState.selectedService;
   const selectedNetwork = airtimeDataState.selectedNetwork;
   const selectedPlan = airtimeDataState.selectedDataPlan;
+  const selectedDataAmount = airtimeDataState.selectedDataAmount;
   const [readOnly, setReadOnly] = useState(false);
   const [airtimeFormField, setAirtimeFormField] = useState({
     phoneNumber: "",
@@ -36,6 +37,12 @@ const AirtimeAndData = () => {
   const airtimeFormIsFilled = Object.values(airtimeFormField).every(
     (val) => val !== "" && selectedNetwork && selectedService
   );
+
+  const dataFormIsFilled =
+    airtimeFormField.phoneNumber &&
+    selectedDataAmount &&
+    selectedService &&
+    selectedPlan;
 
   const handleAddMinus = (type: string) => {
     setReadOnly(true);
@@ -146,14 +153,9 @@ const AirtimeAndData = () => {
             {selectedService === "Data" && (
               <Input
                 placeholder="₦0"
-                symbol={airtimeFormField.airtimeAmount ? "₦" : ""}
-                value={airtimeFormField.airtimeAmount}
-                onChange={(e) =>
-                  setAirtimeFormField({
-                    ...airtimeFormField,
-                    airtimeAmount: e.target.value,
-                  })
-                }
+                symbol=""
+                value={`₦${selectedDataAmount.toLocaleString()}`}
+                readOnly
               />
             )}
           </div>
@@ -161,7 +163,13 @@ const AirtimeAndData = () => {
         <Button
           btnText="Refill"
           width="27rem"
-          disabled={!airtimeFormIsFilled}
+          disabled={
+            selectedService === "Airtime" && !airtimeFormIsFilled
+              ? true
+              : selectedService === "Data" && !dataFormIsFilled
+              ? true
+              : false
+          }
           onClick={() => handleRefill()}
           // mb="1rem"
           mt="6rem"
@@ -176,7 +184,7 @@ const AirtimeAndData = () => {
         handleClear={() => handleClearForm()}
       />
       <DataRefilledSuccessMsg
-        amount={airtimeFormField.airtimeAmount}
+        amount={selectedDataAmount.toLocaleString()}
         phoneNumber={airtimeFormField.phoneNumber}
         handleClear={() => handleClearForm()}
       />

@@ -13,8 +13,8 @@ export const SuccessMessageWrapper = styled.div<{
   justify-content: space-between;
   padding-bottom: ${(props) => (props.errorMessage ? "3.5rem" : "2.5rem")};
   padding-top: ${(props) => (props.errorMessage ? "1.7rem" : "")};
-  padding-left: ${(props) => props.pl || "1.2rem"};
-  padding-right: ${(props) => props.pr || "1.2rem"};
+  padding-left: ${(props) => props.pl || "1rem"};
+  padding-right: ${(props) => props.pr || "1rem"};
 
   .msg-modal-content {
     width: 100%;
@@ -60,7 +60,7 @@ export const SuccessMessageWrapper = styled.div<{
   }
 
   @media screen and (max-width: 640px) {
-    padding: 2rem;
+    padding: 1rem;
 
     .img-cont {
       width: 100%;

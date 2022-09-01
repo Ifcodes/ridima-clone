@@ -48,6 +48,7 @@ const SelectSubCategory = ({
     >
       <div className="subcat-cont">
         <Selector
+          height="4.7rem"
           selectorTitle={selectedCategory || "Select sub-category"}
           onClick={() => setShowModal(true)}
         />
@@ -55,8 +56,8 @@ const SelectSubCategory = ({
       <div className="amount-field-cont">
         <Input
           label="Enter Card Amount"
-          placeholder="e.g $100"
-          symbol="$"
+          placeholder="e.g 100"
+          symbol=""
           value={formField?.amount}
           onChange={(e) => handleChange(e, "amount")}
           required

@@ -1,6 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import DashboardLayout from "../../components/templates/MainLayout";
+import { resetAirtimeDataState } from "../../Entity/AirtimeAndDataEntity";
+import { resetBettingState } from "../../Entity/BettingWalletEntity";
+import { resetElectricityState } from "../../Entity/ElectricityBillEntity";
+import { resetInternetWifiState } from "../../Entity/InteretAndWifiEntity";
 import {
   payBillsState,
   removePayBillsTabs,
@@ -8,6 +12,7 @@ import {
   setPayBillsTabs,
   setSelectedPayBillToPay,
 } from "../../Entity/PayBillsEntity";
+import { resetTvCableEntity } from "../../Entity/TvCablesEntity";
 import { StageTitleWrapper } from "../CreateVirtualCard/createVirtualCardStyles";
 import AirtimeAndData from "./Airtime&Data";
 import BettingWallets from "./Betting";
@@ -25,6 +30,13 @@ const PayBills = () => {
   const selectedBill = payBillState.selectedBillToPay;
 
   const handleTabClick = (tab: string, index: number) => {
+    if (tab === "Pay Bills") {
+      resetBettingState();
+      resetAirtimeDataState();
+      resetTvCableEntity();
+      resetElectricityState();
+      resetInternetWifiState();
+    }
     if (index < 1) {
       setPayBillActiveTabChange("prev");
       setSelectedPayBillToPay("");

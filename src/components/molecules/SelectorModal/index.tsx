@@ -60,7 +60,7 @@ const SelectorModal = ({
               <ListItemWithRadio
                 key={`${option}-of-${index}`}
                 text={option}
-                onClick={() => onServiceClick(option)}
+                onClick={() => onServiceClick(option, index as any)}
                 isChecked={option === selectedOption}
               />
             ))}

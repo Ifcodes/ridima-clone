@@ -2,6 +2,7 @@ import { entity } from "simpler-state";
 
 export const tvCableStates = entity({
   selectedTvCablePlan: "",
+  selectedTvCableAmount: 0,
   selectedServiceProvider: "",
   showServiceProviderModal: false,
   showSelectTvCableModal: false,
@@ -11,6 +12,10 @@ export const tvCableStates = entity({
 
 export const setSelectedTvCablePlan = (val: string) => {
   tvCableStates.set((prev) => ({ ...prev, selectedTvCablePlan: val }));
+};
+
+export const setSelectedTvCableAmount = (val: number) => {
+  tvCableStates.set((prev) => ({ ...prev, selectedTvCableAmount: val }));
 };
 
 export const setSelectedServiceProvider = (val: string) => {
@@ -50,6 +55,7 @@ export const resetTvCableEntity = () => {
     ...prev,
     selectedTvCablePlan: "",
     selectedServiceProvider: "",
+    selectedTvCableAmount: 0,
     showServiceProviderModal: false,
     showSelectTvCableModal: false,
     showConfirmTvCablePurchaseModal: false,

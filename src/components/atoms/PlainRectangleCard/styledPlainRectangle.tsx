@@ -59,10 +59,11 @@ export const RectangleWrapper = styled.div<{
     .card-content {
       padding: 1rem 2rem 1rem;
       .title-cont {
-        width: ${(props) => props.mobileTextWidth || "8rem"};
+        width: ${(props) => props.mobileTextWidth || "9rem"};
 
         h1 {
-          font-size: 1.5rem;
+          font-family: "cera_problack";
+          font-size: 1.7rem;
         }
       }
     }

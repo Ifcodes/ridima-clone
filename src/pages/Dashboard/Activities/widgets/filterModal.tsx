@@ -28,7 +28,8 @@ const FilterModal = ({
       width="28%"
       showModal={showModal}
       closeModal={() => setShowFilterModal(false)}
-      cardHeight={"65%"}
+      cardHeight={"25rem"}
+      mobileCardHeight={"25rem"}
     >
       <FilterModalContentWrapper>
         <H1>Filter</H1>

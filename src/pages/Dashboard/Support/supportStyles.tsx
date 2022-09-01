@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const SupportPageWrapper = styled.div`
   width: 100%;
   height: 100vh;
-  overflow: hidden;
 
   .support-header-title-mobile {
     display: none;
@@ -16,13 +15,14 @@ export const SupportPageWrapper = styled.div`
 
     .support-header-title-mobile {
       display: block;
-      padding: 1rem;
+      padding: 0.5rem 1rem;
     }
   }
 `;
 
 export const SupportContentWrapper = styled.div`
   width: 60%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
@@ -100,11 +100,11 @@ export const SupportContentWrapper = styled.div`
 
   @media screen and (max-width: 640px) {
     width: 100%;
-    height: 90%;
     padding-bottom: 8rem;
     overflow-y: auto;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
 
     .icon-wrapper {
       width: 80%;

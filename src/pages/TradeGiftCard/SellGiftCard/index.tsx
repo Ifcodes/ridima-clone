@@ -182,7 +182,7 @@ const SellGiftCards = () => {
     <DashboardLayout childPadding="0" mobileChildPadding="0">
       <SellGiftCardWrapper stage={activeTab}>
         <div className={activeTab === 1 ? "heading" : "default"}>
-          <StageTitleWrapper darkBgShade>
+          <StageTitleWrapper id="top-page" darkBgShade>
             <span
               className="home"
               onClick={() => {
@@ -223,7 +223,10 @@ const SellGiftCards = () => {
         <div className="main-content">
           {activeTab === 2 ? (
             <>
-              <ActiveGiftCard selectedCarditems={selectedCard} />
+              <ActiveGiftCard
+                selectedCarditems={selectedCard}
+                topScrollId={"top-page"}
+              />
             </>
           ) : (
             <>

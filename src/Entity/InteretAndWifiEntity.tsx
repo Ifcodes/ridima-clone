@@ -2,6 +2,7 @@ import { entity } from "simpler-state";
 
 export const internetWifiStates = entity({
   selectedInternetPlan: "",
+  selectedInternetPlanAmount: 0,
   selectedNetworkProvider: "",
   showNetworkProviderModal: false,
   showSelectIntertPlanModal: false,
@@ -11,6 +12,13 @@ export const internetWifiStates = entity({
 
 export const setSelectedInternetPlan = (val: string) => {
   internetWifiStates.set((prev) => ({ ...prev, selectedInternetPlan: val }));
+};
+
+export const setSelectedInternetPlanAmount = (val: number) => {
+  internetWifiStates.set((prev) => ({
+    ...prev,
+    selectedInternetPlanAmount: val,
+  }));
 };
 
 export const setSelectedNetworkProvider = (val: string) => {
@@ -50,6 +58,7 @@ export const resetInternetWifiState = () => {
     ...prev,
     selectedInternetPlan: "",
     selectedNetworkProvider: "",
+    selectedInternetPlanAmount: 0,
     showNetworkProviderModal: false,
     showSelectIntertPlanModal: false,
     showConfirmWifiPurchaseModal: false,

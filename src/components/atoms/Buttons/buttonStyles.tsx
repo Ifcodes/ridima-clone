@@ -4,8 +4,8 @@ import { ButtonProps } from ".";
 export const ButtonWrapper = styled.button<ButtonProps>`
   width: ${(props) => props.width || "100%"};
   font-size: ${(props) => props.fs || "1rem"};
-  font-family: "cera_prolight";
-  font-weight: ${(props) => props.fw || "700"};
+  font-family: "cera_promedium";
+  font-weight: bold;
   color: ${(props) =>
     props.textColor
       ? props.textColor

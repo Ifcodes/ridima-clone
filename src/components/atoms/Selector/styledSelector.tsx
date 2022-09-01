@@ -5,10 +5,11 @@ export const SelectButtonWrapper = styled.div<{
   mt?: string;
   showDropdown?: boolean;
   width?: string;
+  height?: string;
   mobileWidth?: string;
 }>`
   width: ${(props) => props.width || "27rem"};
-  height: 4.3rem;
+  height: ${(props) => props.height || "4.3rem"};
   background-color: #f6f6f6;
   border-radius: 3.125rem;
   border-bottom-left-radius: ${(props) =>

@@ -3,32 +3,24 @@ import Selector from "../../../../components/atoms/Selector";
 import SelectorModal from "../../../../components/molecules/SelectorModal";
 import {
   airtimeDataStates,
+  setSelectedDataAmount,
   setSelectedDataPlan,
   setShowSelectDataPlan,
 } from "../../../../Entity/AirtimeAndDataEntity";
+import { dataPlans } from "../../../../utils/helpers/dataPlans";
 
 const SelectDataPlanModal = () => {
   const showSelectorModal = airtimeDataStates.use().showSelectDataPlanModal;
   const selectedData = airtimeDataStates.use().selectedDataPlan;
+  const selectedDataAmount = airtimeDataStates.use().selectedDataAmount;
 
-  const handleSelection = (plan: string) => {
+  const handleSelection = (plan: string, index: any) => {
     setSelectedDataPlan(plan);
+    setSelectedDataAmount(dataPlans[index].amount);
     setShowSelectDataPlan(false);
   };
 
-  const dataPlans = [
-    "Airtel 25MB Data Bundle",
-    "Airtel 75MB Data Bundle",
-    "Airtel 200MB Data Bundle",
-    "Airtel 750MB Data Bundle",
-    "Airtel 1GB Data Bundle",
-    "Airtel 2GB Data Bundle",
-    "Airtel 3GB Data Bundle",
-    "Airtel 4.5GB Data Bundle",
-    "Airtel 6GB Data Bundle",
-    "Airtel 8GB Data Bundle",
-    "Airtel 24GB Data Bundle",
-  ];
+  const list = dataPlans.map((plan) => plan.type);
 
   return (
     <div>
@@ -36,7 +28,7 @@ const SelectDataPlanModal = () => {
         openModal={showSelectorModal}
         selectedOption={selectedData}
         closeModal={() => setShowSelectDataPlan(false)}
-        selectorList={dataPlans}
+        selectorList={list}
         onServiceClick={handleSelection}
         title="Select Data Plan"
         modalContentHeight="38rem"

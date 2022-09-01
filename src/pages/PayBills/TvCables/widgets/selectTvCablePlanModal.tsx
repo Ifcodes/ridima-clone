@@ -1,40 +1,32 @@
 import React from "react";
 import SelectorModal from "../../../../components/molecules/SelectorModal";
 import {
+  setSelectedTvCableAmount,
   setSelectedTvCablePlan,
   setShowTvCablePlanModal,
   tvCableStates,
 } from "../../../../Entity/TvCablesEntity";
+import { tvPlans } from "../../../../utils/helpers/dataPlans";
 
 const SelectTvCablePlanModal = () => {
   const showSelectorModal = tvCableStates.use().showSelectTvCableModal;
   const selectedPlan = tvCableStates.use().selectedTvCablePlan;
 
-  const handleSelection = (plan: string) => {
+  const handleSelection = (plan: string, index: any) => {
     setSelectedTvCablePlan(plan);
+    setSelectedTvCableAmount(tvPlans[index].amount);
     setShowTvCablePlanModal(false);
   };
 
-  const internetPlans = [
-    "Basic One Day",
-    "Smart One Day",
-    "Nova One Week",
-    "Classic One Day",
-    "Super One Day",
-    "Basic One Week",
-    "Smart One Week",
-    "Nova One Month",
-    "Classic One Week",
-    "Super One Week",
-    "Super Two Week",
-  ];
+  const planList = tvPlans.map((plan) => plan.type);
+
   return (
     <div>
       <SelectorModal
         openModal={showSelectorModal}
         selectedOption={selectedPlan}
         closeModal={() => setShowTvCablePlanModal(false)}
-        selectorList={internetPlans}
+        selectorList={planList}
         onServiceClick={handleSelection}
         title="Select Tv Cable Plan"
         modalHeight="40rem"

@@ -30,4 +30,8 @@ export const UseUssdCodeContainer = styled.div`
       font-weight: 400;
     }
   }
+
+  @media screen and (max-width: 640px) {
+    padding: 3rem 1.5rem;
+  }
 `;

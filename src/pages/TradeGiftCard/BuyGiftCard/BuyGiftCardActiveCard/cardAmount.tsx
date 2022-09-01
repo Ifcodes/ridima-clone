@@ -31,10 +31,9 @@ const CardAmountSelection = () => {
     <CardAmountFormWrapper isActive={expectedValue > 0}>
       <form onSubmit={handleProceed} className="form-cont">
         <Input
-          // width="27rem"
           label="Enter amount"
-          symbol="$"
-          placeholder="$1000"
+          symbol=""
+          placeholder="1000"
           value={cardAmount}
           onChange={setCardPurchaseAmount}
         />

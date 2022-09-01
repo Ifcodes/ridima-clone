@@ -36,4 +36,8 @@ export const AddBankAccountWrapper = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 640px) {
+    padding: 2rem 1.5rem;
+  }
 `;

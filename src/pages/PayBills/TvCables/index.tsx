@@ -20,7 +20,7 @@ import TvCableSuccessMsgModal from "./widgets/tvCableSuccessMsg";
 const TvCables = () => {
   const tvCableState = tvCableStates.use();
   const selectedProvider = tvCableState.selectedServiceProvider;
-
+  const selectedCableAmount = tvCableState.selectedTvCableAmount;
   const selectedCablePlan = tvCableState.selectedTvCablePlan;
 
   const [formField, setFormField] = useState({
@@ -90,14 +90,9 @@ const TvCables = () => {
 
               <Input
                 placeholder="₦0"
-                symbol={formField.amount ? "₦" : ""}
-                value={formField.amount}
-                onChange={(e) =>
-                  setFormField({
-                    ...formField,
-                    amount: e.target.value,
-                  })
-                }
+                symbol={""}
+                value={`₦${selectedCableAmount.toLocaleString()}`}
+                readOnly
               />
             </div>
           </div>

@@ -3,39 +3,31 @@ import SelectorModal from "../../../../components/molecules/SelectorModal";
 import {
   internetWifiStates,
   setSelectedInternetPlan,
+  setSelectedInternetPlanAmount,
   setShowInternetPlanModal,
   setShowNetworkProviderModal,
 } from "../../../../Entity/InteretAndWifiEntity";
+import { internetPlans } from "../../../../utils/helpers/dataPlans";
 
 const SelectInteretPlanModal = () => {
   const showSelectorModal = internetWifiStates.use().showSelectIntertPlanModal;
   const selectedPlan = internetWifiStates.use().selectedInternetPlan;
 
-  const handleSelection = (plan: string) => {
+  const handleSelection = (plan: string, index: any) => {
     setSelectedInternetPlan(plan);
+    setSelectedInternetPlanAmount(internetPlans[index].amount);
     setShowInternetPlanModal(false);
   };
 
-  const internetPlans = [
-    "REFILL ACCOUNT",
-    "RENEW ACCOUNT",
-    "CHANGE IMMEDIATELY TO PHC UNIFIED VALUE 4GB",
-    "CHANGE IMMEDIATELY TO IBADAN UNIFIED VALUE 4GB",
-    "CHANGE IMMEDIATELY TO LAGOS UNIFIED VALUE 4GB",
-    "CHANGE IMMEDIATELY TO ABUJA UNIFIED VALUE 4GB",
-    "CHANGE IMMEDIATELY TO ABUJA VALUE PACK 4GB",
-    "CHANGE IMMEDIATELY TO ABUJA VALUE PACK 6GB",
-    "CHANGE IMMEDIATELY TO LAGOS VALUE PACK 6GB",
-    "CHANGE IMMEDIATELY TO IBADAN VALUE PACK 6GB",
-    "CHANGE IMMEDIATELY TO IBADAN VALUE PACK 6GB",
-  ];
+  const plans = internetPlans.map((plan) => plan.type);
+
   return (
     <div>
       <SelectorModal
         openModal={showSelectorModal}
         selectedOption={selectedPlan}
         closeModal={() => setShowInternetPlanModal(false)}
-        selectorList={internetPlans}
+        selectorList={plans}
         onServiceClick={handleSelection}
         title="Select Internet Plan"
         modalHeight="40rem"

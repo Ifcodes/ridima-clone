@@ -20,12 +20,11 @@ import SelectNetworkProviderModal from "./widgets/selectNetworkProvider";
 const InternetAndWifi = () => {
   const internetWifiState = internetWifiStates.use();
   const selectedNetwork = internetWifiState.selectedNetworkProvider;
-
   const selectedInternetPlan = internetWifiState.selectedInternetPlan;
+  const selectedPlanAmount = internetWifiState.selectedInternetPlanAmount;
 
   const [formField, setFormField] = useState({
     deviceNumber: "",
-    amount: "",
   });
 
   const formIsFilled = Object.values(formField).every(
@@ -37,7 +36,7 @@ const InternetAndWifi = () => {
   };
 
   const clearForm = () => {
-    setFormField({ deviceNumber: "", amount: "" });
+    setFormField({ deviceNumber: "" });
   };
   return (
     <SelectedBillWrapper>
@@ -87,14 +86,9 @@ const InternetAndWifi = () => {
 
               <Input
                 placeholder="₦0"
-                symbol={formField.amount ? "₦" : ""}
-                value={formField.amount}
-                onChange={(e) =>
-                  setFormField({
-                    ...formField,
-                    amount: e.target.value,
-                  })
-                }
+                symbol=""
+                value={`₦${selectedPlanAmount.toLocaleString()}`}
+                readOnly
               />
             </div>
           </div>
@@ -112,12 +106,12 @@ const InternetAndWifi = () => {
       <SelectInteretPlanModal />
       <ConfirmInternetPurchaseModal
         deviceNumber={formField.deviceNumber}
-        amount={formField.amount}
+        amount={selectedPlanAmount.toLocaleString()}
       />
       <InternetWifiSuccessMsgModal
         deviceNumber={formField.deviceNumber}
-        amount={formField.amount}
-        handleClear={() => clearForm()}
+        amount={selectedPlanAmount.toLocaleString()}
+        handleClear={clearForm}
       />
     </SelectedBillWrapper>
   );

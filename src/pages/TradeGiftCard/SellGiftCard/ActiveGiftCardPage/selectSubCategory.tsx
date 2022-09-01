@@ -4,7 +4,10 @@ import Selector from "../../../../components/atoms/Selector";
 import { setExpectedValue, tradeValue } from "../../../../Entity/TradeValue";
 import { SubCategoryWrapper } from "../../styledTradeGiftCard";
 import SelectSubCategoryModal from "../../../../components/molecules/SelectGiftCardSubCategoryModal";
-import { sellGiftCardsStates, setSellGiftCardSelectedCategory } from "../../../../Entity/SellGiftCardEntity";
+import {
+  sellGiftCardsStates,
+  setSellGiftCardSelectedCategory,
+} from "../../../../Entity/SellGiftCardEntity";
 
 type SubCategoryProps = {
   formField?: {
@@ -19,7 +22,7 @@ const SelectSubCategory = ({
   handleChange = () => {},
 }: SubCategoryProps) => {
   const tradeValues = tradeValue.use();
-  const selectedCategory = sellGiftCardsStates.use().selectedSubCatecory
+  const selectedCategory = sellGiftCardsStates.use().selectedSubCatecory;
   const [showModal, setShowModal] = useState(false);
 
   const rate = 410;
@@ -44,6 +47,7 @@ const SelectSubCategory = ({
     >
       <div className="subcat-cont">
         <Selector
+          height="4.7rem"
           selectorTitle={selectedCategory || "Select sub-category"}
           onClick={() => setShowModal(true)}
         />
@@ -51,8 +55,8 @@ const SelectSubCategory = ({
       <div className="amount-field-cont">
         <Input
           label="Enter Card Amount"
-          placeholder="e.g $100"
-          symbol="$"
+          placeholder="e.g 100"
+          symbol=""
           value={formField?.amount}
           onChange={(e) => handleChange(e, "amount")}
           required

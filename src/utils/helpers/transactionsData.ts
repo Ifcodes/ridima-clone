@@ -51,7 +51,7 @@ export const transactionData = [
     expectedValue: 15500,
     date: today.toDateString(),
     amount: {
-      currency: "$",
+      currency: "₦",
       value: 100,
     },
     status: "Successfull",
@@ -90,7 +90,7 @@ export const transactionData = [
     expectedValue: 15500,
     date: today.toDateString(),
     amount: {
-      currency: "$",
+      currency: "₦",
       value: 100,
     },
     status: "Successfull",
@@ -110,7 +110,7 @@ export const transactionData = [
     expectedValue: 15500,
     date: today.toDateString(),
     amount: {
-      currency: "$",
+      currency: "₦",
       value: 100,
     },
     status: "Successfull",
@@ -150,7 +150,7 @@ export const transactionData = [
     expectedValue: 15500,
     date: yesterday.toDateString(),
     amount: {
-      currency: "$",
+      currency: "₦",
       value: 50,
     },
     status: "Successfull",
@@ -190,7 +190,7 @@ export const transactionData = [
     expectedValue: 15500,
     date: today.toDateString(),
     amount: {
-      currency: "$",
+      currency: "₦",
       value: 50,
     },
     status: "Successfull",
@@ -211,7 +211,7 @@ export const transactionData = [
     expectedValue: 15500,
     date: today.toDateString(),
     amount: {
-      currency: "$",
+      currency: "₦",
       value: 50,
     },
     status: "Successfull",

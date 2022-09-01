@@ -66,8 +66,10 @@ export const WithdrawPageWrapper = styled.div`
     align-items: center;
 
     span {
+      font-size: 1.2rem;
       margin-left: 1rem;
-      width: 6.5rem;
+      width: 10.5rem;
+      font-weight: 500;
     }
   }
 
@@ -83,8 +85,8 @@ export const WithdrawPageWrapper = styled.div`
   }
 
   @media screen and (max-width: 640px) {
-    height: 80%;
-    padding: 1rem 1.5rem 3rem;
+    height: 90%;
+    padding: 1rem 1.5rem 6rem;
     overflow-y: auto;
   }
 `;

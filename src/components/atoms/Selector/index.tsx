@@ -16,6 +16,7 @@ const Selector = ({
   showCalendarIcon,
   selectedDropdownItem,
   width,
+  height,
   mobileWidth,
   onClick = () => {},
   handleSelectItem = () => {},
@@ -31,6 +32,7 @@ const Selector = ({
   onClick?: MouseEventHandler<HTMLDivElement>;
   handleSelectItem?: Function;
   width?: string;
+  height?: string;
   mobileWidth?: string;
 }) => {
   return (
@@ -41,6 +43,7 @@ const Selector = ({
       className={className}
       showDropdown={showDropdown}
       width={width}
+      height={height}
       mobileWidth={mobileWidth}
     >
       <span className="title">{selectorTitle}</span>

@@ -16,7 +16,7 @@ const SuccessMessageCard = ({
     if (type === "transactions") navigate("/activities");
   };
   return (
-    <SuccessMessageWrapper pl={"1rem"} pr={"1rem"}>
+    <SuccessMessageWrapper>
       <div className="msg-modal-content">
         <div className="img-cont">
           <img

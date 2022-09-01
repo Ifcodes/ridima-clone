@@ -69,9 +69,9 @@ const TradeGiftCard = () => {
       setShowBuyCardTermsModal(true);
     } else if (actionType === "Check Gift Card Rates") {
       setCheckRatesModal(true);
-    } else if (actionType === "Hot Gift Cards"){
+    } else if (actionType === "Hot Gift Cards") {
       navigate("/trade-giftcards/hot-giftcards");
-    }else {
+    } else {
       setActiveCard(actionType);
       setTabs(tabs.concat(actionType));
     }
@@ -79,23 +79,25 @@ const TradeGiftCard = () => {
   };
 
   return (
-    <DashboardLayout>
+    <DashboardLayout mobileChildPadding="0">
       <TradeGiftCardWrapper>
-        <StageTitleWrapper>
-          <span className="home" onClick={() => toggleActiveScreen()}>
-            Home
-          </span>
-          {tabs.map((tab, index) => (
-            <StageTitleWrapper
-              key={`key-${tab}-of-${index}`}
-              onClick={() => handleTabClick(tab, index)}
-              isActive={index === activeTab}
-            >
-              <span className="arrow"> {" > "} </span>
-              <span className="title"> {tab} </span>
-            </StageTitleWrapper>
-          ))}
-        </StageTitleWrapper>
+        <div className="tabs-wrapper">
+          <StageTitleWrapper>
+            <span className="home" onClick={() => toggleActiveScreen()}>
+              Home
+            </span>
+            {tabs.map((tab, index) => (
+              <StageTitleWrapper
+                key={`key-${tab}-of-${index}`}
+                onClick={() => handleTabClick(tab, index)}
+                isActive={index === activeTab}
+              >
+                <span className="arrow"> {" > "} </span>
+                <span className="title"> {tab} </span>
+              </StageTitleWrapper>
+            ))}
+          </StageTitleWrapper>
+        </div>
         {activeCard === "" && (
           <TradeGiftCardDefaultPage
             cardContent={cardContent}

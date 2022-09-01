@@ -5,7 +5,7 @@ export const PayBillsWrapper = styled.div`
 
   @media screen and (max-width: 640px) {
     height: 90%;
-    /* padding-bottom: 4rem; */
+    padding-bottom: 4rem;
     overflow-y: auto;
 
     ::-webkit-scrollbar {

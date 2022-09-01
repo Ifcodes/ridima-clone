@@ -1,4 +1,10 @@
-import React, { ChangeEvent, Fragment, ReactNode, useState } from "react";
+import React, {
+  ChangeEvent,
+  Fragment,
+  ReactNode,
+  useRef,
+  useState,
+} from "react";
 // import Stepper from "react-simple-stepper-component";
 import Button from "../../../../components/atoms/Buttons";
 import CardTypeCard from "../../../../components/atoms/CardTypeCard";
@@ -22,6 +28,7 @@ import AmazonIconCircle from "../../../../components/atoms/vectors/AmazonIconCir
 import CardTermsModal from "./Widgets/cardTermsModal";
 import StepperComponent from "../../../../components/molecules/Stepper";
 import { sellGiftCardsStates } from "../../../../Entity/SellGiftCardEntity";
+import { scrollToElement } from "../../../../utils/scrollToElement";
 
 const giftCardTypes = [
   {
@@ -51,12 +58,18 @@ const giftCardTypes = [
   },
 ];
 
-const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
+const ActiveGiftCard = ({
+  selectedCarditems,
+  topScrollId,
+}: {
+  selectedCarditems?: any;
+  topScrollId?: string;
+}) => {
   const tradeValues = tradeValue.use();
   const [showCurrencyModal, setShowCurrencyModal] = useState(false);
   const selectedSubCategory = sellGiftCardsStates.use().selectedSubCatecory;
   const [selectedCardType, setSelectedCardType] = useState({
-    index: 0,
+    index: null,
     cardType: "",
   });
   const [selectedCurrency, setSelectedCurrency] = useState({
@@ -100,7 +113,7 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
     imgUploadFormData.selectedImages.length > 0 &&
     Object.values(imgUploadFormData).every((item) => item !== "");
 
-  const handleCardTypeClick = (card: string, index: number) => {
+  const handleCardTypeClick = (card: string, index: any) => {
     setSelectedCardType((prev) => ({ ...prev, index: index, cardType: card }));
     // if (card === "Physical Card") {
     //   setShowCurrencyModal(true);
@@ -110,11 +123,15 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
   const handleSelectCurrency = (currency: any) => {
     setSelectedCurrency(currency);
     setShowCurrencyModal(false);
+    scrollToElement("tradeCard-btn");
   };
   const date = new Date();
 
   const onProceed = () => {
-    if (currentStage < 3) setCurrentStage(currentStage + 1);
+    if (currentStage < 3) {
+      scrollToElement(topScrollId);
+      setCurrentStage(currentStage + 1);
+    }
     if (currentStage === 2) {
       const summaryData = {
         transactionDate: date,
@@ -127,6 +144,7 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
         images: imgUploadFormData.selectedImages,
       };
       setTradeSummaryData(summaryData);
+      scrollToElement(topScrollId);
     }
     if (currentStage === 3) {
       setOpenCardTermsModal(true);
@@ -174,9 +192,10 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
   const mobileSteps = Array(4).fill("");
 
   const onConfirm = () => {
+    scrollToElement(topScrollId);
     setImgUploadFormData({ ecode: "", selectedImages: [], imgSelected: false });
     setCurrentStage(0);
-    setSelectedCardType({ index: 0, cardType: "" });
+    setSelectedCardType({ index: null, cardType: "" });
     setSelectedCategory({
       amount: "",
       quantity: "",
@@ -186,7 +205,7 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
 
   return (
     <ActiveGiftCardWrapper>
-      <div className="active-card-cont-wrap">
+      <div id="active-card" className="active-card-cont-wrap">
         <div className="stepper-wrap">
           <StepperComponent
             steps={steps}
@@ -256,7 +275,7 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
           </>
         )}
       </div>
-      <div className="tradecard-btn-cont">
+      <div className="tradecard-btn-cont" id="tradeCard-btn">
         <Button
           btnText={currentStage === 3 ? "Sell Giftcard" : "Proceed"}
           disabled={
@@ -267,15 +286,18 @@ const ActiveGiftCard = ({ selectedCarditems }: { selectedCarditems?: any }) => {
               : !selectedCurrency
           }
           width="27rem"
+          mb="2rem"
           onClick={() => onProceed()}
         />
       </div>
-      <SelectCurrencyModal
-        openModal={showCurrencyModal}
-        closeModal={() => setShowCurrencyModal(false)}
-        selectedCurrency={selectedCurrency}
-        selectCurrency={handleSelectCurrency}
-      />
+      {showCurrencyModal && (
+        <SelectCurrencyModal
+          openModal={showCurrencyModal}
+          closeModal={() => setShowCurrencyModal(false)}
+          selectedCurrency={selectedCurrency}
+          selectCurrency={handleSelectCurrency}
+        />
+      )}
       <CardTermsModal
         openModal={openCardTermsModal}
         closeModal={() => setOpenCardTermsModal(false)}
