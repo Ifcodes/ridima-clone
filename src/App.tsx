@@ -5,10 +5,6 @@ import CreateAccountPage from "./pages/AuthPage/CreateAccount";
 import ForgotPassword from "./pages/AuthPage/ForgotPassword";
 import ForgotPin from "./pages/AuthPage/ForgotPin";
 import Loginpage from "./pages/AuthPage/Login";
-import Activities from "./pages/Dashboard/Activities";
-import Home from "./pages/Dashboard/Home";
-import Homepage from "./pages/Dashboard/Home";
-import Leaderboard from "./pages/Dashboard/Leaderboard";
 import Logout from "./pages/Dashboard/Logout";
 import Notification from "./pages/Dashboard/Notifications";
 import Profile from "./pages/Dashboard/Account";
@@ -19,15 +15,21 @@ import VirtualCardsPage from "./pages/VirtualCardsPage";
 import CardDetails from "./pages/VirtualCardsPage/cardDetails";
 import Wallet from "./pages/Dashboard/Wallet";
 import TradeGiftCard from "./pages/TradeGiftCard";
-import SellGiftCards from "./pages/TradeGiftCard/SellGiftCard";
-import BuyGiftCards from "./pages/TradeGiftCard/BuyGiftCard";
-import CheckRates from "./pages/TradeGiftCard/CheckRates";
-import HotGiftCards from "./pages/TradeGiftCard/HotGiftCards";
+
 import PayBills from "./pages/PayBills";
 import WithdrawToBank from "./pages/Dashboard/Wallet/withdrawToBank";
 import SendMoney from "./pages/Dashboard/Wallet/sendMoney";
 import RequestMoney from "./pages/Dashboard/Wallet/requestMoney";
 import EditProfile from "./pages/Dashboard/Account/editProfile";
+import { Suspense, lazy } from "react";
+
+const Home = lazy(() => import("./pages/Dashboard/Home"));
+const Activities = lazy(() => import("./pages/Dashboard/Activities"));
+const Leaderboard = lazy(() => import("./pages/Dashboard/Leaderboard"));
+const SellGiftCards = lazy(() => import("./pages/TradeGiftCard/SellGiftCard"));
+const BuyGiftCards = lazy(() => import("./pages/TradeGiftCard/BuyGiftCard"));
+const CheckRates = lazy(() => import("./pages/TradeGiftCard/CheckRates"));
+const HotGiftCards = lazy(() => import("./pages/TradeGiftCard/HotGiftCards"));
 
 function App() {
   return (
@@ -37,14 +39,42 @@ function App() {
       <Route path="/create-account" element={<CreateAccountPage />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/forgot-pin" element={<ForgotPin />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/activities" element={<Activities />} />
-      <Route path="/wallet" element={<Wallet />} />
+      <Route
+        path="/home"
+        element={
+          <Suspense fallback="Loading...">
+            <Home />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/activities"
+        element={
+          <Suspense>
+            <Activities />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/wallet"
+        element={
+          <Suspense>
+            <Wallet />
+          </Suspense>
+        }
+      />
       <Route path="/support" element={<Support />} />
       <Route path="/notification" element={<Notification />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/profile/edit-profile" element={<EditProfile />} />
-      <Route path="/leaderboard" element={<Leaderboard />} />
+      <Route
+        path="/leaderboard"
+        element={
+          <Suspense>
+            <Leaderboard />
+          </Suspense>
+        }
+      />
       <Route path="/referral" element={<Referral />} />
       <Route path="/security" element={<Security />} />
       <Route path="/logout" element={<Logout />} />
@@ -52,11 +82,36 @@ function App() {
       <Route path="/trade-giftcards" element={<TradeGiftCard />} />
       <Route
         path="/trade-giftcards/sell-giftcards"
-        element={<SellGiftCards />}
+        element={
+          <Suspense>
+            <SellGiftCards />
+          </Suspense>
+        }
       />
-      <Route path="/trade-giftcards/buy-giftcards" element={<BuyGiftCards />} />
-      <Route path="/trade-giftcards/check-rates" element={<CheckRates />} />
-      <Route path="/trade-giftcards/hot-giftcards" element={<HotGiftCards />} />
+      <Route
+        path="/trade-giftcards/buy-giftcards"
+        element={
+          <Suspense>
+            <BuyGiftCards />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/trade-giftcards/check-rates"
+        element={
+          <Suspense>
+            <CheckRates />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/trade-giftcards/hot-giftcards"
+        element={
+          <Suspense>
+            <HotGiftCards />
+          </Suspense>
+        }
+      />
       <Route path="/virtual-cards" element={<VirtualCardsPage />} />
       <Route path="/virtual-cards/:id" element={<CardDetails />} />
       <Route path="/pay-bills" element={<PayBills />} />

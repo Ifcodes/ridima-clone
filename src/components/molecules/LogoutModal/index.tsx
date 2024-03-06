@@ -20,7 +20,7 @@ const Logout = () => {
       showModal={showModal}
       closeModal={() => setLogout(false)}
       showCloseBtn
-      // handleCloseBtn={() => setLogout(false)}
+      handleCloseBtn={() => setLogout(false)}
       width={"25%"}
       cardHeight="25rem"
       mobileCardHeight="25rem"
