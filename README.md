@@ -6,6 +6,6 @@ This is a cloned version of the Ridima web application User Interface built with
 
 ## Links
 - **Original:**     [view](https://app.myridima.com/)
-- **Clone:**         [view](https://ridima-web-dev.netlify.app/)
+- **Clone:**         [view](https://ridima-clone.netlify.app/)
 
 
