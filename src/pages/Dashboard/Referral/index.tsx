@@ -11,8 +11,10 @@ import DashboardLayout from "../../../components/templates/MainLayout";
 import MobileReferralPage from "./mobilePage";
 import ReferralDetails from "./referralDetails";
 import { ReferralPageWrapper } from "./referralStyles";
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
 
 const Referral = () => {
+  useDocumentTitle("Referrals");
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(0);
 

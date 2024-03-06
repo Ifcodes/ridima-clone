@@ -14,8 +14,11 @@ import {
   setCreateVCardPinVerifyModal,
   setCreateVCardSuccessMsgModal,
 } from "../../Entity/CreateVirtualCardEntity";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 
 const FundYourCard = ({ selectedCard }: { selectedCard: string }) => {
+  useDocumentTitle("Fund Your Card");
+
   const [fundAmount, setFundAmount] = useState("");
   const [pin, setPin] = useState("");
   const [currentExchangeRate] = useState(550);

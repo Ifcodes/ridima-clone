@@ -17,8 +17,10 @@ import { clearCreateCard } from "../../../Entity/CreateVirtualCardEntity/Created
 import { setLogout } from "../../../Entity/LogoutEntity";
 import { clearProfileComplete } from "../../../Entity/ProfileComplete";
 import { AccountPageWrapper } from "./accountStyles";
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
 
 const Profile = () => {
+  useDocumentTitle("Account");
   const navigate = useNavigate();
   const actions = [
     { text: "Terms of Service", icon: SaveIcon },

@@ -26,8 +26,10 @@ import ChangePasswordModal from "./Widgets/changePasswordModal";
 import ChangePasswordSuccessMsg from "./Widgets/changePasswordSuccessMsg";
 import ChangePinModal from "./Widgets/changePinModal";
 import ChangePinSuccessMsg from "./Widgets/changePinSuccessModal";
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
 
 const Security = () => {
+  useDocumentTitle("Security");
   const navigate = useNavigate();
   const [tabs, setTabs] = useState(["Profile", "Security"]);
   const [allowBiometrics, setAllowBiometrics] = useState(false);

@@ -14,6 +14,7 @@ import {
   NotificationItemCard,
   NotificationPageWrapper,
 } from "./notificationsStyles";
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
 
 const today = new Date();
 const yesterday = new Date(today);
@@ -75,6 +76,7 @@ const notifications = [
 ];
 
 const Notification = () => {
+  useDocumentTitle("Notifications");
   const navigate = useNavigate();
   const unreadNote = notificationStates.use().totalUnread;
   const [allNotifications, setAllNotifications] = useState(notifications);

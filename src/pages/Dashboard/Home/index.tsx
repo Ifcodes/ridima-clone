@@ -5,8 +5,10 @@ import CreateVirtualCard from "../../CreateVirtualCard";
 import DashboardLayout from "../../../components/templates/MainLayout";
 import DefaultHomeScreen from "./defaultPage";
 import PageMask from "../../../components/molecules/PageMask";
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
 
 const Home = () => {
+  useDocumentTitle("Home");
   const [isDisabled] = useState(false);
   const [activeScreen, setActiveScreen] = useState("default");
 

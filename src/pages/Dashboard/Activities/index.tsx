@@ -12,6 +12,7 @@ import { ActivitiesWrapper } from "./activitiesStyles";
 import EmptyTransactionpage from "./emptyTransactionpage";
 import TransactionsPage from "./transactionsPage";
 import DatefilterModal from "./widgets/datefilterModal";
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
 
 // const cards = [
 //   {
@@ -44,6 +45,8 @@ import DatefilterModal from "./widgets/datefilterModal";
 //   },
 // ];
 const Activities = () => {
+  useDocumentTitle("Activities");
+
   const [selectedCategory, setSelectedCategory] = useState("Gift Cards");
 
   const toggleCategory = (category: string) => {

@@ -13,12 +13,14 @@ import {
 } from "./createVirtualCardStyles";
 import FundYourCard from "./fundYourCard";
 import MobileHeader from "../../components/atoms/MobileHeader";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 
 type VirtualCardProps = {
   toggleActiveScreen?: MouseEventHandler<HTMLSpanElement>;
 };
 
 const CreateVirtualCard = ({ toggleActiveScreen }: VirtualCardProps) => {
+  useDocumentTitle("Create Virtual Card");
   const [cardDetails, setCardDetails] = useState({
     cardName: "",
     billingAddress: "",

@@ -10,8 +10,11 @@ import TriangleUpIcon from "../../../components/atoms/vectors/TriangleUpIcon";
 import DashboardLayout from "../../../components/templates/MainLayout";
 import { leadersList } from "../../../utils/helpers/leadersList";
 import { LeaderBoardWrapper } from "./leaderboardStyles";
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
 
 const Leaderboard = () => {
+  useDocumentTitle("Leaderboard");
+
   const [selectedPeriod, setSelectedPeriod] = useState("Daily");
 
   const topThree = leadersList.slice(0, 4);
