@@ -70,6 +70,13 @@ export const SideNavWrapper = styled.aside<{
     margin-top: 0;
   }
 
+  .unread-notifications-cont {
+    position: absolute;
+    top: 1.6rem;
+    right: 0;
+    z-index: 1;
+  }
+
   @media screen and (max-width: 1240px) {
     width: ${(props) => (props.collapse ? "7rem" : "100%")};
 

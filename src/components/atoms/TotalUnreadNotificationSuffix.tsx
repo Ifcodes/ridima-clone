@@ -13,8 +13,8 @@ const TotalUnreadNotificationSuffix = ({
     <CircledBackground
       bgColor={isActive ? "white" : "#E81313"}
       textColor={isActive ? "#E81313" : "white"}
-      width="2rem"
-      height="2rem"
+      width="1rem"
+      height="1rem"
     >
       {totalUnreadNotification}
     </CircledBackground>

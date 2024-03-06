@@ -4,7 +4,7 @@ import { SvgIconProps } from "../../../types";
 
 const PrimaryButtonBg = (props: SvgIconProps) => (
   <svg
-    viewBox="0 0 436 80"
+    viewBox="0 0 436 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

@@ -22,6 +22,7 @@ export const CircledBackground = styled.div<{
   color: ${(props) => props.textColor || props.theme.colors.red};
   font-weight: 700;
   cursor: pointer;
+  font-size: 14px;
 
   svg {
     width: ${(props) => props.svgWidth || ""};

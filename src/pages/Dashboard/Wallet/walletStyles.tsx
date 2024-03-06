@@ -7,7 +7,7 @@ export const WalletpageWrapper = styled.div`
 
 export const WalletpageDefaultWrapper = styled.div`
   .wallet-card-cont {
-    margin-top: 2.6rem;
+    margin-top: 1rem;
   }
 
   .horizontal-line-cont {

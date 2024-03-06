@@ -53,7 +53,9 @@ const DashboardSideNav = () => {
                 hideBg={!isActive}
                 suffix={
                   item.text === "Notification" && !isCollapsed ? (
-                    <TotalUnreadNotificationSuffix isActive={isActive} />
+                    <div className="unread-notifications-cont">
+                      <TotalUnreadNotificationSuffix isActive={isActive} />
+                    </div>
                   ) : (
                     ""
                   )

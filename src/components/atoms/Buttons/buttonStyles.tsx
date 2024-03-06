@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ButtonProps } from ".";
 
 export const ButtonWrapper = styled.button<ButtonProps>`
-  width: ${(props) => props.width || "100%"};
+  width: ${(props) => props.width || "90%"};
   font-size: ${(props) => props.fs || "1rem"};
   font-family: "cera_promedium";
   font-weight: bold;
